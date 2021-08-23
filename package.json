@@ -1,0 +1,119 @@
+{
+  "name": "create-flutter-widgets-and-classes",
+  "displayName": "Create Flutter Widgets and Classes",
+  "description": "Extension that creates Flutter Stateless or Stateful Widgets, Screens, MobX Store and Classes.",
+  "version": "1.0.0",
+  "publisher": "ricardo-emerson",
+  "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
+  "icon": "images/logo.png",
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "create",
+    "dart",
+    "flutter",
+    "widget",
+    "widgets",
+    "component",
+    "components",
+    "stateless",
+    "stateful",
+    "screen",
+    "screens",
+    "class",
+    "classes",
+    "mobx",
+    "store"
+  ],
+  "engines": {
+    "vscode": "^1.17.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.create-stateless-widget",
+    "onCommand:extension.create-stateful-widget",
+    "onCommand:extension.create-class",
+    "onCommand:extension.create-mobx-store"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.create-stateless-widget",
+        "title": "🔶 Create Flutter Stateless Widget"
+      },
+      {
+        "command": "extension.create-stateful-widget",
+        "title": "🔷 Create Flutter Stateful Widget"
+      },
+      {
+        "command": "extension.create-class",
+        "title": "📄 Create Dart Class"
+      },
+      {
+        "command": "extension.create-mobx-store",
+        "title": "📦 Create MobX Store"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.create-stateless-widget",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-stateful-widget",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-class",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-mobx-store",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Create Flutter Widgets and Classes",
+      "properties": {
+        "createFlutterWidgetsAndClasses.fileNameCaseFormat": {
+          "type": "string",
+          "enum": [
+            "snake_case",
+            "PascalCase",
+            "camelCase",
+            "kebab-case"
+          ],
+          "default": "snake_case",
+          "markdownDescription": "Default file case format for the name of the file."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "yarn run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^12.6.8",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.28"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21"
+  }
+}
