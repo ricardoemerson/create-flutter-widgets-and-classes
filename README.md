@@ -31,11 +31,11 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes&ssr=false#review-details)
 
-This extension creates Flutter Stateless or Stateful Widgets, Screens, MobX Store and Classes.
+This extension creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.
 
 # Usage Examples
 
-You can create a Next, React or React Native Component either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
+You can create a Flutter Stateless or Stateful Widgets, MobX Store and Classes either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
 
 - `📄 Create Dart Class`
 - `📦 Create Mobx Store`
