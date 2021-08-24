@@ -2,13 +2,12 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
   "description": "Extension that creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
   "categories": [
     "Programming Languages",
-    "Snippets",
     "Other"
   ],
   "keywords": [
@@ -35,7 +34,8 @@
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
     "onCommand:extension.create-class",
-    "onCommand:extension.create-mobx-store"
+    "onCommand:extension.create-mobx-store",
+    "workspaceContains:pubspec.yaml"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -55,6 +55,10 @@
       {
         "command": "extension.create-mobx-store",
         "title": "📦 Create MobX Store"
+      },
+      {
+        "command": "extension.wrapObserver",
+        "title": "Wrap with Observer"
       }
     ],
     "menus": {
@@ -78,6 +82,12 @@
           "command": "extension.create-mobx-store",
           "group": "1_modification",
           "when": "explorerResourceIsFolder"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "extension.wrapObserver",
+          "when": "editorLangId == dart"
         }
       ]
     },

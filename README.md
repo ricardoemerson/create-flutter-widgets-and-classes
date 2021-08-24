@@ -74,6 +74,11 @@ Select the folder when the store will be created and choose `📦 Create Mobx St
 
 ![Usage](images/create-store.gif)
 
+## Wrap with Observer
+
+Use the code actions of Visual Studio Code to wrap a widget that uses an observable property with the widget `Observer` from lib `flutter_mobx`.
+
+![Usage](images/wrap-with-observer.gif)
 
 ## Settings
 
