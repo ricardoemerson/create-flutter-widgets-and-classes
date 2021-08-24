@@ -126,6 +126,31 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
         command: "extension.wrapObserver",
         title: "Wrap with Observer"
       });
+
+      codeActions.push({
+        command: "extension.wrapStack",
+        title: "Wrap with Stack"
+      });
+
+      codeActions.push({
+        command: "extension.wrapExpanded",
+        title: "Wrap with Expanded"
+      });
+
+      codeActions.push({
+        command: "extension.wrapPositioned",
+        title: "Wrap with Positioned"
+      });
+
+      codeActions.push({
+        command: "extension.wrapForm",
+        title: "Wrap with Form"
+      });
+
+      codeActions.push({
+        command: "extension.wrapSafeArea",
+        title: "Wrap with SafeArea"
+      });
     }
 
     return codeActions;
@@ -151,7 +176,6 @@ export function activate(context: vscode.ExtensionContext) {
       new CodeActionProvider()
     )
   ];
-
   context.subscriptions.push(...disposable);
 
   let disposableWrapObserver = vscode.commands.registerCommand('extension.wrapObserver', async () => {
@@ -168,8 +192,87 @@ export function activate(context: vscode.ExtensionContext) {
       "editor.action.formatDocument"
     );
   });
-
   context.subscriptions.push(disposableWrapObserver);
+
+  let disposableWrapStack = vscode.commands.registerCommand('extension.wrapStack', async () => {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+    const selectedText = getSelectedText(editor);
+    const text = editor.document.getText(selectedText);
+    const newTextWidget = `Stack(children: [${text},],)`;
+
+    await editor.edit(edit => {
+      edit.replace(selectedText, newTextWidget);
+    });
+    await vscode.commands.executeCommand(
+      "editor.action.formatDocument"
+    );
+  });
+  context.subscriptions.push(disposableWrapStack);
+
+  let disposableWrapExpanded = vscode.commands.registerCommand('extension.wrapExpanded', async () => {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+    const selectedText = getSelectedText(editor);
+    const text = editor.document.getText(selectedText);
+    const newTextWidget = `Expanded(child: ${text},)`;
+
+    await editor.edit(edit => {
+      edit.replace(selectedText, newTextWidget);
+    });
+    await vscode.commands.executeCommand(
+      "editor.action.formatDocument"
+    );
+  });
+  context.subscriptions.push(disposableWrapExpanded);
+
+  let disposableWrapPositioned = vscode.commands.registerCommand('extension.wrapPositioned', async () => {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+    const selectedText = getSelectedText(editor);
+    const text = editor.document.getText(selectedText);
+    const newTextWidget = `Positioned(child: ${text},)`;
+
+    await editor.edit(edit => {
+      edit.replace(selectedText, newTextWidget);
+    });
+    await vscode.commands.executeCommand(
+      "editor.action.formatDocument"
+    );
+  });
+  context.subscriptions.push(disposableWrapPositioned);
+
+  let disposableWrapForm = vscode.commands.registerCommand('extension.wrapForm', async () => {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+    const selectedText = getSelectedText(editor);
+    const text = editor.document.getText(selectedText);
+    const newTextWidget = `Form(child: ${text},)`;
+
+    await editor.edit(edit => {
+      edit.replace(selectedText, newTextWidget);
+    });
+    await vscode.commands.executeCommand(
+      "editor.action.formatDocument"
+    );
+  });
+  context.subscriptions.push(disposableWrapForm);
+
+  let disposableWrapSafeArea = vscode.commands.registerCommand('extension.wrapSafeArea', async () => {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+    const selectedText = getSelectedText(editor);
+    const text = editor.document.getText(selectedText);
+    const newTextWidget = `SafeArea(child: ${text},)`;
+
+    await editor.edit(edit => {
+      edit.replace(selectedText, newTextWidget);
+    });
+    await vscode.commands.executeCommand(
+      "editor.action.formatDocument"
+    );
+  });
+  context.subscriptions.push(disposableWrapSafeArea);
 }
 
 export function deactivate() {}

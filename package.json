@@ -59,6 +59,26 @@
       {
         "command": "extension.wrapObserver",
         "title": "Wrap with Observer"
+      },
+      {
+        "command": "extension.wrapStack",
+        "title": "Wrap with Stack"
+      },
+      {
+        "command": "extension.wrapExpanded",
+        "title": "Wrap with Expanded"
+      },
+      {
+        "command": "extension.wrapPositioned",
+        "title": "Wrap with Positioned"
+      },
+      {
+        "command": "extension.wrapForm",
+        "title": "Wrap with Form"
+      },
+      {
+        "command": "extension.wrapSafeArea",
+        "title": "Wrap with SafeArea"
       }
     ],
     "menus": {
@@ -87,6 +107,26 @@
       "commandPalette": [
         {
           "command": "extension.wrapObserver",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapStack",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapExpanded",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapPositioned",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapForm",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapSafeArea",
           "when": "editorLangId == dart"
         }
       ]

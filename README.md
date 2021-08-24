@@ -80,6 +80,28 @@ Use the code actions of Visual Studio Code to wrap a widget that uses an observa
 
 ![Usage](images/wrap-with-observer.gif)
 
+## Extra wrappers
+
+### Wrap with Stack
+
+![Usage](images/wrap-with-stack.gif)
+
+### Wrap with Expanded
+
+![Usage](images/wrap-with-expanded.gif)
+
+### Wrap with Positioned
+
+![Usage](images/wrap-with-positioned.gif)
+
+### Wrap with Form
+
+![Usage](images/wrap-with-form.gif)
+
+### Wrap with SafeArea
+
+![Usage](images/wrap-with-safe-area.gif)
+
 ## Settings
 
 It is possible choose the case format for the name of widgets and classes.
