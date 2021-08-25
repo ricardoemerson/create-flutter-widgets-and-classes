@@ -151,6 +151,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
         command: "extension.wrapSafeArea",
         title: "Wrap with SafeArea"
       });
+
+      codeActions.push({
+        command: "extension.wrapGestureDetector",
+        title: "Wrap with GestureDetector"
+      });
     }
 
     return codeActions;
@@ -273,6 +278,22 @@ export function activate(context: vscode.ExtensionContext) {
     );
   });
   context.subscriptions.push(disposableWrapSafeArea);
+
+  let disposableWrapGestureDetector = vscode.commands.registerCommand('extension.wrapGestureDetector', async () => {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+    const selectedText = getSelectedText(editor);
+    const text = editor.document.getText(selectedText);
+    const newTextWidget = `GestureDetector(child: ${text}, onTap: () {},)`;
+
+    await editor.edit(edit => {
+      edit.replace(selectedText, newTextWidget);
+    });
+    await vscode.commands.executeCommand(
+      "editor.action.formatDocument"
+    );
+  });
+  context.subscriptions.push(disposableWrapGestureDetector);
 }
 
 export function deactivate() {}

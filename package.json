@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
   "description": "Extension that creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -79,28 +79,32 @@
       {
         "command": "extension.wrapSafeArea",
         "title": "Wrap with SafeArea"
+      },
+      {
+        "command": "extension.wrapGestureDetector",
+        "title": "Wrap with GestureDetector"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "extension.create-stateless-widget",
-          "group": "1_modification",
+          "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-stateful-widget",
-          "group": "1_modification",
+          "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-class",
-          "group": "1_modification",
+          "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-mobx-store",
-          "group": "1_modification",
+          "group": "2_modification",
           "when": "explorerResourceIsFolder"
         }
       ],
@@ -127,6 +131,10 @@
         },
         {
           "command": "extension.wrapSafeArea",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapGestureDetector",
           "when": "editorLangId == dart"
         }
       ]

@@ -2,6 +2,10 @@
 
 All notable changes to the Create Flutter Widgets and Classes extension will be documented in this file.
 
+## [1.1.1]
+
+- Added the code action `Wrap with GestureDetector`.
+
 ## [1.1.0]
 
 - Added the code action `Wrap with Observer`.

@@ -102,6 +102,10 @@ Use the code actions of Visual Studio Code to wrap a widget that uses an observa
 
 ![Usage](images/wrap-with-safe-area.gif)
 
+### Wrap with GestureDetector
+
+![Usage](images/wrap-with-gesture-detector.gif)
+
 ## Settings
 
 It is possible choose the case format for the name of widgets and classes.
