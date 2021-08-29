@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
   "description": "Extension that creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -57,32 +57,36 @@
         "title": "📦 Create MobX Store"
       },
       {
-        "command": "extension.wrapObserver",
-        "title": "Wrap with Observer"
-      },
-      {
-        "command": "extension.wrapStack",
-        "title": "Wrap with Stack"
-      },
-      {
-        "command": "extension.wrapExpanded",
+        "command": "extension.wrapWithExpanded",
         "title": "Wrap with Expanded"
       },
       {
-        "command": "extension.wrapPositioned",
+        "command": "extension.wrapWithStack",
+        "title": "Wrap with Stack"
+      },
+      {
+        "command": "extension.wrapWithPositioned",
         "title": "Wrap with Positioned"
       },
       {
-        "command": "extension.wrapForm",
-        "title": "Wrap with Form"
+        "command": "extension.wrapWithGestureDetector",
+        "title": "Wrap with GestureDetector"
       },
       {
-        "command": "extension.wrapSafeArea",
+        "command": "extension.wrapWithSingleChildScrollView",
+        "title": "Wrap with SingleChildScrollView"
+      },
+      {
+        "command": "extension.wrapWithSafeArea",
         "title": "Wrap with SafeArea"
       },
       {
-        "command": "extension.wrapGestureDetector",
-        "title": "Wrap with GestureDetector"
+        "command": "extension.wrapWithForm",
+        "title": "Wrap with Form"
+      },
+      {
+        "command": "extension.wrapWithObserver",
+        "title": "Wrap with Observer"
       }
     ],
     "menus": {
@@ -110,31 +114,35 @@
       ],
       "commandPalette": [
         {
-          "command": "extension.wrapObserver",
+          "command": "extension.wrapWithExpanded",
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapStack",
+          "command": "extension.wrapWithStack",
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapExpanded",
+          "command": "extension.wrapWithPositioned",
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapPositioned",
+          "command": "extension.wrapWithGestureDetector",
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapForm",
+          "command": "extension.wrapWithSingleChildScrollView",
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapSafeArea",
+          "command": "extension.wrapWithSafeArea",
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapGestureDetector",
+          "command": "extension.wrapWithForm",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithObserver",
           "when": "editorLangId == dart"
         }
       ]
@@ -144,14 +152,20 @@
       "properties": {
         "createFlutterWidgetsAndClasses.fileNameCaseFormat": {
           "type": "string",
+          "markdownDescription": "Default file case format for the name of the file.",
+          "default": "snake_case",
           "enum": [
             "snake_case",
             "PascalCase",
             "camelCase",
             "kebab-case"
           ],
-          "default": "snake_case",
-          "markdownDescription": "Default file case format for the name of the file."
+          "enumDescriptions": [
+            "E.g.: button_widget.dart",
+            "E.g.: ButtonWidget.dart",
+            "E.g.: buttonWidget.dart",
+            "E.g.: button-widget.dart"
+          ]
         }
       }
     }

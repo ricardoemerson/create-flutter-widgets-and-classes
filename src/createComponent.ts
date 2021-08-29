@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 import statelessWidget from './templates/statelessWidget';
 import statefulWidget from './templates/statefulWidget';
 import clazz from './templates/clazz';
-import mobxStore from './templates/mobx-store';
+import mobxStore from './templates/mobxStore';
 import { camelCase, kebabCase, snakeCase } from 'lodash';
 import pascalCase from './templates/shared/functions/pascal-case';
 

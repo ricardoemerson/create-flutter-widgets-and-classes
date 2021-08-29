@@ -2,6 +2,13 @@
 
 All notable changes to the Create Flutter Widgets and Classes extension will be documented in this file.
 
+## [1.1.2]
+
+- Added the code action `Wrap with SingleChildScrollView`.
+- Refactored the Wrappers Section in code.
+- Change order of Wrappers.
+- Change examples of Wrappers in README.md.
+
 ## [1.1.1]
 
 - Added the code action `Wrap with GestureDetector`.
