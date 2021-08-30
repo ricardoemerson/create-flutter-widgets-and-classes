@@ -34,6 +34,7 @@
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
     "onCommand:extension.create-class",
+    "onCommand:extension.create-interface",
     "onCommand:extension.create-mobx-store",
     "workspaceContains:pubspec.yaml"
   ],
@@ -50,7 +51,11 @@
       },
       {
         "command": "extension.create-class",
-        "title": "📄 Create Dart Class"
+        "title": "📝 Create Dart Class"
+      },
+      {
+        "command": "extension.create-interface",
+        "title": "📄 Create Dart Interface"
       },
       {
         "command": "extension.create-mobx-store",
@@ -103,6 +108,11 @@
         },
         {
           "command": "extension.create-class",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-interface",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
@@ -166,6 +176,11 @@
             "E.g.: buttonWidget.dart",
             "E.g.: button-widget.dart"
           ]
+        },
+        "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Defines whether an interface will be created using `I` with prefix to the interface name."
         }
       }
     }

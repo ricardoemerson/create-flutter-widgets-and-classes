@@ -5,6 +5,9 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 ## [1.1.2]
 
 - Added the code action `Wrap with SingleChildScrollView`.
+- Added the context menu `📄 Create Dart Interface`.
+- Added the setting for use `I` prefix in interfaces.
+- Changed the icon of menu item `📝 Create Dart Class`.
 - Refactored the Wrappers Section in code.
 - Change order of Wrappers.
 - Change examples of Wrappers in README.md.
@@ -16,8 +19,8 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 ## [1.1.0]
 
 - Added the code action `Wrap with Observer`.
-- Added the code action `Wrap with Stack`.
 - Added the code action `Wrap with Expanded`.
+- Added the code action `Wrap with Stack`.
 - Added the code action `Wrap with Positioned`.
 - Added the code action `Wrap with Form`.
 - Added the code action `Wrap with SafeArea`.

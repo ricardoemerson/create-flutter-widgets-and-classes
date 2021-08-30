@@ -5,13 +5,14 @@ import * as vscode from 'vscode';
 import statelessWidget from './templates/statelessWidget';
 import statefulWidget from './templates/statefulWidget';
 import clazz from './templates/clazz';
+import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
 import { camelCase, kebabCase, snakeCase } from 'lodash';
 import pascalCase from './templates/shared/functions/pascal-case';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'store';
+  type: 'widget' | 'class' | 'interface' | 'store';
   stateFullWidget?: boolean;
 }
 
@@ -20,32 +21,41 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
 
   const fileNameCaseFormat = config.get("fileNameCaseFormat") as string;
+  const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
 
   const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 
   componentName = componentName.split(' ').join('');
 
   let fileName: string;
+  let iPrefix: string;
 
   switch (fileNameCaseFormat) {
     case 'snake_case':
       fileName = snakeCase(componentName);
+      iPrefix = 'i';
       break;
     case 'PascalCase':
       fileName = pascalCase(componentName);
+      iPrefix = 'I';
       break;
     case 'camelCase':
       fileName = camelCase(componentName);
+      iPrefix = 'i';
       break;
     case 'kebab-case':
       fileName = kebabCase(componentName);
+      iPrefix = 'i';
       break;
     default:
       fileName = snakeCase(componentName);
+      iPrefix = 'i';
       break;
   }
 
-  const componentFileName = `${ fileName }.dart`;
+  const componentFileName = type === 'interface' && useIPrefixForInterfaces
+    ? `${ iPrefix }${ fileName }.dart`
+    : `${ fileName }.dart`;
 
   if (!dir) {
     dir =
@@ -89,6 +99,12 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   if (type === 'class' ) {
     await createFile(
       filePath(componentFileName), clazz({ componentName })
+    );
+  }
+
+  if (type === 'interface' ) {
+    await createFile(
+      filePath(componentFileName), interfaceClazz({ componentName, useIPrefixForInterfaces })
     );
   }
 

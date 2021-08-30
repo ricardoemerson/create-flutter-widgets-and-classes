@@ -5,7 +5,7 @@
     </a>
 </p>
 
-## Support
+# Support
 
 **Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code**. If you find it useful, please consider supporting it.
 
@@ -31,22 +31,32 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes&ssr=false#review-details)
 
-This extension creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.
+This extension creates Flutter Stateless or Stateful Widgets, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
+
+- `Wrap with Expanded`
+- `Wrap with Stack`
+- `Wrap with Positioned`
+- `Wrap with GestureDetector`
+- `Wrap with SingleChildScrollView`
+- `Wrap with SafeArea`
+- `Wrap with Form`
+- `Wrap with Observer`
 
 # Usage Examples
 
-You can create a Flutter Stateless or Stateful Widgets, MobX Store and Classes either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
+You can create a Flutter Stateless or Stateful Widgets, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
 
-- `📄 Create Dart Class`
+- `📄 Create Dart Interface`
+- `📝 Create Dart Class`
 - `📦 Create Mobx Store`
 - `🔶 Create Flutter Stateless Widget`
 - `🔷 Create Flutter Stateful Widget`
 
-### All Commands (Ctrl+Shift+P or Cmd+Shift+P):
+## All Commands (Ctrl+Shift+P or Cmd+Shift+P):
 
 ![Usage](images/show-all-commands.png)
 
-### Mouse Right Click:
+## Mouse Right Click:
 
 ![Usage](images/usage-right-mouse-click.png)
 
@@ -64,9 +74,15 @@ Select the folder when the widget will be created and choose `🔷 Create Flutte
 
 ## Create Dart Class Example:
 
-Select the folder when the class will be created and choose `📄 Create Dart Class` and enter the name of the class to be created.
+Select the folder when the class will be created and choose `📝 Create Dart Class` and enter the name of the class to be created.
 
 ![Usage](images/create-class.gif)
+
+## Create Dart Interface Example:
+
+Select the folder when the interface will be created and choose `📄 Create Dart Interface` and enter the name of the interface to be created.
+
+![Usage](images/create-interface.gif)
 
 ## Create Mobx Store Example:
 
@@ -74,55 +90,77 @@ Select the folder when the store will be created and choose `📦 Create Mobx St
 
 ![Usage](images/create-store.gif)
 
-## Wrap with Observer
+# Extra wrappers
 
-Use the code actions of Visual Studio Code to wrap a widget that uses an observable property with the widget `Observer` from lib `flutter_mobx`.
+Use the code actions of Visual Studio Code to wrap a widget with one of the following wrappers:
 
-![Usage](images/wrap-with-observer.gif)
+- `Wrap with Expanded`
+- `Wrap with Stack`
+- `Wrap with Positioned`
+- `Wrap with GestureDetector`
+- `Wrap with SingleChildScrollView`
+- `Wrap with SafeArea`
+- `Wrap with Form`
+- `Wrap with Observer`
 
-## Extra wrappers
-
-### Wrap with Stack
-
-![Usage](images/wrap-with-stack.gif)
-
-### Wrap with Expanded
+## Wrap with Expanded
 
 ![Usage](images/wrap-with-expanded.gif)
 
-### Wrap with Positioned
+## Wrap with Stack
+
+![Usage](images/wrap-with-stack.gif)
+
+## Wrap with Positioned
 
 ![Usage](images/wrap-with-positioned.gif)
 
-### Wrap with Form
-
-![Usage](images/wrap-with-form.gif)
-
-### Wrap with SafeArea
-
-![Usage](images/wrap-with-safe-area.gif)
-
-### Wrap with GestureDetector
+## Wrap with GestureDetector
 
 ![Usage](images/wrap-with-gesture-detector.gif)
 
-## Settings
+## Wrap with SingleChildScrollView
 
-It is possible choose the case format for the name of widgets and classes.
+![Usage](images/wrap-with-single-child-scroll-view.gif)
 
-![Usage](images/all-settings.png)
+## Wrap with SafeArea
+
+![Usage](images/wrap-with-safe-area.gif)
+
+## Wrap with Form
+
+![Usage](images/wrap-with-form.gif)
+
+## Wrap with Observer
+
+In case of use of `MobX`, it is possible to wrap a widget that uses an observable property with the widget `Observer` from lib `flutter_mobx`.
+
+![Usage](images/wrap-with-observer.gif)
+
+# Settings
+
+It is possible choose the case format for the name of widgets, classes, interfaces and specify if an interface will be prefixed with an `I`.
+
+![Usage](images/settings.gif)
 
 ## File Name Case Format
 
-By default widgets and classes files are created using the `snake_case` format for naming files. It is also possible use the formats: `PascalCase`, `camelCase` and `kebab-case`.
+By default widgets, classes and interfaces files are created using the `snake_case` format for naming files. It is also possible use the formats: `PascalCase`, `camelCase` and `kebab-case`.
 
 ![Usage](images/file-name-case-format.gif)
+
+## Use `I` Prefix For Interfaces
+
+By default interfaces files are created using the `I` prefix in name of file and interface. It is also possible create it without `I` prefix.
+
+![Usage](images/create-interface.gif)
 
 Example of `settings.json`:
 
 ```json
 {
-  "createFlutterWidgetsAndClasses.fileNameCaseFormat": "snake_case|PascalCase|camelCase|kebab-case"
+  "createFlutterWidgetsAndClasses.fileNameCaseFormat": "snake_case|PascalCase|camelCase|kebab-case",
+  "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": false
 }
 ```
 
