@@ -2,6 +2,10 @@
 
 All notable changes to the Create Flutter Widgets and Classes extension will be documented in this file.
 
+## [1.1.4]
+
+- Updated README.md.
+
 ## [1.1.3]
 
 - Allow wrapping a widget using widget selection.

@@ -133,7 +133,7 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 
 ## Wrap with Observer
 
-In case of use of `MobX`, it is possible to wrap a widget that uses an observable property with the widget `Observer` from lib `flutter_mobx`.
+In case of use of `MobX`, it is possible to wrapper a widget that uses an observable property with the widget `Observer` from lib `flutter_mobx`.
 
 ![Usage](images/wrap-with-observer.gif)
 
@@ -143,7 +143,7 @@ In some widgets structures by positioning the cursor over the widget which will 
 
 ![Usage](images/wrap-with-break.gif)
 
-In this case, undo last operation and select the whole widget that will be wrapped and using `code actions` of Visual Studio Code and choose appropriate wrap with option.
+In this case, undo the last operation and select all the widget that will be wrapped, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
 
 ![Usage](images/wrap-with-selecting.gif)
 
