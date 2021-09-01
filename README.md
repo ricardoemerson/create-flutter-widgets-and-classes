@@ -137,6 +137,16 @@ In case of use of `MobX`, it is possible to wrap a widget that uses an observabl
 
 ![Usage](images/wrap-with-observer.gif)
 
+## If wrap fails and breaks the code
+
+In some widgets structures by positioning the cursor over the widget which will be surrounded by new widget may cause breaking the code.
+
+![Usage](images/wrap-with-break.gif)
+
+In this case, undo last operation and select the whole widget that will be wrapped and using `code actions` of Visual Studio Code and choose appropriate wrap with option.
+
+![Usage](images/wrap-with-selecting.gif)
+
 # Settings
 
 It is possible choose the case format for the name of widgets, classes, interfaces and specify if an interface will be prefixed with an `I`.

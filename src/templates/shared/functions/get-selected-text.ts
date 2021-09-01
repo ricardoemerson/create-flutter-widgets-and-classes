@@ -19,6 +19,8 @@ const nextElementIsValid = (code: string, length: number): Boolean => {
 };
 
 export const getSelectedText = (editor: TextEditor): Selection => {
+  if (!editor.selection.isEmpty) return editor.selection;
+
   let offset_l = editor.document.offsetAt(editor.selection.start);
   let offset_r = editor.document.offsetAt(editor.selection.end) - 1;
   let text = editor.document.getText();
