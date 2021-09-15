@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
   "description": "Extension that creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -90,6 +90,10 @@
         "title": "Wrap with Form"
       },
       {
+        "command": "extension.wrapWithObx",
+        "title": "Wrap with Obx"
+      },
+      {
         "command": "extension.wrapWithObserver",
         "title": "Wrap with Observer"
       }
@@ -149,6 +153,10 @@
         },
         {
           "command": "extension.wrapWithForm",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithObx",
           "when": "editorLangId == dart"
         },
         {

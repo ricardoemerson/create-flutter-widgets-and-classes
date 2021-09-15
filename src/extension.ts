@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 
 import createComponent from './createComponent';
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
-import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithObserver, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithStack } from './templates/wrapWith';
+import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithStack } from './templates/wrapWith';
 
 interface CreateComponentProps {
   args: any;
@@ -77,6 +77,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
       });
 
       codeActions.push({
+        command: "extension.wrapWithObx",
+        title: "Wrap with Obx"
+      });
+
+      codeActions.push({
         command: "extension.wrapWithObserver",
         title: "Wrap with Observer"
       });
@@ -111,6 +116,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.wrapWithSingleChildScrollView", wrapWithSingleChildScrollView),
     vscode.commands.registerCommand("extension.wrapWithSafeArea", wrapWithSafeArea),
     vscode.commands.registerCommand("extension.wrapWithForm", wrapWithForm),
+    vscode.commands.registerCommand("extension.wrapWithObx", wrapWithObx),
     vscode.commands.registerCommand("extension.wrapWithObserver", wrapWithObserver),
 
     vscode.languages.registerCodeActionsProvider(

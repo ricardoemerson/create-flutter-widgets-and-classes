@@ -131,9 +131,15 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 
 ![Usage](images/wrap-with-form.gif)
 
+## Wrap with Obx
+
+In case of use of `GetX`, it is possible to wrapper a widget that uses an observable property with the widget `Obx` from lib [`get`](https://pub.dev/packages/get).
+
+![Usage](images/wrap-with-obx.gif)
+
 ## Wrap with Observer
 
-In case of use of `MobX`, it is possible to wrapper a widget that uses an observable property with the widget `Observer` from lib `flutter_mobx`.
+In case of use of `MobX`, it is possible to wrapper a widget that uses an observable property with the widget `Observer` from lib [`flutter_mobx`](https://pub.dev/packages/flutter_mobx).
 
 ![Usage](images/wrap-with-observer.gif)
 

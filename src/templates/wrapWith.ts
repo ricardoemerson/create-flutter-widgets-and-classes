@@ -52,6 +52,15 @@ const wrapWithFormTemplate = (widget: string) => (
 `
 );
 
+const wrapWithObxTemplate = (widget: string) => (
+`Obx(
+  () {
+    return ${ widget };
+  }
+)
+`
+);
+
 const wrapWithObserverTemplate = (widget: string) => (
 `Observer(
   builder: (_) {
@@ -68,4 +77,5 @@ export const wrapWithGestureDetector = async () => wrapWith(wrapWithGestureDetec
 export const wrapWithSingleChildScrollView = async () => wrapWith(wrapWithSingleChildScrollViewTemplate);
 export const wrapWithSafeArea = async () => wrapWith(wrapWithSafeAreaTemplate);
 export const wrapWithForm = async () => wrapWith(wrapWithFormTemplate);
+export const wrapWithObx = async () => wrapWith(wrapWithObxTemplate);
 export const wrapWithObserver = async () => wrapWith(wrapWithObserverTemplate);
