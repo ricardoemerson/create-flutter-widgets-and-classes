@@ -74,6 +74,10 @@
         "title": "Wrap with Positioned"
       },
       {
+        "command": "extension.wrapWithHero",
+        "title": "Wrap with Hero"
+      },
+      {
         "command": "extension.wrapWithGestureDetector",
         "title": "Wrap with GestureDetector"
       },
@@ -137,6 +141,10 @@
         },
         {
           "command": "extension.wrapWithPositioned",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithHero",
           "when": "editorLangId == dart"
         },
         {

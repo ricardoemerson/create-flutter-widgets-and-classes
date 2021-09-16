@@ -36,10 +36,12 @@ This extension creates Flutter Stateless or Stateful Widgets, MobX Store, Classe
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
+- `Wrap with Hero`
 - `Wrap with GestureDetector`
 - `Wrap with SingleChildScrollView`
 - `Wrap with SafeArea`
 - `Wrap with Form`
+- `Wrap with Obx`
 - `Wrap with Observer`
 
 # Usage Examples
@@ -97,10 +99,12 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
+- `Wrap with Hero`
 - `Wrap with GestureDetector`
 - `Wrap with SingleChildScrollView`
 - `Wrap with SafeArea`
 - `Wrap with Form`
+- `Wrap with Obx`
 - `Wrap with Observer`
 
 ## Wrap with Expanded
@@ -114,6 +118,10 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 ## Wrap with Positioned
 
 ![Usage](images/wrap-with-positioned.gif)
+
+## Wrap with Hero
+
+![Usage](images/wrap-with-hero.gif)
 
 ## Wrap with GestureDetector
 

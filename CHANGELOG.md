@@ -4,6 +4,7 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 
 ## [1.2.0]
 
+- Added the code action `Wrap with Hero`.
 - Added the code action `Wrap with Obx`.
 
 ## [1.1.4]

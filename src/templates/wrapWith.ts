@@ -23,6 +23,14 @@ const wrapWithPositionedTemplate = (widget: string) => (
 `
 );
 
+const wrapWithHeroTemplate = (widget: string) => (
+`Hero(
+  tag: 'tag-id',
+  child: ${widget},
+)
+`
+);
+
 const wrapWithGestureDetectorTemplate = (widget: string) => (
 `GestureDetector(
   onTap: () {},
@@ -73,6 +81,7 @@ const wrapWithObserverTemplate = (widget: string) => (
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
+export const wrapWithHero = async () => wrapWith(wrapWithHeroTemplate);
 export const wrapWithGestureDetector = async () => wrapWith(wrapWithGestureDetectorTemplate);
 export const wrapWithSingleChildScrollView = async () => wrapWith(wrapWithSingleChildScrollViewTemplate);
 export const wrapWithSafeArea = async () => wrapWith(wrapWithSafeAreaTemplate);
