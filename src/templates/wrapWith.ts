@@ -23,10 +23,9 @@ const wrapWithPositionedTemplate = (widget: string) => (
 `
 );
 
-const wrapWithSizedBoxTemplate = (widget: string) => (
-`SizedBox(
-  width: 100,
-  height: 100,
+const wrapWithClipRRectTemplate = (widget: string) => (
+`ClipRRect(
+  borderRadius: BorderRadius.circular(20),
   child: ${widget},
 )
 `
@@ -90,7 +89,7 @@ const wrapWithObserverTemplate = (widget: string) => (
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
-export const wrapWithSizedBox = async () => wrapWith(wrapWithSizedBoxTemplate);
+export const wrapWithClipRRect = async () => wrapWith(wrapWithClipRRectTemplate);
 export const wrapWithHero = async () => wrapWith(wrapWithHeroTemplate);
 export const wrapWithGestureDetector = async () => wrapWith(wrapWithGestureDetectorTemplate);
 export const wrapWithSingleChildScrollView = async () => wrapWith(wrapWithSingleChildScrollViewTemplate);

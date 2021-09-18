@@ -80,8 +80,8 @@
         "title": "Wrap with Positioned"
       },
       {
-        "command": "extension.wrapWithSizedBox",
-        "title": "Wrap with SizedBox"
+        "command": "extension.wrapWithClipRRect",
+        "title": "Wrap with ClipRRect"
       },
       {
         "command": "extension.wrapWithHero",
@@ -158,7 +158,7 @@
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapWithSizedBox",
+          "command": "extension.wrapWithClipRRect",
           "when": "editorLangId == dart"
         },
         {
