@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 
 import createComponent from './createComponent';
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
-import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithStack } from './templates/wrapWith';
+import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithSizedBox, wrapWithStack } from './templates/wrapWith';
 
 interface CreateComponentProps {
   args: any;
@@ -54,6 +54,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
       codeActions.push({
         command: "extension.wrapWithPositioned",
         title: "Wrap with Positioned"
+      });
+
+      codeActions.push({
+        command: "extension.wrapWithSizedBox",
+        title: "Wrap with SizedBox"
       });
 
       codeActions.push({
@@ -117,6 +122,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.wrapWithExpanded", wrapWithExpanded),
     vscode.commands.registerCommand("extension.wrapWithStack", wrapWithStack),
     vscode.commands.registerCommand("extension.wrapWithPositioned", wrapWithPositioned),
+    vscode.commands.registerCommand("extension.wrapWithSizedBox", wrapWithSizedBox),
     vscode.commands.registerCommand("extension.wrapWithHero", wrapWithHero),
     vscode.commands.registerCommand("extension.wrapWithGestureDetector", wrapWithGestureDetector),
     vscode.commands.registerCommand("extension.wrapWithSingleChildScrollView", wrapWithSingleChildScrollView),

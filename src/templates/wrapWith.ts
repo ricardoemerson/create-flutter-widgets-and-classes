@@ -23,6 +23,15 @@ const wrapWithPositionedTemplate = (widget: string) => (
 `
 );
 
+const wrapWithSizedBoxTemplate = (widget: string) => (
+`SizedBox(
+  width: 100,
+  height: 100,
+  child: ${widget},
+)
+`
+);
+
 const wrapWithHeroTemplate = (widget: string) => (
 `Hero(
   tag: 'tag-id',
@@ -81,6 +90,7 @@ const wrapWithObserverTemplate = (widget: string) => (
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
+export const wrapWithSizedBox = async () => wrapWith(wrapWithSizedBoxTemplate);
 export const wrapWithHero = async () => wrapWith(wrapWithHeroTemplate);
 export const wrapWithGestureDetector = async () => wrapWith(wrapWithGestureDetectorTemplate);
 export const wrapWithSingleChildScrollView = async () => wrapWith(wrapWithSingleChildScrollViewTemplate);

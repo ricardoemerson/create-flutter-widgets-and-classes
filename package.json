@@ -74,6 +74,10 @@
         "title": "Wrap with Positioned"
       },
       {
+        "command": "extension.wrapWithSizedBox",
+        "title": "Wrap with SizedBox"
+      },
+      {
         "command": "extension.wrapWithHero",
         "title": "Wrap with Hero"
       },
@@ -141,6 +145,10 @@
         },
         {
           "command": "extension.wrapWithPositioned",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithSizedBox",
           "when": "editorLangId == dart"
         },
         {
