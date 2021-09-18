@@ -87,11 +87,11 @@ Select the folder when the interface will be created and choose `📄 Create Dar
 
 ![Usage](images/create-interface.gif)
 
-## Create Mobx Store Example:
+## Code action Implements interface:
 
-Select the folder when the store will be created and choose `📦 Create Mobx Store` and enter the name of the store to be created.
+In interfaces files it is possible to use the code action `Implements interface` to create interface implementation.
 
-![Usage](images/create-store.gif)
+![Usage](images/implements-interface.gif)
 
 # Extra wrappers
 
@@ -168,16 +168,6 @@ In this case, undo the last operation and select all the widget that will be wra
 ![Usage](images/wrap-with-selecting.gif)
 
 # Settings
-
-It is possible choose the case format for the name of widgets, classes, interfaces and specify if an interface will be prefixed with an `I`.
-
-![Usage](images/settings.gif)
-
-## File Name Case Format
-
-By default widgets, classes and interfaces files are created using the `snake_case` format for naming files. It is also possible use the formats: `PascalCase`, `camelCase` and `kebab-case`.
-
-![Usage](images/file-name-case-format.gif)
 
 ## Use `I` Prefix For Interfaces
 

@@ -24,7 +24,9 @@
     "screens",
     "class",
     "classes",
+    "interface",
     "mobx",
+    "getx",
     "store"
   ],
   "engines": {
@@ -61,6 +63,10 @@
         "command": "extension.create-mobx-store",
         "title": "📦 Create MobX Store"
       },
+      {
+				"command": "extension.implementsInterface",
+				"title": "Implements interface"
+			},
       {
         "command": "extension.wrapWithExpanded",
         "title": "Wrap with Expanded"
@@ -132,7 +138,11 @@
           "command": "extension.create-mobx-store",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
-        }
+        },
+        {
+					"command": "extension.implementsInterface",
+					"when": "editorLangId == dart"
+				}
       ],
       "commandPalette": [
         {
@@ -184,23 +194,6 @@
     "configuration": {
       "title": "Create Flutter Widgets and Classes",
       "properties": {
-        "createFlutterWidgetsAndClasses.fileNameCaseFormat": {
-          "type": "string",
-          "markdownDescription": "Default file case format for the name of the file.",
-          "default": "snake_case",
-          "enum": [
-            "snake_case",
-            "PascalCase",
-            "camelCase",
-            "kebab-case"
-          ],
-          "enumDescriptions": [
-            "E.g.: button_widget.dart",
-            "E.g.: ButtonWidget.dart",
-            "E.g.: buttonWidget.dart",
-            "E.g.: button-widget.dart"
-          ]
-        },
         "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": {
           "type": "boolean",
           "default": true,

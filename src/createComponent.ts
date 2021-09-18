@@ -19,39 +19,14 @@ interface ComponentProps {
 export default async (componentName: string, { dir, type, stateFullWidget = false }: ComponentProps) => {
   // Load configurations.
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
-
-  const fileNameCaseFormat = config.get("fileNameCaseFormat") as string;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
 
   const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 
   componentName = componentName.split(' ').join('');
 
-  let fileName: string;
-  let iPrefix: string;
-
-  switch (fileNameCaseFormat) {
-    case 'snake_case':
-      fileName = snakeCase(componentName);
-      iPrefix = 'i';
-      break;
-    case 'PascalCase':
-      fileName = pascalCase(componentName);
-      iPrefix = 'I';
-      break;
-    case 'camelCase':
-      fileName = camelCase(componentName);
-      iPrefix = 'i';
-      break;
-    case 'kebab-case':
-      fileName = kebabCase(componentName);
-      iPrefix = 'i';
-      break;
-    default:
-      fileName = snakeCase(componentName);
-      iPrefix = 'i';
-      break;
-  }
+  let fileName= snakeCase(componentName);
+  let iPrefix = 'i_';
 
   const componentFileName = type === 'interface' && useIPrefixForInterfaces
     ? `${ iPrefix }${ fileName }.dart`

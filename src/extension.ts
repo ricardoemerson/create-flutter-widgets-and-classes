@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 
 import createComponent from './createComponent';
+import implementsInterface from './implementsInterface';
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
 import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithSizedBox, wrapWithStack } from './templates/wrapWith';
 
@@ -39,6 +40,14 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 
     const selectedText = editor.document.getText(getSelectedText(editor));
     const codeActions = [];
+    const textFile = editor.document.getText();
+
+    if (textFile.includes('abstract')) {
+			codeActions.push({
+				command: "extension.implementsInterface",
+				title: "Implements interface"
+			});
+		}
 
     if (selectedText !== '') {
       codeActions.push({
@@ -118,6 +127,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-mobx-store", args => {
       handleCreateFile({ args, type: 'store' });
     }),
+    vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
 
     vscode.commands.registerCommand("extension.wrapWithExpanded", wrapWithExpanded),
     vscode.commands.registerCommand("extension.wrapWithStack", wrapWithStack),
