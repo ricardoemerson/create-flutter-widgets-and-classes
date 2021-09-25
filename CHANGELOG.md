@@ -10,6 +10,10 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 - Added the code action `Wrap with Hero`.
 - Added the code action `Wrap with Obx`.
 - Added the setting `createImplementationOfInterface`.
+- Added the context menu `📝 Create Dart Controller Class`.
+- Added the context menu `📄 Create Dart Provider Interface`.
+- Added the context menu `📄 Create Dart Repository Interface`.
+- Added the context menu `📄 Create Dart Service Interface`.
 - Removed the setting `fileNameCaseFormat`.
 
 ## [1.1.4]

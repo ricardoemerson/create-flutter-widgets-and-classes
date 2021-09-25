@@ -7,13 +7,13 @@ import statefulWidget from './templates/statefulWidget';
 import clazz from './templates/clazz';
 import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
-import { camelCase, kebabCase, snakeCase } from 'lodash';
+import { camelCase, kebabCase, snakeCase, upperFirst } from 'lodash';
 import pascalCase from './templates/shared/functions/pascal-case';
 import clazzImplementation from './templates/clazzImplementation';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'interface' | 'store';
+  type: 'widget' | 'class' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'store';
   stateFullWidget?: boolean;
 }
 
@@ -25,19 +25,29 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
   const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 
-  componentName = componentName.split(' ').join('');
+  componentName = componentName.trim();
 
   let fileName= snakeCase(componentName);
-  let iPrefix = 'i_';
-  let implSufix = '_impl';
+  let iPrefix = useIPrefixForInterfaces ? 'i_' : '';
+  let implSufix = useIPrefixForInterfaces ? '' : '_impl';
 
-  const componentFileName = type === 'interface' && useIPrefixForInterfaces
-    ? `${ iPrefix }${ fileName }.dart`
-    : `${ fileName }.dart`;
+  let componentFileName: string;
+  let componentFileNameForImplementation: string;
+  const interfaceTypes = ['provider', 'repository', 'service']
 
-  const componentFileNameForImplementation = type === 'interface' && useIPrefixForInterfaces
-    ? `${ fileName }.dart`
-    : `${ fileName }${ implSufix }.dart`;
+  if (type === 'interface') {
+    componentFileName = `${ iPrefix }${ fileName }.dart`;
+    componentFileNameForImplementation = `${ fileName }${ implSufix }.dart`
+  } else if (interfaceTypes.includes(type)) {
+    componentName += upperFirst(type);
+    componentFileName = `${ iPrefix }${ fileName }_${ type }.dart`;
+    componentFileNameForImplementation = `${ fileName }_${ type }${ implSufix }.dart`
+  } else if (type === 'controller') {
+    componentName += 'Controller';
+    componentFileName = `${ fileName }_controller.dart`;
+  } else {
+    componentFileName = `${ fileName }.dart`;
+  }
 
   if (!dir) {
     dir =
@@ -78,13 +88,13 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
   }
 
-  if (type === 'class' ) {
+  if (type === 'class' || type === 'controller' ) {
     await createFile(
       filePath(componentFileName), clazz({ componentName })
     );
   }
 
-  if (type === 'interface' ) {
+  if (type === 'interface' || interfaceTypes.includes(type)) {
     await createFile(
       filePath(componentFileName), interfaceClazz({ componentName, useIPrefixForInterfaces })
     );

@@ -7,7 +7,7 @@ import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, 
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'interface' | 'store';
+  type: 'widget' | 'class' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'store';
   stateFullWidget?: boolean;
 }
 
@@ -126,8 +126,20 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-class", args => {
       handleCreateFile({ args, type: 'class' });
     }),
+    vscode.commands.registerCommand("extension.create-class-controller", args => {
+      handleCreateFile({ args, type: 'controller' });
+    }),
     vscode.commands.registerCommand("extension.create-interface", args => {
       handleCreateFile({ args, type: 'interface' });
+    }),
+    vscode.commands.registerCommand("extension.create-interface-provider", args => {
+      handleCreateFile({ args, type: 'provider' });
+    }),
+    vscode.commands.registerCommand("extension.create-interface-repository", args => {
+      handleCreateFile({ args, type: 'repository' });
+    }),
+    vscode.commands.registerCommand("extension.create-interface-service", args => {
+      handleCreateFile({ args, type: 'service' });
     }),
     vscode.commands.registerCommand("extension.create-mobx-store", args => {
       handleCreateFile({ args, type: 'store' });

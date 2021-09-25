@@ -36,7 +36,11 @@
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
     "onCommand:extension.create-class",
+    "onCommand:extension.create-class-controller",
     "onCommand:extension.create-interface",
+    "onCommand:extension.create-interface-provider",
+    "onCommand:extension.create-interface-repository",
+    "onCommand:extension.create-interface-service",
     "onCommand:extension.create-mobx-store",
     "workspaceContains:pubspec.yaml"
   ],
@@ -56,8 +60,24 @@
         "title": "📝 Create Dart Class"
       },
       {
+        "command": "extension.create-class-controller",
+        "title": "📝 Create Dart Controller Class"
+      },
+      {
         "command": "extension.create-interface",
         "title": "📄 Create Dart Interface"
+      },
+      {
+        "command": "extension.create-interface-provider",
+        "title": "📄 Create Dart Provider Interface"
+      },
+      {
+        "command": "extension.create-interface-repository",
+        "title": "📄 Create Dart Repository Interface"
+      },
+      {
+        "command": "extension.create-interface-service",
+        "title": "📄 Create Dart Service Interface"
       },
       {
         "command": "extension.create-mobx-store",
@@ -120,27 +140,47 @@
       "explorer/context": [
         {
           "command": "extension.create-stateless-widget",
-          "group": "2_modification",
+          "group": "2a_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-stateful-widget",
-          "group": "2_modification",
+          "group": "2a_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-class",
-          "group": "2_modification",
+          "group": "2b_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-class-controller",
+          "group": "2b_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-interface",
-          "group": "2_modification",
+          "group": "2c_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-interface-provider",
+          "group": "2c_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-interface-repository",
+          "group": "2c_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-interface-service",
+          "group": "2c_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-mobx-store",
-          "group": "2_modification",
+          "group": "2d_modification",
           "when": "explorerResourceIsFolder"
         },
         {

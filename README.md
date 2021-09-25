@@ -51,7 +51,11 @@ This extension creates Flutter Stateless or Stateful Widgets, MobX Store, Classe
 You can create a Flutter Stateless or Stateful Widgets, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
 
 - `📄 Create Dart Interface`
+- `📄 Create Dart Provider Interface`
+- `📄 Create Dart Repository Interface`
+- `📄 Create Dart Service Interface`
 - `📝 Create Dart Class`
+- `📝 Create Dart Controller Class`
 - `📦 Create Mobx Store`
 - `🔶 Create Flutter Stateless Widget`
 - `🔷 Create Flutter Stateful Widget`
