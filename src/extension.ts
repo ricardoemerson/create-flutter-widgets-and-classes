@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 import createComponent from './createComponent';
 import implementsInterface from './implementsInterface';
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
-import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithClipRRect, wrapWithStack } from './templates/wrapWith';
+import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithClipRRect, wrapWithStack, wrapWithAlign } from './templates/wrapWith';
 
 interface CreateComponentProps {
   args: any;
@@ -63,6 +63,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
       codeActions.push({
         command: "extension.wrapWithPositioned",
         title: "Wrap with Positioned"
+      });
+
+      codeActions.push({
+        command: "extension.wrapWithAlign",
+        title: "Wrap with Align"
       });
 
       codeActions.push({
@@ -132,6 +137,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.wrapWithExpanded", wrapWithExpanded),
     vscode.commands.registerCommand("extension.wrapWithStack", wrapWithStack),
     vscode.commands.registerCommand("extension.wrapWithPositioned", wrapWithPositioned),
+    vscode.commands.registerCommand("extension.wrapWithAlign", wrapWithAlign),
     vscode.commands.registerCommand("extension.wrapWithClipRRect", wrapWithClipRRect),
     vscode.commands.registerCommand("extension.wrapWithHero", wrapWithHero),
     vscode.commands.registerCommand("extension.wrapWithGestureDetector", wrapWithGestureDetector),

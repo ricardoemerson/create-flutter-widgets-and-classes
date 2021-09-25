@@ -36,6 +36,7 @@ This extension creates Flutter Stateless or Stateful Widgets, MobX Store, Classe
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
+- `Wrap with Align`
 - `Wrap with ClipRRect`
 - `Wrap with Hero`
 - `Wrap with GestureDetector`
@@ -100,6 +101,7 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
+- `Wrap with Align`
 - `Wrap with ClipRRect`
 - `Wrap with Hero`
 - `Wrap with GestureDetector`
@@ -120,6 +122,10 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 ## Wrap with Positioned
 
 ![Usage](images/wrap-with-positioned.gif)
+
+## Wrap with Align
+
+![Usage](images/wrap-with-align.gif)
 
 ## Wrap with ClipRRect
 
@@ -169,6 +175,10 @@ In this case, undo the last operation and select all the widget that will be wra
 
 # Settings
 
+## Create Implementation of Interface
+
+By default after creation of an interface, the implementation class will be created together. It is also possible to create an interface without class implemetation.
+
 ## Use `I` Prefix For Interfaces
 
 By default interfaces files are created using the `I` prefix in name of file and interface. It is also possible create it without `I` prefix.
@@ -179,8 +189,8 @@ Example of `settings.json`:
 
 ```json
 {
-  "createFlutterWidgetsAndClasses.fileNameCaseFormat": "snake_case|PascalCase|camelCase|kebab-case",
-  "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": false
+  "createFlutterWidgetsAndClasses.createImplementationOfInterface": true
+  "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": true
 }
 ```
 

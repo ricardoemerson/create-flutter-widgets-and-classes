@@ -9,6 +9,7 @@ import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
 import { camelCase, kebabCase, snakeCase } from 'lodash';
 import pascalCase from './templates/shared/functions/pascal-case';
+import clazzImplementation from './templates/clazzImplementation';
 
 interface ComponentProps {
   dir?: string;
@@ -20,6 +21,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   // Load configurations.
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
+  const createImplementationOfInterface = config.get("createImplementationOfInterface") as boolean;
 
   const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 
@@ -27,10 +29,15 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
   let fileName= snakeCase(componentName);
   let iPrefix = 'i_';
+  let implSufix = '_impl';
 
   const componentFileName = type === 'interface' && useIPrefixForInterfaces
     ? `${ iPrefix }${ fileName }.dart`
     : `${ fileName }.dart`;
+
+  const componentFileNameForImplementation = type === 'interface' && useIPrefixForInterfaces
+    ? `${ fileName }.dart`
+    : `${ fileName }${ implSufix }.dart`;
 
   if (!dir) {
     dir =
@@ -81,6 +88,14 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     await createFile(
       filePath(componentFileName), interfaceClazz({ componentName, useIPrefixForInterfaces })
     );
+
+    if (createImplementationOfInterface) {
+      setTimeout(async () => {
+        await createFile(
+          filePath(componentFileNameForImplementation), clazzImplementation({ componentName, useIPrefixForInterfaces })
+        );
+      }, 1000);
+    }
   }
 
   if (type === 'store' ) {
