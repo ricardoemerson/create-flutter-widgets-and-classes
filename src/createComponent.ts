@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import * as mkdirp from 'mkdirp';
 import * as vscode from 'vscode';
+
 
 import statelessWidget from './templates/statelessWidget';
 import statefulWidget from './templates/statefulWidget';
@@ -10,10 +12,14 @@ import mobxStore from './templates/mobxStore';
 import { camelCase, kebabCase, snakeCase, upperFirst } from 'lodash';
 import pascalCase from './templates/shared/functions/pascal-case';
 import clazzImplementation from './templates/clazzImplementation';
+import getxFeatureBinding from './templates/getxFeatureBinding';
+import getxFeatureController from './templates/getxFeatureController';
+import getxFeatureView from './templates/getxFeatureView';
+import getxFeatureRoutes from './templates/getxFeatureRoutes';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'store';
+  type: 'widget' | 'class' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx feature' | 'getx route' | 'store';
   stateFullWidget?: boolean;
 }
 
@@ -45,6 +51,11 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   } else if (type === 'controller') {
     componentName += 'Controller';
     componentFileName = `${ fileName }_controller.dart`;
+  } else if (type === 'model') {
+    componentName += 'Model';
+    componentFileName = `${ fileName }_model.dart`;
+  } else if (type === 'getx route') {
+    componentFileName = `${ fileName }_routes.dart`;
   } else {
     componentFileName = `${ fileName }.dart`;
   }
@@ -76,6 +87,12 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     // return dirWithFileName + "/" + fileName;
   }
 
+  const filePathFeature = (folderName: string, fileName: string) => {
+    return dir + "/" + folderName + "/" + fileName;
+
+    // return dirWithFileName + "/" + fileName;
+  }
+
   if (type === 'widget' && !stateFullWidget) {
     await createFile(
       filePath(componentFileName), statelessWidget({ componentName })
@@ -88,9 +105,15 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
   }
 
-  if (type === 'class' || type === 'controller' ) {
+  if (type === 'class' || type === 'controller' || type === 'model') {
     await createFile(
       filePath(componentFileName), clazz({ componentName })
+    );
+  }
+
+  if (type === 'getx route') {
+    await createFile(
+      filePath(componentFileName), getxFeatureRoutes({ componentName })
     );
   }
 
@@ -108,6 +131,22 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     }
   }
 
+  if (type === 'getx feature' ) {
+    await mkdirp(dir + '/' + fileName);
+
+    await createFile(
+      filePathFeature(fileName, `${ fileName }_binding.dart`), getxFeatureBinding({ componentName, fileName })
+    );
+
+    await createFile(
+      filePathFeature(fileName, `${ fileName }_controller.dart`), getxFeatureController({ componentName, fileName })
+    );
+
+    await createFile(
+      filePathFeature(fileName, `${ fileName }_view.dart`), getxFeatureView({ componentName, fileName })
+    );
+  }
+
   if (type === 'store' ) {
     await createFile(
       filePath(componentFileName), mobxStore({ componentName, fileName })
@@ -115,12 +154,21 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   }
 
   setTimeout(() => {
-    vscode.workspace.openTextDocument(filePath(componentFileName)).then(editor => {
-      if (!editor) {
-        return;
-      }
-      vscode.window.showTextDocument(editor);
-    });
+    if (type === 'getx feature') {
+      vscode.workspace.openTextDocument(filePath(`${fileName}/${ fileName }_view.dart`)).then(editor => {
+        if (!editor) {
+          return;
+        }
+        vscode.window.showTextDocument(editor);
+      });
+    } else {
+      vscode.workspace.openTextDocument(filePath(componentFileName)).then(editor => {
+        if (!editor) {
+          return;
+        }
+        vscode.window.showTextDocument(editor);
+      });
+    }
   }, 50);
 };
 

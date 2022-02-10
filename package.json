@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
   "description": "Extension that creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -36,11 +36,14 @@
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
     "onCommand:extension.create-class",
+    "onCommand:extension.create-class-model",
     "onCommand:extension.create-class-controller",
     "onCommand:extension.create-interface",
     "onCommand:extension.create-interface-provider",
     "onCommand:extension.create-interface-repository",
     "onCommand:extension.create-interface-service",
+    "onCommand:extension.create-getx-feature",
+    "onCommand:extension.create-getx-route",
     "onCommand:extension.create-mobx-store",
     "workspaceContains:pubspec.yaml"
   ],
@@ -58,6 +61,10 @@
       {
         "command": "extension.create-class",
         "title": "📝 Create Dart Class"
+      },
+      {
+        "command": "extension.create-class-model",
+        "title": "📝 Create Dart Model Class"
       },
       {
         "command": "extension.create-class-controller",
@@ -80,13 +87,25 @@
         "title": "📄 Create Dart Service Interface"
       },
       {
+        "command": "extension.create-getx-feature",
+        "title": "🗂️ Create GetX Feature"
+      },
+      {
+        "command": "extension.create-getx-route",
+        "title": "🪧 Create GetX Route"
+      },
+      {
         "command": "extension.create-mobx-store",
         "title": "📦 Create MobX Store"
       },
       {
-				"command": "extension.implementsInterface",
-				"title": "Implements interface"
-			},
+        "command": "extension.implementsInterface",
+        "title": "Implements interface"
+      },
+      {
+        "command": "extension.wrapWithLayoutBuilder",
+        "title": "Wrap with LayoutBuilder"
+      },
       {
         "command": "extension.wrapWithExpanded",
         "title": "Wrap with Expanded"
@@ -154,6 +173,11 @@
           "when": "explorerResourceIsFolder"
         },
         {
+          "command": "extension.create-class-model",
+          "group": "2b_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
           "command": "extension.create-class-controller",
           "group": "2b_modification",
           "when": "explorerResourceIsFolder"
@@ -179,16 +203,30 @@
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "extension.create-mobx-store",
+          "command": "extension.create-getx-feature",
           "group": "2d_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-					"command": "extension.implementsInterface",
-					"when": "editorLangId == dart"
-				}
+          "command": "extension.create-getx-route",
+          "group": "2d_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-mobx-store",
+          "group": "2e_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.implementsInterface",
+          "when": "editorLangId == dart"
+        }
       ],
       "commandPalette": [
+        {
+          "command": "extension.wrapWithLayoutBuilder",
+          "when": "editorLangId == dart"
+        },
         {
           "command": "extension.wrapWithExpanded",
           "when": "editorLangId == dart"
@@ -264,6 +302,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.168",
+    "@types/mkdirp": "^1.0.2",
     "@types/node": "^12.6.8",
     "tslint": "^5.12.1",
     "typescript": "^3.3.1",
@@ -271,6 +310,7 @@
   },
   "dependencies": {
     "fs": "^0.0.1-security",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4"
   }
 }

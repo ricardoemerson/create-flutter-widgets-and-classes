@@ -3,11 +3,11 @@ import * as vscode from 'vscode';
 import createComponent from './createComponent';
 import implementsInterface from './implementsInterface';
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
-import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithClipRRect, wrapWithStack, wrapWithAlign } from './templates/wrapWith';
+import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithClipRRect, wrapWithStack, wrapWithAlign, wrapWithLayoutBuilder } from './templates/wrapWith';
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'store';
+  type: 'widget' | 'class' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx feature' | 'getx route' | 'store';
   stateFullWidget?: boolean;
 }
 
@@ -50,6 +50,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 		}
 
     if (selectedText !== '') {
+      codeActions.push({
+        command: "extension.wrapWithLayoutBuilder",
+        title: "Wrap with LayoutBuilder"
+      });
+
       codeActions.push({
         command: "extension.wrapWithExpanded",
         title: "Wrap with Expanded"
@@ -126,6 +131,9 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-class", args => {
       handleCreateFile({ args, type: 'class' });
     }),
+    vscode.commands.registerCommand("extension.create-class-model", args => {
+      handleCreateFile({ args, type: 'model' });
+    }),
     vscode.commands.registerCommand("extension.create-class-controller", args => {
       handleCreateFile({ args, type: 'controller' });
     }),
@@ -141,11 +149,18 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-interface-service", args => {
       handleCreateFile({ args, type: 'service' });
     }),
+    vscode.commands.registerCommand("extension.create-getx-feature", args => {
+      handleCreateFile({ args, type: 'getx feature' });
+    }),
+    vscode.commands.registerCommand("extension.create-getx-route", args => {
+      handleCreateFile({ args, type: 'getx route' });
+    }),
     vscode.commands.registerCommand("extension.create-mobx-store", args => {
       handleCreateFile({ args, type: 'store' });
     }),
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
 
+    vscode.commands.registerCommand("extension.wrapWithLayoutBuilder", wrapWithLayoutBuilder),
     vscode.commands.registerCommand("extension.wrapWithExpanded", wrapWithExpanded),
     vscode.commands.registerCommand("extension.wrapWithStack", wrapWithStack),
     vscode.commands.registerCommand("extension.wrapWithPositioned", wrapWithPositioned),

@@ -1,5 +1,14 @@
 import { wrapWith } from './shared/functions/wrap-with';
 
+
+const wrapWithLayoutBuilderTemplate = (widget: string) => (
+`LayoutBuilder(
+  builder: (context, constraints) {
+    return ${ widget };
+  }
+)
+`
+);
 const wrapWithExpandedTemplate = (widget: string) => (
 `Expanded(
   child: ${ widget },
@@ -94,6 +103,7 @@ const wrapWithObserverTemplate = (widget: string) => (
 `
 );
 
+export const wrapWithLayoutBuilder= async () => wrapWith(wrapWithLayoutBuilderTemplate);
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
