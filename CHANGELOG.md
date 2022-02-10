@@ -2,6 +2,12 @@
 
 All notable changes to the Create Flutter Widgets and Classes extension will be documented in this file.
 
+## [1.3.0]
+
+- Added the context menu `📝 Create Dart Model Class`.
+- Added the context menu `🗂️ Create GetX Feature`.
+- Added the context menu `🪧 Create GetX Route`.
+
 ## [1.2.0]
 
 - Added the code action `Implements interface`.
