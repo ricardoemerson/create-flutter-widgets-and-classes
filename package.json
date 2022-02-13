@@ -23,7 +23,6 @@
     "screen",
     "screens",
     "class",
-    "classes",
     "interface",
     "mobx",
     "getx",
@@ -36,14 +35,19 @@
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
     "onCommand:extension.create-class",
-    "onCommand:extension.create-class-model",
-    "onCommand:extension.create-class-controller",
+    "onCommand:extension.create-controller",
+    "onCommand:extension.create-dto",
+    "onCommand:extension.create-model",
     "onCommand:extension.create-interface",
     "onCommand:extension.create-interface-provider",
     "onCommand:extension.create-interface-repository",
     "onCommand:extension.create-interface-service",
+    "onCommand:extension.create-getx-app-bindings",
+    "onCommand:extension.create-getx-app-pages",
+    "onCommand:extension.create-getx-app-structure",
     "onCommand:extension.create-getx-feature",
-    "onCommand:extension.create-getx-route",
+    "onCommand:extension.create-getx-feature-route",
+    "onCommand:extension.create-getx-service",
     "onCommand:extension.create-mobx-store",
     "workspaceContains:pubspec.yaml"
   ],
@@ -51,108 +55,120 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.create-stateless-widget",
-        "title": "🔶 Create Flutter Stateless Widget"
+        "title": "🔶 Create Stateless Widget",
+        "command": "extension.create-stateless-widget"
       },
       {
-        "command": "extension.create-stateful-widget",
-        "title": "🔷 Create Flutter Stateful Widget"
+        "title": "🔷 Create Stateful Widget",
+        "command": "extension.create-stateful-widget"
       },
       {
-        "command": "extension.create-class",
-        "title": "📝 Create Dart Class"
+        "title": "📝 Create Class",
+        "command": "extension.create-class"
       },
       {
-        "command": "extension.create-class-model",
-        "title": "📝 Create Dart Model Class"
+        "title": "📝 Create Controller",
+        "command": "extension.create-controller"
       },
       {
-        "command": "extension.create-class-controller",
-        "title": "📝 Create Dart Controller Class"
+        "title": "📝 Create DTO",
+        "command": "extension.create-dto"
       },
       {
-        "command": "extension.create-interface",
-        "title": "📄 Create Dart Interface"
+        "title": "📝 Create Model",
+        "command": "extension.create-model"
       },
       {
-        "command": "extension.create-interface-provider",
-        "title": "📄 Create Dart Provider Interface"
+        "title": "📄 Create Interface",
+        "command": "extension.create-interface"
       },
       {
-        "command": "extension.create-interface-repository",
-        "title": "📄 Create Dart Repository Interface"
+        "title": "📄 Create Provider Interface",
+        "command": "extension.create-interface-provider"
       },
       {
-        "command": "extension.create-interface-service",
-        "title": "📄 Create Dart Service Interface"
+        "title": "📄 Create Repository Interface",
+        "command": "extension.create-interface-repository"
       },
       {
-        "command": "extension.create-getx-feature",
-        "title": "🗂️ Create GetX Feature"
+        "title": "📄 Create Service Interface",
+        "command": "extension.create-interface-service"
       },
       {
-        "command": "extension.create-getx-route",
-        "title": "🪧 Create GetX Route"
+        "title": "📂 Create GetX App Structure",
+        "command": "extension.create-getx-app-structure"
       },
       {
-        "command": "extension.create-mobx-store",
-        "title": "📦 Create MobX Store"
+        "title": "📑 Create GetX Feature",
+        "command": "extension.create-getx-feature"
       },
       {
-        "command": "extension.implementsInterface",
-        "title": "Implements interface"
+        "title": "🪧 Create GetX Feature Route",
+        "command": "extension.create-getx-feature-route"
       },
       {
-        "command": "extension.wrapWithLayoutBuilder",
-        "title": "Wrap with LayoutBuilder"
+        "title": "📇 Create GetX Service",
+        "command": "extension.create-getx-service"
       },
       {
-        "command": "extension.wrapWithExpanded",
-        "title": "Wrap with Expanded"
+        "title": "📦 Create MobX Store",
+        "command": "extension.create-mobx-store"
       },
       {
-        "command": "extension.wrapWithStack",
-        "title": "Wrap with Stack"
+        "title": "Implements interface",
+        "command": "extension.implementsInterface"
       },
       {
-        "command": "extension.wrapWithPositioned",
-        "title": "Wrap with Positioned"
+        "title": "Wrap with LayoutBuilder",
+        "command": "extension.wrapWithLayoutBuilder"
       },
       {
-        "command": "extension.wrapWithAlign",
-        "title": "Wrap with Align"
+        "title": "Wrap with Expanded",
+        "command": "extension.wrapWithExpanded"
       },
       {
-        "command": "extension.wrapWithClipRRect",
-        "title": "Wrap with ClipRRect"
+        "title": "Wrap with Stack",
+        "command": "extension.wrapWithStack"
       },
       {
-        "command": "extension.wrapWithHero",
-        "title": "Wrap with Hero"
+        "title": "Wrap with Positioned",
+        "command": "extension.wrapWithPositioned"
       },
       {
-        "command": "extension.wrapWithGestureDetector",
-        "title": "Wrap with GestureDetector"
+        "title": "Wrap with Align",
+        "command": "extension.wrapWithAlign"
       },
       {
-        "command": "extension.wrapWithSingleChildScrollView",
-        "title": "Wrap with SingleChildScrollView"
+        "title": "Wrap with ClipRRect",
+        "command": "extension.wrapWithClipRRect"
       },
       {
-        "command": "extension.wrapWithSafeArea",
-        "title": "Wrap with SafeArea"
+        "title": "Wrap with Hero",
+        "command": "extension.wrapWithHero"
       },
       {
-        "command": "extension.wrapWithForm",
-        "title": "Wrap with Form"
+        "title": "Wrap with GestureDetector",
+        "command": "extension.wrapWithGestureDetector"
       },
       {
-        "command": "extension.wrapWithObx",
-        "title": "Wrap with Obx"
+        "title": "Wrap with SingleChildScrollView",
+        "command": "extension.wrapWithSingleChildScrollView"
       },
       {
-        "command": "extension.wrapWithObserver",
-        "title": "Wrap with Observer"
+        "title": "Wrap with SafeArea",
+        "command": "extension.wrapWithSafeArea"
+      },
+      {
+        "title": "Wrap with Form",
+        "command": "extension.wrapWithForm"
+      },
+      {
+        "title": "Wrap with Obx",
+        "command": "extension.wrapWithObx"
+      },
+      {
+        "title": "Wrap with Observer",
+        "command": "extension.wrapWithObserver"
       }
     ],
     "menus": {
@@ -173,12 +189,17 @@
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "extension.create-class-model",
+          "command": "extension.create-controller",
           "group": "2b_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "extension.create-class-controller",
+          "command": "extension.create-dto",
+          "group": "2b_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-model",
           "group": "2b_modification",
           "when": "explorerResourceIsFolder"
         },
@@ -203,19 +224,29 @@
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "extension.create-getx-feature",
+          "command": "extension.create-getx-app-structure",
           "group": "2d_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
-          "command": "extension.create-getx-route",
+          "command": "extension.create-getx-feature",
           "group": "2d_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
+        },
+        {
+          "command": "extension.create-getx-feature-route",
+          "group": "2d_modification",
+          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
+        },
+        {
+          "command": "extension.create-getx-service",
+          "group": "2d_modification",
+          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-mobx-store",
           "group": "2e_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
         },
         {
           "command": "extension.implementsInterface",
@@ -269,11 +300,11 @@
         },
         {
           "command": "extension.wrapWithObx",
-          "when": "editorLangId == dart"
+          "when": "editorLangId == dart && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.wrapWithObserver",
-          "when": "editorLangId == dart"
+          "when": "editorLangId == dart && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
         }
       ]
     },
@@ -289,6 +320,26 @@
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines whether an implementation class of an interface will be created together."
+        },
+        "createFlutterWidgetsAndClasses.getxDisplayContextMenu": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Defines if the context menu with GetX features will be displayed."
+        },
+        "createFlutterWidgetsAndClasses.getxViewsSuffix": {
+          "type": "string",
+          "enum": [
+            "Page",
+            "Screen",
+            "View"
+          ],
+          "default": "Page",
+          "markdownDescription": "Default suffix name for the view layer."
+        },
+        "createFlutterWidgetsAndClasses.mobxDisplayContextMenu": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Defines if the context menu with MobX features will be displayed."
         }
       }
     }

@@ -2,23 +2,23 @@ import { snakeCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName }: CreateComponent) => (
+export default ({ componentName, getxViewsSuffix }: CreateComponent) => (
 `import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '${ snakeCase(componentName) }_controller.dart';
 
-class ${ pascalCase(componentName) }View extends GetView<${ pascalCase(componentName) }Controller> {
+class ${ pascalCase(componentName) }${ getxViewsSuffix } extends GetView<${ pascalCase(componentName) }Controller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('${ pascalCase(componentName) }View'),
+        title: const Text('${ pascalCase(componentName) }${ getxViewsSuffix }'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          '${ pascalCase(componentName) }View is working',
+          '${ pascalCase(componentName) }${ getxViewsSuffix } is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

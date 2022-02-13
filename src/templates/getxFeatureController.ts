@@ -5,7 +5,7 @@ export default ({ componentName }: CreateComponent) => (
 `import 'package:get/get.dart';
 
 class ${ pascalCase(componentName) }Controller extends GetxController {
-  //TODO: Implement ${ pascalCase(componentName) }Controller
+  //TODO: Implement ${ pascalCase(componentName) }Controller.
 
   final count = 0.obs;
 

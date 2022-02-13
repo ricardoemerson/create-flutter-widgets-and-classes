@@ -7,26 +7,63 @@ import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, 
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx feature' | 'getx route' | 'store';
+  type: 'widget' | 'class' | 'dto'  | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
 const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateComponentProps) => {
-  const componentName = await vscode.window.showInputBox({
-    prompt: `Enter the ${ type } name:`,
-    ignoreFocusOut: true,
-    valueSelection: [-1, -1]
-  });
+  let promptTypes = ['widget', 'class', 'dto' , 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-route','getx-service', 'mobx-store'];
+
+  let componentName: string | undefined;
+  const typeName = type.split('-').join(' ');
+  const path = args.fsPath;
+
+  if (type === 'getx-route') {
+    const allowCreate = path.endsWith('routes');
+
+    if (!allowCreate) {
+      vscode.window.showErrorMessage('Select the routes folder to be able to create GetX Feature Route.');
+
+      return;
+    }
+  } else if (type === 'getx-feature') {
+    const allowCreate = path.includes('modules');
+
+    if (!allowCreate) {
+      vscode.window.showErrorMessage('GetX Feature only can be created inside modules folder!');
+
+      return;
+    }
+  } else if (type === 'getx-structure') {
+    const allowCreate = path.endsWith('lib');
+
+    if (!allowCreate) {
+      vscode.window.showErrorMessage('Select the lib folder to be able to create GetX App Structure.');
+
+      return;
+    }
+  }
+
+  if (promptTypes.includes(type)) {
+    componentName = await vscode.window.showInputBox({
+      prompt: `Enter the ${ typeName } name:`,
+      ignoreFocusOut: true,
+      valueSelection: [-1, -1]
+    });
+  } else {
+    componentName = 'structure';
+  }
+
 
   if (!componentName) {
     return;
   }
 
   if (args) {
-    const path = args.fsPath;
-    createComponent(componentName, { dir: path, type, stateFullWidget });
+
+    createComponent(componentName!, { dir: path, type, stateFullWidget });
   } else {
-    createComponent(componentName, { type, stateFullWidget });
+    createComponent(componentName!, { type, stateFullWidget });
   }
 };
 
@@ -131,11 +168,14 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-class", args => {
       handleCreateFile({ args, type: 'class' });
     }),
-    vscode.commands.registerCommand("extension.create-class-model", args => {
-      handleCreateFile({ args, type: 'model' });
-    }),
-    vscode.commands.registerCommand("extension.create-class-controller", args => {
+    vscode.commands.registerCommand("extension.create-controller", args => {
       handleCreateFile({ args, type: 'controller' });
+    }),
+    vscode.commands.registerCommand("extension.create-dto", args => {
+      handleCreateFile({ args, type: 'dto' });
+    }),
+    vscode.commands.registerCommand("extension.create-model", args => {
+      handleCreateFile({ args, type: 'model' });
     }),
     vscode.commands.registerCommand("extension.create-interface", args => {
       handleCreateFile({ args, type: 'interface' });
@@ -149,14 +189,20 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-interface-service", args => {
       handleCreateFile({ args, type: 'service' });
     }),
-    vscode.commands.registerCommand("extension.create-getx-feature", args => {
-      handleCreateFile({ args, type: 'getx feature' });
+    vscode.commands.registerCommand("extension.create-getx-app-structure", args => {
+      handleCreateFile({ args, type: 'getx-structure' });
     }),
-    vscode.commands.registerCommand("extension.create-getx-route", args => {
-      handleCreateFile({ args, type: 'getx route' });
+    vscode.commands.registerCommand("extension.create-getx-feature", args => {
+      handleCreateFile({ args, type: 'getx-feature' });
+    }),
+    vscode.commands.registerCommand("extension.create-getx-feature-route", args => {
+      handleCreateFile({ args, type: 'getx-route' });
+    }),
+    vscode.commands.registerCommand("extension.create-getx-service", args => {
+      handleCreateFile({ args, type: 'getx-service' });
     }),
     vscode.commands.registerCommand("extension.create-mobx-store", args => {
-      handleCreateFile({ args, type: 'store' });
+      handleCreateFile({ args, type: 'mobx-store' });
     }),
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
 

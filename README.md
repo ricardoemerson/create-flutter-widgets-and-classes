@@ -31,8 +31,9 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes&ssr=false#review-details)
 
-This extension creates Flutter Stateless or Stateful Widgets, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
+This extension creates Flutter Stateless or Stateful Widgets, GetX Features, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
 
+- `Wrap with LayoutBuilder`
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
@@ -48,17 +49,25 @@ This extension creates Flutter Stateless or Stateful Widgets, MobX Store, Classe
 
 # Usage Examples
 
-You can create a Flutter Stateless or Stateful Widgets, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
+You can create a Flutter Stateless or Stateful Widgets, GetX Features, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
 
-- `📄 Create Dart Interface`
-- `📄 Create Dart Provider Interface`
-- `📄 Create Dart Repository Interface`
-- `📄 Create Dart Service Interface`
-- `📝 Create Dart Class`
-- `📝 Create Dart Controller Class`
-- `📦 Create Mobx Store`
-- `🔶 Create Flutter Stateless Widget`
-- `🔷 Create Flutter Stateful Widget`
+
+- `🔶 Create Stateless Widget`
+- `🔷 Create Stateful Widget`
+- `📝 Create Class`
+- `📝 Create Controller`
+- `📝 Create DTO`
+- `📝 Create Model`
+- `📄 Create Interface`
+- `📄 Create Provider Interface`
+- `📄 Create Repository Interface`
+- `📄 Create Service Interface`
+- `📑 Create GetX App Bindings`
+- `🪧 Create GetX App Pages`
+- `🗂️ Create GetX Feature`
+- `🪧 Create GetX Feature Route`
+- `📇 Create GetX Service`
+- `📦 Create MobX Store`
 
 ## All Commands (Ctrl+Shift+P or Cmd+Shift+P):
 
@@ -68,9 +77,9 @@ You can create a Flutter Stateless or Stateful Widgets, MobX Store, Classes and 
 
 ![Usage](images/usage-right-mouse-click.png)
 
-## Create Flutter Stateless Widget Example:
+## Create Stateless Widget Example:
 
-Select the folder when the widget will be created and choose `🔶 Create Flutter Stateless Widget` and enter the name of the widget to be created.
+Select the folder when the widget will be created and choose `🔶 Create Stateless Widget` and enter the name of the widget to be created.
 
 ![Usage](images/create-stateless-widget.gif)
 

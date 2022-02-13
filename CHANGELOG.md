@@ -4,9 +4,16 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 
 ## [1.3.0]
 
-- Added the context menu `📝 Create Dart Model Class`.
+- Added the context menu `📝 Create DTO`.
+- Added the context menu `📝 Create Model`.
+- Added the context menu `📑 Create GetX App Bindings`.
 - Added the context menu `🗂️ Create GetX Feature`.
-- Added the context menu `🪧 Create GetX Route`.
+- Added the context menu `🪧 Create GetX App Pages`.
+- Added the context menu `🪧 Create GetX Feature Route`.
+- Added the context menu `📇 Create GetX Service`.
+- Added the code action `Wrap with LayoutBuilder`.
+- Added the setting `displayGetxContextMenu`.
+- Added the setting `displayMobxContextMenu`.
 
 ## [1.2.0]
 
