@@ -39,6 +39,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   // Load configurations.
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
   const getxViewsSuffix = config.get("getxViewsSuffix") as string;
+  const mobxFileSuffix = config.get("mobxFileSuffix") as string;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
   const createImplementationOfInterface = config.get("createImplementationOfInterface") as boolean;
   const createFolderForInterfaces = config.get("createFolderForInterfaces") as boolean;
@@ -49,7 +50,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
   let fileName= snakeCase(componentName);
   let iPrefix = useIPrefixForInterfaces ? 'i_' : '';
-  let implSufix = useIPrefixForInterfaces ? '' : '_impl';
+  let implSuffix = useIPrefixForInterfaces ? '' : '_impl';
 
   let componentFileName: string;
   let componentFileNameForImplementation: string;
@@ -57,11 +58,11 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
   if (type === 'interface') {
     componentFileName = `${ iPrefix }${ fileName }.dart`;
-    componentFileNameForImplementation = `${ fileName }${ implSufix }.dart`
+    componentFileNameForImplementation = `${ fileName }${ implSuffix }.dart`
   } else if (interfaceTypes.includes(type)) {
     componentName += upperFirst(type);
     componentFileName = `${ iPrefix }${ fileName }_${ type }.dart`;
-    componentFileNameForImplementation = `${ fileName }_${ type }${ implSufix }.dart`
+    componentFileNameForImplementation = `${ fileName }_${ type }${ implSuffix }.dart`
   } else if (type === 'controller') {
     componentName += 'Controller';
     componentFileName = `${ fileName }_controller.dart`;
@@ -72,6 +73,8 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     componentFileName = `${ fileName }_model.dart`;
   } else if (type === 'getx-route') {
     componentFileName = `${ fileName }_routes.dart`;
+  } else if (type === 'mobx-store') {
+    componentFileName = `${ fileName }_${lowerCase(mobxFileSuffix)}.dart`;
   } else {
     componentFileName = `${ fileName }.dart`;
   }
@@ -254,7 +257,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
   if (type === 'mobx-store' ) {
     await createFile(
-      filePath(componentFileName), mobxStore({ componentName, fileName })
+      filePath(componentFileName), mobxStore({ componentName, fileName, mobxFileSuffix })
     );
   }
 

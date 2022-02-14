@@ -346,7 +346,16 @@
             "View"
           ],
           "default": "Page",
-          "markdownDescription": "Default suffix name for the view layer."
+          "markdownDescription": "Default suffix name for the GetX view layer."
+        },
+        "createFlutterWidgetsAndClasses.mobxFileSuffix": {
+          "type": "string",
+          "enum": [
+            "Store",
+            "Controller"
+          ],
+          "default": "Store",
+          "markdownDescription": "Default suffix name for the MobX store."
         },
         "createFlutterWidgetsAndClasses.mobxDisplayContextMenu": {
           "type": "boolean",

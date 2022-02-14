@@ -1,14 +1,15 @@
+import { lowerCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName, fileName }: CreateComponent) => (
+export default ({ componentName, fileName, mobxFileSuffix }: CreateComponent) => (
 `import 'package:mobx/mobx.dart';
 
-part '${ fileName }.g.dart';
+part '${ fileName }_${ lowerCase(mobxFileSuffix) }.g.dart';
 
-class ${ pascalCase(componentName) } = _${ pascalCase(componentName) }Base with _$${ pascalCase(componentName) };
+class ${ pascalCase(componentName) }${ mobxFileSuffix } = _${ pascalCase(componentName) }${ mobxFileSuffix }Base with _$${ pascalCase(componentName) }${ mobxFileSuffix };
 
-abstract class _${ pascalCase(componentName) }Base with Store {
+abstract class _${ pascalCase(componentName) }${ mobxFileSuffix }Base with Store {
 
 }
 `
