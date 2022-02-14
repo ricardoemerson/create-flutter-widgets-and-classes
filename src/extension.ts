@@ -7,12 +7,12 @@ import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, 
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'dto'  | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'class' | 'dto' | 'enum' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
 const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateComponentProps) => {
-  let promptTypes = ['widget', 'class', 'dto' , 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-route','getx-service', 'mobx-store'];
+  let promptTypes = ['widget', 'class', 'dto' , 'enum', 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-route','getx-service', 'mobx-store'];
 
   let componentName: string | undefined;
   const typeName = type.split('-').join(' ');
@@ -30,7 +30,7 @@ const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateC
     const allowCreate = path.includes('modules');
 
     if (!allowCreate) {
-      vscode.window.showErrorMessage('GetX Feature only can be created inside modules folder!');
+      vscode.window.showErrorMessage('GetX Features can only be created from the modules folder!');
 
       return;
     }
@@ -54,13 +54,11 @@ const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateC
     componentName = 'structure';
   }
 
-
   if (!componentName) {
     return;
   }
 
   if (args) {
-
     createComponent(componentName!, { dir: path, type, stateFullWidget });
   } else {
     createComponent(componentName!, { type, stateFullWidget });
@@ -173,6 +171,9 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand("extension.create-dto", args => {
       handleCreateFile({ args, type: 'dto' });
+    }),
+    vscode.commands.registerCommand("extension.create-enum", args => {
+      handleCreateFile({ args, type: 'enum' });
     }),
     vscode.commands.registerCommand("extension.create-model", args => {
       handleCreateFile({ args, type: 'model' });

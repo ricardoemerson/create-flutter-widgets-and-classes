@@ -42,8 +42,6 @@
     "onCommand:extension.create-interface-provider",
     "onCommand:extension.create-interface-repository",
     "onCommand:extension.create-interface-service",
-    "onCommand:extension.create-getx-app-bindings",
-    "onCommand:extension.create-getx-app-pages",
     "onCommand:extension.create-getx-app-structure",
     "onCommand:extension.create-getx-feature",
     "onCommand:extension.create-getx-feature-route",
@@ -75,6 +73,10 @@
         "command": "extension.create-dto"
       },
       {
+        "title": "📝 Create Enum",
+        "command": "extension.create-enum"
+      },
+      {
         "title": "📝 Create Model",
         "command": "extension.create-model"
       },
@@ -99,7 +101,7 @@
         "command": "extension.create-getx-app-structure"
       },
       {
-        "title": "📑 Create GetX Feature",
+        "title": "🗂️ Create GetX Feature",
         "command": "extension.create-getx-feature"
       },
       {
@@ -107,7 +109,7 @@
         "command": "extension.create-getx-feature-route"
       },
       {
-        "title": "📇 Create GetX Service",
+        "title": "📑 Create GetX Service",
         "command": "extension.create-getx-service"
       },
       {
@@ -195,6 +197,11 @@
         },
         {
           "command": "extension.create-dto",
+          "group": "2b_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-enum",
           "group": "2b_modification",
           "when": "explorerResourceIsFolder"
         },
@@ -320,6 +327,11 @@
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines whether an implementation class of an interface will be created together."
+        },
+        "createFlutterWidgetsAndClasses.createFolderForInterfaces": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Defines if it will create a folder to contain the interface and implementation only for Providers, Repositories and Services."
         },
         "createFlutterWidgetsAndClasses.getxDisplayContextMenu": {
           "type": "boolean",

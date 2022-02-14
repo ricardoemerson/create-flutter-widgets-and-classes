@@ -31,7 +31,7 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes&ssr=false#review-details)
 
-This extension creates Flutter Stateless or Stateful Widgets, GetX Features, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
+This extension creates Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Routes, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
 
 - `Wrap with LayoutBuilder`
 - `Wrap with Expanded`
@@ -49,8 +49,7 @@ This extension creates Flutter Stateless or Stateful Widgets, GetX Features, Mob
 
 # Usage Examples
 
-You can create a Flutter Stateless or Stateful Widgets, GetX Features, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
-
+You can create a Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Routes, GetX Services, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
 
 - `🔶 Create Stateless Widget`
 - `🔷 Create Stateful Widget`
@@ -62,11 +61,10 @@ You can create a Flutter Stateless or Stateful Widgets, GetX Features, MobX Stor
 - `📄 Create Provider Interface`
 - `📄 Create Repository Interface`
 - `📄 Create Service Interface`
-- `📑 Create GetX App Bindings`
-- `🪧 Create GetX App Pages`
-- `🗂️ Create GetX Feature`
+- `📂 Create GetX App Structure`
+- **`🗂️** Create GetX Feature`
 - `🪧 Create GetX Feature Route`
-- `📇 Create GetX Service`
+- `📑  Create GetX Service`
 - `📦 Create MobX Store`
 
 ## All Commands (Ctrl+Shift+P or Cmd+Shift+P):
@@ -83,21 +81,45 @@ Select the folder when the widget will be created and choose `🔶 Create Statel
 
 ![Usage](images/create-stateless-widget.gif)
 
-## Create Flutter Stateful Widget Example:
+## Create Stateful Widget Example:
 
-Select the folder when the widget will be created and choose `🔷 Create Flutter Stateful Widget` and enter the name of the widget to be created.
+Select the folder when the widget will be created and choose `🔷 Create Stateful Widget` and enter the name of the widget to be created.
 
 ![Usage](images/create-stateful-widget.gif)
 
-## Create Dart Class Example:
+## Create Class Example:
 
 Select the folder when the class will be created and choose `📝 Create Dart Class` and enter the name of the class to be created.
 
 ![Usage](images/create-class.gif)
 
-## Create Dart Interface Example:
+## Create Controller Example:
 
-Select the folder when the interface will be created and choose `📄 Create Dart Interface` and enter the name of the interface to be created.
+Select the folder when the controller will be created and choose `📝 Create Controller` and enter the name of the controller to be created.
+
+![Usage](images/create-controller.gif)
+
+## Create DTO Example:
+
+Select the folder when the DTO will be created and choose `📝 Create DTO` and enter the name of the DTO to be created.
+
+![Usage](images/create-dto.gif)
+
+## Create Enum Example:
+
+Select the folder when the enum will be created and choose `📝 Create Enum` and enter the name of the enum to be created.
+
+![Usage](images/create-enum.gif)
+
+## Create Model Example:
+
+Select the folder when the model will be created and choose `📝 Create Model` and enter the name of the model to be created.
+
+![Usage](images/create-model.gif)
+
+## Create Interface Example:
+
+Select the folder when the interface will be created and choose `📄 Create Interface` and enter the name of the interface to be created.
 
 ![Usage](images/create-interface.gif)
 

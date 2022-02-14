@@ -9,8 +9,7 @@ import statefulWidget from './templates/statefulWidget';
 import clazz from './templates/clazz';
 import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
-import { camelCase, kebabCase, lowerCase, snakeCase, upperFirst } from 'lodash';
-import pascalCase from './templates/shared/functions/pascal-case';
+import { lowerCase, snakeCase, upperFirst } from 'lodash';
 import clazzImplementation from './templates/clazzImplementation';
 import getxFeatureBinding from './templates/getxFeatureBinding';
 import getxFeatureController from './templates/getxFeatureController';
@@ -20,10 +19,12 @@ import getxAppBindings from './templates/getxAppBindings';
 import getxAppPages from './templates/getxAppPages';
 import getxService from './templates/getxService';
 import flutterMain from './templates/flutterMain';
+import clazzDTO from './templates/clazzDTO';
+import enumType from './templates/enumType';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'dto'  | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'class' | 'dto' | 'enum' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
@@ -32,7 +33,6 @@ interface GetxFeature {
   fileName: string;
   componentName: string;
   getxViewsSuffix: string;
-  fromRoot?: boolean;
 }
 
 export default async (componentName: string, { dir, type, stateFullWidget = false }: ComponentProps) => {
@@ -41,6 +41,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   const getxViewsSuffix = config.get("getxViewsSuffix") as string;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
   const createImplementationOfInterface = config.get("createImplementationOfInterface") as boolean;
+  const createFolderForInterfaces = config.get("createFolderForInterfaces") as boolean;
 
   const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 
@@ -65,7 +66,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     componentName += 'Controller';
     componentFileName = `${ fileName }_controller.dart`;
   } else if (type === 'dto') {
-    componentName += 'DTO';
     componentFileName = `${ fileName }_dto.dart`;
   } else if (type === 'model') {
     componentName += 'Model';
@@ -106,7 +106,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   }
 
   const createGetxFeature = async ({
-    dir, fileName, componentName, getxViewsSuffix, fromRoot = false,
+    dir, fileName, componentName, getxViewsSuffix,
   }: GetxFeature) => {
     let pathDir: string = `${dir}${sep}${fileName}`;
 
@@ -137,9 +137,21 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
   }
 
-  if (type === 'class' || type === 'controller' || type === 'model' || type === 'dto') {
+  if (type === 'class' || type === 'controller' || type === 'model') {
     await createFile(
       filePath(componentFileName), clazz({ componentName })
+    );
+  }
+
+  if (type === 'dto') {
+    await createFile(
+      filePath(componentFileName), clazzDTO({ componentName })
+    );
+  }
+
+  if (type === 'enum') {
+    await createFile(
+      filePath(componentFileName), enumType({ componentName })
     );
   }
 
@@ -156,16 +168,34 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   }
 
   if (type === 'interface' || interfaceTypes.includes(type)) {
-    await createFile(
-      filePath(componentFileName), interfaceClazz({ componentName, useIPrefixForInterfaces })
-    );
+    if (createFolderForInterfaces && interfaceTypes.includes(type)) {
+      let pathDir: string = `${dir}${sep}${fileName}`;
 
-    if (createImplementationOfInterface) {
-      setTimeout(async () => {
-        await createFile(
-          filePath(componentFileNameForImplementation), clazzImplementation({ componentName, useIPrefixForInterfaces })
-        );
-      }, 1000);
+      await mkdirp(pathDir);
+
+      await createFile(
+        filePathFeature(pathDir, componentFileName), interfaceClazz({ componentName, useIPrefixForInterfaces })
+      );
+
+      if (createImplementationOfInterface) {
+        setTimeout(async () => {
+          await createFile(
+            filePathFeature(pathDir, componentFileNameForImplementation), clazzImplementation({ componentName, useIPrefixForInterfaces })
+          );
+        }, 1000);
+      }
+    } else {
+      await createFile(
+        filePath(componentFileName), interfaceClazz({ componentName, useIPrefixForInterfaces })
+      );
+
+      if (createImplementationOfInterface) {
+        setTimeout(async () => {
+          await createFile(
+            filePath(componentFileNameForImplementation), clazzImplementation({ componentName, useIPrefixForInterfaces })
+          );
+        }, 1000);
+      }
     }
   }
 
@@ -207,7 +237,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       fileName: 'home',
       componentName: 'home',
       getxViewsSuffix,
-      fromRoot: true,
     });
 
     await mkdirp(dir + '/app/routes');
@@ -239,6 +268,13 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       });
     } else if ((type === 'getx-structure')) {
       vscode.workspace.openTextDocument(filePath(`app/modules/home/home_${lowerCase(getxViewsSuffix)}.dart`)).then(editor => {
+        if (!editor) {
+          return;
+        }
+        vscode.window.showTextDocument(editor);
+      });
+    } else if ((interfaceTypes.includes(type) && createFolderForInterfaces)) {
+      vscode.workspace.openTextDocument(filePath(`${fileName}/${componentFileName}`)).then(editor => {
         if (!editor) {
           return;
         }

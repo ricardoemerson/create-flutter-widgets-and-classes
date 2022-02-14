@@ -14,9 +14,7 @@ class ${ pascalCase(componentName) } extends StatefulWidget {
 class _${ pascalCase(componentName) }State extends State<${ pascalCase(componentName) }> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-
-    );
+    return Container();
   }
 }
 `
