@@ -126,15 +126,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       await mkdirp(fullRoutesPath);
     }
 
-    console.log('fullRoutesPath: ', fullRoutesPath);
-
-    console.log('fileName: ', fileName);
-    console.log('dir: ', dir);
-    console.log('pathDir: ', pathDir);
-    console.log('projectRoot: ', projectRoot);
-    console.log('componentName: ', componentName);
-    console.log('componentFileName: ', componentFileName);
-
     await mkdirp(pathDir);
 
     await createFile(
@@ -368,41 +359,31 @@ function updateAppPages({
 }: UpdateAppRoutes) {
   const appRoutesPath = `${ fullRoutesPath }${ sep }app_pages.dart`;
 
-  const text = fs.readFileSync(appRoutesPath).toString('utf-8');
-  const textByLine = text.split("\n");
-  console.log('textByLine: ', textByLine);
+  const appRoutesContent = fs.readFileSync(appRoutesPath).toString('utf-8');
+  const appRoutesContentLines = appRoutesContent.split("\n");
 
-  let newContent: string[] = [];
   let lastImportIndex = 0;
   let lastRouteIndex = 0;
 
-  textByLine.forEach((line, index) => {
+  appRoutesContentLines.forEach((line, index) => {
     if (line.startsWith('import')) {
-      lastImportIndex = index;
+      lastImportIndex = index + 1;
     }
 
     if (line.endsWith('];')) {
-      lastRouteIndex = index - 1;
+      lastRouteIndex = index + 1;
     }
   });
 
-  textByLine.forEach((line, index) => {
-    newContent.push(line);
-    if (index === lastImportIndex) {
-      newContent.push(importFile);
-    }
+  appRoutesContentLines.splice(lastImportIndex, 0, importFile);
+  appRoutesContentLines.splice(lastRouteIndex, 0, `\t\t${ routeInfo }`);
 
-    if (index === lastRouteIndex) {
-      newContent.push(`    ${ routeInfo }`);
-    }
-  });
+  const updatedRoutesContent = appRoutesContentLines.join("\n");
 
-  console.log('newContent: ', newContent);
-
-  fs.writeFile(appRoutesPath, newContent.join("\n"), (err) => {
-
-    // In case of a error throw err.
-    if (err) throw err;
-})
+  fs.writeFile(appRoutesPath, updatedRoutesContent, (err) => {
+    if (err) {
+      vscode.window.showErrorMessage(`Not was possible update the app routes in ${ appRoutesPath }.`);
+    };
+  })
 }
 
