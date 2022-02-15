@@ -40,6 +40,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
   const getxViewsSuffix = config.get("getxViewsSuffix") as string;
   const mobxFileSuffix = config.get("mobxFileSuffix") as string;
+  const getxRoutesPath = config.get("getxRoutesPath") as string;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
   const createImplementationOfInterface = config.get("createImplementationOfInterface") as boolean;
   const createFolderForInterfaces = config.get("createFolderForInterfaces") as boolean;
@@ -111,7 +112,24 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   const createGetxFeature = async ({
     dir, fileName, componentName, getxViewsSuffix,
   }: GetxFeature) => {
-    let pathDir: string = `${dir}${sep}${fileName}`;
+    let pathDir: string = `${ dir }${ fileName }`;
+
+    const routesPath = getxRoutesPath.split('/').join(sep);
+    const fullRoutesPath = `${ projectRoot }${ routesPath }`;
+    const featurePath = pathDir.split("modules")[1].split(sep).join('/');
+
+    if (!fs.existsSync(fullRoutesPath)) {
+      await mkdirp(fullRoutesPath);
+    }
+
+    console.log('fullRoutesPath: ', fullRoutesPath);
+
+    console.log('fileName: ', fileName);
+    console.log('dir: ', dir);
+    console.log('pathDir: ', pathDir);
+    console.log('projectRoot: ', projectRoot);
+    console.log('componentName: ', componentName);
+    console.log('componentFileName: ', componentFileName);
 
     await mkdirp(pathDir);
 
@@ -125,6 +143,10 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
     await createFile(
       filePathFeature(pathDir, `${ fileName }_${lowerCase(getxViewsSuffix)}.dart`), getxFeatureView({ componentName, fileName, getxViewsSuffix })
+    );
+
+    await createFile(
+      filePathFeature(fullRoutesPath, `${ fileName }_routes.dart`), getxFeatureRoutes({ componentName, getxViewsSuffix, featurePath })
     );
   };
 

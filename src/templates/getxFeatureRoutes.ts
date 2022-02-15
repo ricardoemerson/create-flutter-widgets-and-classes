@@ -3,9 +3,12 @@ import CreateComponent from './interfaces/CreateComponent';
 import addHomeImport from './shared/functions/add-home-import';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName, getxViewsSuffix, createHomeImport = false }: CreateComponent) => (
+export default ({ componentName, getxViewsSuffix, featurePath }: CreateComponent) => (
 `import 'package:get/get.dart';
-${ addHomeImport(createHomeImport) }
+
+import '../modules${ featurePath }/${ componentName }_binding.dart';
+import '../modules${ featurePath }/${ componentName }_page.dart';
+
 class ${ pascalCase(componentName) }Routes {
   ${ pascalCase(componentName) }Routes._();
 
