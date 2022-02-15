@@ -7,26 +7,18 @@ import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, 
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'dto' | 'enum' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' |'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
 const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateComponentProps) => {
-  let promptTypes = ['widget', 'class', 'dto' , 'enum', 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-route','getx-service', 'mobx-store'];
+  let promptTypes = ['widget', 'class', 'dto' , 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-service', 'mobx-store'];
 
   let componentName: string | undefined;
   const typeName = type.split('-').join(' ');
   const path = args.fsPath;
 
-  if (type === 'getx-route') {
-    const allowCreate = path.endsWith('routes');
-
-    if (!allowCreate) {
-      vscode.window.showErrorMessage('Select the routes folder to be able to create GetX Feature Route.');
-
-      return;
-    }
-  } else if (type === 'getx-feature') {
+  if (type === 'getx-feature') {
     const allowCreate = path.includes('modules');
 
     if (!allowCreate) {
@@ -169,9 +161,6 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-getx-feature", args => {
       handleCreateFile({ args, type: 'getx-feature' });
     }),
-    vscode.commands.registerCommand("extension.create-getx-feature-route", args => {
-      handleCreateFile({ args, type: 'getx-route' });
-    }),
     vscode.commands.registerCommand("extension.create-getx-service", args => {
       handleCreateFile({ args, type: 'getx-service' });
     }),
@@ -195,9 +184,6 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand("extension.create-dto", args => {
       handleCreateFile({ args, type: 'dto' });
-    }),
-    vscode.commands.registerCommand("extension.create-enum", args => {
-      handleCreateFile({ args, type: 'enum' });
     }),
     vscode.commands.registerCommand("extension.create-interface", args => {
       handleCreateFile({ args, type: 'interface' });

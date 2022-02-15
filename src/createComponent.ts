@@ -20,11 +20,11 @@ import getxAppPages from './templates/getxAppPages';
 import getxService from './templates/getxService';
 import flutterMain from './templates/flutterMain';
 import clazzDTO from './templates/clazzDTO';
-import enumType from './templates/enumType';
+import pascalCase from './templates/shared/functions/pascal-case';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'dto' | 'enum' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-route' |'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
@@ -72,8 +72,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   } else if (type === 'model') {
     componentName += 'Model';
     componentFileName = `${ fileName }_model.dart`;
-  } else if (type === 'getx-route') {
-    componentFileName = `${ fileName }_routes.dart`;
   } else if (type === 'mobx-store') {
     componentFileName = `${ fileName }_${lowerCase(mobxFileSuffix)}.dart`;
   } else {
@@ -148,6 +146,10 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     await createFile(
       filePathFeature(fullRoutesPath, `${ fileName }_routes.dart`), getxFeatureRoutes({ componentName, getxViewsSuffix, featurePath })
     );
+
+    if (type !== 'getx-structure') {
+      vscode.window.showInformationMessage(`Add the instruction ...${ pascalCase(fileName) }Routes.routes to your ${ getxRoutesPath }/app_pages.dart`);
+    }
   };
 
   if (type === 'widget' && !stateFullWidget) {
@@ -171,18 +173,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   if (type === 'dto') {
     await createFile(
       filePath(componentFileName), clazzDTO({ componentName })
-    );
-  }
-
-  if (type === 'enum') {
-    await createFile(
-      filePath(componentFileName), enumType({ componentName })
-    );
-  }
-
-  if (type === 'getx-route') {
-    await createFile(
-      filePath(componentFileName), getxFeatureRoutes({ componentName, getxViewsSuffix })
     );
   }
 
@@ -258,18 +248,17 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
     await mkdirp(dir + '/app/modules');
     await createGetxFeature({
-      dir: `${dir}app${sep}modules`,
+      dir: `${dir}app${sep}modules${sep}`,
       fileName: 'home',
       componentName: 'home',
       getxViewsSuffix,
     });
 
-    await mkdirp(dir + '/app/routes');
+    const routesPath = getxRoutesPath.split('/').join(sep);
+    const fullRoutesPath = `${ projectRoot }${ routesPath }`;
+
     await createFile(
-      filePath('app/routes/app_pages.dart'), getxAppPages({ componentName: 'app_pages' })
-    );
-    await createFile(
-      filePath('app/routes/home_routes.dart'), getxFeatureRoutes({ componentName: 'home', getxViewsSuffix, createHomeImport: true })
+      filePathFeature(fullRoutesPath, 'app_pages.dart'), getxAppPages({ componentName: 'app_pages' })
     );
 
     await createFile(

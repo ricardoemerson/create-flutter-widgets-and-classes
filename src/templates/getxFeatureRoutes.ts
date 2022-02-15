@@ -1,6 +1,5 @@
 import { kebabCase, snakeCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
-import addHomeImport from './shared/functions/add-home-import';
 import pascalCase from './shared/functions/pascal-case';
 
 export default ({ componentName, getxViewsSuffix, featurePath }: CreateComponent) => (
@@ -14,7 +13,7 @@ class ${ pascalCase(componentName) }Routes {
 
   static final routes = [
     GetPage(
-      name: '/${ kebabCase(componentName) }',
+      name: '${ featurePath }',
       page: ${ pascalCase(componentName) }${ getxViewsSuffix }.new,
       binding: ${ pascalCase(componentName) }Binding(),
     ),

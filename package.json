@@ -36,7 +36,6 @@
     "onCommand:extension.create-stateful-widget",
     "onCommand:extension.create-getx-app-structure",
     "onCommand:extension.create-getx-feature",
-    "onCommand:extension.create-getx-feature-route",
     "onCommand:extension.create-getx-service",
     "onCommand:extension.create-mobx-store",
     "onCommand:extension.create-interface-provider",
@@ -45,7 +44,6 @@
     "onCommand:extension.create-class",
     "onCommand:extension.create-controller",
     "onCommand:extension.create-dto",
-    "onCommand:extension.create-enum",
     "onCommand:extension.create-interface",
     "onCommand:extension.create-model",
     "workspaceContains:pubspec.yaml"
@@ -68,10 +66,6 @@
       {
         "title": "🗂️ Create GetX Feature",
         "command": "extension.create-getx-feature"
-      },
-      {
-        "title": "🪧 Create GetX Feature Route",
-        "command": "extension.create-getx-feature-route"
       },
       {
         "title": "📑 Create GetX Service",
@@ -104,10 +98,6 @@
       {
         "title": "📝 Create DTO",
         "command": "extension.create-dto"
-      },
-      {
-        "title": "📝 Create Enum",
-        "command": "extension.create-enum"
       },
       {
         "title": "📝 Create Interface",
@@ -197,11 +187,6 @@
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
-          "command": "extension.create-getx-feature-route",
-          "group": "2b_modification",
-          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
-        },
-        {
           "command": "extension.create-getx-service",
           "group": "2b_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
@@ -238,11 +223,6 @@
         },
         {
           "command": "extension.create-dto",
-          "group": "2e_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-enum",
           "group": "2e_modification",
           "when": "explorerResourceIsFolder"
         },
