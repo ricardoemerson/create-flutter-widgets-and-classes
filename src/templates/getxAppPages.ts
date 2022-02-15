@@ -12,7 +12,6 @@ class AppPages {
 
   static final routes = [
     ...HomeRoutes.routes,
-    // TODO: add new routes of your views here.
   ];
 }
 `

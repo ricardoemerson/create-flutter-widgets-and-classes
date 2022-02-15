@@ -7,8 +7,6 @@ export default ({ componentName }: CreateComponent) => (
 class ${ pascalCase(componentName) }Controller extends GetxController {
   //TODO: Implement ${ pascalCase(componentName) }Controller.
 
-  final count = 0.obs;
-
   @override
   void onInit() {
     super.onInit();
@@ -23,8 +21,6 @@ class ${ pascalCase(componentName) }Controller extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
 `
 );

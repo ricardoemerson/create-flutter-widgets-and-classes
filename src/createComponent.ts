@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as mkdirp from 'mkdirp';
 import * as vscode from 'vscode';
-
+const ncp = require("copy-paste");
 
 import statelessWidget from './templates/statelessWidget';
 import statefulWidget from './templates/statefulWidget';
@@ -33,6 +33,13 @@ interface GetxFeature {
   fileName: string;
   componentName: string;
   getxViewsSuffix: string;
+}
+
+interface UpdateAppRoutes {
+  fullRoutesPath: string;
+  sep: string;
+  importFile: string;
+  routeInfo: string;
 }
 
 export default async (componentName: string, { dir, type, stateFullWidget = false }: ComponentProps) => {
@@ -148,7 +155,19 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
 
     if (type !== 'getx-structure') {
-      vscode.window.showInformationMessage(`Add the instruction ...${ pascalCase(fileName) }Routes.routes to your ${ getxRoutesPath }/app_pages.dart`);
+      const importFile = `import '${ fileName }_routes.dart';`;
+      const routeInfo = `...${ pascalCase(fileName) }Routes.routes,`;
+
+      updateAppPages({
+        fullRoutesPath,
+        sep,
+        importFile,
+        routeInfo,
+      });
+
+      // ncp.copy(newRoute);
+
+      // vscode.window.showInformationMessage(`Open the file ${ getxRoutesPath }/app_pages.dart and paste the new route (${ newRoute }) to the routes array.`);
     }
   };
 
@@ -348,3 +367,47 @@ const createFile = async (filePath: string, content: string | string[]) => {
     vscode.window.showWarningMessage("File already exists.");
   }
 };
+
+function updateAppPages({
+  fullRoutesPath, sep, importFile, routeInfo
+}: UpdateAppRoutes) {
+  const appRoutesPath = `${ fullRoutesPath }${ sep }app_pages.dart`;
+
+  const text = fs.readFileSync(appRoutesPath).toString('utf-8');
+  const textByLine = text.split("\n");
+  console.log('textByLine: ', textByLine);
+
+  let newContent: string[] = [];
+  let lastImportIndex = 0;
+  let lastRouteIndex = 0;
+
+  textByLine.forEach((line, index) => {
+    if (line.startsWith('import')) {
+      lastImportIndex = index;
+    }
+
+    if (line.endsWith('];')) {
+      lastRouteIndex = index - 1;
+    }
+  });
+
+  textByLine.forEach((line, index) => {
+    newContent.push(line);
+    if (index === lastImportIndex) {
+      newContent.push(importFile);
+    }
+
+    if (index === lastRouteIndex) {
+      newContent.push(`    ${ routeInfo }`);
+    }
+  });
+
+  console.log('newContent: ', newContent);
+
+  fs.writeFile(appRoutesPath, newContent.join("\n"), (err) => {
+
+    // In case of a error throw err.
+    if (err) throw err;
+})
+}
+

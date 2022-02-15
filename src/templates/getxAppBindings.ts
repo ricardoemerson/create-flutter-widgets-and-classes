@@ -8,7 +8,7 @@ export default ({ componentName }: CreateComponent) => (
 class ApplicationBindings extends Bindings {
   @override
   void dependencies() {
-    // TODO: implement dependencies
+
   }
 }
 `

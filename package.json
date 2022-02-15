@@ -64,11 +64,11 @@
         "command": "extension.create-getx-app-structure"
       },
       {
-        "title": "🗂️ Create GetX Feature",
+        "title": "📑 Create GetX Feature",
         "command": "extension.create-getx-feature"
       },
       {
-        "title": "📑 Create GetX Service",
+        "title": "🗃️ Create GetX Service",
         "command": "extension.create-getx-service"
       },
       {
@@ -371,6 +371,7 @@
     "vscode": "^1.1.28"
   },
   "dependencies": {
+    "copy-paste": "^1.3.0",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4"
