@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as mkdirp from 'mkdirp';
 import * as vscode from 'vscode';
-const ncp = require("copy-paste");
 
 import statelessWidget from './templates/statelessWidget';
 import statefulWidget from './templates/statefulWidget';
@@ -164,10 +163,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
         importFile,
         routeInfo,
       });
-
-      // ncp.copy(newRoute);
-
-      // vscode.window.showInformationMessage(`Open the file ${ getxRoutesPath }/app_pages.dart and paste the new route (${ newRoute }) to the routes array.`);
     }
   };
 
