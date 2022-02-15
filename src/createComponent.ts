@@ -20,6 +20,7 @@ import getxService from './templates/getxService';
 import flutterMain from './templates/flutterMain';
 import clazzDTO from './templates/clazzDTO';
 import pascalCase from './templates/shared/functions/pascal-case';
+import { sleep } from './templates/shared/functions/sleep';
 
 interface ComponentProps {
   dir?: string;
@@ -156,6 +157,47 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       });
     }
   };
+
+  async function updateAppPages({
+    fullRoutesPath, sep, importFile, routeInfo
+  }: UpdateAppRoutes) {
+    const appRoutesPath = `${ fullRoutesPath }${ sep }app_pages.dart`;
+
+    if (!fs.existsSync(appRoutesPath)) {
+      await createFile(
+        filePathFeature(fullRoutesPath, 'app_pages.dart'), getxAppPages({ componentName: 'app_pages' })
+      );
+
+      await sleep(500);
+    }
+
+    const appRoutesContent = fs.readFileSync(appRoutesPath).toString('utf-8');
+    const appRoutesContentLines = appRoutesContent.split("\n");
+
+    let lastImportIndex = 0;
+    let lastRouteIndex = 0;
+
+    appRoutesContentLines.forEach((line, index) => {
+      if (line.startsWith('import')) {
+        lastImportIndex = index + 1;
+      }
+
+      if (line.endsWith('];')) {
+        lastRouteIndex = index + 1;
+      }
+    });
+
+    appRoutesContentLines.splice(lastImportIndex, 0, importFile);
+    appRoutesContentLines.splice(lastRouteIndex, 0, `\t\t${ routeInfo }`);
+
+    const updatedRoutesContent = appRoutesContentLines.join("\n");
+
+    fs.writeFile(appRoutesPath, updatedRoutesContent, (err) => {
+      if (err) {
+        vscode.window.showErrorMessage(`Not was possible update the app routes in ${ appRoutesPath }.`);
+      };
+    })
+  }
 
   if (type === 'widget' && !stateFullWidget) {
     await createFile(
@@ -353,37 +395,3 @@ const createFile = async (filePath: string, content: string | string[]) => {
     vscode.window.showWarningMessage("File already exists.");
   }
 };
-
-function updateAppPages({
-  fullRoutesPath, sep, importFile, routeInfo
-}: UpdateAppRoutes) {
-  const appRoutesPath = `${ fullRoutesPath }${ sep }app_pages.dart`;
-
-  const appRoutesContent = fs.readFileSync(appRoutesPath).toString('utf-8');
-  const appRoutesContentLines = appRoutesContent.split("\n");
-
-  let lastImportIndex = 0;
-  let lastRouteIndex = 0;
-
-  appRoutesContentLines.forEach((line, index) => {
-    if (line.startsWith('import')) {
-      lastImportIndex = index + 1;
-    }
-
-    if (line.endsWith('];')) {
-      lastRouteIndex = index + 1;
-    }
-  });
-
-  appRoutesContentLines.splice(lastImportIndex, 0, importFile);
-  appRoutesContentLines.splice(lastRouteIndex, 0, `\t\t${ routeInfo }`);
-
-  const updatedRoutesContent = appRoutesContentLines.join("\n");
-
-  fs.writeFile(appRoutesPath, updatedRoutesContent, (err) => {
-    if (err) {
-      vscode.window.showErrorMessage(`Not was possible update the app routes in ${ appRoutesPath }.`);
-    };
-  })
-}
-
