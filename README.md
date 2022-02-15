@@ -1,7 +1,7 @@
 <p align="center">
   <br />
   <a title="Learn more about Create Flutter Widgets and Classes" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
-    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Create Flutter Widgets and Classes Logo" width="256"  heigth="256"/>
+    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Create Flutter Widgets and Classes Logo" width="256"  height="256"/>
     </a>
 </p>
 
@@ -49,23 +49,24 @@ This extension creates Flutter Stateless or Stateful Widgets, GetX App Structure
 
 # Usage Examples
 
-You can create a Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Routes, GetX Services, MobX Store, Classes and Intefaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
+You can create a Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Routes, GetX Services, MobX Store, Classes and Interfaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
 
 - `🔶 Create Stateless Widget`
 - `🔷 Create Stateful Widget`
-- `📝 Create Class`
-- `📝 Create Controller`
-- `📝 Create DTO`
-- `📝 Create Model`
-- `📄 Create Interface`
-- `📄 Create Provider Interface`
-- `📄 Create Repository Interface`
-- `📄 Create Service Interface`
 - `📂 Create GetX App Structure`
-- **`🗂️** Create GetX Feature`
+- `🗂️ Create GetX Feature`
 - `🪧 Create GetX Feature Route`
 - `📑  Create GetX Service`
 - `📦 Create MobX Store`
+- `📄 Create Provider Interface`
+- `📄 Create Repository Interface`
+- `📄 Create Service Interface`
+- `📝 Create Class`
+- `📝 Create Controller`
+- `📝 Create DTO`
+- `📝 Create Enum`
+- `📄 Create Interface`
+- `📝 Create Model`
 
 ## All Commands (Ctrl+Shift+P or Cmd+Shift+P):
 
@@ -77,15 +78,46 @@ You can create a Flutter Stateless or Stateful Widgets, GetX App Structures, Get
 
 ## Create Stateless Widget Example:
 
-Select the folder when the widget will be created and choose `🔶 Create Stateless Widget` and enter the name of the widget to be created.
+To create a Stateless Widget, right-click on the folder where the widget will be created, choose `🔶 Create Stateless Widget` and inform the name of the widget that will be created.
 
 ![Usage](images/create-stateless-widget.gif)
 
 ## Create Stateful Widget Example:
 
-Select the folder when the widget will be created and choose `🔷 Create Stateful Widget` and enter the name of the widget to be created.
+To create a Stateful Widget, right-click on the folder where the widget will be created, choose `🔷 Create Stateful Widget` and inform the name of the widget that will be created.
 
 ![Usage](images/create-stateful-widget.gif)
+
+## Create GetX App Structure Example:
+
+> You need to have the `get` package installed in your `pubspec.yaml`
+
+To create a GetX App Structure, right-click on the `lib` folder and choose `📂 Create GetX App Structure`.
+
+![Usage](images/create-getx-app-structure.gif)
+
+The folders that will be created by the command `📂 Create GetX App Structure`:
+
+![Usage](images/getx-app-structure.png)
+
+
+## Create GetX Feature Example:
+
+> You need to have the `get` package installed in your `pubspec.yaml`
+
+To create a GetX feature, right-click on the `modules` folder or any subfolder inside it and choose `🗂️ Create GetX Feature`.
+
+![Usage](images/create-getx-feature.gif)
+
+
+## Create GetX Feature Route Example:
+
+> You need to have the `get` package installed in your `pubspec.yaml`
+
+To create a GetX Feature Route, right-click on the `routes` folder and choose `🪧 Create GetX Feature Route`.
+
+![Usage](images/create-getx-feature-routes.gif)
+
 
 ## Create Class Example:
 

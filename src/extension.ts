@@ -163,33 +163,6 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-stateful-widget", args => {
       handleCreateFile({ args, type: 'widget', stateFullWidget: true });
     }),
-    vscode.commands.registerCommand("extension.create-class", args => {
-      handleCreateFile({ args, type: 'class' });
-    }),
-    vscode.commands.registerCommand("extension.create-controller", args => {
-      handleCreateFile({ args, type: 'controller' });
-    }),
-    vscode.commands.registerCommand("extension.create-dto", args => {
-      handleCreateFile({ args, type: 'dto' });
-    }),
-    vscode.commands.registerCommand("extension.create-enum", args => {
-      handleCreateFile({ args, type: 'enum' });
-    }),
-    vscode.commands.registerCommand("extension.create-model", args => {
-      handleCreateFile({ args, type: 'model' });
-    }),
-    vscode.commands.registerCommand("extension.create-interface", args => {
-      handleCreateFile({ args, type: 'interface' });
-    }),
-    vscode.commands.registerCommand("extension.create-interface-provider", args => {
-      handleCreateFile({ args, type: 'provider' });
-    }),
-    vscode.commands.registerCommand("extension.create-interface-repository", args => {
-      handleCreateFile({ args, type: 'repository' });
-    }),
-    vscode.commands.registerCommand("extension.create-interface-service", args => {
-      handleCreateFile({ args, type: 'service' });
-    }),
     vscode.commands.registerCommand("extension.create-getx-app-structure", args => {
       handleCreateFile({ args, type: 'getx-structure' });
     }),
@@ -205,6 +178,34 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-mobx-store", args => {
       handleCreateFile({ args, type: 'mobx-store' });
     }),
+    vscode.commands.registerCommand("extension.create-interface-provider", args => {
+      handleCreateFile({ args, type: 'provider' });
+    }),
+    vscode.commands.registerCommand("extension.create-interface-repository", args => {
+      handleCreateFile({ args, type: 'repository' });
+    }),
+    vscode.commands.registerCommand("extension.create-interface-service", args => {
+      handleCreateFile({ args, type: 'service' });
+    }),
+    vscode.commands.registerCommand("extension.create-class", args => {
+      handleCreateFile({ args, type: 'class' });
+    }),
+    vscode.commands.registerCommand("extension.create-controller", args => {
+      handleCreateFile({ args, type: 'controller' });
+    }),
+    vscode.commands.registerCommand("extension.create-dto", args => {
+      handleCreateFile({ args, type: 'dto' });
+    }),
+    vscode.commands.registerCommand("extension.create-enum", args => {
+      handleCreateFile({ args, type: 'enum' });
+    }),
+    vscode.commands.registerCommand("extension.create-interface", args => {
+      handleCreateFile({ args, type: 'interface' });
+    }),
+    vscode.commands.registerCommand("extension.create-model", args => {
+      handleCreateFile({ args, type: 'model' });
+    }),
+
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
 
     vscode.commands.registerCommand("extension.wrapWithLayoutBuilder", wrapWithLayoutBuilder),
