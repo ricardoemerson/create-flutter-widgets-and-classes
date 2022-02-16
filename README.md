@@ -9,16 +9,18 @@
 
 **Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code**. If you find it useful, please consider supporting it.
 
-<table align="center" width="60%" border="0">
+> My partner, look how much useful functionality this extension has. In my opinion the donation is mandatory!
+
+<table align="center" width="80%" border="0">
   <tr>
     <td>
       <a title="PayPal" href="https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96">
-        Donate with PayPal
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Create Flutter Widgets and Classes Logo" width="200"  height="100"/>
       </a>
     </td>
     <td>
       <a title="Mercado Pago" href="https://mpago.la/1LvP93a">
-        Donate with Mercado Pago
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Create Flutter Widgets and Classes Logo" width="352"  height="82"/>
       </a>
     </td>
   </tr>
@@ -31,7 +33,7 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes&ssr=false#review-details)
 
-This extension creates Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Routes, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
+This extension creates Flutter Stateless or Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
 
 - `Wrap with LayoutBuilder`
 - `Wrap with Expanded`
@@ -49,36 +51,15 @@ This extension creates Flutter Stateless or Stateful Widgets, GetX App Structure
 
 # Usage Examples
 
-You can create a Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Routes, GetX Services, MobX Store, Classes and Interfaces either by typing in the vscode command palette or by right-clicking any folder in the tree view and use the followed options:
-
-- `🔶 Create Stateless Widget`
-- `🔷 Create Stateful Widget`
-- `📂 Create GetX App Structure`
-- `🗂️ Create GetX Feature`
-- `🪧 Create GetX Feature Route`
-- `📑  Create GetX Service`
-- `📦 Create MobX Store`
-- `📄 Create Provider Interface`
-- `📄 Create Repository Interface`
-- `📄 Create Service Interface`
-- `📝 Create Class`
-- `📝 Create Controller`
-- `📝 Create DTO`
-- `📝 Create Enum`
-- `📄 Create Interface`
-- `📝 Create Model`
-
-## All Commands (Ctrl+Shift+P or Cmd+Shift+P):
-
-![Usage](images/show-all-commands.png)
-
-## Mouse Right Click:
+You can create Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Services, MobX Store, Classes and Interfaces by right clicking on any folder in the tree view and using the following options:
 
 ![Usage](images/usage-right-mouse-click.png)
 
 ## Create Stateless Widget Example:
 
 To create a Stateless Widget, right-click on the folder where the widget will be created, choose `🔶 Create Stateless Widget` and inform the name of the widget that will be created.
+<img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/create-stateless-widget.gif" alt="Create Flutter Widgets and Classes Logo" width="1163"  height="770"/>
+
 
 ![Usage](images/create-stateless-widget.gif)
 
