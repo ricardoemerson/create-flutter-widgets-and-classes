@@ -329,14 +329,14 @@
           "default": "Page",
           "markdownDescription": "Default suffix name for the GetX view layer."
         },
-        "createFlutterWidgetsAndClasses.getxRoutesPath": {
+        "createFlutterWidgetsAndClasses.getxProjectPath": {
           "type": "string",
           "enum": [
-            "/lib/app/routes",
-            "/lib/routes"
+            "/lib/app",
+            "/lib"
           ],
-          "default": "/lib/app/routes",
-          "markdownDescription": "Default routes path for the GetX routes files."
+          "default": "/lib/app",
+          "markdownDescription": "Default path for the GetX Project folders and files."
         },
         "createFlutterWidgetsAndClasses.mobxFileSuffix": {
           "type": "string",

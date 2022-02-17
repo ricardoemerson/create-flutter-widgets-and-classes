@@ -47,7 +47,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
   const getxViewsSuffix = config.get("getxViewsSuffix") as string;
   const mobxFileSuffix = config.get("mobxFileSuffix") as string;
-  const getxRoutesPath = config.get("getxRoutesPath") as string;
+  const getxProjectPath = config.get("getxProjectPath") as string;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
   const createImplementationOfInterface = config.get("createImplementationOfInterface") as boolean;
   const createFolderForInterfaces = config.get("createFolderForInterfaces") as boolean;
@@ -119,7 +119,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   }: GetxFeature) => {
     let pathDir: string = `${ dir }${ fileName }`;
 
-    const routesPath = getxRoutesPath.split('/').join(sep);
+    const routesPath = getxProjectPath.split('/').join(sep) + '/routes';
     const fullRoutesPath = `${ projectRoot }${ routesPath }`;
     const featurePath = pathDir.split("modules")[1].split(sep).join('/');
 
@@ -271,7 +271,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
     fs.rename(mainFile, oldMainFile, () => null);
 
-    const usesAppPath = getxRoutesPath.includes('app') ? true : false;
+    const usesAppPath = getxProjectPath.includes('app') ? true : false;
     const getxFolder = usesAppPath ? '/app/' : '/';
 
     if (usesAppPath) {
@@ -315,7 +315,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       getxViewsSuffix,
     });
 
-    const routesPath = getxRoutesPath.split('/').join(sep);
+    const routesPath = getxProjectPath.split('/').join(sep) + '/routes';
     const fullRoutesPath = `${ projectRoot }${ routesPath }`;
 
     await createFile(
@@ -342,7 +342,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
         vscode.window.showTextDocument(editor);
       });
     } else if ((type === 'getx-structure')) {
-      const usesAppPath = getxRoutesPath.includes('app') ? true : false;
+      const usesAppPath = getxProjectPath.includes('app') ? true : false;
       const homePath = usesAppPath
         ? `app/modules/home/home_${ lowerCase(getxViewsSuffix) }.dart`
         : `modules/home/home_${ lowerCase(getxViewsSuffix) }.dart`;

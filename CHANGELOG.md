@@ -13,7 +13,7 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 - Added the setting `createFolderForInterfaces`.
 - Added the setting `getxDisplayContextMenu`.
 - Added the setting `getxViewsSuffix`.
-- Added the setting `getxRoutesPath`.
+- Added the setting `getxProjectPath`.
 - Added the setting `mobxDisplayContextMenu`.
 - Added the setting `mobxFileSuffix`.
 
