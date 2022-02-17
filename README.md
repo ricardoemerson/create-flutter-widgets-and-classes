@@ -7,24 +7,25 @@
 
 # Support
 
-**Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code**. If you find it useful, please consider supporting it.
+**Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code**.
 
-> My partner, look how much useful functionality this extension has. In my opinion the donation is mandatory!
+> ## This extension is very useful, please consider donating so I can continue to add new features.
 
-<table align="center" width="80%" border="0">
+<table align="center" width="100%" border="0">
   <tr>
-    <td>
+    <td >
       <a title="PayPal" href="https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96">
         <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Create Flutter Widgets and Classes Logo" width="200"  height="100"/>
       </a>
     </td>
     <td>
       <a title="Mercado Pago" href="https://mpago.la/1LvP93a">
-        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Create Flutter Widgets and Classes Logo" width="352"  height="82"/>
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Create Flutter Widgets and Classes Logo" width="250"  height="65"/>
       </a>
     </td>
   </tr>
 </table>
+
 
 # Create Flutter Widgets and Classes
 
@@ -49,25 +50,29 @@ This extension creates Flutter Stateless or Stateful Widgets, GetX App Structure
 - `Wrap with Obx`
 - `Wrap with Observer`
 
+
 # Usage Examples
+
+> All the examples shown below were performed using the extension's default settings. In your project feel free to customize as you wish.
 
 You can create Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Services, MobX Store, Classes and Interfaces by right clicking on any folder in the tree view and using the following options:
 
 ![Usage](images/usage-right-mouse-click.png)
 
+
 ## Create Stateless Widget Example:
 
 To create a Stateless Widget, right-click on the folder where the widget will be created, choose `🔶 Create Stateless Widget` and inform the name of the widget that will be created.
-<img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/create-stateless-widget.gif" alt="Create Flutter Widgets and Classes Logo" width="1163"  height="770"/>
-
 
 ![Usage](images/create-stateless-widget.gif)
+
 
 ## Create Stateful Widget Example:
 
 To create a Stateful Widget, right-click on the folder where the widget will be created, choose `🔷 Create Stateful Widget` and inform the name of the widget that will be created.
 
 ![Usage](images/create-stateful-widget.gif)
+
 
 ## Create GetX App Structure Example:
 
@@ -86,66 +91,90 @@ The folders that will be created by the command `📂 Create GetX App Structure`
 
 > You need to have the `get` package installed in your `pubspec.yaml`
 
-To create a GetX feature, right-click on the `modules` folder or any subfolder inside it and choose `🗂️ Create GetX Feature`.
+To create a GetX feature, right-click on the `modules` folder or any subfolder inside it and choose `📑 Create GetX Feature`.
 
 ![Usage](images/create-getx-feature.gif)
 
 
-## Create GetX Feature Route Example:
+## Create GetX Service Example:
 
 > You need to have the `get` package installed in your `pubspec.yaml`
 
-To create a GetX Feature Route, right-click on the `routes` folder and choose `🪧 Create GetX Feature Route`.
+To create a GetX Service, right-click on the desired folder and choose  `🗃️ Create GetX Service`.
 
-![Usage](images/create-getx-feature-routes.gif)
+![Usage](images/create-getx-service.gif)
+
+##
+## Create MobX Store
+
+> You need to have the `mobx e flutter_mobx` package installed in your `pubspec.yaml`
+
+To create a MobX Store, right-click on the desired folder and choose `📦 Create MobX Store`.
+
+![Usage](images/create-mobx-store.gif)
+
+
+## Create Provider Interface Example:
+
+Select the folder where the Provider Interface will be created and choose `📄 Create Provider Interface` and enter the name of the provider interface to be created.
+
+![Usage](images/create-providers.gif)
+
+
+## Create Repository Interface Example:
+
+Select the folder where the Repository Interface will be created and choose `📄 Create Repository Interface` and enter the name of the repository interface to be created.
+
+![Usage](images/create-repositories.gif)
+
+
+## Create Service Interface Example:
+
+Select the folder where the Service Interface will be created and choose `📄 Create Service Interface` and enter the name of the service interface to be created.
+
+![Usage](images/create-services.gif)
 
 
 ## Create Class Example:
 
-Select the folder when the class will be created and choose `📝 Create Dart Class` and enter the name of the class to be created.
+Select the folder where the class will be created and choose `📝 Create Dart Class` and enter the name of the class to be created.
 
 ![Usage](images/create-class.gif)
 
+
 ## Create Controller Example:
 
-Select the folder when the controller will be created and choose `📝 Create Controller` and enter the name of the controller to be created.
+Select the folder where the controller will be created and choose `📝 Create Controller` and enter the name of the controller to be created.
 
 ![Usage](images/create-controller.gif)
 
+
 ## Create DTO Example:
 
-Select the folder when the DTO will be created and choose `📝 Create DTO` and enter the name of the DTO to be created.
+Select the folder where the DTO will be created and choose `📝 Create DTO` and enter the name of the DTO to be created.
 
 ![Usage](images/create-dto.gif)
 
-## Create Enum Example:
-
-Select the folder when the enum will be created and choose `📝 Create Enum` and enter the name of the enum to be created.
-
-![Usage](images/create-enum.gif)
-
-## Create Model Example:
-
-Select the folder when the model will be created and choose `📝 Create Model` and enter the name of the model to be created.
-
-![Usage](images/create-model.gif)
 
 ## Create Interface Example:
 
-Select the folder when the interface will be created and choose `📄 Create Interface` and enter the name of the interface to be created.
+Select the folder where the interface will be created and choose `📝 Create Interface` and enter the name of the interface to be created.
 
 ![Usage](images/create-interface.gif)
 
-## Code action Implements interface:
 
-In interfaces files it is possible to use the code action `Implements interface` to create interface implementation.
+## Create Model Example:
 
-![Usage](images/implements-interface.gif)
+Select the folder where the model will be created and choose `📝 Create Model` and enter the name of the model to be created.
+
+![Usage](images/create-model.gif)
+
 
 # Extra wrappers
 
 Use the code actions of Visual Studio Code to wrap a widget with one of the following wrappers:
 
+- `Wrap with LayoutBuilder`
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
@@ -158,6 +187,10 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 - `Wrap with Form`
 - `Wrap with Obx`
 - `Wrap with Observer`
+
+## Wrap with LayoutBuilder
+
+![Usage](images/wrap-with-layout-builder.gif)
 
 ## Wrap with Expanded
 
@@ -222,6 +255,14 @@ In this case, undo the last operation and select all the widget that will be wra
 ![Usage](images/wrap-with-selecting.gif)
 
 # Settings
+
+
+
+## Code action Implements interface:
+
+In interfaces files it is possible to use the code action `Implements interface` to create interface implementation file case it is not implemented yet.
+
+![Usage](images/implements-interface.gif)
 
 ## Create Implementation of Interface
 
