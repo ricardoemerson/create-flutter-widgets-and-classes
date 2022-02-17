@@ -5,4 +5,5 @@ export default interface CreateComponent {
   getxViewsSuffix?: string;
   mobxFileSuffix?: string;
   useIPrefixForInterfaces?: boolean;
+  usesAppPath?: boolean;
 }

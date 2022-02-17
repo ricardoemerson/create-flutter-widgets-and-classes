@@ -248,15 +248,14 @@ In case of use of `MobX`, it is possible to wrapper a widget that uses an observ
 
 In some widgets structures by positioning the cursor over the widget which will be surrounded by new widget may cause breaking the code.
 
-![Usage](images/wrap-with-break.gif)
+![Usage](images/wrap-with-break-code.gif)
 
 In this case, undo the last operation and select all the widget that will be wrapped, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
 
 ![Usage](images/wrap-with-selecting.gif)
 
+
 # Settings
-
-
 
 ## Code action Implements interface:
 

@@ -271,31 +271,45 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
     fs.rename(mainFile, oldMainFile, () => null);
 
-    await mkdirp(dir + '/app');
-    await mkdirp(dir + '/app/core');
+    const usesAppPath = getxRoutesPath.includes('app') ? true : false;
+    const getxFolder = usesAppPath ? '/app/' : '/';
 
-    await mkdirp(dir + '/app/core/bindings');
+    if (usesAppPath) {
+      await mkdirp(dir + `/app`);
+    }
+
+    await mkdirp(dir + `${getxFolder}core`);
+
+    await mkdirp(dir + `${ getxFolder }core/bindings`);
+
+    const bindingsPath = usesAppPath
+      ? 'app/core/bindings/application_bindings.dart'
+      : 'core/bindings/application_bindings.dart';
+
     await createFile(
-      filePath(`app/core/bindings/application_bindings.dart`), getxAppBindings({ componentName: 'application_bindings' })
+      filePath(bindingsPath), getxAppBindings({ componentName: 'application_bindings' })
     );
 
-    await mkdirp(dir + '/app/core/config');
-    await mkdirp(dir + '/app/core/theme');
-    await mkdirp(dir + '/app/core/widgets');
-    await mkdirp(dir + '/app/data');
-    await mkdirp(dir + '/app/data/dtos');
-    await mkdirp(dir + '/app/data/enums');
-    await mkdirp(dir + '/app/data/exceptions');
-    await mkdirp(dir + '/app/data/extensions');
-    await mkdirp(dir + '/app/data/models');
-    await mkdirp(dir + '/app/data/providers');
-    await mkdirp(dir + '/app/data/repositories');
-    await mkdirp(dir + '/app/data/services');
-    await mkdirp(dir + '/app/data/sessions');
+    await mkdirp(dir + `${getxFolder}core/config`);
+    await mkdirp(dir + `${getxFolder}core/theme`);
+    await mkdirp(dir + `${getxFolder}core/widgets`);
+    await mkdirp(dir + `${getxFolder}data`);
+    await mkdirp(dir + `${getxFolder}data/dtos`);
+    await mkdirp(dir + `${getxFolder}data/enums`);
+    await mkdirp(dir + `${getxFolder}data/exceptions`);
+    await mkdirp(dir + `${getxFolder}data/extensions`);
+    await mkdirp(dir + `${getxFolder}data/models`);
+    await mkdirp(dir + `${getxFolder}data/providers`);
+    await mkdirp(dir + `${getxFolder}data/repositories`);
+    await mkdirp(dir + `${getxFolder}data/services`);
+    await mkdirp(dir + `${getxFolder}data/sessions`);
 
-    await mkdirp(dir + '/app/modules');
+    await mkdirp(dir + `${ getxFolder }modules`);
+
+    const modulesFolder = usesAppPath ? `${ dir }app${ sep }modules${ sep }` : `${ dir }modules${ sep }`
+
     await createGetxFeature({
-      dir: `${dir}app${sep}modules${sep}`,
+      dir: modulesFolder,
       fileName: 'home',
       componentName: 'home',
       getxViewsSuffix,
@@ -309,7 +323,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
 
     await createFile(
-      filePath('main.dart'), flutterMain({ componentName })
+      filePath('main.dart'), flutterMain({ componentName, usesAppPath })
     );
   }
 
@@ -328,7 +342,11 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
         vscode.window.showTextDocument(editor);
       });
     } else if ((type === 'getx-structure')) {
-      vscode.workspace.openTextDocument(filePath(`app/modules/home/home_${lowerCase(getxViewsSuffix)}.dart`)).then(editor => {
+      const usesAppPath = getxRoutesPath.includes('app') ? true : false;
+      const homePath = usesAppPath
+        ? `app/modules/home/home_${ lowerCase(getxViewsSuffix) }.dart`
+        : `modules/home/home_${ lowerCase(getxViewsSuffix) }.dart`;
+      vscode.workspace.openTextDocument(filePath(homePath)).then(editor => {
         if (!editor) {
           return;
         }
