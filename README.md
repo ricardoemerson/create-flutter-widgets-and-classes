@@ -7,7 +7,7 @@
 
 # Support
 
-**Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code**.
+**Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code** to be used in your Flutter projects.
 
 > ## This extension is very useful, please consider donating so I can continue to add new features.
 
@@ -34,7 +34,7 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes&ssr=false#review-details)
 
-This extension creates Flutter Stateless or Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers:
+This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers in your Flutter projects:
 
 - `Wrap with LayoutBuilder`
 - `Wrap with Expanded`
@@ -55,10 +55,12 @@ This extension creates Flutter Stateless or Stateful Widgets, GetX App Structure
 
 > All the examples shown below were performed using the extension's default settings. In your project feel free to customize as you wish.
 
-You can create Flutter Stateless or Stateful Widgets, GetX App Structures, GetX Features, GetX Services, MobX Store, Classes and Interfaces by right clicking on any folder in the tree view and using the following options:
+You can create Stateless Widgets, Stateful Widgets, GetX App Structures, GetX Features, GetX Services, MobX Store, Classes and Interfaces by right clicking on any folder in the tree view and using the following options:
 
 ![Usage](images/usage-right-mouse-click.png)
 
+
+# Widgets
 
 ## Create Stateless Widget Example:
 
@@ -74,6 +76,8 @@ To create a Stateful Widget, right-click on the folder where the widget will be 
 ![Usage](images/create-stateful-widget.gif)
 
 
+# GetX
+
 ## Create GetX App Structure Example:
 
 > You need to have the `get` package installed in your `pubspec.yaml`
@@ -86,12 +90,14 @@ The folders that will be created by the command `📂 Create GetX App Structure`
 
 ![Usage](images/getx-app-structure.png)
 
+If you not will use some folder, just delete it from your project.
+
 
 ## Create GetX Feature Example:
 
 > You need to have the `get` package installed in your `pubspec.yaml`
 
-To create a GetX feature, right-click on the `modules` folder or any subfolder inside it and choose `📑 Create GetX Feature`.
+To create a GetX resource that is composed of the `view`, `controller`, `binding` and `route` files, right-click on the `modules` folder or any subfolder inside it and choose `📑 Create GetX Feature`.
 
 ![Usage](images/create-getx-feature.gif)
 
@@ -104,15 +110,19 @@ To create a GetX Service, right-click on the desired folder and choose  `🗃️
 
 ![Usage](images/create-getx-service.gif)
 
-##
+
+# MobX
+
 ## Create MobX Store
 
-> You need to have the `mobx e flutter_mobx` package installed in your `pubspec.yaml`
+> You need to have the `mobx and flutter_mobx` package installed in your `pubspec.yaml`
 
 To create a MobX Store, right-click on the desired folder and choose `📦 Create MobX Store`.
 
 ![Usage](images/create-mobx-store.gif)
 
+
+# Interface for Providers, Repositories and Services
 
 ## Create Provider Interface Example:
 
@@ -134,6 +144,7 @@ Select the folder where the Service Interface will be created and choose `📄 C
 
 ![Usage](images/create-services.gif)
 
+# Classes
 
 ## Create Class Example:
 
@@ -168,6 +179,15 @@ Select the folder where the interface will be created and choose `📝 Create In
 Select the folder where the model will be created and choose `📝 Create Model` and enter the name of the model to be created.
 
 ![Usage](images/create-model.gif)
+
+
+# Code Actions
+
+## Code action Implements Interface:
+
+In interfaces files it is possible to use the code action `Implements interface` to create interface implementation file case it is not implemented yet or when already exists and you want create another implementation of interface.
+
+![Usage](images/implements-interface.gif)
 
 
 # Extra wrappers
@@ -244,7 +264,7 @@ In case of use of `MobX`, it is possible to wrapper a widget that uses an observ
 
 ![Usage](images/wrap-with-observer.gif)
 
-## If wrap fails and breaks the code
+## If wrap fails and breaks the code?
 
 In some widgets structures by positioning the cursor over the widget which will be surrounded by new widget may cause breaking the code.
 
@@ -257,7 +277,8 @@ In this case, undo the last operation and select all the widget that will be wra
 
 # Settings
 
-The **Create Flutter Widgets and Classes** has many settings that change its behavior when creating Interfaces, GetX Features and MobX Store.
+The **Create Flutter Widgets and Classes** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX Store.
+
 
 ## Create Folder for Interfaces
 
@@ -265,29 +286,54 @@ Defines if it will create a folder to contain the **interface** and **implementa
 
 ![Usage](images/settings-create-folder-interfaces.gif)
 
-## Code action Implements interface:
-
-In interfaces files it is possible to use the code action `Implements interface` to create interface implementation file case it is not implemented yet.
-
-![Usage](images/implements-interface.gif)
 
 ## Create Implementation of Interface
 
-By default after creation of an interface, the implementation class will be created together. It is also possible to create an interface without class implemetation.
+Defines whether the implementation class of an interface will be created together.
+
+![Usage](images/settings-implements-interfaces.gif)
+
+
+## GetX Display Context Menu
+
+Defines if the context menu with GetX features will be displayed.
+
+![Usage](images/settings-display-getx-menu.gif)
+
+
+## GetX Project Path
+
+Default path for the GetX Project folders and files.
+
+![Usage](images/settings-getx-project-path.gif)
+
+
+## GetX View Suffix
+
+Default suffix name for the GetX view layer.
+
+![Usage](images/settings-getx-views-suffix.gif)
+
+
+## MobX Display Context Menu
+
+Defines if the context menu with MobX features will be displayed.
+
+![Usage](images/settings-display-mobx-menu.gif)
+
+
+## MobX View Suffix
+
+Default suffix name for the MobX store.
+
+![Usage](images/settings-mobx-file-suffix.gif)
+
 
 ## Use `I` Prefix For Interfaces
 
-By default interfaces files are created using the `I` prefix in name of file and interface. It is also possible create it without `I` prefix.
+Defines whether an interface will be created using `I` with prefix to the interface name..
 
-![Usage](images/create-interface.gif)
+![Usage](images/settings-use-i-preffix-interface.gif)
 
-Example of `settings.json`:
-
-```json
-{
-  "createFlutterWidgetsAndClasses.createImplementationOfInterface": true
-  "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": true
-}
-```
 
 **Enjoy!**

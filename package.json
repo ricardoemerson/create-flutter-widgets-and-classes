@@ -22,10 +22,15 @@
     "stateful",
     "screen",
     "screens",
+    "view",
+    "views",
     "class",
     "interface",
-    "mobx",
+    "provider",
+    "repository",
+    "service",
     "getx",
+    "mobx",
     "store"
   ],
   "engines": {
@@ -307,7 +312,7 @@
         "createFlutterWidgetsAndClasses.createImplementationOfInterface": {
           "type": "boolean",
           "default": true,
-          "markdownDescription": "Defines whether an implementation class of an interface will be created together."
+          "markdownDescription": "Defines whether the implementation class of an interface will be created together."
         },
         "createFlutterWidgetsAndClasses.createFolderForInterfaces": {
           "type": "boolean",
