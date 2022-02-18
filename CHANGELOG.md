@@ -2,7 +2,7 @@
 
 All notable changes to the Create Flutter Widgets and Classes extension will be documented in this file.
 
-## [1.3.0]
+## [2.0.0]
 
 - Added the context menu `📂 Create GetX App Structure`.
 - Added the context menu `🗂️ Create GetX Feature`.
@@ -16,6 +16,7 @@ All notable changes to the Create Flutter Widgets and Classes extension will be 
 - Added the setting `getxProjectPath`.
 - Added the setting `mobxDisplayContextMenu`.
 - Added the setting `mobxFileSuffix`.
+- Improve code action Implements interface.
 
 ## [1.2.0]
 
