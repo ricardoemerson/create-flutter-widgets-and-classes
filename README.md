@@ -257,6 +257,14 @@ In this case, undo the last operation and select all the widget that will be wra
 
 # Settings
 
+The **Create Flutter Widgets and Classes** has many settings that change its behavior when creating Interfaces, GetX Features and MobX Store.
+
+## Create Folder for Interfaces
+
+Defines if it will create a folder to contain the **interface** and **implementation** only for `Providers`, `Repositories` and `Services`.
+
+![Usage](images/settings-create-folder-interfaces.gif)
+
 ## Code action Implements interface:
 
 In interfaces files it is possible to use the code action `Implements interface` to create interface implementation file case it is not implemented yet.
