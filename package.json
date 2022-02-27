@@ -1,8 +1,8 @@
 {
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
-  "description": "Extension that creates Flutter Stateless or Stateful Widgets, MobX Store and Classes.",
-  "version": "2.0.1",
+  "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
+  "version": "2.0.2",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",

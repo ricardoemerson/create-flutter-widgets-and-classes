@@ -2,6 +2,10 @@
 
 All notable changes to the Create Flutter Widgets and Classes extension will be documented in this file.
 
+## [2.0.2]
+
+- Update extension description.
+
 ## [2.0.1]
 
 - Improve the routes creation for `🗂️ Create GetX Feature`.
