@@ -8,7 +8,7 @@ import statefulWidget from './templates/statefulWidget';
 import clazz from './templates/clazz';
 import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
-import { lowerCase, snakeCase, upperFirst } from 'lodash';
+import { kebabCase, lowerCase, snakeCase, upperFirst } from 'lodash';
 import clazzImplementation from './templates/clazzImplementation';
 import getxFeatureBinding from './templates/getxFeatureBinding';
 import getxFeatureController from './templates/getxFeatureController';
@@ -21,6 +21,9 @@ import flutterMain from './templates/flutterMain';
 import clazzDTO from './templates/clazzDTO';
 import pascalCase from './templates/shared/functions/pascal-case';
 import { sleep } from './templates/shared/functions/sleep';
+import getxMainRoutes from './templates/getxMainRoutes';
+import getxFeatureRoutesImports from './templates/getxFeatureRoutesImports';
+import getxFeatureRoutesGetPage from './templates/getxFeatureRoutesGetPage';
 
 interface ComponentProps {
   dir?: string;
@@ -40,6 +43,14 @@ interface UpdateAppRoutes {
   sep: string;
   importFile: string;
   routeInfo: string;
+}
+
+interface UpdateFeatureRoutes {
+  fullRoutesPath: string;
+  mainRouteName: string;
+  sep: string;
+  importFiles: string;
+  getPageData: string;
 }
 
 export default async (componentName: string, { dir, type, stateFullWidget = false }: ComponentProps) => {
@@ -123,6 +134,14 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     const fullRoutesPath = `${ projectRoot }${ routesPath }`;
     const featurePath = pathDir.split("modules")[1].split(sep).join('/');
 
+    const featureModules = featurePath.split('/');
+    featureModules.shift();
+    const mainRouteName = `${ featureModules[0] }`;
+    const mainRoutePath = `${ fullRoutesPath }${ sep }${ mainRouteName }_routes.dart`;
+
+    const routeFileExists = fs.existsSync(mainRoutePath);
+    const createRouteFile = !routeFileExists;
+
     if (!fs.existsSync(fullRoutesPath)) {
       await mkdirp(fullRoutesPath);
     }
@@ -141,19 +160,37 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       filePathFeature(pathDir, `${ fileName }_${lowerCase(getxViewsSuffix)}.dart`), getxFeatureView({ componentName, fileName, getxViewsSuffix })
     );
 
-    await createFile(
-      filePathFeature(fullRoutesPath, `${ fileName }_routes.dart`), getxFeatureRoutes({ componentName, getxViewsSuffix, featurePath })
-    );
+    if (createRouteFile) {
+      await createFile(
+        filePathFeature(fullRoutesPath, `${ mainRouteName }_routes.dart`), getxMainRoutes({ componentName, mainRouteName, getxViewsSuffix, featurePath })
+      );
 
-    if (type !== 'getx-structure') {
-      const importFile = `import '${ fileName }_routes.dart';`;
-      const routeInfo = `...${ pascalCase(fileName) }Routes.routes,`;
+      if (type !== 'getx-structure') {
+        const importFile = `import '${ mainRouteName }_routes.dart';`;
+        const routeInfo = `...${ pascalCase(mainRouteName) }Routes.routes,`;
 
-      updateAppPages({
-        fullRoutesPath,
-        sep,
-        importFile,
-        routeInfo,
+        updateAppPages({
+          fullRoutesPath,
+          sep,
+          importFile,
+          routeInfo,
+        });
+      }
+    } else {
+//       const importFiles = `import '../modules${ featurePath }/${ snakeCase(componentName) }_binding.dart';
+// import '../modules${ featurePath }/${ snakeCase(componentName) }_${ lowerCase(getxViewsSuffix) }.dart';`;
+
+//       const getPageData = `GetPage(
+//       name: '${ featurePath!.split('/').map(route => kebabCase(route)).join('/') }',
+//       page: ${ pascalCase(componentName) }${ getxViewsSuffix }.new,
+//       binding: ${ pascalCase(componentName) }Binding(),
+//     ),`;
+
+      const importFiles = getxFeatureRoutesImports({ componentName, getxViewsSuffix, featurePath });
+      const getPageData = getxFeatureRoutesGetPage({ componentName, getxViewsSuffix, featurePath });
+
+      updateFeatureRoutes({
+        fullRoutesPath, mainRouteName, sep, importFiles, getPageData,
       });
     }
   };
@@ -195,6 +232,41 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     fs.writeFile(appRoutesPath, updatedRoutesContent, (err) => {
       if (err) {
         vscode.window.showErrorMessage(`Not was possible update the app routes in ${ appRoutesPath }.`);
+      };
+    })
+  }
+
+  async function updateFeatureRoutes({
+    fullRoutesPath, mainRouteName, sep, importFiles, getPageData
+  }: UpdateFeatureRoutes) {
+    const featureRoutesPath = `${ fullRoutesPath }${ sep }${mainRouteName}_routes.dart`;
+
+    await sleep(500);
+
+    const appRoutesContent = fs.readFileSync(featureRoutesPath).toString('utf-8');
+    const appRoutesContentLines = appRoutesContent.split("\n");
+
+    let lastImportIndex = 0;
+    let lastGetPageIndex = 0;
+
+    appRoutesContentLines.forEach((line, index) => {
+      if (line.startsWith('import')) {
+        lastImportIndex = index + 1;
+      }
+
+      if (line.endsWith('];')) {
+        lastGetPageIndex = index + 1;
+      }
+    });
+
+    appRoutesContentLines.splice(lastImportIndex, 0, importFiles);
+    appRoutesContentLines.splice(lastGetPageIndex, 0, `\t\t${ getPageData }`);
+
+    const updatedRoutesContent = appRoutesContentLines.join("\n");
+
+    fs.writeFile(featureRoutesPath, updatedRoutesContent, (err) => {
+      if (err) {
+        vscode.window.showErrorMessage(`Not was possible update the app routes in ${ featureRoutesPath }.`);
       };
     })
   }

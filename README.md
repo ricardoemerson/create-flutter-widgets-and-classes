@@ -101,6 +101,10 @@ To create a GetX resource that is composed of the `view`, `controller`, `binding
 
 ![Usage](images/create-getx-feature.gif)
 
+You can create a folder to group GetX resources. In this case the name of the route file will be the name of the folder created, as we can see in the example below:
+
+![Usage](images/create-getx-feature-folder-group.gif)
+
 
 ## Create GetX Service Example:
 
