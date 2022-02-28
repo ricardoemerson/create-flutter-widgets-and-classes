@@ -1,8 +1,9 @@
 import { kebabCase, lowerCase, snakeCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
+import createGetPageTearOff from './shared/functions/create-get-page-tear-off';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName, mainRouteName, getxViewsSuffix, featurePath }: CreateComponent) => (
+export default ({ componentName, mainRouteName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs }: CreateComponent) => (
 `import 'package:get/get.dart';
 
 import '../modules${ featurePath }/${ snakeCase(componentName) }_binding.dart';
@@ -14,7 +15,7 @@ class ${ pascalCase(mainRouteName!) }Routes {
   static final routes = [
     GetPage(
       name: '${ featurePath!.split('/').map(route => kebabCase(route)).join('/') }',
-      page: ${ pascalCase(componentName) }${ getxViewsSuffix }.new,
+      page: ${ createGetPageTearOff(componentName, getxViewsSuffix, getxUseConstructorTearOffs) }
       binding: ${ pascalCase(componentName) }Binding(),
     ),
   ];

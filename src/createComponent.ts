@@ -36,6 +36,7 @@ interface GetxFeature {
   fileName: string;
   componentName: string;
   getxViewsSuffix: string;
+  getxUseConstructorTearOffs: boolean;
 }
 
 interface UpdateAppRoutes {
@@ -59,6 +60,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   const getxViewsSuffix = config.get("getxViewsSuffix") as string;
   const mobxFileSuffix = config.get("mobxFileSuffix") as string;
   const getxProjectPath = config.get("getxProjectPath") as string;
+  const getxUseConstructorTearOffs = config.get("getxUseConstructorTearOffs") as boolean;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
   const createImplementationOfInterface = config.get("createImplementationOfInterface") as boolean;
   const createFolderForInterfaces = config.get("createFolderForInterfaces") as boolean;
@@ -149,7 +151,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     await mkdirp(pathDir);
 
     await createFile(
-      filePathFeature(pathDir, `${ fileName }_binding.dart`), getxFeatureBinding({ componentName, fileName })
+      filePathFeature(pathDir, `${ fileName }_binding.dart`), getxFeatureBinding({ componentName, fileName, getxUseConstructorTearOffs })
     );
 
     await createFile(
@@ -162,7 +164,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
     if (createRouteFile) {
       await createFile(
-        filePathFeature(fullRoutesPath, `${ mainRouteName }_routes.dart`), getxMainRoutes({ componentName, mainRouteName, getxViewsSuffix, featurePath })
+        filePathFeature(fullRoutesPath, `${ mainRouteName }_routes.dart`), getxMainRoutes({ componentName, mainRouteName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs })
       );
 
       if (type !== 'getx-structure') {
@@ -187,7 +189,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 //     ),`;
 
       const importFiles = getxFeatureRoutesImports({ componentName, getxViewsSuffix, featurePath });
-      const getPageData = getxFeatureRoutesGetPage({ componentName, getxViewsSuffix, featurePath });
+      const getPageData = getxFeatureRoutesGetPage({ componentName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs });
 
       updateFeatureRoutes({
         fullRoutesPath, mainRouteName, sep, importFiles, getPageData,
@@ -334,7 +336,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   }
 
   if (type === 'getx-feature') {
-    await createGetxFeature({ dir, fileName, componentName, getxViewsSuffix });
+    await createGetxFeature({ dir, fileName, componentName, getxViewsSuffix, getxUseConstructorTearOffs });
   }
 
   if (type === 'getx-structure') {
@@ -385,6 +387,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
       fileName: 'home',
       componentName: 'home',
       getxViewsSuffix,
+      getxUseConstructorTearOffs,
     });
 
     const routesPath = getxProjectPath.split('/').join(sep) + '/routes';

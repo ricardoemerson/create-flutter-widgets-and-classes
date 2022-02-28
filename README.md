@@ -312,6 +312,13 @@ Default path for the GetX Project folders and files.
 ![Usage](images/settings-getx-project-path.gif)
 
 
+## GetX Use Constructor Tear-offs
+
+Defines if the Bindings and Routes files will use the new Dart language feature named Constructor tear-offs.
+
+![Usage](images/settings-getx-constructor-tear-off.gif)
+
+
 ## GetX View Suffix
 
 Default suffix name for the GetX view layer.

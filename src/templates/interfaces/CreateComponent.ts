@@ -7,4 +7,5 @@ export default interface CreateComponent {
   mobxFileSuffix?: string;
   useIPrefixForInterfaces?: boolean;
   usesAppPath?: boolean;
+  getxUseConstructorTearOffs?: boolean;
 }

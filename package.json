@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Create Flutter Widgets and Classes",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -318,6 +318,11 @@
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if it will create a folder to contain the interface and implementation only for Providers, Repositories and Services."
+        },
+        "createFlutterWidgetsAndClasses.getxUseConstructorTearOffs": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Defines if the Bindings and Routes files will use the new Dart language feature named Constructor tear-offs."
         },
         "createFlutterWidgetsAndClasses.getxDisplayContextMenu": {
           "type": "boolean",
