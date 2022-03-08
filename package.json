@@ -1,8 +1,8 @@
 {
   "name": "create-flutter-widgets-and-classes",
-  "displayName": "Create Flutter Widgets and Classes",
+  "displayName": "Create Widgets and Classes for Flutter",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -11,20 +11,15 @@
     "Other"
   ],
   "keywords": [
-    "create",
     "dart",
     "flutter",
-    "widget",
     "widgets",
-    "component",
     "components",
     "stateless",
     "stateful",
-    "screen",
     "screens",
-    "view",
     "views",
-    "class",
+    "classes",
     "interface",
     "provider",
     "repository",
@@ -302,7 +297,7 @@
       ]
     },
     "configuration": {
-      "title": "Create Flutter Widgets and Classes",
+      "title": "Create Widgets and Classes for Flutter",
       "properties": {
         "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": {
           "type": "boolean",

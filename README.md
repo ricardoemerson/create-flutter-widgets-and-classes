@@ -1,33 +1,33 @@
 <p align="center">
   <br />
-  <a title="Learn more about Create Flutter Widgets and Classes" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
-    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Create Flutter Widgets and Classes Logo" width="256"  height="256"/>
+  <a title="Learn more about Create Widgets and Classes for Flutter" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
+    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Create Widgets and Classes for Flutter Logo" width="256"  height="256"/>
     </a>
 </p>
 
 # Support
 
-**Create Flutter Widgets and Classes** is an extension created for **Visual Studio Code** to be used in your Flutter projects.
+**Create Widgets and Classes for Flutter** is an extension created for **Visual Studio Code** to be used in your Flutter projects.
 
-> ## This extension is very useful, please consider donating so I can continue to add new features.
+> ## This extension has a lot of features, please consider donating so I can continue to add new features.
 
 <table align="center" width="100%" border="0">
   <tr>
     <td >
       <a title="PayPal" href="https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96">
-        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Create Flutter Widgets and Classes Logo" width="200"  height="100"/>
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Create Widgets and Classes for Flutter Logo" width="180"  height="80"/>
       </a>
     </td>
     <td>
       <a title="Mercado Pago" href="https://mpago.la/1LvP93a">
-        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Create Flutter Widgets and Classes Logo" width="250"  height="65"/>
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Create Widgets and Classes for Flutter Logo" width="220"  height="65"/>
       </a>
     </td>
   </tr>
 </table>
 
 
-# Create Flutter Widgets and Classes
+# Create Widgets and Classes for Flutter
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
@@ -281,7 +281,7 @@ In this case, undo the last operation and select all the widget that will be wra
 
 # Settings
 
-The **Create Flutter Widgets and Classes** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX Store.
+The **Create Widgets and Classes for Flutter** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX Store.
 
 
 ## Create Folder for Interfaces
@@ -333,7 +333,7 @@ Defines if the context menu with MobX features will be displayed.
 ![Usage](images/settings-display-mobx-menu.gif)
 
 
-## MobX View Suffix
+## MobX File Suffix
 
 Default suffix name for the MobX store.
 
@@ -347,4 +347,5 @@ Defines whether an interface will be created using `I` with prefix to the interf
 ![Usage](images/settings-use-i-preffix-interface.gif)
 
 
-**Enjoy!**
+
+**That's all, Enjoy!**
