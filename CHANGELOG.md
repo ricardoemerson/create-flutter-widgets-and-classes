@@ -1,8 +1,12 @@
 # Change Log
 
-All notable changes to the Create Widgets and Classes for Flutter extension will be documented in this file.
+All notable changes to the Flutter Creator extension will be documented in this file.
 
-## [2.0.3]
+## [2.1.0]
+
+- Change extension name to Flutter Creator.
+
+## [2.0.4]
 
 - Update context menu image in readme.md.
 - Change extension name to Create Widgets and Classes for Flutter.

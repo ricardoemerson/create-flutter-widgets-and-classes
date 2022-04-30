@@ -11,6 +11,7 @@
     "createReactTSXComponent.useReactFC": false,
     "createReactTSXComponent.stylesFormat": "TailwindCSSParser",
     "cSpell.words": [
+        "safearea",
         "wsedit"
     ]
 }
