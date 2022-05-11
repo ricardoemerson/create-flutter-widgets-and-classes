@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.2.1]
+
+- Change extension logo.
+
 ## [2.2.0]
 
 - Change extension name to Flutter Tools.
