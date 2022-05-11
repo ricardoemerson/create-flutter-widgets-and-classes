@@ -1,6 +1,10 @@
 # Change Log
 
-All notable changes to the Flutter Creator extension will be documented in this file.
+All notable changes to the Flutter Tools extension will be documented in this file.
+
+## [2.2.0]
+
+- Change extension name to Flutter Tools.
 
 ## [2.1.0]
 

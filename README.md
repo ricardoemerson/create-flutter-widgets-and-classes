@@ -1,13 +1,13 @@
 <p align="center">
   <br />
-  <a title="Learn more about Flutter Creator" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
-    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Flutter Creator Logo" width="256"  height="256"/>
+  <a title="Learn more about Flutter Tools" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
+    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Flutter Tools Logo" width="256"  height="256"/>
     </a>
 </p>
 
 # Support
 
-**Flutter Creator** is an extension created for **Visual Studio Code** to be used in your Flutter projects.
+**Flutter Tools** is an extension created for **Visual Studio Code** to be used in your Flutter projects.
 
 > ## This extension has a lot of features, please consider donating so I can continue to add new features.
 
@@ -15,19 +15,19 @@
   <tr>
     <td >
       <a title="PayPal" href="https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96">
-        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Flutter Creator Logo" width="180"  height="80"/>
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Flutter Tools Logo" width="180"  height="80"/>
       </a>
     </td>
     <td>
       <a title="Mercado Pago" href="https://mpago.la/1LvP93a">
-        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Flutter Creator Logo" width="220"  height="65"/>
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Flutter Tools Logo" width="220"  height="65"/>
       </a>
     </td>
   </tr>
 </table>
 
 
-# Flutter Creator
+# Flutter Tools
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
@@ -281,9 +281,9 @@ In this case, undo the last operation and select all the widget that will be wra
 
 # Settings
 
-The **Flutter Creator** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX Store.
+The **Flutter Tools** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX Store.
 
-> The previous name of extension was **Create Widgets and Classes for Flutter** and now the name it's **Flutter Creator**. So in your VSCode the name of extension in settings will be the new name.
+> The previous name of extension was **Create Widgets and Classes for Flutter** and now the name it's **Flutter Tools**. So in your VSCode the name of extension in settings will be the new name.
 
 ## Create Folder for Interfaces
 
