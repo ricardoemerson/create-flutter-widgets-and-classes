@@ -274,7 +274,7 @@ In some widgets structures by positioning the cursor over the widget which will 
 
 ![Usage](images/wrap-with-break-code.gif)
 
-In this case, undo the last operation and select all the widget that will be wrapped, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
+In this case, undo the last operation and select all the widget that will be wrapped using the shorcut `Alt` + `W`, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
 
 ![Usage](images/wrap-with-selecting.gif)
 

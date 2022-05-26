@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.2.2]
+
+- Added the shortcut `Alt` + `W` for select a widget.
+
 ## [2.2.1]
 
 - Change extension logo.
