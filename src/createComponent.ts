@@ -8,7 +8,7 @@ import statefulWidget from './templates/statefulWidget';
 import clazz from './templates/clazz';
 import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
-import { kebabCase, lowerCase, snakeCase, upperFirst } from 'lodash';
+import { camelCase, kebabCase, lowerCase, snakeCase, upperFirst } from 'lodash';
 import clazzImplementation from './templates/clazzImplementation';
 import getxFeatureBinding from './templates/getxFeatureBinding';
 import getxFeatureController from './templates/getxFeatureController';
@@ -24,6 +24,7 @@ import { sleep } from './templates/shared/functions/sleep';
 import getxMainRoutes from './templates/getxMainRoutes';
 import getxFeatureRoutesImports from './templates/getxFeatureRoutesImports';
 import getxFeatureRoutesGetPage from './templates/getxFeatureRoutesGetPage';
+import getxFeatureRoutesConstantRoute from './templates/getxFeatureRoutesConstantRoute';
 
 interface ComponentProps {
   dir?: string;
@@ -51,6 +52,7 @@ interface UpdateFeatureRoutes {
   mainRouteName: string;
   sep: string;
   importFiles: string;
+  constantRouteData: string;
   getPageData: string;
 }
 
@@ -189,10 +191,11 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 //     ),`;
 
       const importFiles = getxFeatureRoutesImports({ componentName, getxViewsSuffix, featurePath });
+      const constantRouteData = getxFeatureRoutesConstantRoute({ componentName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs });
       const getPageData = getxFeatureRoutesGetPage({ componentName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs });
 
       updateFeatureRoutes({
-        fullRoutesPath, mainRouteName, sep, importFiles, getPageData,
+        fullRoutesPath, mainRouteName, sep, importFiles, constantRouteData, getPageData,
       });
     }
   };
@@ -239,7 +242,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   }
 
   async function updateFeatureRoutes({
-    fullRoutesPath, mainRouteName, sep, importFiles, getPageData
+    fullRoutesPath, mainRouteName, sep, importFiles, constantRouteData, getPageData
   }: UpdateFeatureRoutes) {
     const featureRoutesPath = `${ fullRoutesPath }${ sep }${mainRouteName}_routes.dart`;
 
@@ -249,11 +252,16 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     const appRoutesContentLines = appRoutesContent.split("\n");
 
     let lastImportIndex = 0;
+    let lastConstantRouteIndex = 0;
     let lastGetPageIndex = 0;
 
     appRoutesContentLines.forEach((line, index) => {
       if (line.startsWith('import')) {
         lastImportIndex = index + 1;
+      }
+
+      if (line.trimLeft().startsWith('static const')) {
+        lastConstantRouteIndex = index + 1;
       }
 
       if (line.endsWith('];')) {
@@ -262,7 +270,8 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     });
 
     appRoutesContentLines.splice(lastImportIndex, 0, importFiles);
-    appRoutesContentLines.splice(lastGetPageIndex, 0, `\t\t${ getPageData }`);
+    appRoutesContentLines.splice(lastConstantRouteIndex + 1, 0, `\t${ constantRouteData }`);
+    appRoutesContentLines.splice(lastGetPageIndex + 1, 0, `\t\t${ getPageData }`);
 
     const updatedRoutesContent = appRoutesContentLines.join("\n");
 

@@ -1,4 +1,4 @@
-import { kebabCase, lowerCase, snakeCase } from 'lodash';
+import { camelCase, kebabCase, lowerCase, snakeCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
 import createGetPageTearOff from './shared/functions/create-get-page-tear-off';
 import pascalCase from './shared/functions/pascal-case';
@@ -12,9 +12,11 @@ import '../modules${ featurePath }/${ snakeCase(componentName) }_${ lowerCase(ge
 class ${ pascalCase(componentName) }Routes {
   ${ pascalCase(componentName) }Routes._();
 
+  static const ${camelCase(featurePath)} = '${ featurePath!.split('/').map(route => kebabCase(route)).join('/') }';
+
   static final routes = [
     GetPage(
-      name: '${ featurePath!.split('/').map(route => kebabCase(route)).join('/') }',
+      name: ${camelCase(featurePath)},
       page: ${ createGetPageTearOff(componentName, getxViewsSuffix, getxUseConstructorTearOffs) }
       binding: ${ pascalCase(componentName) }Binding(),
     ),
