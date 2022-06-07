@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.3.2]
+
+- Fix for existent routes.
+
 ## [2.3.1]
 
 - Added key into Widgets constructors.

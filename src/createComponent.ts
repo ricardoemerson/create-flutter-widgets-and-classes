@@ -253,6 +253,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
 
     let lastImportIndex = 0;
     let lastConstantRouteIndex = 0;
+    let lastConstantRouteMixedIndex = 0;
     let lastGetPageIndex = 0;
 
     appRoutesContentLines.forEach((line, index) => {
@@ -264,13 +265,23 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
         lastConstantRouteIndex = index + 1;
       }
 
+      if (line.endsWith('Routes._();')) {
+        lastConstantRouteMixedIndex = index + 1;
+      }
+
       if (line.endsWith('];')) {
         lastGetPageIndex = index + 1;
       }
     });
 
     appRoutesContentLines.splice(lastImportIndex, 0, importFiles);
-    appRoutesContentLines.splice(lastConstantRouteIndex + 1, 0, `\t${ constantRouteData }`);
+
+    if (lastConstantRouteIndex !== 0) {
+      appRoutesContentLines.splice(lastConstantRouteIndex + 1, 0, `\t${ constantRouteData }`);
+    } else {
+      appRoutesContentLines.splice(lastConstantRouteMixedIndex + 1, 0, `\n\t${ constantRouteData }`);
+    }
+
     appRoutesContentLines.splice(lastGetPageIndex + 1, 0, `\t\t${ getPageData }`);
 
     const updatedRoutesContent = appRoutesContentLines.join("\n");
