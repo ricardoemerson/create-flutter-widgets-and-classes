@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 import '${ snakeCase(componentName) }_controller.dart';
 
 class ${ pascalCase(componentName) }${ getxViewsSuffix } extends GetView<${ pascalCase(componentName) }Controller> {
+  const ${ pascalCase(componentName) }${ getxViewsSuffix }({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

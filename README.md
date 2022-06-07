@@ -5,9 +5,10 @@
     </a>
 </p>
 
-# What's new in Flutter Toos 2.3.0
+# What's new in Flutter Toos 2.3.1
 
-- For the resource's routes file, a static const variable has been added with the path of the route to represent it, such as `static const home = '/home';` . With this, it is now possible to navigate to a route, for example using `Get.toNamed(HomeRoutes.home);`
+- For the resource's routes file, a static const variable has been added with the path of the route to represent it, such as `static const home = '/home';` . With this, it is now possible to navigate to a route, for example using `Get.toNamed(HomeRoutes.home);`.
+- Added key into Widgets constructors.
 
 # Support
 

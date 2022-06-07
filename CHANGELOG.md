@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.3.1]
+
+- Added key into Widgets constructors.
+
 ## [2.3.0]
 
 - For the resource's routes file, a static const variable has been added with the path of the route to represent it, such as `static const home = '/home';` . With this, it is now possible to navigate to a route, for example using `Get.toNamed(HomeRoutes.home);`
