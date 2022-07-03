@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.4.0]
+
+- Added the context menu item `Create Singleton Class`.
+
 ## [2.3.2]
 
 - Fix for existent routes.

@@ -5,6 +5,10 @@
     </a>
 </p>
 
+# What's new in Flutter Toos 2.4.0
+
+- Added the context menu item `Create Singleton Class`.
+
 # What's new in Flutter Toos 2.3.1
 
 - For the resource's routes file, a static const variable has been added with the path of the route to represent it, such as `static const home = '/home';` . With this, it is now possible to navigate to a route, for example using `Get.toNamed(HomeRoutes.home);`.
@@ -188,6 +192,13 @@ Select the folder where the interface will be created and choose `📝 Create In
 Select the folder where the model will be created and choose `📝 Create Model` and enter the name of the model to be created.
 
 ![Usage](images/create-model.gif)
+
+
+## Create Singleton Class Example:
+
+Select the folder where the model will be created and choose `📝 Create Singleton Class` and enter the name of the singleton class to be created.
+
+![Usage](images/create-singleton-class.gif)
 
 
 # Code Actions

@@ -9,7 +9,7 @@ import * as history from './selectionHistory';
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' |'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'class' | 'singleton-class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' |'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
@@ -24,7 +24,7 @@ class SearchResult {
 }
 
 const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateComponentProps) => {
-  let promptTypes = ['widget', 'class', 'dto' , 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-service', 'mobx-store'];
+  let promptTypes = ['widget', 'class', 'singleton-class', 'dto' , 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-service', 'mobx-store'];
 
   let componentName: string | undefined;
   const typeName = type.split('-').join(' ');
@@ -333,6 +333,9 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand("extension.create-class", args => {
       handleCreateFile({ args, type: 'class' });
+    }),
+    vscode.commands.registerCommand("extension.create-singleton-class", args => {
+      handleCreateFile({ args, type: 'singleton-class' });
     }),
     vscode.commands.registerCommand("extension.create-controller", args => {
       handleCreateFile({ args, type: 'controller' });

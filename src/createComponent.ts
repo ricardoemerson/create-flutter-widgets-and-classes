@@ -25,10 +25,11 @@ import getxMainRoutes from './templates/getxMainRoutes';
 import getxFeatureRoutesImports from './templates/getxFeatureRoutesImports';
 import getxFeatureRoutesGetPage from './templates/getxFeatureRoutesGetPage';
 import getxFeatureRoutesConstantRoute from './templates/getxFeatureRoutesConstantRoute';
+import singletonClazz from './templates/singletonClazz';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'class' | 'singleton-class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-service' | 'getx-structure' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
@@ -308,6 +309,12 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   if (type === 'class' || type === 'controller' || type === 'model') {
     await createFile(
       filePath(componentFileName), clazz({ componentName })
+    );
+  }
+
+  if (type === 'singleton-class') {
+    await createFile(
+      filePath(componentFileName), singletonClazz({ componentName })
     );
   }
 

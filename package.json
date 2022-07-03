@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -44,6 +44,9 @@
   "engines": {
     "vscode": "^1.17.0"
   },
+  "sponsor": {
+    "url": "https://github.com/sponsors/ricardoemerson"
+  },
   "activationEvents": [
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
@@ -55,6 +58,7 @@
     "onCommand:extension.create-interface-repository",
     "onCommand:extension.create-interface-service",
     "onCommand:extension.create-class",
+    "onCommand:extension.create-singleton-class",
     "onCommand:extension.create-controller",
     "onCommand:extension.create-dto",
     "onCommand:extension.create-interface",
@@ -104,6 +108,10 @@
       {
         "title": "📝 Create Class",
         "command": "extension.create-class"
+      },
+      {
+        "title": "📝 Create Singleton Class",
+        "command": "extension.create-singleton-class"
       },
       {
         "title": "📝 Create Controller",
@@ -239,6 +247,11 @@
         },
         {
           "command": "extension.create-class",
+          "group": "2e_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-singleton-class",
           "group": "2e_modification",
           "when": "explorerResourceIsFolder"
         },
