@@ -8,7 +8,7 @@ class ${ pascalCase(componentName) } extends StatefulWidget {
   const ${ pascalCase(componentName) }({ Key? key }) : super(key: key);
 
   @override
-  _${ pascalCase(componentName) }State createState() => _${ pascalCase(componentName) }State();
+  State<${ pascalCase(componentName) }> createState() => _${ pascalCase(componentName) }State();
 }
 
 class _${ pascalCase(componentName) }State extends State<${ pascalCase(componentName) }> {

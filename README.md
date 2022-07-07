@@ -5,6 +5,10 @@
     </a>
 </p>
 
+# What's new in Flutter Toos 2.4.1
+
+- Changed the template file for Stateful Widgets to avoid this warning `Avoid using private types in public APIs`.
+
 # What's new in Flutter Toos 2.4.0
 
 - Added the context menu item `Create Singleton Class`.

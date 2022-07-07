@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.4.1]
+
+- Changed the template file for Stateful Widgets to avoid this warning `Avoid using private types in public APIs`.
+
 ## [2.4.0]
 
 - Added the context menu item `Create Singleton Class`.
