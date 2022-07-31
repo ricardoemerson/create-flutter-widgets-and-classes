@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -50,9 +50,12 @@
   "activationEvents": [
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
+    "onCommand:extension.create-stateless-widget-page",
+    "onCommand:extension.create-stateful-widget-page",
     "onCommand:extension.create-getx-app-structure",
     "onCommand:extension.create-getx-feature",
     "onCommand:extension.create-getx-service",
+    "onCommand:extension.create-mobx-controller",
     "onCommand:extension.create-mobx-store",
     "onCommand:extension.create-interface-provider",
     "onCommand:extension.create-interface-repository",
@@ -61,6 +64,7 @@
     "onCommand:extension.create-singleton-class",
     "onCommand:extension.create-controller",
     "onCommand:extension.create-dto",
+    "onCommand:extension.create-exception",
     "onCommand:extension.create-interface",
     "onCommand:extension.create-model",
     "onCommand:extension.selectWidget",
@@ -78,6 +82,14 @@
         "command": "extension.create-stateful-widget"
       },
       {
+        "title": "📄 Create Stateless Widget Page",
+        "command": "extension.create-stateless-widget-page"
+      },
+      {
+        "title": "📑 Create Stateful Widget Page",
+        "command": "extension.create-stateful-widget-page"
+      },
+      {
         "title": "📂 Create GetX App Structure",
         "command": "extension.create-getx-app-structure"
       },
@@ -88,6 +100,10 @@
       {
         "title": "🗃️ Create GetX Service",
         "command": "extension.create-getx-service"
+      },
+      {
+        "title": "🗂️ Create MobX Controller",
+        "command": "extension.create-mobx-controller"
       },
       {
         "title": "📦 Create MobX Store",
@@ -122,6 +138,10 @@
         "command": "extension.create-dto"
       },
       {
+        "title": "📝 Create Exception",
+        "command": "extension.create-exception"
+      },
+      {
         "title": "📝 Create Interface",
         "command": "extension.create-interface"
       },
@@ -136,6 +156,10 @@
       {
         "title": "Wrap with LayoutBuilder",
         "command": "extension.wrapWithLayoutBuilder"
+      },
+      {
+        "title": "Wrap with ValueListenableBuilder",
+        "command": "extension.wrapWithValueListenableBuilder"
       },
       {
         "title": "Wrap with Expanded",
@@ -166,6 +190,10 @@
         "command": "extension.wrapWithGestureDetector"
       },
       {
+        "title": "Wrap with InkWell",
+        "command": "extension.wrapWithInkWell"
+      },
+      {
         "title": "Wrap with SingleChildScrollView",
         "command": "extension.wrapWithSingleChildScrollView"
       },
@@ -178,11 +206,11 @@
         "command": "extension.wrapWithForm"
       },
       {
-        "title": "Wrap with Obx",
+        "title": "Wrap with GetX Obx",
         "command": "extension.wrapWithObx"
       },
       {
-        "title": "Wrap with Observer",
+        "title": "Wrap with MobX Observer",
         "command": "extension.wrapWithObserver"
       },
       {
@@ -211,68 +239,88 @@
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "extension.create-getx-app-structure",
+          "command": "extension.create-stateless-widget-page",
           "group": "2b_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-stateful-widget-page",
+          "group": "2b_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-getx-app-structure",
+          "group": "2c_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-getx-feature",
-          "group": "2b_modification",
+          "group": "2c_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-getx-service",
-          "group": "2b_modification",
+          "group": "2c_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
+          "command": "extension.create-mobx-controller",
+          "group": "2d_modification",
+          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
+        },
+        {
           "command": "extension.create-mobx-store",
-          "group": "2c_modification",
+          "group": "2d_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-interface-provider",
-          "group": "2d_modification",
+          "group": "2e_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-interface-repository",
-          "group": "2d_modification",
+          "group": "2e_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-interface-service",
-          "group": "2d_modification",
+          "group": "2e_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-class",
-          "group": "2e_modification",
+          "group": "2f_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-singleton-class",
-          "group": "2e_modification",
+          "group": "2f_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-controller",
-          "group": "2e_modification",
+          "group": "2f_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-dto",
-          "group": "2e_modification",
+          "group": "2f_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.create-exception",
+          "group": "2f_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-interface",
-          "group": "2e_modification",
+          "group": "2f_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-model",
-          "group": "2e_modification",
+          "group": "2f_modification",
           "when": "explorerResourceIsFolder"
         },
         {
@@ -283,6 +331,10 @@
       "commandPalette": [
         {
           "command": "extension.wrapWithLayoutBuilder",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithValueListenableBuilder",
           "when": "editorLangId == dart"
         },
         {
@@ -311,6 +363,10 @@
         },
         {
           "command": "extension.wrapWithGestureDetector",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithInkWell",
           "when": "editorLangId == dart"
         },
         {
@@ -382,19 +438,20 @@
           "default": "/lib/app",
           "markdownDescription": "Default path for the GetX Project folders and files."
         },
-        "createFlutterWidgetsAndClasses.mobxFileSuffix": {
-          "type": "string",
-          "enum": [
-            "Store",
-            "Controller"
-          ],
-          "default": "Store",
-          "markdownDescription": "Default suffix name for the MobX store."
-        },
         "createFlutterWidgetsAndClasses.mobxDisplayContextMenu": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if the context menu with MobX features will be displayed."
+        },
+        "createFlutterWidgetsAndClasses.widgetsViewsSuffix": {
+          "type": "string",
+          "enum": [
+            "Page",
+            "Screen",
+            "View"
+          ],
+          "default": "Page",
+          "markdownDescription": "Default suffix name for the Widgets views."
         }
       }
     }

@@ -14,7 +14,12 @@ class ${ pascalCase(componentName) } extends StatefulWidget {
 class _${ pascalCase(componentName) }State extends State<${ pascalCase(componentName) }> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text(
+        '${ pascalCase(componentName) } is working',
+        style: TextStyle(fontSize: 20),
+      ),
+    );
   }
 }
 `

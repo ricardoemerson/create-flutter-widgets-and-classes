@@ -8,4 +8,5 @@ export default interface CreateComponent {
   useIPrefixForInterfaces?: boolean;
   usesAppPath?: boolean;
   getxUseConstructorTearOffs?: boolean;
+  widgetsViewsSuffix?: string;
 }

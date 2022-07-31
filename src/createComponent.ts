@@ -5,7 +5,11 @@ import * as vscode from 'vscode';
 
 import statelessWidget from './templates/statelessWidget';
 import statefulWidget from './templates/statefulWidget';
+import statelessWidgetPage from './templates/statelessWidgetPage';
+import statefulWidgetPage from './templates/statefulWidgetPage';
 import clazz from './templates/clazz';
+import singletonClazz from './templates/singletonClazz';
+import clazzException from './templates/clazzException';
 import interfaceClazz from './templates/interfaceClazz';
 import mobxStore from './templates/mobxStore';
 import { camelCase, kebabCase, lowerCase, snakeCase, upperFirst } from 'lodash';
@@ -18,18 +22,16 @@ import getxAppBindings from './templates/getxAppBindings';
 import getxAppPages from './templates/getxAppPages';
 import getxService from './templates/getxService';
 import flutterMain from './templates/flutterMain';
-import clazzDTO from './templates/clazzDTO';
 import pascalCase from './templates/shared/functions/pascal-case';
 import { sleep } from './templates/shared/functions/sleep';
 import getxMainRoutes from './templates/getxMainRoutes';
 import getxFeatureRoutesImports from './templates/getxFeatureRoutesImports';
 import getxFeatureRoutesGetPage from './templates/getxFeatureRoutesGetPage';
 import getxFeatureRoutesConstantRoute from './templates/getxFeatureRoutesConstantRoute';
-import singletonClazz from './templates/singletonClazz';
 
 interface ComponentProps {
   dir?: string;
-  type: 'widget' | 'class' | 'singleton-class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' | 'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'widget-page' | 'class' | 'singleton-class' | 'dto' | 'exception' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' |'getx-service' | 'getx-structure' | 'mobx-controller' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
@@ -61,7 +63,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   // Load configurations.
   const config = vscode.workspace.getConfiguration("createFlutterWidgetsAndClasses");
   const getxViewsSuffix = config.get("getxViewsSuffix") as string;
-  const mobxFileSuffix = config.get("mobxFileSuffix") as string;
+  const widgetsViewsSuffix = config.get("widgetsViewsSuffix") as string;
   const getxProjectPath = config.get("getxProjectPath") as string;
   const getxUseConstructorTearOffs = config.get("getxUseConstructorTearOffs") as boolean;
   const useIPrefixForInterfaces = config.get("useIPrefixForInterfaces") as boolean;
@@ -80,6 +82,8 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
   let componentFileNameForImplementation: string;
   const interfaceTypes = ['provider', 'repository', 'service']
 
+  const mobxFileSuffix = type === 'mobx-controller' ? 'Controller' : 'Store';
+
   if (type === 'interface') {
     componentFileName = `${ iPrefix }${ fileName }.dart`;
     componentFileNameForImplementation = `${ fileName }${ implSuffix }.dart`
@@ -91,12 +95,17 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     componentName += 'Controller';
     componentFileName = `${ fileName }_controller.dart`;
   } else if (type === 'dto') {
+    componentName += 'DTO';
     componentFileName = `${ fileName }_dto.dart`;
+  } else if (type === 'exception') {
+    componentFileName = `${ fileName }_exception.dart`;
   } else if (type === 'model') {
     componentName += 'Model';
     componentFileName = `${ fileName }_model.dart`;
-  } else if (type === 'mobx-store') {
+  } else if (type === 'mobx-controller' || type === 'mobx-store') {
     componentFileName = `${ fileName }_${lowerCase(mobxFileSuffix)}.dart`;
+  } else if (type === 'widget-page') {
+    componentFileName = `${ fileName }_${lowerCase(widgetsViewsSuffix)}.dart`;
   } else {
     componentFileName = `${ fileName }.dart`;
   }
@@ -182,15 +191,6 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
         });
       }
     } else {
-//       const importFiles = `import '../modules${ featurePath }/${ snakeCase(componentName) }_binding.dart';
-// import '../modules${ featurePath }/${ snakeCase(componentName) }_${ lowerCase(getxViewsSuffix) }.dart';`;
-
-//       const getPageData = `GetPage(
-//       name: '${ featurePath!.split('/').map(route => kebabCase(route)).join('/') }',
-//       page: ${ pascalCase(componentName) }${ getxViewsSuffix }.new,
-//       binding: ${ pascalCase(componentName) }Binding(),
-//     ),`;
-
       const importFiles = getxFeatureRoutesImports({ componentName, getxViewsSuffix, featurePath });
       const constantRouteData = getxFeatureRoutesConstantRoute({ componentName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs });
       const getPageData = getxFeatureRoutesGetPage({ componentName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs });
@@ -306,7 +306,27 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
   }
 
-  if (type === 'class' || type === 'controller' || type === 'model') {
+  if (type === 'widget-page' && !stateFullWidget) {
+    let pathDir: string = `${dir}${sep}${fileName}`;
+
+    await mkdirp(pathDir);
+
+    await createFile(
+      filePathFeature(pathDir, componentFileName), statelessWidgetPage({ componentName, widgetsViewsSuffix })
+    );
+  }
+
+  if (type === 'widget-page' && stateFullWidget) {
+    let pathDir: string = `${dir}${sep}${fileName}`;
+
+    await mkdirp(pathDir);
+
+    await createFile(
+      filePathFeature(pathDir, componentFileName), statefulWidgetPage({ componentName, widgetsViewsSuffix })
+    );
+  }
+
+  if (type === 'class' || type === 'controller' || type === 'dto' || type === 'model') {
     await createFile(
       filePath(componentFileName), clazz({ componentName })
     );
@@ -318,9 +338,9 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
   }
 
-  if (type === 'dto') {
+  if (type === 'exception') {
     await createFile(
-      filePath(componentFileName), clazzDTO({ componentName })
+      filePath(componentFileName), clazzException({ componentName })
     );
   }
 
@@ -392,6 +412,7 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
 
     await mkdirp(dir + `${getxFolder}core/config`);
+    await mkdirp(dir + `${getxFolder}core/helpers`);
     await mkdirp(dir + `${getxFolder}core/theme`);
     await mkdirp(dir + `${getxFolder}core/widgets`);
     await mkdirp(dir + `${getxFolder}data`);
@@ -429,14 +450,21 @@ export default async (componentName: string, { dir, type, stateFullWidget = fals
     );
   }
 
-  if (type === 'mobx-store' ) {
+  if (type === 'mobx-controller' || type === 'mobx-store') {
     await createFile(
       filePath(componentFileName), mobxStore({ componentName, fileName, mobxFileSuffix })
     );
   }
 
   setTimeout(() => {
-    if (type === 'getx-feature') {
+    if (type === 'widget-page') {
+      vscode.workspace.openTextDocument(filePath(`${ fileName }/${ fileName }_${ lowerCase(widgetsViewsSuffix) }.dart`)).then(editor => {
+        if (!editor) {
+          return;
+        }
+        vscode.window.showTextDocument(editor);
+      });
+    } else if (type === 'getx-feature') {
       vscode.workspace.openTextDocument(filePath(`${fileName}/${ fileName }_${lowerCase(getxViewsSuffix)}.dart`)).then(editor => {
         if (!editor) {
           return;

@@ -2,6 +2,19 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [2.5.0]
+
+- Added the context menu `📄 Create Stateless Widget Page`.
+- Added the context menu `📑 Create Stateful Widget Page`.
+- Added the context menu `🗂️ Create MobX Controller`.
+- Added the context menu `📝 Create Exception`.
+- Added the wrapper `Wrap with ValueListenableBuilder`.
+- Added the wrapper `Wrap with InkWell`.
+- Updated the template of the wrapper `Wrap with LayoutBuilder`.
+- Added configuration of Widgets Page file suffix.
+- Removed configuration of MobX file suffix.
+
+
 ## [2.4.1]
 
 - Changed the template file for Stateful Widgets to avoid this warning `Avoid using private types in public APIs`.

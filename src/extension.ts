@@ -3,13 +3,13 @@ import * as vscode from 'vscode';
 import createComponent from './createComponent';
 import implementsInterface from './implementsInterface';
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
-import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithClipRRect, wrapWithStack, wrapWithAlign, wrapWithLayoutBuilder } from './templates/wrapWith';
+import { wrapWithExpanded, wrapWithForm, wrapWithGestureDetector, wrapWithHero, wrapWithObserver, wrapWithObx, wrapWithPositioned, wrapWithSafeArea, wrapWithSingleChildScrollView, wrapWithClipRRect, wrapWithStack, wrapWithAlign, wrapWithLayoutBuilder, wrapWithValueListenableBuilder, wrapWithInkWell } from './templates/wrapWith';
 import { bracketUtil } from './bracketUtil';
 import * as history from './selectionHistory';
 
 interface CreateComponentProps {
   args: any;
-  type: 'widget' | 'class' | 'singleton-class' | 'dto' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' |'getx-service' | 'getx-structure' | 'mobx-store';
+  type: 'widget' | 'widget-page' | 'class' | 'singleton-class' | 'dto' | 'exception' | 'model' | 'controller' | 'interface' | 'provider' | 'repository' | 'service' | 'getx-feature' |'getx-service' | 'getx-structure' | 'mobx-controller' | 'mobx-store';
   stateFullWidget?: boolean;
 }
 
@@ -24,7 +24,7 @@ class SearchResult {
 }
 
 const handleCreateFile = async ({ args, type, stateFullWidget = false }: CreateComponentProps) => {
-  let promptTypes = ['widget', 'class', 'singleton-class', 'dto' , 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-service', 'mobx-store'];
+  let promptTypes = ['widget', 'widget-page', 'class', 'singleton-class', 'dto' , 'exception', 'model', 'controller', 'interface', 'provider', 'repository', 'service', 'getx-feature', 'getx-service', 'mobx-controller', 'mobx-store'];
 
   let componentName: string | undefined;
   const typeName = type.split('-').join(' ');
@@ -95,6 +95,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
       });
 
       codeActions.push({
+        command: "extension.wrapWithValueListenableBuilder",
+        title: "Wrap with ValueListenableBuilder"
+      });
+
+      codeActions.push({
         command: "extension.wrapWithExpanded",
         title: "Wrap with Expanded"
       });
@@ -130,6 +135,11 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
       });
 
       codeActions.push({
+        command: "extension.wrapWithInkWell",
+        title: "Wrap with InkWell"
+      });
+
+      codeActions.push({
         command: "extension.wrapWithSingleChildScrollView",
         title: "Wrap with SingleChildScrollView"
       });
@@ -146,12 +156,12 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 
       codeActions.push({
         command: "extension.wrapWithObx",
-        title: "Wrap with Obx"
+        title: "Wrap with GetX Obx"
       });
 
       codeActions.push({
         command: "extension.wrapWithObserver",
-        title: "Wrap with Observer"
+        title: "Wrap with MobX Observer"
       });
     }
 
@@ -190,7 +200,7 @@ function findBackward(text: string, index: number): SearchResult {
 			bracketStack.push(char);
 		}
 	}
-	//we are geting to the edge
+	//we are getting to the edge
 	return null!;
 }
 
@@ -310,6 +320,12 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-stateful-widget", args => {
       handleCreateFile({ args, type: 'widget', stateFullWidget: true });
     }),
+    vscode.commands.registerCommand("extension.create-stateless-widget-page", args => {
+      handleCreateFile({ args, type: 'widget-page' });
+    }),
+    vscode.commands.registerCommand("extension.create-stateful-widget-page", args => {
+      handleCreateFile({ args, type: 'widget-page', stateFullWidget: true });
+    }),
     vscode.commands.registerCommand("extension.create-getx-app-structure", args => {
       handleCreateFile({ args, type: 'getx-structure' });
     }),
@@ -318,6 +334,9 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand("extension.create-getx-service", args => {
       handleCreateFile({ args, type: 'getx-service' });
+    }),
+    vscode.commands.registerCommand("extension.create-mobx-controller", args => {
+      handleCreateFile({ args, type: 'mobx-controller' });
     }),
     vscode.commands.registerCommand("extension.create-mobx-store", args => {
       handleCreateFile({ args, type: 'mobx-store' });
@@ -343,6 +362,9 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.create-dto", args => {
       handleCreateFile({ args, type: 'dto' });
     }),
+    vscode.commands.registerCommand("extension.create-exception", args => {
+      handleCreateFile({ args, type: 'exception' });
+    }),
     vscode.commands.registerCommand("extension.create-interface", args => {
       handleCreateFile({ args, type: 'interface' });
     }),
@@ -353,6 +375,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
 
     vscode.commands.registerCommand("extension.wrapWithLayoutBuilder", wrapWithLayoutBuilder),
+    vscode.commands.registerCommand("extension.wrapWithValueListenableBuilder", wrapWithValueListenableBuilder),
     vscode.commands.registerCommand("extension.wrapWithExpanded", wrapWithExpanded),
     vscode.commands.registerCommand("extension.wrapWithStack", wrapWithStack),
     vscode.commands.registerCommand("extension.wrapWithPositioned", wrapWithPositioned),
@@ -360,6 +383,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.wrapWithClipRRect", wrapWithClipRRect),
     vscode.commands.registerCommand("extension.wrapWithHero", wrapWithHero),
     vscode.commands.registerCommand("extension.wrapWithGestureDetector", wrapWithGestureDetector),
+    vscode.commands.registerCommand("extension.wrapWithInkWell", wrapWithInkWell),
     vscode.commands.registerCommand("extension.wrapWithSingleChildScrollView", wrapWithSingleChildScrollView),
     vscode.commands.registerCommand("extension.wrapWithSafeArea", wrapWithSafeArea),
     vscode.commands.registerCommand("extension.wrapWithForm", wrapWithForm),

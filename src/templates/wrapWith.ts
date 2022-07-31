@@ -3,12 +3,33 @@ import { wrapWith } from './shared/functions/wrap-with';
 
 const wrapWithLayoutBuilderTemplate = (widget: string) => (
 `LayoutBuilder(
-  builder: (context, constraints) {
-    return ${ widget };
-  }
+  builder: (context, constraints){
+    return ConstrainedBox(
+    constraints: BoxConstraints(
+      minHeight: constraints.maxHeight,
+      minWidth: constraints.maxWidth,
+    ),
+    child: IntrinsicHeight(
+      child: SingleChildScrollView(
+        child: ${ widget },
+      ),
+    ),
+  );
+  },
 )
 `
 );
+
+const wrapWithValueListenableBuilderTemplate = (widget: string) => (
+`ValueListenableBuilder<>(
+  valueListenable: ,
+  builder: (_, value, __) {
+    return ${ widget };
+  },
+)
+`
+);
+
 const wrapWithExpandedTemplate = (widget: string) => (
 `Expanded(
   child: ${ widget },
@@ -64,6 +85,14 @@ const wrapWithGestureDetectorTemplate = (widget: string) => (
 `
 );
 
+const wrapWithInkWellTemplate = (widget: string) => (
+`InkWell(
+  onTap: () {},
+  child: ${ widget },
+)
+`
+);
+
 const wrapWithSingleChildScrollViewTemplate = (widget: string) => (
 `SingleChildScrollView(
   child: ${ widget },
@@ -104,6 +133,7 @@ const wrapWithObserverTemplate = (widget: string) => (
 );
 
 export const wrapWithLayoutBuilder= async () => wrapWith(wrapWithLayoutBuilderTemplate);
+export const wrapWithValueListenableBuilder = async () => wrapWith(wrapWithValueListenableBuilderTemplate);
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
@@ -111,6 +141,7 @@ export const wrapWithAlign = async () => wrapWith(wrapWithAlignTemplate);
 export const wrapWithClipRRect = async () => wrapWith(wrapWithClipRRectTemplate);
 export const wrapWithHero = async () => wrapWith(wrapWithHeroTemplate);
 export const wrapWithGestureDetector = async () => wrapWith(wrapWithGestureDetectorTemplate);
+export const wrapWithInkWell = async () => wrapWith(wrapWithInkWellTemplate);
 export const wrapWithSingleChildScrollView = async () => wrapWith(wrapWithSingleChildScrollViewTemplate);
 export const wrapWithSafeArea = async () => wrapWith(wrapWithSafeAreaTemplate);
 export const wrapWithForm = async () => wrapWith(wrapWithFormTemplate);
