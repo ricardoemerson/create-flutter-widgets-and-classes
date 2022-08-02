@@ -4,16 +4,40 @@ All notable changes to the Flutter Tools extension will be documented in this fi
 
 ## [2.5.0]
 
-- Added the context menu `📄 Create Stateless Widget Page`.
-- Added the context menu `📑 Create Stateful Widget Page`.
-- Added the context menu `🗂️ Create MobX Controller`.
-- Added the context menu `📝 Create Exception`.
+- Cleaned up the context menu, removing the items below and added new options via VSCode QuickPick:
+  - `Create Controller`
+  - `Create DTO`
+  - `Create Provider Interface`
+  - `Create Repository Interface`
+  - `Create Service Interface`
+  - `Create Model`
+  - `Create Singleton Class`
+- Now when choose `Create Stateless Widget` or `Create Stateful Widget` it's possible to choose if a widget will be created as `Component` or `Page`.
+- Now when choose `Create MobX Store` it's possible to choose if the suffix name of MobX Store will be created as `Controller` or `Store`.
+- Now when choose `Create Class` it's possible to choose the options bellow:
+  - `Create Class`
+  - `Create Controller Class`
+  - `Create Controller Class with ChangeNotifier`
+  - `Create DTO Class`
+  - `Create Enum`
+  - `Create Exception Class`
+  - `Create Extension`
+  - `Create Helper Class`
+  - `Create Interface Class`
+  - `Create Mixin`
+  - `Create Model Class`
+  - `Create Singleton Class`
+- Now when choose `Create Interface` it's possible to choose the options bellow:
+  - `Create Interface Class`
+  - `Create Provider Interface`
+  - `Create Repository Interface`
+  - `Create Service Interface`
 - Added the wrapper `Wrap with ValueListenableBuilder`.
 - Added the wrapper `Wrap with InkWell`.
 - Updated the template of the wrapper `Wrap with LayoutBuilder`.
 - Added configuration of Widgets Page file suffix.
+- Added configuration of Create Folder for Widgets Page.
 - Removed configuration of MobX file suffix.
-
 
 ## [2.4.1]
 
