@@ -1,9 +1,10 @@
 // import { window, commands, SnippetString } from "vscode";
-import { window, commands, SnippetString } from 'vscode';
 import { getSelectedText } from './get-selected-text';
 
+import { window, commands, SnippetString } from 'vscode';
+
 export const wrapWith = async (snippet: (widget: string) => string) => {
-  let editor = window.activeTextEditor;
+  const editor = window.activeTextEditor;
 
   if (!editor) return;
 
@@ -12,5 +13,5 @@ export const wrapWith = async (snippet: (widget: string) => string) => {
 
   editor.insertSnippet(new SnippetString(snippet(widget)), selection);
 
-  await commands.executeCommand("editor.action.formatDocument");
+  await commands.executeCommand('editor.action.formatDocument');
 };

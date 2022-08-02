@@ -1,11 +1,11 @@
 import CreateComponent from './interfaces/CreateComponent';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName }: CreateComponent) => (
-`import 'package:get/get.dart';
+export default ({ componentName }: CreateComponent) =>
+  `import 'package:get/get.dart';
 
-class ${ pascalCase(componentName) }Controller extends GetxController {
-  //TODO: Implement ${ pascalCase(componentName) }Controller.
+class ${pascalCase(componentName)}Controller extends GetxController {
+  //TODO: Implement ${pascalCase(componentName)}Controller.
 
   @override
   void onInit() {
@@ -22,5 +22,4 @@ class ${ pascalCase(componentName) }Controller extends GetxController {
     super.onClose();
   }
 }
-`
-);
+`;

@@ -1,12 +1,11 @@
-import { kebabCase, snakeCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName }: CreateComponent) => (
-`import 'home_routes.dart';
+export default ({ componentName }: CreateComponent) =>
+  `import 'home_routes.dart';
 
-class AppPages {
-  AppPages._();
+class ${pascalCase(componentName)} {
+  ${pascalCase(componentName)}._();
 
   static const INITIAL = '/home';
 
@@ -14,5 +13,4 @@ class AppPages {
     ...HomeRoutes.routes,
   ];
 }
-`
-);
+`;

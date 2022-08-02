@@ -1,26 +1,41 @@
-import { camelCase, kebabCase, lowerCase, snakeCase } from 'lodash';
 import CreateComponent from './interfaces/CreateComponent';
 import createGetPageTearOff from './shared/functions/create-get-page-tear-off';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName, mainRouteName, getxViewsSuffix, featurePath, getxUseConstructorTearOffs }: CreateComponent) => (
-`import 'package:get/get.dart';
+import { camelCase, kebabCase, lowerCase, snakeCase } from 'lodash';
 
-import '../modules${ featurePath }/${ snakeCase(componentName) }_binding.dart';
-import '../modules${ featurePath }/${ snakeCase(componentName) }_${ lowerCase(getxViewsSuffix) }.dart';
+export default ({
+  componentName,
+  mainRouteName,
+  getxViewsSuffix,
+  featurePath,
+  getxUseConstructorTearOffs,
+}: CreateComponent) =>
+  `import 'package:get/get.dart';
 
-class ${ pascalCase(mainRouteName!) }Routes {
-  ${ pascalCase(mainRouteName!) }Routes._();
+import '../modules${featurePath}/${snakeCase(componentName)}_binding.dart';
+import '../modules${featurePath}/${snakeCase(componentName)}_${lowerCase(
+    getxViewsSuffix
+  )}.dart';
 
-  static const ${camelCase(featurePath)} = '${ featurePath!.split('/').map(route => kebabCase(route)).join('/') }';
+class ${pascalCase(mainRouteName!)}Routes {
+  ${pascalCase(mainRouteName!)}Routes._();
+
+  static const ${camelCase(featurePath)} = '${featurePath!
+    .split('/')
+    .map(route => kebabCase(route))
+    .join('/')}';
 
   static final routes = [
     GetPage(
       name: ${camelCase(featurePath)},
-      page: ${ createGetPageTearOff(componentName, getxViewsSuffix, getxUseConstructorTearOffs) }
-      binding: ${ pascalCase(componentName) }Binding(),
+      page: ${createGetPageTearOff(
+        componentName,
+        getxViewsSuffix,
+        getxUseConstructorTearOffs
+      )}
+      binding: ${pascalCase(componentName)}Binding(),
     ),
   ];
 }
-`
-);
+`;
