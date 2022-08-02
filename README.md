@@ -77,7 +77,7 @@
 </table>
 
 
-# Flutter Tools
+# Flutter Tools (Documentation of version 2.4.1)
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
@@ -87,6 +87,7 @@
 This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets the following wrappers in your Flutter projects:
 
 - `Wrap with LayoutBuilder`
+- `Wrap with ValueListenableBuilder`
 - `Wrap with Expanded`
 - `Wrap with Stack`
 - `Wrap with Positioned`
@@ -94,11 +95,12 @@ This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, 
 - `Wrap with ClipRRect`
 - `Wrap with Hero`
 - `Wrap with GestureDetector`
+- `Wrap with InkWell`
 - `Wrap with SingleChildScrollView`
 - `Wrap with SafeArea`
 - `Wrap with Form`
-- `Wrap with Obx`
-- `Wrap with Observer`
+- `Wrap with GetX Obx`
+- `Wrap with MobX Observer`
 
 
 # Usage Examples
