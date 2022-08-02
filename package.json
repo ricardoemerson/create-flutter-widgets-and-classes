@@ -50,23 +50,12 @@
   "activationEvents": [
     "onCommand:extension.create-stateless-widget",
     "onCommand:extension.create-stateful-widget",
-    "onCommand:extension.create-stateless-widget-page",
-    "onCommand:extension.create-stateful-widget-page",
     "onCommand:extension.create-getx-app-structure",
     "onCommand:extension.create-getx-feature",
     "onCommand:extension.create-getx-service",
-    "onCommand:extension.create-mobx-controller",
     "onCommand:extension.create-mobx-store",
-    "onCommand:extension.create-interface-provider",
-    "onCommand:extension.create-interface-repository",
-    "onCommand:extension.create-interface-service",
     "onCommand:extension.create-class",
-    "onCommand:extension.create-singleton-class",
-    "onCommand:extension.create-controller",
-    "onCommand:extension.create-dto",
-    "onCommand:extension.create-exception",
     "onCommand:extension.create-interface",
-    "onCommand:extension.create-model",
     "onCommand:extension.selectWidget",
     "workspaceContains:pubspec.yaml"
   ],
@@ -82,14 +71,6 @@
         "command": "extension.create-stateful-widget"
       },
       {
-        "title": "📄 Create Stateless Widget Page",
-        "command": "extension.create-stateless-widget-page"
-      },
-      {
-        "title": "📑 Create Stateful Widget Page",
-        "command": "extension.create-stateful-widget-page"
-      },
-      {
         "title": "📂 Create GetX App Structure",
         "command": "extension.create-getx-app-structure"
       },
@@ -102,52 +83,16 @@
         "command": "extension.create-getx-service"
       },
       {
-        "title": "🗂️ Create MobX Controller",
-        "command": "extension.create-mobx-controller"
-      },
-      {
         "title": "📦 Create MobX Store",
         "command": "extension.create-mobx-store"
-      },
-      {
-        "title": "📄 Create Provider Interface",
-        "command": "extension.create-interface-provider"
-      },
-      {
-        "title": "📄 Create Repository Interface",
-        "command": "extension.create-interface-repository"
-      },
-      {
-        "title": "📄 Create Service Interface",
-        "command": "extension.create-interface-service"
       },
       {
         "title": "📝 Create Class",
         "command": "extension.create-class"
       },
       {
-        "title": "📝 Create Singleton Class",
-        "command": "extension.create-singleton-class"
-      },
-      {
-        "title": "📝 Create Controller",
-        "command": "extension.create-controller"
-      },
-      {
-        "title": "📝 Create DTO",
-        "command": "extension.create-dto"
-      },
-      {
-        "title": "📝 Create Exception",
-        "command": "extension.create-exception"
-      },
-      {
-        "title": "📝 Create Interface",
+        "title": "🗒️ Create Interface",
         "command": "extension.create-interface"
-      },
-      {
-        "title": "📝 Create Model",
-        "command": "extension.create-model"
       },
       {
         "title": "Implements interface",
@@ -239,88 +184,33 @@
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "extension.create-stateless-widget-page",
-          "group": "2b_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-stateful-widget-page",
-          "group": "2b_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
           "command": "extension.create-getx-app-structure",
-          "group": "2c_modification",
+          "group": "2b_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-getx-feature",
-          "group": "2c_modification",
+          "group": "2b_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-getx-service",
-          "group": "2c_modification",
+          "group": "2b_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
         },
         {
-          "command": "extension.create-mobx-controller",
-          "group": "2d_modification",
-          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
-        },
-        {
           "command": "extension.create-mobx-store",
-          "group": "2d_modification",
+          "group": "2c_modification",
           "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
         },
         {
-          "command": "extension.create-interface-provider",
-          "group": "2e_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-interface-repository",
-          "group": "2e_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-interface-service",
-          "group": "2e_modification",
+          "command": "extension.create-interface",
+          "group": "2d_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "extension.create-class",
-          "group": "2f_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-singleton-class",
-          "group": "2f_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-controller",
-          "group": "2f_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-dto",
-          "group": "2f_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-exception",
-          "group": "2f_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-interface",
-          "group": "2f_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.create-model",
-          "group": "2f_modification",
+          "group": "2d_modification",
           "when": "explorerResourceIsFolder"
         },
         {
@@ -452,6 +342,11 @@
           ],
           "default": "Page",
           "markdownDescription": "Default suffix name for the Widgets views."
+        },
+        "createFlutterWidgetsAndClasses.createFolderForWidgetsPage": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Defines if it will create a folder to contain the widget."
         }
       }
     }
@@ -467,6 +362,14 @@
     "@types/lodash": "^4.14.168",
     "@types/mkdirp": "^1.0.2",
     "@types/node": "^12.6.8",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import-helpers": "^1.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.7.1",
     "tslint": "^5.12.1",
     "typescript": "^3.3.1",
     "vscode": "^1.1.28"
