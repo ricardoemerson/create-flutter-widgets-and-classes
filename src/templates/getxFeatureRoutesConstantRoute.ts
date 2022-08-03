@@ -2,8 +2,8 @@ import CreateComponent from './interfaces/CreateComponent';
 
 import { camelCase, kebabCase } from 'lodash';
 
-export default ({ featurePath }: CreateComponent) =>
-  `static const ${camelCase(featurePath)} = '${featurePath!
+export default ({ featurePath, componentName }: CreateComponent) =>
+  `static const ${camelCase(componentName)} = '${featurePath!
     .split('/')
     .map(route => kebabCase(route))
     .join('/')}';`;

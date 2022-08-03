@@ -21,14 +21,14 @@ import '../modules${featurePath}/${snakeCase(componentName)}_${lowerCase(
 class ${pascalCase(mainRouteName!)}Routes {
   ${pascalCase(mainRouteName!)}Routes._();
 
-  static const ${camelCase(featurePath)} = '${featurePath!
+  static const ${camelCase(componentName)} = '${featurePath!
     .split('/')
     .map(route => kebabCase(route))
     .join('/')}';
 
   static final routes = [
     GetPage(
-      name: ${camelCase(featurePath)},
+      name: ${camelCase(componentName)},
       page: ${createGetPageTearOff(
         componentName,
         getxViewsSuffix,

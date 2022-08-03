@@ -11,7 +11,7 @@ export default ({
   getxUseConstructorTearOffs,
 }: CreateComponent) =>
   `GetPage(
-      name: ${camelCase(featurePath)},
+      name: ${camelCase(componentName)},
       page: ${createGetPageTearOff(
         componentName,
         getxViewsSuffix,
