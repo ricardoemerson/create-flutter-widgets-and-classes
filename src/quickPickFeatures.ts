@@ -6,14 +6,14 @@ export async function chooseWidgetType() {
   const widgetType = (await vscode.window.showQuickPick(
     [
       {
-        label: 'Create Widget as a Component',
+        label: '🧩 Create Widget as a Component',
         description: 'Create a widget without Scaffold.',
         detail: '',
         picked: true,
         value: 'widget',
       },
       {
-        label: 'Create Widget as a Page',
+        label: '📑 Create Widget as a Page',
         description: 'Create a widget with Scaffold.',
         detail: '',
         picked: false,
@@ -32,7 +32,7 @@ export async function chooseInterfaceType() {
   const interfaceType = (await vscode.window.showQuickPick(
     [
       {
-        label: 'Create Interface Class',
+        label: '📄 Create Interface Class',
         description:
           'Create an interface class and a folder can be created that contains the interface and the interface implementation.',
         detail: '',
@@ -40,21 +40,21 @@ export async function chooseInterfaceType() {
         value: 'interface-folder',
       },
       {
-        label: 'Create Provider Interface',
+        label: '📄 Create Provider Interface',
         description: 'Create a provider interface.',
         detail: '',
         picked: false,
         value: 'provider',
       },
       {
-        label: 'Create Repository Interface',
+        label: '📄 Create Repository Interface',
         description: 'Create a repository interface.',
         detail: '',
         picked: false,
         value: 'repository',
       },
       {
-        label: 'Create Service Interface',
+        label: '📄 Create Service Interface',
         description: 'Create a service interface.',
         detail: '',
         picked: false,
@@ -73,84 +73,84 @@ export async function chooseClassType() {
   const classType = (await vscode.window.showQuickPick(
     [
       {
-        label: 'Create Class',
+        label: '📝 Create Class',
         description: 'Create a default class.',
         detail: '',
         picked: true,
         value: 'class',
       },
       {
-        label: 'Create Controller Class',
+        label: '📝 Create Controller Class',
         description: 'Create a controller class.',
         detail: '',
         picked: false,
         value: 'controller',
       },
       {
-        label: 'Create Controller Class with ChangeNotifier',
+        label: '📝 Create Controller Class with ChangeNotifier',
         description: 'Create a controller class that extends ChangeNotifier.',
         detail: '',
         picked: false,
         value: 'controller-change-notifier',
       },
       {
-        label: 'Create DTO Class',
+        label: '📝 Create DTO Class',
         description: 'Create a DTO class.',
         detail: '',
         picked: false,
         value: 'dto',
       },
       {
-        label: 'Create Enum',
+        label: '📃 Create Enum',
         description: 'Create an enum.',
         detail: '',
         picked: false,
         value: 'enum',
       },
       {
-        label: 'Create Exception Class',
+        label: '⛔ Create Exception Class',
         description: 'Create an exception class.',
         detail: '',
         picked: false,
         value: 'exception',
       },
       {
-        label: 'Create Extension',
+        label: '📇 Create Extension',
         description: 'Create an extension.',
         detail: '',
         picked: false,
         value: 'extension',
       },
       {
-        label: 'Create Helper Class',
+        label: '📝 Create Helper Class',
         description: 'Create a helper class.',
         detail: '',
         picked: false,
         value: 'helper',
       },
       {
-        label: 'Create Interface Class',
+        label: '📄 Create Interface Class',
         description: 'Create an interface class.',
         detail: '',
         picked: false,
         value: 'interface',
       },
       {
-        label: 'Create Mixin',
+        label: '📒 Create Mixin',
         description: 'Create a mixin.',
         detail: '',
         picked: false,
         value: 'mixin',
       },
       {
-        label: 'Create Model Class',
+        label: '📝 Create Model Class',
         description: 'Create a model class.',
         detail: '',
         picked: false,
         value: 'model',
       },
       {
-        label: 'Create Singleton Class',
+        label: '📝 Create Singleton Class',
         description: 'Create a singleton class.',
         detail: '',
         picked: false,
@@ -169,14 +169,14 @@ export async function chooseMobXType() {
   const mobXStoreType = (await vscode.window.showQuickPick(
     [
       {
-        label: 'MobX Store as Controller',
+        label: '🗂️ MobX Store as Controller',
         description: 'Create a MobX store using the Controller suffix.',
         detail: '',
         picked: true,
         value: 'mobx-controller',
       },
       {
-        label: 'MobX Store as Store',
+        label: '📦 MobX Store as Store',
         description: 'Create a MobX store using the Store suffix.',
         detail: '',
         picked: false,

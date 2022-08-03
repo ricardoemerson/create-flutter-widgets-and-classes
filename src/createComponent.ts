@@ -535,6 +535,7 @@ export default async (
 
     await mkdirp(dir + `${getxFolder}core/config`);
     await mkdirp(dir + `${getxFolder}core/helpers`);
+    await mkdirp(dir + `${getxFolder}core/mixins`);
     await mkdirp(dir + `${getxFolder}core/theme`);
     await mkdirp(dir + `${getxFolder}core/widgets`);
     await mkdirp(dir + `${getxFolder}data`);

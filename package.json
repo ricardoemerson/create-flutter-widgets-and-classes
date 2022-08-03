@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "2.5.0",
+  "version": "3.0.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -42,7 +42,7 @@
     "utilities"
   ],
   "engines": {
-    "vscode": "^1.17.0"
+    "vscode": "^1.65.0"
   },
   "sponsor": {
     "url": "https://github.com/sponsors/ricardoemerson"
