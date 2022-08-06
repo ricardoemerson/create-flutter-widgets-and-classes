@@ -79,6 +79,7 @@
 
 # Flutter Tools (Documentation of version 2.4.1)
 
+[![GitHub Stars](https://img.shields.io/github/stars/ricardoemerson/create-flutter-widgets-and-classes.svg?logo=github)](https://github.com/ricardoemerson/create-flutter-widgets-and-classes)
 [![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.create-flutter-widgets-and-classes.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes)

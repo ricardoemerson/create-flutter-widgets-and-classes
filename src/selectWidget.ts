@@ -1,5 +1,5 @@
-import { bracketUtil } from './bracketUtil';
-import * as history from './selectionHistory';
+import { bracketUtil } from './templates/shared/functions/bracketUtil';
+import * as history from './templates/shared/functions/selectionHistory';
 
 import * as vscode from 'vscode';
 

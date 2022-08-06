@@ -1,21 +1,4 @@
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
-import {
-  wrapWithExpanded,
-  wrapWithForm,
-  wrapWithGestureDetector,
-  wrapWithHero,
-  wrapWithObserver,
-  wrapWithObx,
-  wrapWithPositioned,
-  wrapWithSafeArea,
-  wrapWithSingleChildScrollView,
-  wrapWithClipRRect,
-  wrapWithStack,
-  wrapWithAlign,
-  wrapWithLayoutBuilder,
-  wrapWithValueListenableBuilder,
-  wrapWithInkWell,
-} from './templates/wrapWith';
 
 import createComponent from './createComponent';
 import implementsInterface from './implementsInterface';
@@ -25,6 +8,7 @@ import {
   chooseMobXType,
   chooseWidgetType,
 } from './quickPickFeatures';
+import { wrapWithWidget } from './quickPickWrapWith';
 import { expandSelection } from './selectWidget';
 
 import * as vscode from 'vscode';
@@ -177,78 +161,8 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 
     if (selectedText !== '') {
       codeActions.push({
-        command: 'extension.wrapWithLayoutBuilder',
-        title: 'Wrap with LayoutBuilder',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithValueListenableBuilder',
-        title: 'Wrap with ValueListenableBuilder',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithExpanded',
-        title: 'Wrap with Expanded',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithStack',
-        title: 'Wrap with Stack',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithPositioned',
-        title: 'Wrap with Positioned',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithAlign',
-        title: 'Wrap with Align',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithClipRRect',
-        title: 'Wrap with ClipRRect',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithHero',
-        title: 'Wrap with Hero',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithGestureDetector',
-        title: 'Wrap with GestureDetector',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithInkWell',
-        title: 'Wrap with InkWell',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithSingleChildScrollView',
-        title: 'Wrap with SingleChildScrollView',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithSafeArea',
-        title: 'Wrap with SafeArea',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithForm',
-        title: 'Wrap with Form',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithObx',
-        title: 'Wrap with GetX Obx',
-      });
-
-      codeActions.push({
-        command: 'extension.wrapWithObserver',
-        title: 'Wrap with MobX Observer',
+        command: 'extension.wrapWithWidget',
+        title: 'Flutter Tools - Wrap with Widget...',
       });
     }
 
@@ -284,35 +198,7 @@ export function activate(context: vscode.ExtensionContext) {
     }),
 
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
-
-    vscode.commands.registerCommand(
-      'extension.wrapWithLayoutBuilder',
-      wrapWithLayoutBuilder
-    ),
-    vscode.commands.registerCommand(
-      'extension.wrapWithValueListenableBuilder',
-      wrapWithValueListenableBuilder
-    ),
-    vscode.commands.registerCommand('extension.wrapWithExpanded', wrapWithExpanded),
-    vscode.commands.registerCommand('extension.wrapWithStack', wrapWithStack),
-    vscode.commands.registerCommand('extension.wrapWithPositioned', wrapWithPositioned),
-    vscode.commands.registerCommand('extension.wrapWithAlign', wrapWithAlign),
-    vscode.commands.registerCommand('extension.wrapWithClipRRect', wrapWithClipRRect),
-    vscode.commands.registerCommand('extension.wrapWithHero', wrapWithHero),
-    vscode.commands.registerCommand(
-      'extension.wrapWithGestureDetector',
-      wrapWithGestureDetector
-    ),
-    vscode.commands.registerCommand('extension.wrapWithInkWell', wrapWithInkWell),
-    vscode.commands.registerCommand(
-      'extension.wrapWithSingleChildScrollView',
-      wrapWithSingleChildScrollView
-    ),
-    vscode.commands.registerCommand('extension.wrapWithSafeArea', wrapWithSafeArea),
-    vscode.commands.registerCommand('extension.wrapWithForm', wrapWithForm),
-    vscode.commands.registerCommand('extension.wrapWithObx', wrapWithObx),
-    vscode.commands.registerCommand('extension.wrapWithObserver', wrapWithObserver),
-
+    vscode.commands.registerCommand('extension.wrapWithWidget', wrapWithWidget),
     vscode.commands.registerCommand('extension.selectWidget', function () {
       expandSelection(true);
     }),

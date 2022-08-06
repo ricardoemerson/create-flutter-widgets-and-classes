@@ -99,64 +99,8 @@
         "command": "extension.implementsInterface"
       },
       {
-        "title": "Wrap with LayoutBuilder",
-        "command": "extension.wrapWithLayoutBuilder"
-      },
-      {
-        "title": "Wrap with ValueListenableBuilder",
-        "command": "extension.wrapWithValueListenableBuilder"
-      },
-      {
-        "title": "Wrap with Expanded",
-        "command": "extension.wrapWithExpanded"
-      },
-      {
-        "title": "Wrap with Stack",
-        "command": "extension.wrapWithStack"
-      },
-      {
-        "title": "Wrap with Positioned",
-        "command": "extension.wrapWithPositioned"
-      },
-      {
-        "title": "Wrap with Align",
-        "command": "extension.wrapWithAlign"
-      },
-      {
-        "title": "Wrap with ClipRRect",
-        "command": "extension.wrapWithClipRRect"
-      },
-      {
-        "title": "Wrap with Hero",
-        "command": "extension.wrapWithHero"
-      },
-      {
-        "title": "Wrap with GestureDetector",
-        "command": "extension.wrapWithGestureDetector"
-      },
-      {
-        "title": "Wrap with InkWell",
-        "command": "extension.wrapWithInkWell"
-      },
-      {
-        "title": "Wrap with SingleChildScrollView",
-        "command": "extension.wrapWithSingleChildScrollView"
-      },
-      {
-        "title": "Wrap with SafeArea",
-        "command": "extension.wrapWithSafeArea"
-      },
-      {
-        "title": "Wrap with Form",
-        "command": "extension.wrapWithForm"
-      },
-      {
-        "title": "Wrap with GetX Obx",
-        "command": "extension.wrapWithObx"
-      },
-      {
-        "title": "Wrap with MobX Observer",
-        "command": "extension.wrapWithObserver"
+        "title": "Flutter Tools - Wrap with Widget...",
+        "command": "extension.wrapWithWidget"
       },
       {
 				"command": "extension.selectWidget",
@@ -168,6 +112,12 @@
 				"command": "extension.selectWidget",
 				"key": "alt+w",
 				"mac": "alt+w",
+				"when": "editorFocus"
+			},
+			{
+				"command": "extension.wrapWithWidget",
+				"key": "shift+alt+w",
+				"mac": "shift+alt+w",
 				"when": "editorFocus"
 			}
 		],
@@ -220,64 +170,8 @@
       ],
       "commandPalette": [
         {
-          "command": "extension.wrapWithLayoutBuilder",
+          "command": "extension.wrapWithWidget",
           "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithValueListenableBuilder",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithExpanded",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithStack",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithPositioned",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithAlign",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithClipRRect",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithHero",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithGestureDetector",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithInkWell",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithSingleChildScrollView",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithSafeArea",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithForm",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithObx",
-          "when": "editorLangId == dart && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
-        },
-        {
-          "command": "extension.wrapWithObserver",
-          "when": "editorLangId == dart && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
         }
       ]
     },

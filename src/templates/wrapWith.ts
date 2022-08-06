@@ -2,6 +2,20 @@ import { wrapWith } from './shared/functions/wrap-with';
 
 const wrapWithLayoutBuilderTemplate = (widget: string) =>
   `LayoutBuilder(
+  builder: (context, constraints) {
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: constraints.maxHeight,
+        minWidth: constraints.maxWidth,
+      ),
+      child: ${widget},
+    );
+  },
+)
+`;
+
+const wrapWithLayoutBuilderWithSingleChildScrollViewTemplate = (widget: string) =>
+  `LayoutBuilder(
   builder: (context, constraints){
     return ConstrainedBox(
     constraints: BoxConstraints(
@@ -18,6 +32,16 @@ const wrapWithLayoutBuilderTemplate = (widget: string) =>
 )
 `;
 
+const wrapWithConstrainedBoxTemplate = (widget: string) =>
+  `ConstrainedBox(
+  constraints: BoxConstraints(
+    minHeight: constraints.maxHeight,
+    minWidth: constraints.maxWidth,
+  ),
+  child: ${widget},
+)
+`;
+
 const wrapWithValueListenableBuilderTemplate = (widget: string) =>
   `ValueListenableBuilder<>(
   valueListenable: ,
@@ -29,6 +53,24 @@ const wrapWithValueListenableBuilderTemplate = (widget: string) =>
 
 const wrapWithExpandedTemplate = (widget: string) =>
   `Expanded(
+  child: ${widget},
+)
+`;
+
+const wrapWithFlexibleTemplate = (widget: string) =>
+  `Flexible(
+  child: ${widget},
+)
+`;
+
+const wrapWithIntrinsicHeightTemplate = (widget: string) =>
+  `IntrinsicHeight(
+  child: ${widget},
+)
+`;
+
+const wrapWithIntrinsicWidthTemplate = (widget: string) =>
+  `IntrinsicWidth(
   child: ${widget},
 )
 `;
@@ -117,9 +159,18 @@ const wrapWithObserverTemplate = (widget: string) =>
 `;
 
 export const wrapWithLayoutBuilder = async () => wrapWith(wrapWithLayoutBuilderTemplate);
+export const wrapWithLayoutBuilderWithSingleChildScrollView = async () =>
+  wrapWith(wrapWithLayoutBuilderWithSingleChildScrollViewTemplate);
+export const wrapWithConstrainedBox = async () =>
+  wrapWith(wrapWithConstrainedBoxTemplate);
 export const wrapWithValueListenableBuilder = async () =>
   wrapWith(wrapWithValueListenableBuilderTemplate);
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
+export const wrapWithFlexible = async () => wrapWith(wrapWithFlexibleTemplate);
+export const wrapWithIntrinsicHeight = async () =>
+  wrapWith(wrapWithIntrinsicHeightTemplate);
+export const wrapWithIntrinsicWidth = async () =>
+  wrapWith(wrapWithIntrinsicWidthTemplate);
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
 export const wrapWithAlign = async () => wrapWith(wrapWithAlignTemplate);
