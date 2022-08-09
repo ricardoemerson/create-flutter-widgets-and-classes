@@ -1,0 +1,515 @@
+{
+  "Adds Dart Date import": {
+		"prefix": "ft-imp-dart-date",
+		"body": [
+			"import 'package:dart_date/dart_date.dart';${0}"
+		]
+	},
+	"Adds current filename in pascal case": {
+		"prefix": "ft-get-file-name",
+		"body": [
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}${0}"
+		]
+  },
+	"Creates a class for the current file": {
+		"prefix": "ft-class",
+		"body": [
+			"class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} {",
+			"  ${0}",
+			"}"
+		]
+	},
+	"Creates a class constructor for the current file": {
+		"prefix": "ft-constructor-class",
+		"body": [
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}() {",
+			"  ${0}",
+			"}"
+		]
+  },
+  "Creates a class constructor for the current file with named params": {
+		"prefix": "ft-constructor-class-with-named-params",
+		"body": [
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  ${0}",
+			"});"
+		]
+  },
+  "Creates a private class constructor for the current file": {
+		"prefix": "ft-private-construtor",
+		"body": [
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}._();"
+		]
+  },
+	"Creates a private class attibute": {
+		"prefix": "ft-private-attribute",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/} _${1};${0}"
+		]
+	},
+	"Creates an injection for Firebase Auth - Complete": {
+		"prefix": "ft-constructor-inject-firebase-auth",
+		"body": [
+			"final FirebaseAuth _firebaseAuth;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required FirebaseAuth firebaseAuth,",
+			"}) : _firebaseAuth = firebaseAuth;"
+		]
+  },
+	"Adds an injection for Firebase Auth - Parts to include": {
+		"prefix": "ft-add-inject-firebase-auth",
+		"body": [
+			"final FirebaseAuth _firebaseAuth;",
+			"",
+			"required FirebaseAuth firebaseAuth,",
+			"",
+			"_firebaseAuth = firebaseAuth;"
+		]
+  },
+	"Creates an injection for Controller - Complete": {
+		"prefix": "ft-constructor-inject-controller",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Controller _controller;",
+			"",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  Key? key,",
+			"  required ${1/(.*)/${1:/capitalize}/}Controller controller,",
+			"}) : _controller = controller,",
+			"   super(key: key);"
+		]
+  },
+	"Adds an injection for Controller - Parts to include": {
+		"prefix": "ft-add-inject-controller",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Controller _controller;",
+			"",
+			"required ${1/(.*)/${1:/capitalize}/}Controller controller,",
+			"",
+			"_controller = controller,"
+		]
+  },
+	"Creates an injection for Service - Complete": {
+		"prefix": "ft-constructor-inject-service",
+		"body": [
+			"final I${1/(.*)/${1:/capitalize}/}Service _${1}Service;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required I${1/(.*)/${1:/capitalize}/}Service ${1}Service,",
+			"}) : _${1}Service = ${1}Service;"
+		]
+  },
+	"Creates an injection for Service - Parts to include": {
+		"prefix": "ft-add-inject-service",
+		"body": [
+			"final I${1/(.*)/${1:/capitalize}/}Service _${1}Service;",
+			"",
+			"required I${1/(.*)/${1:/capitalize}/}Service ${1}Service,",
+			"",
+			"_${1}Service = ${1}Service;"
+		]
+  },
+	"Creates an injection for Repository - Complete": {
+		"prefix": "ft-constructor-inject-repository",
+		"body": [
+			"final I${1/(.*)/${1:/capitalize}/}Repository _${1}Repository;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required I${1/(.*)/${1:/capitalize}/}Repository ${1}Repository,",
+			"}) : _${1}Repository = ${1}Repository;"
+		]
+  },
+	"Adds an injection for Repository - Parts to include": {
+		"prefix": "ft-add-inject-repository",
+		"body": [
+			"final I${1/(.*)/${1:/capitalize}/}Repository _${1}Repository;",
+			"",
+			"required I${1/(.*)/${1:/capitalize}/}Repository ${1}Repository,",
+			"",
+			"_${1}Repository = ${1}Repository;"
+		]
+  },
+	"Creates an injection for Session - Complete": {
+		"prefix": "ft-constructor-inject-session",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Session _${1}Session;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required ${1/(.*)/${1:/capitalize}/}Session ${1}Session,",
+			"}) : _${1}Session = ${1}Session;"
+		]
+  },
+	"Adds an injection for Session - Parts to include": {
+		"prefix": "ft-add-inject-session",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Session _${1}Session;",
+			"",
+			"required ${1/(.*)/${1:/capitalize}/}Session ${1}Session,",
+			"",
+			"_${1}Session = ${1}Session;"
+		]
+  },
+	"Creates an injection for Provider - Complete": {
+		"prefix": "ft-constructor-inject-provider",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Provider _${1}Provider;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required ${1/(.*)/${1:/capitalize}/}Provider ${1}Provider,",
+			"}) : _${1}Provider = ${1}Provider;"
+		]
+  },
+	"Adds an injection for Provider - Parts to include": {
+		"prefix": "ft-add-inject-provider",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Provider _${1}Provider;",
+			"",
+			"required ${1/(.*)/${1:/capitalize}/}Provider ${1}Provider,",
+			"",
+			"_${1}Provider = ${1}Provider;"
+		]
+  },
+	"Creates an injection for RestClient - Complete": {
+		"prefix": "ft-constructor-inject-rest-client",
+		"body": [
+			"final RestClient _restClient;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required RestClient restClient,",
+			"}) : _restClient = restClient;"
+		]
+  },
+	"Adds an injection for RestClient - Parts to include": {
+		"prefix": "ft-add-inject-rest-client",
+		"body": [
+			"final RestClient _restClient;",
+			"",
+			"required RestClient restClient,",
+			"",
+			"_restClient = restClient;"
+		]
+  },
+	"Creates an injection for ApiCacheStorageService - Complete": {
+		"prefix": "ft-constructor-inject-api-storage",
+		"body": [
+			"final IApiCacheStorageService _apiCacheStorageService;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required IApiCacheStorageService apiCacheStorageService,",
+			"}) : _apiCacheStorageService = apiCacheStorageService;"
+		]
+  },
+	"Adds an injection for ApiCacheStorageService - Parts to include": {
+		"prefix": "ft-add-inject-api-storage",
+		"body": [
+			"final IApiCacheStorageService _apiCacheStorageService;",
+			"",
+			"required IApiCacheStorageService apiCacheStorageService,",
+			"",
+			"_apiCacheStorageService = apiCacheStorageService;"
+		]
+  },
+	"Creates an injection for RestClient and ApiCacheStorageService - Complete": {
+		"prefix": "ft-constructor-inject-rest-client-with-api-storage",
+		"body": [
+			"final RestClient _restClient;",
+			"final IApiCacheStorageService _apiCacheStorageService;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required RestClient restClient,",
+			"  required IApiCacheStorageService apiCacheStorageService,",
+			"}) : _restClient = restClient,",
+			"     _apiCacheStorageService = apiCacheStorageService;"
+		]
+  },
+	"Creates an if denying the condition": {
+		"prefix": "ft-ifnot",
+		"body": [
+			"if (!${1:condition}) {",
+			"  ${0}",
+			"}"
+		]
+	},
+	"Creates an if with return if condition was truthy": {
+		"prefix": "ft-if-return",
+		"body": [
+			"if (${1:condition}) return;${0}"
+		]
+	},
+	"Creates an if with return if condition was falsey": {
+		"prefix": "ft-ifnot-return",
+		"body": [
+			"if (!${1:condition}) return;${0}"
+		]
+	},
+	"Creates an if with return if StateFull Widget it'n mounted": {
+		"prefix": "ft-ifnot-mounted",
+		"body": [
+			"if (!mounted) return;${0}"
+		]
+	},
+	"Creates an if for null condition": {
+		"prefix": "ft-ifnull",
+		"body": [
+			"if (${1:condition} == null) {",
+			"  ${0}",
+			"}"
+		]
+	},
+	"Creates an if for not null condition": {
+		"prefix": "ft-ifnotnull",
+		"body": [
+			"if (${1:condition} != null) {",
+			"  ${0}",
+			"}"
+		]
+	},
+	"Creates an if for check if String contains term": {
+		"prefix": "ft-ifcontains",
+		"body": [
+			"if (${1:variable}.contains('${2:content}')) {",
+			"  ${0}",
+			"}"
+		]
+	},
+	"Creates a basic comment": {
+		"prefix": "ft-cm-basic",
+		"body": [
+			"/* ${1:comment} */${0}"
+		]
+	},
+	"Creates a block comment": {
+		"prefix": "ft-cm-block",
+		"body": [
+			"/*",
+			" * ${1:comment}",
+			" */",
+			"${0}"
+		]
+	},
+	"Creates a section comment": {
+		"prefix": "ft-cm-section",
+		"body": [
+			"// ${1:comment}",
+			"// --------------------------------------------------------------------------",
+			"${0}"
+		]
+	},
+	"Creates a subsection comment": {
+		"prefix": "ft-cm-subsection",
+		"body": [
+			"/* ----------------  ${1:Subsection comment block}  ---------------- */",
+			"${0}"
+		]
+	},
+	"Creates a footer comment": {
+		"prefix": "ft-cm-section-footer",
+		"body": [
+			"/* ----------------  End of ${1:Section comment block}  ---------------- */${0}"
+		]
+	},
+	"Creates a documentation comment": {
+		"prefix": "ft-cm-element-block",
+		"body": [
+			"/* ============================================================================",
+			" * ${1:element_name}",
+			" * ============================================================================",
+			" * ${2:element_description}",
+			" *",
+			" * Examples of use:",
+			" *",
+			" * ${3:examples}",
+			" *",
+			" * ========================================================================== */",
+			"${0}"
+		]
+	},
+	"Adds a Future.delayed instruction": {
+		"prefix": "ft-delayed-seconds",
+		"body": [
+			"await Future.delayed(const Duration(seconds: ${1|1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60|}));${0}"
+		]
+	},
+	"Adds a Duration instruction": {
+		"prefix": "ft-duration",
+		"body": [
+			"Duration(${1|days,hours,microseconds,miliseconds,minutes,seconds|}: ${2|1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60|})${0}"
+		]
+	},
+	"Adds property as a void Function()": {
+		"prefix": "ft-final-void-function",
+		"body": [
+			"final void Function()? ${1:functionName};"
+		]
+	},
+	"Adds property as a VoidCallback function": {
+		"prefix": "ft-final-void-call-back",
+		"body": [
+			"final VoidCallback ${1:functionName};"
+		]
+	},
+	"Adds a variable of type GlobalKey<FormState>()": {
+		"prefix": "ft-form-key",
+		"body": [
+			"final formKey = GlobalKey<FormState>();${0}"
+		]
+	},
+	"Adds a private variable of type GlobalKey<FormState>()": {
+		"prefix": "ft-form-key-private",
+		"body": [
+			"final _formKey = GlobalKey<FormState>();${0}"
+		]
+	},
+	"Adds a variable of type FocusNode()": {
+		"prefix": "ft-focus-node",
+		"body": [
+			"final ${1:inputName}FN = FocusNode();${0}"
+		]
+	},
+	"Adds a private variable of type FocusNode()": {
+		"prefix": "ft-focus-node-private",
+		"body": [
+			"final _${1:inputName}FN = FocusNode();${0}"
+		]
+	},
+	"Adds a variable of type TextEditingController()": {
+		"prefix": ["ft-text-editing-controller", "ft-editing-controller"],
+		"body": [
+			"final ${1:inputName}EC = TextEditingController();${0}"
+		]
+	},
+	"Adds a private variable of type TextEditingController()": {
+		"prefix": ["ft-text-editing-controller-private", "ft-editing-controller-private"],
+		"body": [
+			"final _${1:inputName}EC = TextEditingController();${0}"
+		]
+	},
+	"Adds two functions fromMap and fromJson to create lists from map data": {
+		"prefix": "ft-list-from-map-and-json",
+		"body": [
+			"List<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}> ${2:listName}FromJson(jsonData) {",
+			"  final listJson =",
+			"      jsonData.map<Map<String, dynamic>>((data) => data as Map<String, dynamic>).toList();",
+			"",
+			"  return List<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}>.from(listJson?.map(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.fromMap));",
+			"}",
+			"",
+			"List<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}> ${2}FromMap(mapData) {",
+			"  final listMap =",
+			"      mapData.map<Map<String, dynamic>>((data) => data as Map<String, dynamic>).toList();",
+			"",
+			"  return listMap.map<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}>(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.fromMap).toList();${0}",
+			"}"
+		]
+	},
+	"Adds a key and value assignment to an object where the key and value are equal": {
+    "prefix": "ft-prop-eq",
+    "body": ["${1:propertyName}: $1,"]
+	},
+	"Adds a key and value assignment to an map where the key and value are equal": {
+    "prefix": "ft-prop-eq-map",
+    "body": ["'${1:propertyName}': $1,"]
+	},
+	"Adds the instruction throw Exception()": {
+    "prefix": "ft-throw-exception",
+    "body": [
+      "throw Exception('${1:error_message}',);${0}"
+    ]
+	},
+	"Adds the instruction throw AppException()": {
+    "prefix": "ft-throw-app-exception",
+    "body": [
+      "throw AppException(message: '${1:error_message}',);${0}"
+    ]
+	},
+	"Adds the instruction throw AuthException()": {
+    "prefix": "ft-throw-auth-exception",
+    "body": [
+      "throw AuthException(message: '${1:error_message}',);${0}"
+    ]
+	},
+	"Adds the instruction await": {
+    "prefix": "ft-await",
+    "body": [
+      "await ${0}"
+    ]
+	},
+	"Adds a simple assingment variable": {
+    "prefix": "ft-final-simple",
+    "body": [
+      "final ${1:varName} = ${2:value};${0}"
+    ]
+	},
+	"Adds a future assingment variable": {
+    "prefix": "ft-final-await",
+    "body": [
+      "final ${1:varName} = await ${2:serviceName}.${3:methodName}(${4:params});${0}"
+    ]
+	},
+	"Adds a future assingment variable for multiple futures processing": {
+    "prefix": "ft-final-future-wait",
+    "body": [
+      "final ${1:varName} = await Future.wait([",
+      "  ${0}",
+      "]);"
+    ]
+	},
+	"Adds a declaration for BuildContext": {
+    "prefix": "ft-build-context",
+    "body": [
+      "BuildContext context${0}"
+    ]
+	},
+	"Adds a variable of type DateFormat('dd/MM/y')": {
+    "prefix": "ft-date-format-dd-mm-yyyy",
+    "body": [
+      "final dateFormat = DateFormat('dd/MM/y');${0}"
+    ]
+	},
+	"Adds a Future method": {
+    "prefix": "ft-future-method",
+    "body": [
+      "Future<${1:type}> ${2:methodName}(${3:params}) async {",
+      "  ${0}",
+      "}"
+    ]
+	},
+	"Adds a Future void method": {
+    "prefix": "ft-future-void-method",
+    "body": [
+      "Future<void> ${1:methodName}(${2:params}) async {",
+      "  ${0}",
+      "}"
+    ]
+	},
+	"Adds a void method": {
+    "prefix": "ft-void-method",
+    "body": [
+      "void ${1:methodName}(${2:params}) {",
+      "  ${0}",
+      "}"
+    ]
+	},
+	"Check if a form is valid": {
+		"prefix": "ft-form-is-valid",
+		"body": [
+			"final formIsValid = formKey.currentState?.validate() ?? false;",
+			"",
+			"if (formIsValid) {",
+			"  ${0}",
+			"}"
+		]
+	},
+	"Adds a get property": {
+		"prefix": "ft-get",
+		"body": [
+				"${1|String,int,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+		]
+	},
+	"Adds a static get property": {
+		"prefix": "ft-static-get",
+		"body": [
+				"static ${1|String,int,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+		]
+	}
+}

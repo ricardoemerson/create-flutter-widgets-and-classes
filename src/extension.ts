@@ -162,7 +162,7 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
     if (selectedText !== '') {
       codeActions.push({
         command: 'extension.wrapWithWidget',
-        title: 'Flutter Tools - Wrap with Widget...',
+        title: 'Flutter Tools - Wrap with widget...',
       });
     }
 

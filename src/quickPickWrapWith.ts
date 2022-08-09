@@ -1,3 +1,4 @@
+import { sleep } from './templates/shared/functions/sleep';
 import {
   wrapWithAlign,
   wrapWithClipRRect,
@@ -146,134 +147,155 @@ export async function wrapWithWidget() {
 }
 
 async function chooseWrapWithWidget() {
-  const wrapWithWidget = (await vscode.window.showQuickPick(
-    [
-      {
-        label: 'Wrap with Align',
-        description: 'Wrap the selected widget with Align',
-        picked: false,
-        value: 'align',
-      },
-      {
-        label: 'Wrap with ClipRRect',
-        description: 'Wrap the selected widget with ClipRRect',
-        picked: false,
-        value: 'clip-r-rect',
-      },
-      {
-        label: 'Wrap with ConstrainedBox',
-        description: 'Wrap the selected widget with ConstrainedBox',
-        picked: false,
-        value: 'constrained-box',
-      },
-      {
-        label: 'Wrap with Expanded',
-        description: 'Wrap the selected widget with Expanded',
-        picked: false,
-        value: 'expanded',
-      },
-      {
-        label: 'Wrap with Flexible',
-        description: 'Wrap the selected widget with Flexible',
-        picked: false,
-        value: 'flexible',
-      },
-      {
-        label: 'Wrap with Form',
-        description: 'Wrap the selected widget with Form',
-        picked: false,
-        value: 'form',
-      },
-      {
-        label: 'Wrap with GestureDetector',
-        description: 'Wrap the selected widget with GestureDetector',
-        picked: false,
-        value: 'gesture-detector',
-      },
-      {
-        label: 'Wrap with Hero',
-        description: 'Wrap the selected widget with Hero',
-        picked: false,
-        value: 'hero',
-      },
-      {
-        label: 'Wrap with InkWell',
-        description: 'Wrap the selected widget with InkWell',
-        picked: false,
-        value: 'ink-well',
-      },
-      {
-        label: 'Wrap with IntrinsicHeight',
-        description: 'Wrap the selected widget with IntrinsicHeight',
-        picked: false,
-        value: 'intrinsic-height',
-      },
-      {
-        label: 'Wrap with IntrinsicWidth',
-        description: 'Wrap the selected widget with IntrinsicWidth',
-        picked: false,
-        value: 'intrinsic-width',
-      },
-      {
-        label: 'Wrap with LayoutBuilder',
-        description: 'Wrap the selected widget with LayoutBuilder',
-        picked: false,
-        value: 'layout-builder',
-      },
-      {
-        label: 'Wrap with LayoutBuilder and SingleChildScrollView',
-        description:
-          'Wrap the selected widget with LayoutBuilder and SingleChildScrollView',
-        picked: false,
-        value: 'layout-builder-with-single-child-scroll-view',
-      },
-      {
-        label: 'Wrap with MobX Observer',
-        description: 'Wrap the selected widget with MobX Observer',
-        picked: false,
-        value: 'observer',
-      },
-      {
-        label: 'Wrap with GetX Obx',
-        description: 'Wrap the selected widget with GetX Obx',
-        picked: false,
-        value: 'obx',
-      },
-      {
-        label: 'Wrap with Positioned',
-        description: 'Wrap the selected widget with Positioned',
-        picked: false,
-        value: 'positioned',
-      },
-      {
-        label: 'Wrap with SafeArea',
-        description: 'Wrap the selected widget with SafeArea',
-        picked: false,
-        value: 'safe-area',
-      },
-      {
-        label: 'Wrap with SingleChildScrollView',
-        description: 'Wrap the selected widget with SingleChildScrollView',
-        picked: false,
-        value: 'single-child-scroll-view',
-      },
-      {
-        label: 'Wrap with Stack',
-        description: 'Wrap the selected widget with Stack',
-        picked: false,
-        value: 'stack',
-      },
-      {
-        label: 'Wrap with ValueListenableBuilder',
-        description: 'Wrap the selected widget with ValueListenableBuilder',
-        picked: false,
-        value: 'value-listenable-builder',
-      },
-    ] as QuickPickItem[],
+  const config = vscode.workspace.getConfiguration('createFlutterWidgetsAndClasses');
+  const getxDisplayContextMenu = config.get('getxDisplayContextMenu') as boolean;
+  const mobxDisplayContextMenu = config.get('mobxDisplayContextMenu') as boolean;
+
+  const quickPickItems: QuickPickItem[] = [
     {
-      placeHolder: 'Choose wished widget to wrap the selected widget.',
-    }
-  )) as any;
+      label: 'Wrap with Align',
+      description: 'Wrap the selected widget with Align',
+      picked: false,
+      value: 'align',
+    },
+    {
+      label: 'Wrap with ClipRRect',
+      description: 'Wrap the selected widget with ClipRRect',
+      picked: false,
+      value: 'clip-r-rect',
+    },
+    {
+      label: 'Wrap with ConstrainedBox',
+      description: 'Wrap the selected widget with ConstrainedBox',
+      picked: false,
+      value: 'constrained-box',
+    },
+    {
+      label: 'Wrap with Expanded',
+      description: 'Wrap the selected widget with Expanded',
+      picked: false,
+      value: 'expanded',
+    },
+    {
+      label: 'Wrap with Flexible',
+      description: 'Wrap the selected widget with Flexible',
+      picked: false,
+      value: 'flexible',
+    },
+    {
+      label: 'Wrap with Form',
+      description: 'Wrap the selected widget with Form',
+      picked: false,
+      value: 'form',
+    },
+    {
+      label: 'Wrap with GestureDetector',
+      description: 'Wrap the selected widget with GestureDetector',
+      picked: false,
+      value: 'gesture-detector',
+    },
+    {
+      label: 'Wrap with Hero',
+      description: 'Wrap the selected widget with Hero',
+      picked: false,
+      value: 'hero',
+    },
+    {
+      label: 'Wrap with InkWell',
+      description: 'Wrap the selected widget with InkWell',
+      picked: false,
+      value: 'ink-well',
+    },
+    {
+      label: 'Wrap with IntrinsicHeight',
+      description: 'Wrap the selected widget with IntrinsicHeight',
+      picked: false,
+      value: 'intrinsic-height',
+    },
+    {
+      label: 'Wrap with IntrinsicWidth',
+      description: 'Wrap the selected widget with IntrinsicWidth',
+      picked: false,
+      value: 'intrinsic-width',
+    },
+    {
+      label: 'Wrap with LayoutBuilder',
+      description: 'Wrap the selected widget with LayoutBuilder',
+      picked: false,
+      value: 'layout-builder',
+    },
+    {
+      label: 'Wrap with LayoutBuilder and SingleChildScrollView',
+      description:
+        'Wrap the selected widget with LayoutBuilder and SingleChildScrollView',
+      picked: false,
+      value: 'layout-builder-with-single-child-scroll-view',
+    },
+    {
+      label: 'Wrap with Positioned',
+      description: 'Wrap the selected widget with Positioned',
+      picked: false,
+      value: 'positioned',
+    },
+    {
+      label: 'Wrap with SafeArea',
+      description: 'Wrap the selected widget with SafeArea',
+      picked: false,
+      value: 'safe-area',
+    },
+    {
+      label: 'Wrap with SingleChildScrollView',
+      description: 'Wrap the selected widget with SingleChildScrollView',
+      picked: false,
+      value: 'single-child-scroll-view',
+    },
+    {
+      label: 'Wrap with Stack',
+      description: 'Wrap the selected widget with Stack',
+      picked: false,
+      value: 'stack',
+    },
+    {
+      label: 'Wrap with ValueListenableBuilder',
+      description: 'Wrap the selected widget with ValueListenableBuilder',
+      picked: false,
+      value: 'value-listenable-builder',
+    },
+  ];
+
+  if (mobxDisplayContextMenu) {
+    const mobxItem: QuickPickItem = {
+      label: 'Wrap with MobX Observer',
+      description: 'Wrap the selected widget with MobX Observer',
+      picked: false,
+      value: 'observer',
+    };
+
+    const positionedIndex = quickPickItems.findIndex(
+      item => item.label === 'Wrap with Positioned'
+    );
+
+    quickPickItems.splice(positionedIndex + 1, 0, mobxItem);
+  }
+
+  if (getxDisplayContextMenu) {
+    const getxItem: QuickPickItem = {
+      label: 'Wrap with GetX Obx',
+      description: 'Wrap the selected widget with GetX Obx',
+      picked: false,
+      value: 'obx',
+    };
+
+    const safeAreaIndex = quickPickItems.findIndex(
+      item => item.label === 'Wrap with SafeArea'
+    );
+
+    quickPickItems.splice(safeAreaIndex, 0, getxItem);
+  }
+
+  const wrapWithWidget = (await vscode.window.showQuickPick(quickPickItems, {
+    placeHolder: 'Choose wished widget to wrap the selected widget.',
+  })) as any;
 
   return wrapWithWidget ? wrapWithWidget.value : null;
 }

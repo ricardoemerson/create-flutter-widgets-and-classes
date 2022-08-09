@@ -1,0 +1,152 @@
+{
+  "Adds GetX import": {
+		"prefix": "ft-imp-get",
+		"body": [
+			"import 'package:get/get.dart';${0}"
+		]
+	},
+  "Uses GetX to get width or height of screen": {
+		"prefix": "ft-get-size",
+		"body": [
+			"Get.${1|width,height|},${0}"
+		]
+	},"Adds the Get.find() the get instance of classe using GetX": {
+		"prefix": "ft-get-find",
+		"body": [
+			"Get.find(),${0}"
+		]
+	},
+	"Uses GetX to get width of screen": {
+		"prefix": "ft-get-width",
+		"body": [
+			"Get.width,${0}"
+		]
+	},
+	"Uses GetX to get height of screen": {
+		"prefix": "ft-get-height",
+		"body": [
+			"Get.height,${0}"
+		]
+	},
+	"Adds width property using Get.width": {
+		"prefix": "ft-width-get-width",
+		"body": [
+			"width: Get.width,${0}"
+		]
+	},
+	"Adds width property using Get.height": {
+		"prefix": "ft-height-get-height",
+		"body": [
+			"height: Get.height,${0}"
+		]
+	},
+  "Adds Get.put() instruction for Service": {
+		"prefix": "ft-get-put-service",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}Service());${0}"
+		]
+	},
+	"Adds Get.put() instruction for Session": {
+		"prefix": "ft-get-put-session",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}Session());${0}"
+		]
+	},
+	"Adds Get.put() instruction for Repository": {
+		"prefix": "ft-get-put-repository",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}Repository());${0}"
+		]
+	},
+	"Adds Get.put() instruction for Provider": {
+		"prefix": "ft-get-put-provider",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}Provider());${0}"
+		]
+	},
+	"Adds GetView instruction for get instance of controller inside view": {
+		"prefix": "ft-get-view",
+		"body": [
+			"GetView<${1/(.*)/${1:/capitalize}/}Controller>${0}"
+		]
+	},
+	"Adds Get.put() instruction for Controller": {
+		"prefix": "ft-get-put-controller",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}Controller());${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for Controller": {
+		"prefix": "ft-get-lazy-put-controller",
+		"body": [
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Controller>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}Controller(),",
+			");${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for Provider used by a Service": {
+		"prefix": "ft-get-lazy-put-provider",
+		"body": [
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Provider>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}Provider(),",
+			");",
+			"",
+			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Service>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}Service(${1}Provider: Get.find(),),",
+			");${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for Service": {
+		"prefix": "ft-get-lazy-put-service",
+		"body": [
+			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Service>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}Service(${1}Repository: Get.find(),),",
+			");${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for Repository used by a Service": {
+		"prefix": "ft-get-lazy-put-repository",
+		"body": [
+			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Repository>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}Repository(restClient: Get.find(),),",
+			");",
+			"",
+			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Service>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}Service(${1}Repository: Get.find(),),",
+			");${0}"
+		]
+	},
+  "Adds override for onInit method": {
+		"prefix": "ft-on-init",
+		"body": [
+			"@override",
+			"void onInit() {",
+			"  super.onInit();",
+			"",
+			"  ${0}",
+			"}"
+		]
+  },
+	"Adds override for onReady method": {
+		"prefix": "ft-on-ready",
+		"body": [
+			"@override",
+			"void onReady() {",
+			"  super.onReady();",
+			"",
+			"  ${0}",
+			"}"
+		]
+  },
+	"Adds override for onClose method": {
+		"prefix": "ft-on-close",
+		"body": [
+			"@override",
+			"void onClose() {",
+			"  ${0}",
+			"",
+			"  super.onClose();",
+			"}"
+		]
+  }
+}

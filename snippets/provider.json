@@ -1,0 +1,14 @@
+{
+  "Adds the context.read() the get instance of classe using Provider": {
+    "prefix": "ft-context-read",
+    "body": [
+      "context.read()${0}"
+    ]
+	},
+	"Adds the context.read<type>()... the get instance of classe using Provider": {
+    "prefix": "ft-context-read-data",
+    "body": [
+      "context.read<${1:type}>().${0}"
+    ]
+	}
+}

@@ -99,7 +99,7 @@
         "command": "extension.implementsInterface"
       },
       {
-        "title": "Flutter Tools - Wrap with Widget...",
+        "title": "Flutter Tools - Wrap with widget...",
         "command": "extension.wrapWithWidget"
       },
       {
@@ -175,6 +175,24 @@
         }
       ]
     },
+    "snippets": [
+      {
+        "language": "dart",
+        "path": "./snippets/flutter.json"
+      },
+      {
+        "language": "dart",
+        "path": "./snippets/widgets.json"
+      },
+      {
+        "language": "dart",
+        "path": "./snippets/getx.json"
+      },
+      {
+        "language": "dart",
+        "path": "./snippets/provider.json"
+      }
+    ],
     "configuration": {
       "title": "Flutter Tools",
       "properties": {

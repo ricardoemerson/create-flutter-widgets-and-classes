@@ -1,0 +1,627 @@
+{
+  "Adds BorderRadius": {
+		"prefix": "ft-border-radius",
+		"body": [
+			"borderRadius: BorderRadius.${0},"
+		]
+	},
+	"Adds BorderRadius.circular()": {
+		"prefix": "ft-border-radius-circular",
+		"body": [
+			"borderRadius: BorderRadius.circular(${1:value}),${0}"
+		]
+	},
+	"Adds BorderSide() with width and color": {
+		"prefix": "ft-border-side",
+		"body": [
+			"borderSide: const BorderSide(width: ${1|1,2,3,4,5|}, color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},),${0}"
+		]
+	},
+	"Adds BorderSide() with color": {
+		"prefix": "ft-border-side-color",
+		"body": [
+			"borderSide: const BorderSide(color: Colors.${1|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}),${0}"
+		]
+	},
+	"Adds a shape property using RoundedRectangleBorder()": {
+		"prefix": "ft-shape-rounded-rectangle-border",
+		"body": [
+			"shape: RoundedRectangleBorder(",
+			"  borderRadius: BorderRadius.circular(${1:value}),",
+			"  side: const BorderSide(width: ${2:value}),",
+			"),"
+		]
+	},
+	"Adds MainAxisSize to Row or Column": {
+		"prefix": "ft-main-axis-size",
+		"body": [
+			"mainAxisSize: MainAxisSize.${1|min,max|},${0}"
+		]
+	},
+	"Adds MainAxisAlignment to Row or Column": {
+		"prefix": "ft-main-axis-alignment",
+		"body": [
+			"mainAxisAlignment: MainAxisAlignment.${1|start,end,center,spaceBetween,spaceAround,spaceEvenly|},${0}"
+		]
+	},
+	"Adds CrossAxisAlignment to Row or Column": {
+		"prefix": "ft-cross-axis-alignment",
+		"body": [
+			"crossAxisAlignment: CrossAxisAlignment.${1|start,end,center,baseLine,stretch|},${0}"
+		]
+	},
+	"Adds alignment property using Alignment": {
+		"prefix": "ft-alignment",
+		"body": [
+			"alignment: Alignment.${1|topLeft,topCenter,topRight,centerLeft,center,centerRight,bottomLeft,bottomCenter,bottomRight|},${0}"
+		]
+	},
+	"Adds alignment property using WrapAlignment": {
+		"prefix": "ft-wrap-alignment",
+		"body": [
+			"alignment: WrapAlignment.${1|start,end,center,spaceBetween,spaceAround,spaceEvenly|},${0}"
+		]
+	},
+	"Adds FontWeight": {
+		"prefix": "ft-font-weight",
+		"body": [
+			"fontWeight: FontWeight.${1|normal,bold,w100,w200,w300,w400,w500,w600,w700,w800,w900|},${0}"
+		]
+	},
+	"Adds TextAlign": {
+		"prefix": "ft-text-align",
+		"body": [
+			"textAlign: TextAlign.${1|left,right,center,justify,start,end|},${0}"
+		]
+	},
+	"Adds a Hexadecimal Color": {
+    "prefix": ["ft-0xff", "ft-hex-color"],
+    "body": [
+      "Color(0xFF${1:hexColor})${0}"
+    ]
+	},
+	"Adds a color property using a Hexadecimal Color": {
+		"prefix": "ft-color-hex",
+		"body": [
+			"color: Color(0xFF${1:hexColor})${0},"
+		]
+	},
+	"Adds a color property using Colors": {
+		"prefix": "ft-color",
+		"body": [
+			"color: Colors.${1|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}${0},"
+		]
+	},
+	"Adds a backgroundColor property using Colors": {
+		"prefix": "ft-background-color",
+		"body": [
+			"backgroundColor: Colors.${1|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}${0},"
+		]
+	},
+	"Adds a backgroundColor property using a Hexadecimal Color": {
+		"prefix": "ft-background-color-hex",
+		"body": [
+			"backgroundColor: Color(0xFF${1:hexColor})${0},"
+		]
+	},
+	"Adds a color property using Theme.of(context)": {
+		"prefix": "ft-color-theme",
+		"body": [
+			"color: Theme.of(context).${0},"
+		]
+	},
+	"Adds a color using Theme.of(context)": {
+		"prefix": "ft-theme-of",
+		"body": [
+			"Theme.of(context).${0},"
+		]
+	},
+	"Adds an overflow property using TextOverflow.ellipsis": {
+		"prefix": "ft-text-overflow",
+		"body": [
+			"overflow: TextOverflow.ellipsis,${0}"
+		]
+	},
+	"Adds a vertical spacing between widgets using SizedBox": {
+		"prefix": ["ft-space-vertical", "ft-separator-vertical", "ft-sized-box-height"],
+		"body": [
+			"const SizedBox(height: ${1|5,10,15,20,25,30,35,40,45,50|}),${0}"
+		]
+	},
+	"Adds a horizontal spacing between widgets using SizedBox": {
+		"prefix": ["ft-space-horizontal", "ft-separator-horizontal", "ft-sized-box-width"],
+		"body": [
+			"const SizedBox(width: ${1|5,10,15,20,25,30,35,40,45,50|}),${0}"
+		]
+	},
+	"Adds a SizedBox.shrink()": {
+		"prefix": "ft-space-shrink",
+		"body": [
+			"const SizedBox.shrink();${0}"
+		]
+	},
+  "Adds margin property using EdgeInsets.all()": {
+		"prefix": "ft-margin-all",
+		"body": [
+			"margin: const EdgeInsets.all(${1:value}),${0}"
+		]
+	},
+	"Adds margin property using EdgeInsets.symmetric()": {
+		"prefix": "ft-margin-symmetric",
+		"body": [
+			"margin: const EdgeInsets.symmetric(${1|horizontal,vertical|}: ${2:value}),${0}"
+		]
+	},
+	"Adds margin property using EdgeInsets.only()": {
+		"prefix": "ft-margin-only",
+		"body": [
+			"margin: const EdgeInsets.only(${1:side}),${0}"
+		]
+	},
+	"Adds padding property using EdgeInsets.all()": {
+		"prefix": "ft-padding-all",
+		"body": [
+			"padding: const EdgeInsets.all(${1:value}),${0}"
+		]
+	},
+	"Adds padding property using EdgeInsets.symmetric()": {
+		"prefix": "ft-padding-symmetric",
+		"body": [
+			"padding: const EdgeInsets.symmetric(${1|horizontal,vertical|}: ${2:value}),${0}"
+		]
+	},
+	"Adds padding property using EdgeInsets.only()": {
+		"prefix": "ft-padding-only",
+		"body": [
+			"padding: const EdgeInsets.only(${1:side}),${0}"
+		]
+	},
+	"Adds padding property using EdgeInsets.zero": {
+		"prefix": "ft-padding-zero",
+		"body": [
+			"padding: EdgeInsets.zero,${0}"
+		]
+	},
+	"Adds EdgeInsets.zero": {
+		"prefix": "ft-edge-insets-zero",
+		"body": [
+			"EdgeInsets.zero,${0}"
+		]
+	},
+	"Adds border property using Border.all": {
+		"prefix": "ft-border-all",
+		"body": [
+			"border: Border.all(width: ${1:value}, color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}),${0}"
+		]
+	},
+	"Adds border property using Border.symmetric": {
+		"prefix": "ft-border-symmetric",
+		"body": [
+			"border: Border.symmetric(${1|horizontal,vertical|}: ${2:value}),${0}"
+		]
+	},
+	"Adds physics property using BouncingScrollPhysics()": {
+		"prefix": "ft-bouncing-scroll-physics",
+		"body": [
+			"physics: const BouncingScrollPhysics(),${0}"
+		]
+	},
+	"Adds scrollDirection property using Axis": {
+		"prefix": "ft-scroll-direction",
+		"body": [
+			"scrollDirection: Axis.${1|horizontal,vertical|},${0}"
+		]
+	},
+	"Adds Navigator instruction using pushNamed": {
+		"prefix": "ft-navigator-push-named",
+		"body": [
+			"Navigator.of(context).pushNamed('/${2:route-name}');${0},"
+		]
+	},
+	"Adds Navigator instruction using pop": {
+		"prefix": "ft-navigator-pop",
+		"body": [
+			"Navigator.of(context).pop(),${0}"
+		]
+	},
+	"Adds Navigator instruction using MaterialPageRoute": {
+		"prefix": "ft-navigator-push",
+		"body": [
+			"Navigator.push(",
+			"  context,",
+			"  MaterialPageRoute(",
+			"    builder: (context) => ${1:Page}(),",
+			"  ),",
+			"),${0}"
+		]
+	},
+	"Adds MediaQuery instruction using size": {
+		"prefix": "ft-media-query",
+		"body": [
+			"MediaQuery.of(context).size.${1|width,height|},${0}"
+		]
+	},
+  "Adds appBarTheme property using AppBarTheme()": {
+		"prefix": "ft-app-bar-theme",
+		"body": [
+			"appBarTheme: AppBarTheme(",
+			"  brightness: Brightness.dark,",
+			"),${0}"
+		]
+	},
+	"Adds brightness property using Brightness": {
+		"prefix": "ft-app-bar-brightness",
+		"body": [
+			"brightness: Brightness.${1|dark,light|},${0}"
+		]
+	},
+	"Adds style property using TextStyle() with color, fontSize and fontWeight": {
+		"prefix": "ft-text-style",
+		"body": [
+			"style: TextStyle(",
+			"  color: Colors.${1|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},",
+			"  fontSize: ${2:size},",
+			"  fontWeight: FontWeight.${3|normal,bold,w100,w200,w300,w400,w500,w600,w700,w800,w900|},",
+			"),${0}"
+		]
+	},
+	"Adds style property using TextStyle() only for fontWeight": {
+		"prefix": "ft-text-style-weight",
+		"body": [
+			"style: TextStyle(",
+			"  fontWeight: FontWeight.${3|normal,bold,w100,w200,w300,w400,w500,w600,w700,w800,w900|},",
+			"),${0}"
+		]
+	},
+	"Adds style property using TextStyle() only for fontSize": {
+		"prefix": "ft-text-style-size",
+		"body": [
+			"style: TextStyle(",
+			"  fontSize: ${1:size},",
+			"),${0}"
+		]
+	},
+	"Adds style property using TextStyle() only for color": {
+		"prefix": "ft-text-style-color",
+		"body": [
+			"style: TextStyle(",
+			"  color: Colors.${1|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},",
+			"),${0}"
+		]
+	},
+	"Adds style property using Theme.of(context).textTheme": {
+		"prefix": "ft-text-style-theme-of",
+		"body": [
+			"style: Theme.of(context).textTheme.${0}"
+		]
+	},
+	"Adds Image Widget with properties height, width, image and fit": {
+		"prefix": "ft-image-asset",
+		"body": [
+			"Image(",
+			"  height: ${1:height},",
+			"  width: ${2:width},",
+			"  image: AssetImage('assets/images/${3:assetUrl}'),",
+			"  fit: BoxFit.${4|fill,contain,cover,fitWidth,fitHeight,none,scaleDown|},",
+			"),${0}"
+		]
+	},
+	"Adds fit property using BoxFit": {
+		"prefix": "ft-fit-box-fit",
+		"body": [
+			"fit: BoxFit.${1|fill,contain,cover,fitWidth,fitHeight,none,scaleDown|},${0}"
+		]
+	},
+	"Adds IconButton Widget with properties icon, color, iconSize and onPressed": {
+		"prefix": "ft-icon-button",
+		"body": [
+			"IconButton(",
+			"  icon: Icon(Icons.${1:iconName}),",
+			"  color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},",
+			"  iconSize: ${3:size},",
+			"  onPressed: () => ${0},",
+			"),"
+		]
+	},
+	"Adds ElevatedButton Widget using BorderRadius()": {
+		"prefix": "ft-elevated-rectangle-button",
+		"body": [
+			"ElevatedButton( ",
+			"  child: Text( ",
+			"    '${1:buttonText}', ",
+			"    style: TextStyle( ",
+			"      color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}, ",
+			"      fontSize: ${3:fontSize}, ",
+			"    ), ",
+			"  ), ",
+			"  style: ElevatedButton.styleFrom( ",
+			"    padding: const EdgeInsets.symmetric(horizontal: ${4:value}), ",
+			"    primary: Theme.of(context).${5}, ",
+			"    shape: RoundedRectangleBorder( ",
+			"      borderRadius: BorderRadius.circular(${6:value}), ",
+			"    ), ",
+			"  ), ",
+			"  onPressed: () => {}, ",
+			"),${0} "
+		]
+	},
+	"Adds ElevatedButton Widget using CircleBorder()": {
+		"prefix": "ft-elevated-circ-button",
+		"body": [
+			"ElevatedButton( ",
+			"  child: Icon( ",
+			"    Icons.${1}, ",
+			"    size: ${2:size}, ",
+			"  ), ",
+			"  style: ElevatedButton.styleFrom( ",
+			"    primary: Theme.of(context).${3}, ",
+			"    shape: CircleBorder(), ",
+			"    padding: EdgeInsets.all(${4:value}), ",
+			"  ), ",
+			"  onPressed: () => {}, ",
+			") "
+		]
+	},
+	"Adds decoration property using BoxDecoration": {
+		"prefix": "ft-container-decoration",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  ${0}",
+			"),"
+		]
+	},
+	"Adds decoration property using BoxDecoration and DecorationImage": {
+		"prefix": "ft-container-image",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  image: DecorationImage(",
+			"    image: AssetImage('assets/images/${1:assetUrl}'),",
+			"    fit: BoxFit.cover,",
+			"  ),",
+			"  borderRadius: BorderRadius.circular(${2:value}),",
+			"),${0}"
+		]
+	},
+	"Adds decoration property using BoxDecoration with borderRadius and color": {
+		"prefix": "ft-container-border-radius",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  borderRadius: BorderRadius.circular(${1:value}),",
+			"  border: Border.all(${2:value}),",
+			"  color: Colors.${3|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},",
+			"),"
+		]
+	},
+	"Adds decoration property using BoxDecoration with BoxShadow": {
+		"prefix": "ft-container-box-shadow",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  boxShadow: [",
+			"    BoxShadow(",
+			"      color: Colors.black26,",
+			"      offset: Offset(3, 0),",
+			"      blurRadius: 6,",
+			"    ),",
+			"  ],",
+			"),"
+		]
+	},
+	"Adds decoration property using BoxDecoration with BoxShadow for Bottom Sheet": {
+		"prefix": "ft-container-box-shadow-bottom-sheet",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  boxShadow: [",
+			"    BoxShadow(",
+			"      color: Colors.black26,",
+			"      offset: Offset(0, -1),",
+			"      blurRadius: 6,",
+			"    ),",
+			"  ],",
+			"),"
+		]
+	},
+	"Adds boxShadow property using BoxShadow": {
+		"prefix": "ft-box-shadow",
+		"body": [
+			"boxShadow: [",
+			"  BoxShadow(",
+			"    color: Colors.black26,",
+			"    offset: Offset(3, 0),",
+			"    blurRadius: 6,",
+			"  ),",
+			"],"
+		]
+	},
+	"Adds boxShadow property using BoxShadow for Bottom Sheet": {
+		"prefix": "ft-box-shadow-bottom-sheet",
+		"body": [
+			"boxShadow: [",
+			"  BoxShadow(",
+			"    color: Colors.black26,",
+			"    offset: Offset(0, -1),",
+			"    blurRadius: 6,",
+			"  ),",
+			"],"
+		]
+	},
+	"Adds Column Widget": {
+		"prefix": "ft-column",
+		"body": [
+			"Column(",
+			"  children: [",
+			"    ${0}",
+			"  ],",
+			"),"
+		]
+	},
+	"Adds Row Widget": {
+		"prefix": "ft-row",
+		"body": [
+			"Row(",
+			"  children: [",
+			"    ${0}",
+			"  ],",
+			"),"
+		]
+	},
+	"Adds borderRadius property using BorderRadius.only()": {
+		"prefix": "ft-border-radius-only",
+		"body": [
+			"borderRadius: BorderRadius.only(",
+			"  topLeft: Radius.circular(24),",
+			"  topRight: Radius.circular(24),",
+			"), "
+		]
+	},
+	"Adds Text Widget": {
+		"prefix": "ft-text",
+		"body": [
+			"Text('${0}',),"
+		]
+	},
+	"Adds TextSpan Widget with text property": {
+		"prefix": "ft-text-span",
+		"body": [
+			"TextSpan(text: '${0}'),"
+		]
+	},
+	"Adds TextSpan Widget with children property": {
+		"prefix": "ft-text-span-children",
+		"body": [
+			"TextSpan(",
+			"  children: [",
+			"    ${0}",
+			"  ],",
+			"), "
+		]
+	},
+  "Adds OutlinedButton Widget with Icon": {
+		"prefix": "ft-outlined-icon-button",
+		"body": [
+			"OutlinedButton(",
+			"  onPressed: () => {},",
+			"  style: OutlinedButton.styleFrom(",
+			"    padding: EdgeInsets.zero,",
+			"    shape: RoundedRectangleBorder(",
+			"      borderRadius: BorderRadius.circular(${1:value}),",
+			"    ),",
+			"  ),",
+			"  child: Icon(Icons.${0}),",
+			"),"
+		]
+	},
+	"Sets the color for statusBarIconBrightness": {
+		"prefix": "ft-status-bar-icon-brightness",
+		"body": [
+			"SystemChrome.setSystemUIOverlayStyle(",
+			"  SystemUiOverlayStyle.dark",
+			"    .copyWith(statusBarIconBrightness: Brightness.dark),",
+			");"
+		]
+	},
+  "Adds textInputAction property using TextInputAction": {
+		"prefix": ["ft-text-input-action", "ft-input-action"],
+		"body": [
+			"textInputAction: TextInputAction.${1|none,unspecified,done,go,search,send,next,previous,continueAction,join,route,emergencyCall,newline|},${0}"
+		]
+	},
+	"Adds textCapitalization property using TextCapitalization": {
+		"prefix": "ft-text-capitalization",
+		"body": [
+			"textCapitalization: TextCapitalization.${1|words,sentences,characters,none|},${0}"
+		]
+	},
+	"Adds keyboardType property using TextInputType": {
+		"prefix": ["ft-keyboard-type", "ft-input-type"],
+		"body": [
+			"keyboardType: TextInputType.${1|datetime,emailAddress,multiline,name,none,number,phone,streetAddress,text,url,visiblePassword,values|},${0}"
+		]
+	},
+	"Adds the instruction WidgetsFlutterBinding.ensureInitialized();": {
+		"prefix": "ft-ensure-initialized",
+		"body": [
+			"WidgetsFlutterBinding.ensureInitialized();${0}"
+		]
+	},
+  "Adds Scaffold Widget": {
+		"prefix": "ft-scaffold",
+		"body": [
+			"Scaffold(",
+			"  appBar: AppBar(",
+			"    title: const Text('${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}'),",
+			"  ),",
+			"  body: const Center(",
+			"    child: Text('Scaffold Body'),",
+			"  ),",
+			");"
+		]
+	},
+  "Adds PopupMenuButton Widget": {
+		"prefix": "ft-popup-menu-button",
+		"body": [
+			"PopupMenuButton(",
+			"  icon: const Icon(Icons.filter_alt),",
+			"  itemBuilder: (_) => [",
+			"    const PopupMenuItem<${1|String,int,bool,Date|}>(",
+			"      child: Text(",
+			"        '${2:itemText}',",
+			"      ),",
+			"    ),",
+			"  ],",
+			")"
+		]
+	},
+  "ft-constraints-box-constraints": {
+		"prefix": "ft-constraints-box-constraints",
+		"body": [
+			"constraints: BoxConstraints(",
+			"  ${1|minHeight,maxHeight|}: ${2:heightValue},",
+			"  ${3|minWidth,maxWidth|}: ${4:widthValue},",
+			"),${0}"
+		]
+	},
+  "Adds localizations for pt-BR": {
+		"prefix": "ft-add-locales-pt-br",
+		"body": [
+			"localizationsDelegates: const [",
+			"  GlobalMaterialLocalizations.delegate,",
+			"  GlobalCupertinoLocalizations.delegate,",
+			"  GlobalWidgetsLocalizations.delegate",
+			"],",
+			"supportedLocales: const [",
+			"  Locale('pt', 'BR'),",
+			"],"
+		]
+	},
+  "Adds shadows property using Shadow to use in Text Widget": {
+		"prefix": "ft-text-shadow",
+		"body": [
+			"shadows: [",
+			"  const Shadow(",
+			"    color: Colors.black26,",
+			"    offset: Offset(2, 2),",
+			"    // blurRadius: 6,",
+			"  ),",
+			"],"
+		]
+	},
+	"Adds Text.rich Widget": {
+		"prefix": "ft-text-rich",
+		"body": [
+				"Text.rich(",
+				"  TextSpan(",
+				"    style: TextStyle(${1:mainTextStyle}),",
+				"    children: [",
+				"      TextSpan(",
+				"        text: '${2:firstText} ',",
+				"      ),",
+				"      TextSpan(",
+				"        text: '${3:secondText}',",
+				"        style: TextStyle(${4:customStyles}),",
+				"      ),",
+				"    ],",
+				"  ),",
+				")"
+		]
+	}
+}
