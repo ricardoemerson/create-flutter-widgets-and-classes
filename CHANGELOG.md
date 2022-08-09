@@ -38,6 +38,28 @@ All notable changes to the Flutter Tools extension will be documented in this fi
 - Added configuration of Widgets Page file suffix.
 - Added configuration of Create Folder for Widgets Page.
 - Removed configuration of MobX file suffix.
+- Cleaned up the wrappers widgets context menu, removing the items below and added new options via VSCode QuickPick:
+  - `Wrap with Align`
+  - `Wrap with ClipRRect`
+  - `Wrap with ConstrainedBox`
+  - `Wrap with Expanded`
+  - `Wrap with Flexible`
+  - `Wrap with Form`
+  - `Wrap with GestureDetector`
+  - `Wrap with Hero`
+  - `Wrap with InkWell`
+  - `Wrap with IntrinsicHeight`
+  - `Wrap with IntrinsicWidth`
+  - `Wrap with LayoutBuilder`
+  - `Wrap with LayoutBuilder and SingleChildScrollView`
+  - `Wrap with Positioned`
+  - `Wrap with SafeArea`
+  - `Wrap with SingleChildScrollView`
+  - `Wrap with Stack`
+  - `Wrap with ValueListenableBuilder`
+  - `Wrap with MobX Observer`
+  - `Wrap with GetX Obx`
+- Added **163 snippets** that can be accessed with `ft-` prefix.
 
 ## [2.4.1]
 
