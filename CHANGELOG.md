@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.1.0]
+
+- Adds notification message for extension updates.
+
 ## [3.0.0]
 
 - Cleaned up the context menu, removing the items below and added new options via VSCode QuickPick:

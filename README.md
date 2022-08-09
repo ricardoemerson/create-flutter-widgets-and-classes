@@ -5,7 +5,7 @@
     </a>
 </p>
 
-# What's new in Flutter Tools 3.0.0 🎉
+# What's new in Flutter Tools 3.1.0 🎉
 
 - Cleaned up the context menu, removing the items below and added new options via VSCode QuickPick:
   - `📝 Create Controller`
@@ -63,6 +63,7 @@
   - `Wrap with MobX Observer`
   - `Wrap with GetX Obx`
 - Added **163 snippets** that can be accessed with `ft-` prefix.
+- Adds notification message for extension updates.
 
 # What's new in Flutter Tools 2.4.1
 
