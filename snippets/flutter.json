@@ -5,6 +5,18 @@
 			"import 'package:dart_date/dart_date.dart';${0}"
 		]
 	},
+  "Adds part file for main file": {
+		"prefix": "ft-part",
+		"body": [
+			"part '${1:pathToFile}';${0}"
+		]
+	},
+  "Adds part of main file": {
+		"prefix": "ft-part-of",
+		"body": [
+			"part of '${1:pathToMainFile}';${0}"
+		]
+	},
 	"Adds current filename in pascal case": {
 		"prefix": "ft-get-file-name",
 		"body": [
@@ -41,14 +53,14 @@
 			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}._();"
 		]
   },
-	"Creates a private class attibute": {
+	"Creates a private class attribute": {
 		"prefix": "ft-private-attribute",
 		"body": [
 			"final ${1/(.*)/${1:/capitalize}/} _${1};${0}"
 		]
 	},
 	"Creates an injection for Firebase Auth - Complete": {
-		"prefix": "ft-constructor-inject-firebase-auth",
+		"prefix": "ft-constr-inject-firebase-auth",
 		"body": [
 			"final FirebaseAuth _firebaseAuth;",
 			"",
@@ -68,7 +80,7 @@
 		]
   },
 	"Creates an injection for Controller - Complete": {
-		"prefix": "ft-constructor-inject-controller",
+		"prefix": "ft-constr-inject-controller",
 		"body": [
 			"final ${1/(.*)/${1:/capitalize}/}Controller _controller;",
 			"",
@@ -89,8 +101,8 @@
 			"_controller = controller,"
 		]
   },
-	"Creates an injection for Service - Complete": {
-		"prefix": "ft-constructor-inject-service",
+	"Creates an injection for IService - Complete": {
+		"prefix": "ft-constr-inject-i-service",
 		"body": [
 			"final I${1/(.*)/${1:/capitalize}/}Service _${1}Service;",
 			"",
@@ -99,8 +111,18 @@
 			"}) : _${1}Service = ${1}Service;"
 		]
   },
-	"Creates an injection for Service - Parts to include": {
-		"prefix": "ft-add-inject-service",
+	"Creates an injection for Service - Complete": {
+		"prefix": "ft-constr-inject-service",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Service _${1}Service;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required ${1/(.*)/${1:/capitalize}/}Service ${1}Service,",
+			"}) : _${1}Service = ${1}Service;"
+		]
+  },
+	"Creates an injection for IService - Parts to include": {
+		"prefix": "ft-add-inject-i-service",
 		"body": [
 			"final I${1/(.*)/${1:/capitalize}/}Service _${1}Service;",
 			"",
@@ -109,8 +131,18 @@
 			"_${1}Service = ${1}Service;"
 		]
   },
-	"Creates an injection for Repository - Complete": {
-		"prefix": "ft-constructor-inject-repository",
+	"Creates an injection for Service - Parts to include": {
+		"prefix": "ft-add-inject-service",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Service _${1}Service;",
+			"",
+			"required ${1/(.*)/${1:/capitalize}/}Service ${1}Service,",
+			"",
+			"_${1}Service = ${1}Service;"
+		]
+  },
+	"Creates an injection for IRepository - Complete": {
+		"prefix": "ft-constr-inject-i-repository",
 		"body": [
 			"final I${1/(.*)/${1:/capitalize}/}Repository _${1}Repository;",
 			"",
@@ -119,8 +151,18 @@
 			"}) : _${1}Repository = ${1}Repository;"
 		]
   },
-	"Adds an injection for Repository - Parts to include": {
-		"prefix": "ft-add-inject-repository",
+	"Creates an injection for Repository - Complete": {
+		"prefix": "ft-constr-inject-repository",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Repository _${1}Repository;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required ${1/(.*)/${1:/capitalize}/}Repository ${1}Repository,",
+			"}) : _${1}Repository = ${1}Repository;"
+		]
+  },
+	"Adds an injection for IRepository - Parts to include": {
+		"prefix": "ft-add-inject-i-repository",
 		"body": [
 			"final I${1/(.*)/${1:/capitalize}/}Repository _${1}Repository;",
 			"",
@@ -129,8 +171,18 @@
 			"_${1}Repository = ${1}Repository;"
 		]
   },
+	"Adds an injection for Repository - Parts to include": {
+		"prefix": "ft-add-inject-repository",
+		"body": [
+			"final ${1/(.*)/${1:/capitalize}/}Repository _${1}Repository;",
+			"",
+			"required ${1/(.*)/${1:/capitalize}/}Repository ${1}Repository,",
+			"",
+			"_${1}Repository = ${1}Repository;"
+		]
+  },
 	"Creates an injection for Session - Complete": {
-		"prefix": "ft-constructor-inject-session",
+		"prefix": "ft-constr-inject-session",
 		"body": [
 			"final ${1/(.*)/${1:/capitalize}/}Session _${1}Session;",
 			"",
@@ -149,14 +201,34 @@
 			"_${1}Session = ${1}Session;"
 		]
   },
+	"Creates an injection for IProvider - Complete": {
+		"prefix": "ft-constr-inject-i-provider",
+		"body": [
+			"final I${1/(.*)/${1:/capitalize}/}Provider _${1}Provider;",
+			"",
+			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+			"  required I${1/(.*)/${1:/capitalize}/}Provider ${1}Provider,",
+			"}) : _${1}Provider = ${1}Provider;"
+		]
+  },
 	"Creates an injection for Provider - Complete": {
-		"prefix": "ft-constructor-inject-provider",
+		"prefix": "ft-constr-inject-provider",
 		"body": [
 			"final ${1/(.*)/${1:/capitalize}/}Provider _${1}Provider;",
 			"",
 			"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
 			"  required ${1/(.*)/${1:/capitalize}/}Provider ${1}Provider,",
 			"}) : _${1}Provider = ${1}Provider;"
+		]
+  },
+	"Adds an injection for IProvider - Parts to include": {
+		"prefix": "ft-add-inject-i-provider",
+		"body": [
+			"final I${1/(.*)/${1:/capitalize}/}Provider _${1}Provider;",
+			"",
+			"required I${1/(.*)/${1:/capitalize}/}Provider ${1}Provider,",
+			"",
+			"_${1}Provider = ${1}Provider;"
 		]
   },
 	"Adds an injection for Provider - Parts to include": {
@@ -170,7 +242,7 @@
 		]
   },
 	"Creates an injection for RestClient - Complete": {
-		"prefix": "ft-constructor-inject-rest-client",
+		"prefix": "ft-constr-inject-rest-client",
 		"body": [
 			"final RestClient _restClient;",
 			"",
@@ -190,7 +262,7 @@
 		]
   },
 	"Creates an injection for ApiCacheStorageService - Complete": {
-		"prefix": "ft-constructor-inject-api-storage",
+		"prefix": "ft-constr-inject-i-api-storage",
 		"body": [
 			"final IApiCacheStorageService _apiCacheStorageService;",
 			"",
@@ -200,7 +272,7 @@
 		]
   },
 	"Adds an injection for ApiCacheStorageService - Parts to include": {
-		"prefix": "ft-add-inject-api-storage",
+		"prefix": "ft-add-inject-i-api-storage",
 		"body": [
 			"final IApiCacheStorageService _apiCacheStorageService;",
 			"",
@@ -210,7 +282,7 @@
 		]
   },
 	"Creates an injection for RestClient and ApiCacheStorageService - Complete": {
-		"prefix": "ft-constructor-inject-rest-client-with-api-storage",
+		"prefix": "ft-constr-inject-rest-client-with-i-api-storage",
 		"body": [
 			"final RestClient _restClient;",
 			"final IApiCacheStorageService _apiCacheStorageService;",
@@ -236,7 +308,7 @@
 			"if (${1:condition}) return;${0}"
 		]
 	},
-	"Creates an if with return if condition was falsey": {
+	"Creates an if with return if condition was falsy": {
 		"prefix": "ft-ifnot-return",
 		"body": [
 			"if (!${1:condition}) return;${0}"
@@ -333,7 +405,7 @@
 	"Adds a Duration instruction": {
 		"prefix": "ft-duration",
 		"body": [
-			"Duration(${1|days,hours,microseconds,miliseconds,minutes,seconds|}: ${2|1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60|})${0}"
+			"Duration(${1|days,hours,microseconds,milliseconds,minutes,seconds|}: ${2|1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60|})${0}"
 		]
 	},
 	"Adds property as a void Function()": {
@@ -434,19 +506,19 @@
       "await ${0}"
     ]
 	},
-	"Adds a simple assingment variable": {
+	"Adds a simple assignment variable": {
     "prefix": "ft-final-simple",
     "body": [
       "final ${1:varName} = ${2:value};${0}"
     ]
 	},
-	"Adds a future assingment variable": {
+	"Adds a future assignment variable": {
     "prefix": "ft-final-await",
     "body": [
       "final ${1:varName} = await ${2:serviceName}.${3:methodName}(${4:params});${0}"
     ]
 	},
-	"Adds a future assingment variable for multiple futures processing": {
+	"Adds a future assignment variable for multiple futures processing": {
     "prefix": "ft-final-future-wait",
     "body": [
       "final ${1:varName} = await Future.wait([",

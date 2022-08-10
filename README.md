@@ -5,7 +5,7 @@
     </a>
 </p>
 
-# What's new in Flutter Tools 3.1.0 🎉
+# What's new in Flutter Tools 3.0 🎉
 
 - Cleaned up the context menu, removing the items below and added new options via VSCode QuickPick:
   - `📝 Create Controller`
@@ -62,7 +62,7 @@
   - `Wrap with ValueListenableBuilder`
   - `Wrap with MobX Observer`
   - `Wrap with GetX Obx`
-- Added **163 snippets** that can be accessed with `ft-` prefix.
+- Added **165 snippets** that can be accessed with `ft-` prefix.
 - Adds notification message for extension updates.
 
 # What's new in Flutter Tools 2.4.1
@@ -362,7 +362,7 @@ In some widgets structures by positioning the cursor over the widget which will 
 
 ![Usage](images/wrap-with-break-code.gif)
 
-In this case, undo the last operation and select all the widget that will be wrapped using the shorcut `Alt` + `W`, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
+In this case, undo the last operation and select all the widget that will be wrapped using the shortcut `Alt` + `W`, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
 
 ![Usage](images/wrap-with-selecting.gif)
 
@@ -433,7 +433,7 @@ Default suffix name for the MobX store.
 
 Defines whether an interface will be created using `I` with prefix to the interface name..
 
-![Usage](images/settings-use-i-preffix-interface.gif)
+![Usage](images/settings-use-i-prefix-interface.gif)
 
 
 

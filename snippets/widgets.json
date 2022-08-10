@@ -299,9 +299,9 @@
 		"prefix": "ft-image-asset",
 		"body": [
 			"Image(",
-			"  height: ${1:height},",
+			"  image: AssetImage('assets/images/${1:assetUrl}'),",
 			"  width: ${2:width},",
-			"  image: AssetImage('assets/images/${3:assetUrl}'),",
+			"  height: ${3:height},",
 			"  fit: BoxFit.${4|fill,contain,cover,fitWidth,fitHeight,none,scaleDown|},",
 			"),${0}"
 		]

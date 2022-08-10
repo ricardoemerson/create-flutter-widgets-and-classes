@@ -11,6 +11,11 @@
     "createReactTSXComponent.useReactFC": false,
     "createReactTSXComponent.stylesFormat": "TailwindCSSParser",
     "cSpell.words": [
+        "ifcontains",
+        "ifnot",
+        "ifnotnull",
+        "ifnull",
+        "rrect",
         "safearea",
         "wsedit"
     ]

@@ -2,9 +2,21 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.2.0]
+
+- Updated snippets:
+  - `ft-part` -> Adds part file for main file.
+  - `ft-part-of` -> Adds part of main file.
+  - `ft-constr-inject-i-provider` -> Creates an injection for IProvider - Complete.
+  - `ft-constr-inject-provider` -> Creates an injection for Provider - Complete.
+  - `ft-constr-inject-i-repository` -> Creates an injection for IRepository - Complete.
+  - `ft-constr-inject-repository` -> Creates an injection for Repository - Complete.
+  - `ft-constr-inject-i-service` -> Creates an injection for IService - Complete.
+  - `ft-constr-inject-service` -> Creates an injection for Service - Complete.
+
 ## [3.1.0]
 
-- Adds notification message for extension updates.
+- Added notification message for extension updates.
 
 ## [3.0.0]
 
