@@ -2,6 +2,14 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.3.2]
+
+- Updated CHANGELOG.md.
+
+## [3.3.1]
+
+- Updated README.md.
+
 ## [3.3.0]
 
 - Updated snippets:
@@ -9,6 +17,7 @@ All notable changes to the Flutter Tools extension will be documented in this fi
   - `ft-static-method` -> Adds a static method.
   - `ft-static-future-void-method` -> Adds a static Future<void> method.
   - `ft-static-future-method` -> Adds a static Future method.
+- Added the list of available snippets inside the README.md file in the [Snippets](#snippets) section.
 
 ## [3.2.0]
 
