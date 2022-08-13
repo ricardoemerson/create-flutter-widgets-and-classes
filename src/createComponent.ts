@@ -91,7 +91,7 @@ export default async (
 
   let componentFileName: string;
   let componentFileNameForImplementation: string;
-  const interfaceTypes = ['provider', 'repository', 'service'];
+  const interfaceTypes = ['provider', 'repository', 'service', 'interface-folder'];
   const mobxFileSuffix = type === 'mobx-controller' ? 'Controller' : 'Store';
 
   if (type === 'interface' || type === 'interface-folder') {

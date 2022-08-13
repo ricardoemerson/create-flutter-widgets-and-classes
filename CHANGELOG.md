@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.3.3]
+
+- Added fix for open the interface file when created through context menu -> 🗒️ Create Interface -> 📄 Create Interface Class.
+
 ## [3.3.2]
 
 - Updated CHANGELOG.md.
