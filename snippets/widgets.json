@@ -1,23 +1,23 @@
 {
-  "Adds BorderRadius": {
+  "Adds borderRadius property using BorderRadius": {
 		"prefix": "ft-border-radius",
 		"body": [
 			"borderRadius: BorderRadius.${0},"
 		]
 	},
-	"Adds BorderRadius.circular()": {
+	"Adds borderRadius property using BorderRadius.circular()": {
 		"prefix": "ft-border-radius-circular",
 		"body": [
 			"borderRadius: BorderRadius.circular(${1:value}),${0}"
 		]
 	},
-	"Adds BorderSide() with width and color": {
+	"Adds borderSide property using BorderSide() with width and color": {
 		"prefix": "ft-border-side",
 		"body": [
 			"borderSide: const BorderSide(width: ${1|1,2,3,4,5|}, color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},),${0}"
 		]
 	},
-	"Adds BorderSide() with color": {
+	"Adds borderSide property using BorderSide() with color": {
 		"prefix": "ft-border-side-color",
 		"body": [
 			"borderSide: const BorderSide(color: Colors.${1|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}),${0}"
@@ -32,19 +32,19 @@
 			"),"
 		]
 	},
-	"Adds MainAxisSize to Row or Column": {
+	"Adds mainAxisSize property using MainAxisSize to Row() or Column()": {
 		"prefix": "ft-main-axis-size",
 		"body": [
 			"mainAxisSize: MainAxisSize.${1|min,max|},${0}"
 		]
 	},
-	"Adds MainAxisAlignment to Row or Column": {
+	"Adds mainAxisAlignment property using MainAxisAlignment to Row() or Column()": {
 		"prefix": "ft-main-axis-alignment",
 		"body": [
 			"mainAxisAlignment: MainAxisAlignment.${1|start,end,center,spaceBetween,spaceAround,spaceEvenly|},${0}"
 		]
 	},
-	"Adds CrossAxisAlignment to Row or Column": {
+	"Adds crossAxisAlignment property using CrossAxisAlignment to Row() or Column()": {
 		"prefix": "ft-cross-axis-alignment",
 		"body": [
 			"crossAxisAlignment: CrossAxisAlignment.${1|start,end,center,baseLine,stretch|},${0}"
@@ -206,6 +206,12 @@
 			"physics: const BouncingScrollPhysics(),${0}"
 		]
 	},
+	"Adds direction property using Axis": {
+		"prefix": "ft-direction",
+		"body": [
+			"direction: Axis.${1|horizontal,vertical|},${0}"
+		]
+	},
 	"Adds scrollDirection property using Axis": {
 		"prefix": "ft-scroll-direction",
 		"body": [
@@ -215,7 +221,7 @@
 	"Adds Navigator instruction using pushNamed": {
 		"prefix": "ft-navigator-push-named",
 		"body": [
-			"Navigator.of(context).pushNamed('/${2:route-name}');${0},"
+			"Navigator.pushNamed(context, '/${1:route-name}');${0},"
 		]
 	},
 	"Adds Navigator instruction using pop": {
@@ -571,7 +577,7 @@
 			")"
 		]
 	},
-  "ft-constraints-box-constraints": {
+  "Adds constraints property using BoxConstraints": {
 		"prefix": "ft-constraints-box-constraints",
 		"body": [
 			"constraints: BoxConstraints(",

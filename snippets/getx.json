@@ -10,7 +10,8 @@
 		"body": [
 			"Get.${1|width,height|},${0}"
 		]
-	},"Adds the Get.find() the get instance of classe using GetX": {
+	},
+  "Adds the Get.find() the get instance of classe using GetX": {
 		"prefix": "ft-get-find",
 		"body": [
 			"Get.find(),${0}"

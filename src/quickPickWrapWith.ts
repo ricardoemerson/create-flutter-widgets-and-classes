@@ -1,4 +1,3 @@
-import { sleep } from './templates/shared/functions/sleep';
 import {
   wrapWithAlign,
   wrapWithClipRRect,
@@ -22,6 +21,7 @@ import {
   wrapWithValueListenableBuilder,
 } from './templates/wrapWith';
 
+import { orderBy } from 'lodash';
 import * as vscode from 'vscode';
 import { window } from 'vscode';
 
@@ -265,35 +265,29 @@ async function chooseWrapWithWidget() {
 
   if (mobxDisplayContextMenu) {
     const mobxItem: QuickPickItem = {
-      label: 'Wrap with MobX Observer',
-      description: 'Wrap the selected widget with MobX Observer',
+      label: 'Wrap with Observer for MobX',
+      description: 'Wrap the selected widget with Observer fro MobX',
       picked: false,
       value: 'observer',
     };
 
-    const positionedIndex = quickPickItems.findIndex(
-      item => item.label === 'Wrap with Positioned'
-    );
-
-    quickPickItems.splice(positionedIndex + 1, 0, mobxItem);
+    quickPickItems.push(mobxItem);
   }
 
   if (getxDisplayContextMenu) {
     const getxItem: QuickPickItem = {
-      label: 'Wrap with GetX Obx',
-      description: 'Wrap the selected widget with GetX Obx',
+      label: 'Wrap with Obx for GetX',
+      description: 'Wrap the selected widget with Obx for GetX',
       picked: false,
       value: 'obx',
     };
 
-    const safeAreaIndex = quickPickItems.findIndex(
-      item => item.label === 'Wrap with SafeArea'
-    );
-
-    quickPickItems.splice(safeAreaIndex, 0, getxItem);
+    quickPickItems.push(getxItem);
   }
 
-  const wrapWithWidget = (await vscode.window.showQuickPick(quickPickItems, {
+  const sortedItems = orderBy(quickPickItems, 'label');
+
+  const wrapWithWidget = (await vscode.window.showQuickPick(sortedItems, {
     placeHolder: 'Choose wished widget to wrap the selected widget.',
   })) as any;
 

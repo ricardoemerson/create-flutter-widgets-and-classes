@@ -229,7 +229,7 @@ async function showMessage(version: string, previousVersion?: string) {
     if (result === whatsNew) {
       await env.openExternal(
         Uri.parse(
-          'https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes'
+          'https://marketplace.visualstudio.com/items/ricardo-emerson.create-flutter-widgets-and-classes/changelog'
         )
       );
     } else if (result === giveAStar) {

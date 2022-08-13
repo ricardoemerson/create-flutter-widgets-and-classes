@@ -583,5 +583,29 @@
 		"body": [
 				"static ${1|String,int,bool,Date|} get ${2:getterName} => ${3:value};${0}"
 		]
+	},
+	"Adds a static method": {
+		"prefix": "ft-static-method",
+		"body": [
+				"static ${1|String,int,bool,Date|} ${2:methodName}() {",
+				"  ${0}",
+				"}"
+		]
+	},
+	"Adds a static Future<void> method": {
+		"prefix": "ft-static-future-void-method",
+		"body": [
+				"static Future<void> ${2:methodName}() async {",
+				"  ${0}",
+				"}"
+		]
+	},
+	"Adds a static Future method": {
+		"prefix": "ft-static-future-method",
+		"body": [
+				"static Future<${1|String,int,bool,Date|}> ${2:methodName}() async {",
+				"  ${0}",
+				"}"
+		]
 	}
 }

@@ -2,6 +2,14 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.3.0]
+
+- Updated snippets:
+  - `ft-direction` -> Adds direction property using Axis.
+  - `ft-static-method` -> Adds a static method.
+  - `ft-static-future-void-method` -> Adds a static Future<void> method.
+  - `ft-static-future-method` -> Adds a static Future method.
+
 ## [3.2.0]
 
 - Updated snippets:
