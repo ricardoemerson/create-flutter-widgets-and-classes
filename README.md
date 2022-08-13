@@ -64,6 +64,7 @@
   - `Wrap with GetX Obx`
 
 - Added [175 snippets](#snippets) that can be accessed with `ft-` prefix.
+- Added the list of available snippets inside the README.md file in the [Snippets](#snippets) section.
 - Adds notification message for extension updates.
 
 # What's new in Flutter Tools 2.4.1
