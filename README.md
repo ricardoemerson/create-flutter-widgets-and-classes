@@ -374,7 +374,7 @@ All snippets are available through prefix `ft-`.
 
 ## Flutter and Dart
 
-| Snippet | Description | Options |
+| Snippet | Description | Choice Options |
 |---|---|---|
 | `ft-imp-dart-date` | Adds Dart Date import | |
 | `ft-part` | Adds part file for main file | |
@@ -455,7 +455,7 @@ All snippets are available through prefix `ft-`.
 
 ## Widgets
 
-| Snippet | Description | Options |
+| Snippet | Description | Choice Options |
 |---|---|---|
 | `ft-border-radius` | Adds borderRadius property using BorderRadius |  |
 | `ft-border-radius-circular` | Adds borderRadius property using BorderRadius.circular() | |
@@ -562,7 +562,7 @@ All snippets are available through prefix `ft-`.
 
 ## Provider
 
-| Snippet | Description | Options |
+| Snippet | Description | Choice Options |
 |---|---|---|
 | `ft-context-read` | Adds the context.read() the get instance of classe using Provider | |
 | `ft-context-read-data` | Adds the context.read<type>()... the get instance of classe using Provider | |
