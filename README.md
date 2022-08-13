@@ -62,7 +62,8 @@
   - `Wrap with ValueListenableBuilder`
   - `Wrap with MobX Observer`
   - `Wrap with GetX Obx`
-- Added **165 snippets** that can be accessed with `ft-` prefix.
+
+- Added [175 snippets](#snippets) that can be accessed with `ft-` prefix.
 - Adds notification message for extension updates.
 
 # What's new in Flutter Tools 2.4.1
@@ -367,6 +368,8 @@ In this case, undo the last operation and select all the widget that will be wra
 ![Usage](images/wrap-with-selecting.gif)
 
 # Snippets
+
+All snippets are available through prefix `ft-`.
 
 ## Flutter and Dart
 
