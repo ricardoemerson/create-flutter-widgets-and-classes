@@ -573,39 +573,49 @@
 		]
 	},
 	"Adds a get property": {
-		"prefix": "ft-get",
+		"prefix": "ft-get-property",
 		"body": [
-				"${1|String,int,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+				"${1|void,String,int,double,bool,Date|} get ${2:getterName} => ${3:value};${0}"
 		]
 	},
 	"Adds a static get property": {
-		"prefix": "ft-static-get",
+		"prefix": "ft-static-get-property",
 		"body": [
-				"static ${1|String,int,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+				"static ${1|void,String,int,double,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+		]
+	},
+	"Add a signature to a static method": {
+		"prefix": "ft-signature-static-method",
+		"body": [
+				"static ${1|void,String,int,double,bool,Date|} ${2:methodName}();${0}"
 		]
 	},
 	"Adds a static method": {
 		"prefix": "ft-static-method",
 		"body": [
-				"static ${1|String,int,bool,Date|} ${2:methodName}() {",
+				"static ${1|void,String,int,double,bool,Date|} ${2:methodName}() {",
 				"  ${0}",
 				"}"
 		]
 	},
-	"Adds a static Future<void> method": {
-		"prefix": "ft-static-future-void-method",
+	"Adds a signature of a future static method": {
+		"prefix": "ft-signature-future-static-method",
 		"body": [
-				"static Future<void> ${2:methodName}() async {",
+				"static ${1|void,String,int,double,bool,Date|} ${2:methodName}();${0}"
+		]
+	},
+	"Adds a future static method": {
+		"prefix": "ft-future-static-method",
+		"body": [
+				"static Future<${1|void,String,int,double,bool,Date|}> ${2:methodName}() async {",
 				"  ${0}",
 				"}"
 		]
 	},
-	"Adds a static Future method": {
-		"prefix": "ft-static-future-method",
+	"Creates a ValueNotifier attribute": {
+		"prefix": "ft-value-notifier",
 		"body": [
-				"static Future<${1|String,int,bool,Date|}> ${2:methodName}() async {",
-				"  ${0}",
-				"}"
+			"final ${1:attributeName} = ValueNotifier<${2|void,String,int,double,bool,Date|}>($3);${0}"
 		]
 	}
 }

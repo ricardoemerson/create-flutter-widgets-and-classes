@@ -1,0 +1,45 @@
+{
+  "Creates a Flutter Modular Module": {
+		"prefix": "ft-modular-module",
+		"body": [
+			"import 'package:flutter_modular/flutter_modular.dart';",
+			"",
+			"import '${1}_page.dart';",
+			"",
+			"class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} extends Module {",
+			"  @override",
+			"  List<Bind> get binds => [];",
+			"",
+			"  @override",
+			"  List<ModularRoute> get routes => [",
+			"        ChildRoute(Modular.initialRoute, child: (_, __) => const ${1/(.*)/${1:/capitalize}/}Page()),${0}",
+			"      ];",
+			"}",
+			""
+		]
+	},
+	"Adds the Modular.get() the get instance of class using Modular": {
+		"prefix": "ft-modular-get",
+		"body": [
+				"Modular.get()${0}"
+		]
+	},
+	"Adds the Modular.get<Class>() to get instance of class using Modular": {
+		"prefix": "ft-modular-get-of-type",
+		"body": [
+				"Modular.get<${1:className}>().${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for any IClass using Modular": {
+		"prefix": "ft-bind-lazy-singleton-i-class",
+		"body": [
+				"Bind.lazySingleton<I${1/(.*)/${1:/capitalize}/}>((i) => ${1/(.*)/${1:/capitalize}/}(), ${2:export: true}),${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for any Class using Modular": {
+		"prefix": "ft-bind-lazy-singleton-class",
+		"body": [
+				"Bind.lazySingleton<${1/(.*)/${1:/capitalize}/}>((i) => ${1/(.*)/${1:/capitalize}/}Impl(), ${2:export: true}),${0}"
+		]
+	}
+}

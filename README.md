@@ -447,11 +447,12 @@ All snippets are available through prefix `ft-`.
 | `ft-future-void-method` | Adds a Future void method | |
 | `ft-void-method` | Adds a void method | |
 | `ft-form-is-valid` | Check if a form is valid | |
-| `ft-get` | Adds a get property | `String` \| `int` \| `bool` \| `Date` |
-| `ft-static-get` | Adds a static get property | `String` \| `int` \| `bool` \| `Date` |
-| `ft-static-method` | Adds a static method | `String` \| `int` \| `bool` \| `Date` |
-| `ft-static-future-void-method` | Adds a static Future<void> method | |
-| `ft-static-future-method` | Adds a static Future method | `String` \| `int` \| `bool` \| `Date`  |
+| `ft-get-property` | Adds a get property | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
+| `ft-static-get-property` | Adds a static get property | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
+| `ft-signature-static-method` | Add a signature to a static method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
+| `ft-static-method` | Adds a static method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
+| `ft-signature-future-static-method` | Adds a signature of a future static method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date`  |
+| `ft-static-future-method` | Adds a static Future method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date`  |
 
 ## Widgets
 
@@ -529,7 +530,7 @@ All snippets are available through prefix `ft-`.
 | `ft-keyboard-type` <br/><br/> `ft-input-type` | Adds keyboardType property using TextInputType | `datetime` \| `emailAddress` \| `multiline` \| `name` \| `none` \| `number` \| `phone` \| `streetAddress` \| `text` \| `url` \| `visiblePassword` \| `values` |
 | `ft-ensure-initialized` | Adds the instruction WidgetsFlutterBinding.ensureInitialized(); | |
 | `ft-scaffold` | Adds Scaffold Widget | |
-| `ft-popup-menu-button` | Adds PopupMenuButton Widget | `String` \| `int` \| `bool` \| `Date` |
+| `ft-popup-menu-button` | Adds PopupMenuButton Widget |  `String` \| `int` \| `double` \| `bool` \| `Date` |
 | `ft-constraints-box-constraints` | Adds constraints property using BoxConstraints | |
 | `ft-add-locales-pt-br` | Adds localizations for pt-BR | |
 | `ft-text-shadow` | Adds shadows property using Shadow to use in Text Widget | |
@@ -540,22 +541,31 @@ All snippets are available through prefix `ft-`.
 | Snippet | Description | Choice Options |
 |---|---|---|
 | `ft-imp-get` | Adds GetX import | `width` \|  `height` |
+| `ft-rx-attribute` | Creates a Rx attribute | `String` \| `int` \| `double` \| `bool` \| `Date` |
+| `ft-rxn-attribute` | Creates a Rxn attribute | `String` \| `int` \| `double` \| `bool` \| `Date` |
+| `ft-obs-attribute` | Creates a GetX Observable attribute | |
 | `ft-get-size` | Uses GetX to get width or height of screen | |
 | `ft-get-find` | Adds the Get.find() the get instance of classe using GetX | |
 | `ft-get-width` | Uses GetX to get width of screen | |
 | `ft-get-height` | Uses GetX to get height of screen | |
 | `ft-width-get-width` | Adds width property using Get.width | |
 | `ft-height-get-height` | Adds width property using Get.height | |
-| `ft-get-put-service` | Adds Get.put() instruction for Service | |
-| `ft-get-put-session` | Adds Get.put() instruction for Session | |
-| `ft-get-put-repository` | Adds Get.put() instruction for Repository | |
-| `ft-get-put-provider` | Adds Get.put() instruction for Provider | |
+| `ft-get-put-service` | Adds Get.put() instruction for Service() | |
+| `ft-get-put-service-impl` | Adds Get.put() instruction for ServiceImpl() | |
+| `ft-get-put-session` | Adds Get.put() instruction for Session() | |
+| `ft-get-put-repository` | Adds Get.put() instruction for Repository() | |
+| `ft-get-put-repository-impl` | Adds Get.put() instruction for RepositoryImpl() | |
+| `ft-get-put-provider` | Adds Get.put() instruction for Provider() | |
+| `ft-get-put-provider-impl` | Adds Get.put() instruction for ProviderImpl() | |
 | `ft-get-view` | Adds GetView instruction for get instance of controller inside view | |
-| `ft-get-put-controller` | Adds Get.put() instruction for Controller | |
-| `ft-get-lazy-put-controller` | Adds Get.lazyPut() instruction for Controller | |
-| `ft-get-lazy-put-provider` | Adds Get.lazyPut() instruction for Provider used by a Service | |
-| `ft-get-lazy-put-service` | Adds Get.lazyPut() instruction for Service | |
-| `ft-get-lazy-put-repository` | Adds Get.lazyPut() instruction for Repository used by a Service | |
+| `ft-get-put-controller` | Adds Get.put() instruction for Controller() | |
+| `ft-get-lazy-put-controller` | Adds Get.lazyPut() instruction for Controller() | |
+| `ft-get-lazy-put-provider` | Adds Get.lazyPut() instruction for Provider() used by a Service() | |
+| `ft-get-lazy-put-provider-impl` | Adds Get.lazyPut() instruction for ProviderImpl() used by a ServiceImpl() | |
+| `ft-get-lazy-put-service` | Adds Get.lazyPut() instruction for Service() | |
+| `ft-get-lazy-put-service-impl` | Adds Get.lazyPut() instruction for ServiceImpl() | |
+| `ft-get-lazy-put-repository` | Adds Get.lazyPut() instruction for Repository() used by a Service() | |
+| `ft-get-lazy-put-repository-impl` | Adds Get.lazyPut() instruction for RepositoryImpl() used by a ServiceImpl() | |
 | `ft-on-init` | Adds override for onInit method | |
 | `ft-on-ready` | Adds override for onReady method | |
 | `ft-on-close` | Adds override for onClose method | |
@@ -564,8 +574,20 @@ All snippets are available through prefix `ft-`.
 
 | Snippet | Description | Choice Options |
 |---|---|---|
-| `ft-context-read` | Adds the context.read() the get instance of classe using Provider | |
-| `ft-context-read-data` | Adds the context.read<type>()... the get instance of classe using Provider | |
+| `ft-provider-read` | Adds the context.read() to get instance of classe using Provider | |
+| `ft-provider-read-data` | Adds the context.read<type>()... to get instance of classe using Provider | |
+| `ft-provider-watch` | Adds the context.watch<type>()... to watch instance of classe using Provider | |
+| `ft-provider-select` | Adds the context.select<ClassName, type>()... to select instance of classe using Provider |  `String` \| `int` \| `double` \| `bool` \| `Date` |
+
+## Modular
+
+| Snippet | Description | Choice Options |
+|---|---|---|
+| `ft-modular-module` | Creates a Flutter Modular Module | |
+| `ft-modular-get` | Adds the Modular.get() the get instance of class using Modular | |
+| `ft-modular-get-of-type` | Adds the Modular.get<Class>() to get instance of class using Modular | |
+| `ft-bind-lazy-singleton-i-class` | Adds Bind.lazySingleton() instruction for any IClass using Modular | |
+| `ft-bind-lazy-singleton-class` | Adds Bind.lazySingleton() instruction for any Class using Modular | |
 
 
 # Settings

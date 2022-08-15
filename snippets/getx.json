@@ -5,6 +5,24 @@
 			"import 'package:get/get.dart';${0}"
 		]
 	},
+  "Creates a Rx attribute": {
+		"prefix": "ft-rx-attribute",
+		"body": [
+      "final ${1:attributeName} = Rx<${2|String,int,double,bool,Date|}>();${0}"
+		]
+  },
+  "Creates a Rxn attribute": {
+		"prefix": "ft-rxn-attribute",
+		"body": [
+      "final ${1:attributeName} = Rxn<${2|String,int,double,bool,Date|}>();${0}"
+		]
+  },
+  "Creates a GetX Observable attribute": {
+    "prefix": "ft-obs-attribute",
+    "body": [
+      "final ${1:attributeName} = ${2:value}.obs;${0}"
+    ]
+	},
   "Uses GetX to get width or height of screen": {
 		"prefix": "ft-get-size",
 		"body": [
@@ -41,28 +59,46 @@
 			"height: Get.height,${0}"
 		]
 	},
-  "Adds Get.put() instruction for Service": {
+  "Adds Get.put() instruction for Service()": {
 		"prefix": "ft-get-put-service",
 		"body": [
 			"Get.put(${1/(.*)/${1:/capitalize}/}Service());${0}"
 		]
 	},
-	"Adds Get.put() instruction for Session": {
+  "Adds Get.put() instruction for ServiceImpl()": {
+		"prefix": "ft-get-put-service-impl",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}ServiceImpl());${0}"
+		]
+	},
+	"Adds Get.put() instruction for Session()": {
 		"prefix": "ft-get-put-session",
 		"body": [
 			"Get.put(${1/(.*)/${1:/capitalize}/}Session());${0}"
 		]
 	},
-	"Adds Get.put() instruction for Repository": {
+	"Adds Get.put() instruction for Repository()": {
 		"prefix": "ft-get-put-repository",
 		"body": [
 			"Get.put(${1/(.*)/${1:/capitalize}/}Repository());${0}"
 		]
 	},
-	"Adds Get.put() instruction for Provider": {
+	"Adds Get.put() instruction for RepositoryImpl()": {
+		"prefix": "ft-get-put-repository-impl",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}RepositoryImpl());${0}"
+		]
+	},
+	"Adds Get.put() instruction for Provider()": {
 		"prefix": "ft-get-put-provider",
 		"body": [
 			"Get.put(${1/(.*)/${1:/capitalize}/}Provider());${0}"
+		]
+	},
+	"Adds Get.put() instruction for ProviderImpl()": {
+		"prefix": "ft-get-put-provider-impl",
+		"body": [
+			"Get.put(${1/(.*)/${1:/capitalize}/}ProviderImpl());${0}"
 		]
 	},
 	"Adds GetView instruction for get instance of controller inside view": {
@@ -71,13 +107,13 @@
 			"GetView<${1/(.*)/${1:/capitalize}/}Controller>${0}"
 		]
 	},
-	"Adds Get.put() instruction for Controller": {
+	"Adds Get.put() instruction for Controller()": {
 		"prefix": "ft-get-put-controller",
 		"body": [
 			"Get.put(${1/(.*)/${1:/capitalize}/}Controller());${0}"
 		]
 	},
-	"Adds Get.lazyPut() instruction for Controller": {
+	"Adds Get.lazyPut() instruction for Controller()": {
 		"prefix": "ft-get-lazy-put-controller",
 		"body": [
 			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Controller>(",
@@ -85,7 +121,7 @@
 			");${0}"
 		]
 	},
-	"Adds Get.lazyPut() instruction for Provider used by a Service": {
+	"Adds Get.lazyPut() instruction for Provider() used by a Service()": {
 		"prefix": "ft-get-lazy-put-provider",
 		"body": [
 			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Provider>(",
@@ -97,7 +133,19 @@
 			");${0}"
 		]
 	},
-	"Adds Get.lazyPut() instruction for Service": {
+	"Adds Get.lazyPut() instruction for ProviderImpl() used by a ServiceImpl()": {
+		"prefix": "ft-get-lazy-put-provider",
+		"body": [
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Provider>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}ProviderImpl(),",
+			");",
+			"",
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Service>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}ServiceImpl(${1}Provider: Get.find(),),",
+			");${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for Service()": {
 		"prefix": "ft-get-lazy-put-service",
 		"body": [
 			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Service>(",
@@ -105,7 +153,15 @@
 			");${0}"
 		]
 	},
-	"Adds Get.lazyPut() instruction for Repository used by a Service": {
+	"Adds Get.lazyPut() instruction for ServiceImpl()": {
+		"prefix": "ft-get-lazy-put-service-impl",
+		"body": [
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Service>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}ServiceImpl(${1}Repository: Get.find(),),",
+			");${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for Repository() used by a Service()": {
 		"prefix": "ft-get-lazy-put-repository",
 		"body": [
 			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Repository>(",
@@ -114,6 +170,18 @@
 			"",
 			"Get.lazyPut<I${1/(.*)/${1:/capitalize}/}Service>(",
 			"  () => ${1/(.*)/${1:/capitalize}/}Service(${1}Repository: Get.find(),),",
+			");${0}"
+		]
+	},
+	"Adds Get.lazyPut() instruction for RepositoryImpl() used by a ServiceImpl()": {
+		"prefix": "ft-get-lazy-put-repository",
+		"body": [
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Repository>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}RepositoryImpl(restClient: Get.find(),),",
+			");",
+			"",
+			"Get.lazyPut<${1/(.*)/${1:/capitalize}/}Service>(",
+			"  () => ${1/(.*)/${1:/capitalize}/}ServiceImpl(${1}Repository: Get.find(),),",
 			");${0}"
 		]
 	},

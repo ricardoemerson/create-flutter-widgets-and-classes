@@ -1,14 +1,26 @@
 {
-  "Adds the context.read() the get instance of classe using Provider": {
-    "prefix": "ft-context-read",
+  "Adds the context.read() to get instance of classe using Provider": {
+    "prefix": "ft-provider-read",
     "body": [
       "context.read()${0}"
     ]
 	},
-	"Adds the context.read<type>()... the get instance of classe using Provider": {
-    "prefix": "ft-context-read-data",
+	"Adds the context.read<type>()... to get instance of classe using Provider": {
+    "prefix": "ft-provider-read-data",
     "body": [
       "context.read<${1:type}>().${0}"
+    ]
+	},
+	"Adds the context.watch<type>()... to watch instance of classe using Provider": {
+    "prefix": "ft-provider-watch",
+    "body": [
+      "context.watch<${1:type}>().${0}"
+    ]
+	},
+	"Adds the context.select<ClassName, type>()... to select instance of classe using Provider": {
+    "prefix": "ft-provider-select",
+    "body": [
+      "context.select<${1:ClassName, ${2|String,int,double,bool,Date|}}>((${3:value}) {});${0}"
     ]
 	}
 }

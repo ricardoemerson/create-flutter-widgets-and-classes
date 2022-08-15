@@ -568,7 +568,7 @@
 			"PopupMenuButton(",
 			"  icon: const Icon(Icons.filter_alt),",
 			"  itemBuilder: (_) => [",
-			"    const PopupMenuItem<${1|String,int,bool,Date|}>(",
+			"    const PopupMenuItem<${1|String,int,double,bool,Date|}>(",
 			"      child: Text(",
 			"        '${2:itemText}',",
 			"      ),",

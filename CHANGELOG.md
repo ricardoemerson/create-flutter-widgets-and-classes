@@ -2,6 +2,40 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.4.0]
+
+- Updated snippets list:
+  - Flutter and Dart
+  - `ft-get-property` -> Adds a get property.
+  - `ft-static-get-property` -> Adds a static get property.
+  - `ft-signature-static-method` -> Add a signature to a static method.
+  - `ft-static-method` -> Adds a static method.
+  - `ft-signature-future-static-method` -> Adds a signature of a future static method.
+  - `ft-future-static-method` -> Adds a future static method.
+
+  - GetX:
+  - `ft-get-put-service-impl` -> Adds Get.put() instruction for ServiceImpl().
+  - `ft-get-put-repository-impl` -> Adds Get.put() instruction for RepositoryImpl().
+  - `ft-get-put-provider-impl` -> Adds Get.put() instruction for ProviderImpl().
+  - `ft-get-lazy-put-provider-impl` -> Adds Get.lazyPut() instruction for ProviderImpl() used by a ServiceImpl().
+  - `ft-get-lazy-put-service-impl` -> Adds Get.lazyPut() instruction for ServiceImpl().
+  - `ft-get-lazy-put-repository-impl` -> Adds Get.lazyPut() instruction for RepositoryImpl() used by a ServiceImpl().
+  - `ft-rx-attribute` -> Creates a Rx attribute.
+  - `ft-rxn-attribute` -> Creates a Rxn attribute.
+  - `ft-obs-attribute` -> Creates a GetX Observable attribute.
+
+  - Provider:
+  - `ft-provider-watch` -> Adds the context.watch<type>()... to watch instance of classe using Provider.
+  - `ft-provider-select` -> Adds the context.select<ClassName, type>()... to select instance of classe using Provider.
+
+  - Flutter Modular
+  - `ft-modular-module` -> Creates a Flutter Modular Module.
+  - `ft-modular-get` -> Adds the Modular.get() the get instance of class using Modular.
+  - `ft-modular-get-of-type` -> Adds the Modular.get<Class>() to get instance of class using Modular.
+  - `ft-bind-lazy-singleton-i-class` -> Adds Bind.lazySingleton() instruction for any IClass using Modular.
+  - `ft-bind-lazy-singleton-class` -> Adds Bind.lazySingleton() instruction for any Class using Modular.
+  -
+
 ## [3.3.3]
 
 - Added fix for open the interface file when created through context menu -> 🗒️ Create Interface -> 📄 Create Interface Class.
@@ -16,7 +50,7 @@ All notable changes to the Flutter Tools extension will be documented in this fi
 
 ## [3.3.0]
 
-- Updated snippets:
+- Updated snippets list:
   - `ft-direction` -> Adds direction property using Axis.
   - `ft-static-method` -> Adds a static method.
   - `ft-static-future-void-method` -> Adds a static Future<void> method.
