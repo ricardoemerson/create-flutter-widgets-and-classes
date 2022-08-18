@@ -19,6 +19,7 @@ import {
   wrapWithSingleChildScrollView,
   wrapWithStack,
   wrapWithValueListenableBuilder,
+  wrapWithVisibility,
 } from './templates/wrapWith';
 
 import { orderBy } from 'lodash';
@@ -45,7 +46,8 @@ type WrapWidgetType =
   | 'safe-area'
   | 'single-child-scroll-view'
   | 'stack'
-  | 'value-listenable-builder';
+  | 'value-listenable-builder'
+  | 'visibility';
 
 interface QuickPickItem {
   label: string;
@@ -142,12 +144,16 @@ export async function wrapWithWidget() {
       case 'value-listenable-builder':
         wrapWithValueListenableBuilder();
         break;
+
+      case 'visibility':
+        wrapWithVisibility();
+        break;
     }
   }
 }
 
 async function chooseWrapWithWidget() {
-  const config = vscode.workspace.getConfiguration('createFlutterWidgetsAndClasses');
+  const config = vscode.workspace.getConfiguration('flutterTools');
   const getxDisplayContextMenu = config.get('getxDisplayContextMenu') as boolean;
   const mobxDisplayContextMenu = config.get('mobxDisplayContextMenu') as boolean;
 
@@ -260,6 +266,12 @@ async function chooseWrapWithWidget() {
       description: 'Wrap the selected widget with ValueListenableBuilder',
       picked: false,
       value: 'value-listenable-builder',
+    },
+    {
+      label: 'Wrap with Visibility',
+      description: 'Wrap the selected widget with Visibility',
+      picked: false,
+      value: 'visibility',
     },
   ];
 

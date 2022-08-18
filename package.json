@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -100,6 +100,22 @@
         "command": "extension.implementsInterface"
       },
       {
+        "title": "Wrap with Expanded",
+        "command": "extension.wrapWithExpanded"
+      },
+      {
+        "title": "Wrap with Flexible",
+        "command": "extension.wrapWithFlexible"
+      },
+      {
+        "title": "Wrap with Observer for MobX",
+        "command": "extension.wrapWithObserver"
+      },
+      {
+        "title": "Wrap with Obx for GetX",
+        "command": "extension.wrapWithObx"
+      },
+      {
         "title": "Flutter Tools - Wrap with widget...",
         "command": "extension.wrapWithWidget"
       },
@@ -137,22 +153,22 @@
         {
           "command": "extension.create-getx-app-structure",
           "group": "2b_modification",
-          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
+          "when": "explorerResourceIsFolder && config.flutterTools.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-getx-feature",
           "group": "2b_modification",
-          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
+          "when": "explorerResourceIsFolder && config.flutterTools.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-getx-service",
           "group": "2b_modification",
-          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.getxDisplayContextMenu == true"
+          "when": "explorerResourceIsFolder && config.flutterTools.getxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-mobx-store",
           "group": "2c_modification",
-          "when": "explorerResourceIsFolder && config.createFlutterWidgetsAndClasses.mobxDisplayContextMenu == true"
+          "when": "explorerResourceIsFolder && config.flutterTools.mobxDisplayContextMenu == true"
         },
         {
           "command": "extension.create-interface",
@@ -171,7 +187,23 @@
       ],
       "commandPalette": [
         {
+          "command": "extension.wrapWithExpanded",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithFlexible",
+          "when": "editorLangId == dart"
+        },
+        {
           "command": "extension.wrapWithWidget",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithObserver",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithObx",
           "when": "editorLangId == dart"
         }
       ]
@@ -201,32 +233,32 @@
     "configuration": {
       "title": "Flutter Tools",
       "properties": {
-        "createFlutterWidgetsAndClasses.useIPrefixForInterfaces": {
+        "flutterTools.useIPrefixForInterfaces": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines whether an interface will be created using `I` with prefix to the interface name."
         },
-        "createFlutterWidgetsAndClasses.createImplementationOfInterface": {
+        "flutterTools.createImplementationOfInterface": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines whether the implementation class of an interface will be created together."
         },
-        "createFlutterWidgetsAndClasses.createFolderForInterfaces": {
+        "flutterTools.createFolderForInterfaces": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if it will create a folder to contain the interface and implementation only for Providers, Repositories and Services."
         },
-        "createFlutterWidgetsAndClasses.getxUseConstructorTearOffs": {
+        "flutterTools.getxUseConstructorTearOffs": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if the Bindings and Routes files will use the new Dart language feature named Constructor tear-offs."
         },
-        "createFlutterWidgetsAndClasses.getxDisplayContextMenu": {
+        "flutterTools.getxDisplayContextMenu": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if the context menu with GetX features will be displayed."
         },
-        "createFlutterWidgetsAndClasses.getxViewsSuffix": {
+        "flutterTools.getxViewsSuffix": {
           "type": "string",
           "enum": [
             "Page",
@@ -236,7 +268,7 @@
           "default": "Page",
           "markdownDescription": "Default suffix name for the GetX view layer."
         },
-        "createFlutterWidgetsAndClasses.getxProjectPath": {
+        "flutterTools.getxProjectPath": {
           "type": "string",
           "enum": [
             "/lib/app",
@@ -245,12 +277,12 @@
           "default": "/lib/app",
           "markdownDescription": "Default path for the GetX Project folders and files."
         },
-        "createFlutterWidgetsAndClasses.mobxDisplayContextMenu": {
+        "flutterTools.mobxDisplayContextMenu": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if the context menu with MobX features will be displayed."
         },
-        "createFlutterWidgetsAndClasses.widgetsViewsSuffix": {
+        "flutterTools.widgetsViewsSuffix": {
           "type": "string",
           "enum": [
             "Page",
@@ -260,7 +292,7 @@
           "default": "Page",
           "markdownDescription": "Default suffix name for the Widgets views."
         },
-        "createFlutterWidgetsAndClasses.createFolderForWidgetsPage": {
+        "flutterTools.createFolderForWidgetsPage": {
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if it will create a folder to contain the widget."

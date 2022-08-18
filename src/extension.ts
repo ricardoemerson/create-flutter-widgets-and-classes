@@ -1,4 +1,10 @@
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
+import {
+  wrapWithExpanded,
+  wrapWithFlexible,
+  wrapWithObserver,
+  wrapWithObx,
+} from './templates/wrapWith';
 
 import createComponent from './createComponent';
 import implementsInterface from './implementsInterface';
@@ -149,6 +155,10 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
       return [];
     }
 
+    const config = vscode.workspace.getConfiguration('flutterTools');
+    const getxDisplayContextMenu = config.get('getxDisplayContextMenu') as boolean;
+    const mobxDisplayContextMenu = config.get('mobxDisplayContextMenu') as boolean;
+
     const selectedText = editor.document.getText(getSelectedText(editor));
     const codeActions = [];
     const textFile = editor.document.getText();
@@ -161,6 +171,30 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
     }
 
     if (selectedText !== '') {
+      codeActions.push({
+        command: 'extension.wrapWithExpanded',
+        title: 'Wrap with Expanded',
+      });
+
+      codeActions.push({
+        command: 'extension.wrapWithFlexible',
+        title: 'Wrap with Flexible',
+      });
+
+      if (mobxDisplayContextMenu) {
+        codeActions.push({
+          command: 'extension.wrapWithObserver',
+          title: 'Wrap with Observer for MobX',
+        });
+      }
+
+      if (getxDisplayContextMenu) {
+        codeActions.push({
+          command: 'extension.wrapWithObx',
+          title: 'Wrap with Obx for GetX',
+        });
+      }
+
       codeActions.push({
         command: 'extension.wrapWithWidget',
         title: 'Flutter Tools - Wrap with widget...',
@@ -251,6 +285,10 @@ async function showMessage(version: string, previousVersion?: string) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+  const config = vscode.workspace.getConfiguration('flutterTools');
+  const getxDisplayContextMenu = config.get('getxDisplayContextMenu') as boolean;
+  const mobxDisplayContextMenu = config.get('mobxDisplayContextMenu') as boolean;
+
   const previousVersion = context.globalState.get<string>(LAST_VERSION_KEY);
   const extensionData = extensions.getExtension(
     'ricardo-emerson.create-flutter-widgets-and-classes'
@@ -286,6 +324,10 @@ export function activate(context: vscode.ExtensionContext) {
     }),
 
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
+    vscode.commands.registerCommand('extension.wrapWithExpanded', wrapWithExpanded),
+    vscode.commands.registerCommand('extension.wrapWithFlexible', wrapWithFlexible),
+    vscode.commands.registerCommand('extension.wrapWithObserver', wrapWithObserver),
+    vscode.commands.registerCommand('extension.wrapWithObx', wrapWithObx),
     vscode.commands.registerCommand('extension.wrapWithWidget', wrapWithWidget),
     vscode.commands.registerCommand('extension.selectWidget', function () {
       expandSelection(true);
@@ -296,6 +338,18 @@ export function activate(context: vscode.ExtensionContext) {
       new CodeActionProvider()
     ),
   ];
+
+  // if (mobxDisplayContextMenu) {
+  //   disposable.push(
+  //     vscode.commands.registerCommand('extension.wrapWithObserver', wrapWithObserver)
+  //   );
+  // }
+
+  // if (getxDisplayContextMenu) {
+  //   disposable.push(
+  //     vscode.commands.registerCommand('extension.wrapWithObx', wrapWithObx)
+  //   );
+  // }
 
   context.subscriptions.push(...disposable);
 }

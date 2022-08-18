@@ -55,14 +55,16 @@
   - `Wrap with IntrinsicWidth`
   - `Wrap with LayoutBuilder`
   - `Wrap with LayoutBuilder and SingleChildScrollView`
+  - `Wrap with Observer for MobX`
+  - `Wrap with Obx for GetX`
   - `Wrap with Positioned`
   - `Wrap with SafeArea`
   - `Wrap with SingleChildScrollView`
   - `Wrap with Stack`
   - `Wrap with ValueListenableBuilder`
-  - `Wrap with MobX Observer`
-  - `Wrap with GetX Obx`
+  - `Wrap with Visibility`
 
+- Added a check if some GetX folders exist to avoid errors.
 - Added [175 snippets](#snippets) that can be accessed with `ft-` prefix.
 - Added the list of available snippets inside the README.md file in the [Snippets](#snippets) section.
 - Adds notification message for extension updates.

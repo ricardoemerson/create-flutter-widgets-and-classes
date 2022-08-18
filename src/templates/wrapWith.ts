@@ -63,6 +63,13 @@ const wrapWithFlexibleTemplate = (widget: string) =>
 )
 `;
 
+const wrapWithVisibilityTemplate = (widget: string) =>
+  `Visibility(
+  visible: condition,
+  child: ${widget},
+)
+`;
+
 const wrapWithIntrinsicHeightTemplate = (widget: string) =>
   `IntrinsicHeight(
   child: ${widget},
@@ -126,6 +133,7 @@ const wrapWithInkWellTemplate = (widget: string) =>
 
 const wrapWithSingleChildScrollViewTemplate = (widget: string) =>
   `SingleChildScrollView(
+  physics: const BouncingScrollPhysics(),
   child: ${widget},
 )
 `;
@@ -167,6 +175,7 @@ export const wrapWithValueListenableBuilder = async () =>
   wrapWith(wrapWithValueListenableBuilderTemplate);
 export const wrapWithExpanded = async () => wrapWith(wrapWithExpandedTemplate);
 export const wrapWithFlexible = async () => wrapWith(wrapWithFlexibleTemplate);
+export const wrapWithVisibility = async () => wrapWith(wrapWithVisibilityTemplate);
 export const wrapWithIntrinsicHeight = async () =>
   wrapWith(wrapWithIntrinsicHeightTemplate);
 export const wrapWithIntrinsicWidth = async () =>

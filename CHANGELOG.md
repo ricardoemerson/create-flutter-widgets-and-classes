@@ -2,6 +2,11 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.5.0]
+
+- Added the item `Wrap with Visibility`.
+- Added a check if some GetX folders exist to avoid errors.
+
 ## [3.4.0]
 
 - Updated snippets list:

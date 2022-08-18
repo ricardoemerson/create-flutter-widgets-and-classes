@@ -17,7 +17,7 @@ async function implementsInterface(uri: any) {
     .replace('abstract class ', '')
     .replace(' {', '');
 
-  const config = vscode.workspace.getConfiguration('createFlutterWidgetsAndClasses');
+  const config = vscode.workspace.getConfiguration('flutterTools');
   const useIPrefixForInterfaces = config.get('useIPrefixForInterfaces') as boolean;
 
   let implementationName = interfaceName;

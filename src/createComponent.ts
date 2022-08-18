@@ -69,7 +69,7 @@ export default async (
   { dir, type, stateFullWidget = false }: ComponentProps
 ) => {
   // Load configurations.
-  const config = vscode.workspace.getConfiguration('createFlutterWidgetsAndClasses');
+  const config = vscode.workspace.getConfiguration('flutterTools');
   const getxViewsSuffix = config.get('getxViewsSuffix') as string;
   const widgetsViewsSuffix = config.get('widgetsViewsSuffix') as string;
   const getxProjectPath = config.get('getxProjectPath') as string;
@@ -517,7 +517,28 @@ export default async (
     const getxFolder = usesAppPath ? '/app/' : '/';
 
     if (usesAppPath) {
+      if (fs.existsSync(dir + `/app`)) {
+        vscode.window.showErrorMessage(
+          'GetX App Structure can only be created if "/app" folder does not exist!'
+        );
+
+        return;
+      }
+
       await mkdirp(dir + `/app`);
+    }
+
+    if (
+      fs.existsSync(dir + `${getxFolder}core`) ||
+      fs.existsSync(dir + `${getxFolder}data`) ||
+      fs.existsSync(dir + `${getxFolder}modules`) ||
+      fs.existsSync(dir + `${getxFolder}routes`)
+    ) {
+      vscode.window.showErrorMessage(
+        'GetX App Structure only can be created if "/core", "/data", "/modules" and "/routes" folders does not exists!'
+      );
+
+      return;
     }
 
     await mkdirp(dir + `${getxFolder}core`);
