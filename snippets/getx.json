@@ -8,13 +8,13 @@
   "Creates a Rx attribute": {
 		"prefix": "ft-rx-attribute",
 		"body": [
-      "final ${1:attributeName} = Rx<${2|String,int,double,bool,Date|}>();${0}"
+      "final ${1:attributeName} = Rx<${2|String,int,double,bool,Datetime|}>();${0}"
 		]
   },
   "Creates a Rxn attribute": {
 		"prefix": "ft-rxn-attribute",
 		"body": [
-      "final ${1:attributeName} = Rxn<${2|String,int,double,bool,Date|}>();${0}"
+      "final ${1:attributeName} = Rxn<${2|String,int,double,bool,Datetime|}>();${0}"
 		]
   },
   "Creates a GetX Observable attribute": {

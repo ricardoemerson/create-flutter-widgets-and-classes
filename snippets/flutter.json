@@ -402,6 +402,12 @@
 			"await Future.delayed(const Duration(seconds: ${1|1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60|}));${0}"
 		]
 	},
+	"Adds a Future.delayed instruction with a callback function": {
+		"prefix": "ft-delayed-seconds-with-callback",
+		"body": [
+			"await Future.delayed(const Duration(seconds: ${1|1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60|}, () {}));${0}"
+		]
+	},
 	"Adds a Duration instruction": {
 		"prefix": "ft-duration",
 		"body": [
@@ -575,25 +581,31 @@
 	"Adds a get property": {
 		"prefix": "ft-get-property",
 		"body": [
-				"${1|void,String,int,double,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+				"${1|void,String,int,double,bool,Datetime|} get ${2:getterName} => ${3:value};${0}"
 		]
 	},
 	"Adds a static get property": {
 		"prefix": "ft-static-get-property",
 		"body": [
-				"static ${1|void,String,int,double,bool,Date|} get ${2:getterName} => ${3:value};${0}"
+				"static ${1|void,String,int,double,bool,Datetime|} get ${2:getterName} => ${3:value};${0}"
 		]
 	},
 	"Add a signature to a static method": {
 		"prefix": "ft-signature-static-method",
 		"body": [
-				"static ${1|void,String,int,double,bool,Date|} ${2:methodName}();${0}"
+				"static ${1|void,String,int,double,bool,Datetime|} ${2:methodName}();${0}"
+		]
+	},
+	"Add a signature to method": {
+		"prefix": "ft-signature-method",
+		"body": [
+				"${1|void,String,int,double,bool,Datetime|} ${2:methodName}();${0}"
 		]
 	},
 	"Adds a static method": {
 		"prefix": "ft-static-method",
 		"body": [
-				"static ${1|void,String,int,double,bool,Date|} ${2:methodName}() {",
+				"static ${1|void,String,int,double,bool,Datetime|} ${2:methodName}() {",
 				"  ${0}",
 				"}"
 		]
@@ -601,13 +613,19 @@
 	"Adds a signature of a future static method": {
 		"prefix": "ft-signature-future-static-method",
 		"body": [
-				"static ${1|void,String,int,double,bool,Date|} ${2:methodName}();${0}"
+				"static Future<${1|void,String,int,double,bool,Datetime|}> ${2:methodName}();${0}"
+		]
+	},
+	"Adds a signature of a future method": {
+		"prefix": "ft-signature-future-method",
+		"body": [
+				"Future<${1|void,String,int,double,bool,Datetime|}> ${2:methodName}();${0}"
 		]
 	},
 	"Adds a future static method": {
 		"prefix": "ft-future-static-method",
 		"body": [
-				"static Future<${1|void,String,int,double,bool,Date|}> ${2:methodName}() async {",
+				"static Future<${1|void,String,int,double,bool,Datetime|}> ${2:methodName}() async {",
 				"  ${0}",
 				"}"
 		]
@@ -615,7 +633,7 @@
 	"Creates a ValueNotifier attribute": {
 		"prefix": "ft-value-notifier",
 		"body": [
-			"final ${1:attributeName} = ValueNotifier<${2|void,String,int,double,bool,Date|}>($3);${0}"
+			"final ${1:attributeName} = ValueNotifier<${2|void,String,int,double,bool,Datetime|}>($3);${0}"
 		]
 	}
 }

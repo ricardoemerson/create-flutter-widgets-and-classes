@@ -33,13 +33,47 @@
 	"Adds Bind.lazySingleton() instruction for any IClass using Modular": {
 		"prefix": "ft-bind-lazy-singleton-i-class",
 		"body": [
-				"Bind.lazySingleton<I${1/(.*)/${1:/capitalize}/}>((i) => ${1/(.*)/${1:/capitalize}/}(), ${2:export: true}),${0}"
+				"Bind.lazySingleton<I${1/(.*)/${1:/capitalize}/}>((i) => ${1/(.*)/${1:/capitalize}/}()${2:, export: true}),${0}"
 		]
 	},
 	"Adds Bind.lazySingleton() instruction for any Class using Modular": {
 		"prefix": "ft-bind-lazy-singleton-class",
 		"body": [
-				"Bind.lazySingleton<${1/(.*)/${1:/capitalize}/}>((i) => ${1/(.*)/${1:/capitalize}/}Impl(), ${2:export: true}),${0}"
+				"Bind.lazySingleton<${1/(.*)/${1:/capitalize}/}>((i) => ${1/(.*)/${1:/capitalize}/}Impl()${2:, export: true}),${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for Controller using Modular": {
+		"prefix": "ft-bind-lazy-singleton-controller",
+		"body": [
+				"Bind.lazySingleton((i) => ${1/(.*)/${1:/capitalize}/}Controller()),${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for Repository() used by a Service() using Modular": {
+		"prefix": "ft-bind-lazy-singleton-repository",
+		"body": [
+				"Bind.lazySingleton<I${1/(.*)/${1:/capitalize}/}>Repository((i) => ${1/(.*)/${1:/capitalize}/}Repository()),",
+        "",
+				"Bind.lazySingleton<I${1/(.*)/${1:/capitalize}/}>Service((i) => ${1/(.*)/${1:/capitalize}/}Service(${1}Repository: i(),)),${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for RepositoryImpl() used by a ServiceImpl() using Modular": {
+		"prefix": "ft-bind-lazy-singleton-repository-impl",
+		"body": [
+				"Bind.lazySingleton<${1/(.*)/${1:/capitalize}/}>Repository((i) => ${1/(.*)/${1:/capitalize}/}RepositoryImpl()),",
+        "",
+				"Bind.lazySingleton<${1/(.*)/${1:/capitalize}/}>Service((i) => ${1/(.*)/${1:/capitalize}/}ServiceImpl(${1}Repository: i(),)),${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for Service() using Modular": {
+		"prefix": "ft-bind-lazy-singleton-service",
+		"body": [
+				"Bind.lazySingleton<I${1/(.*)/${1:/capitalize}/}>Service((i) => ${1/(.*)/${1:/capitalize}/}Service(${1}Repository: i(),)),${0}"
+		]
+	},
+	"Adds Bind.lazySingleton() instruction for ServiceImpl() using Modular": {
+		"prefix": "ft-bind-lazy-singleton-service-impl",
+		"body": [
+				"Bind.lazySingleton<${1/(.*)/${1:/capitalize}/}>Service((i) => ${1/(.*)/${1:/capitalize}/}ServiceImpl(${1}Repository: i(),)),${0}"
 		]
 	}
 }

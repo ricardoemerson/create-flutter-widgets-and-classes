@@ -2,6 +2,11 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.6.0]
+
+- Added new Modular snippets.
+- Improved Flutter snippets.
+
 ## [3.5.0]
 
 - Added the item `Wrap with Visibility`.

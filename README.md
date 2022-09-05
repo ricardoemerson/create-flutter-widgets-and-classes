@@ -376,221 +376,230 @@ All snippets are available through prefix `ft-`.
 
 ## Flutter and Dart
 
-| Snippet | Description | Choice Options |
-|---|---|---|
-| `ft-imp-dart-date` | Adds Dart Date import | |
-| `ft-part` | Adds part file for main file | |
-| `ft-part-of` | Adds part of main file | |
-| `ft-get-file-name` | Adds current filename in pascal case | |
-| `ft-class` | Creates a class for the current file | |
-| `ft-constructor-class` | Creates a class constructor for the current file | |
-| `ft-constructor-class-with-named-params` | Creates a class constructor for the current file with named params | |
-| `ft-private-construtor` | Creates a private class constructor for the current file | |
-| `ft-private-attribute` | Creates a private class attribute | |
-| `ft-constr-inject-firebase-auth` | Creates an injection for Firebase Auth - Complete | |
-| `ft-add-inject-firebase-auth` | Adds an injection for Firebase Auth - Parts to include | |
-| `ft-constr-inject-controller` | Creates an injection for Controller - Complete | |
-| `ft-add-inject-controller` | Adds an injection for Controller - Parts to include | |
-| `ft-constr-inject-i-service` | Creates an injection for IService - Complete | |
-| `ft-constr-inject-service` | Creates an injection for Service - Complete | |
-| `ft-add-inject-i-service` | Creates an injection for IService - Parts to include | |
-| `ft-add-inject-service` | Creates an injection for Service - Parts to include | |
-| `ft-constr-inject-i-repository` | Creates an injection for IRepository - Complete | |
-| `ft-constr-inject-repository` | Creates an injection for Repository - Complete | |
-| `ft-add-inject-i-repository` | Adds an injection for IRepository - Parts to include | |
-| `ft-add-inject-repository` | Adds an injection for Repository - Parts to include | |
-| `ft-constr-inject-session` | Creates an injection for Session - Complete | |
-| `ft-add-inject-session` | Adds an injection for Session - Parts to include | |
-| `ft-constr-inject-i-provider` | Creates an injection for IProvider - Complete | |
-| `ft-constr-inject-provider` | Creates an injection for Provider - Complete | |
-| `ft-add-inject-i-provider` | Adds an injection for IProvider - Parts to include | |
-| `ft-add-inject-provider` | Adds an injection for Provider - Parts to include | |
-| `ft-constr-inject-rest-client` | Creates an injection for RestClient - Complete | |
-| `ft-add-inject-rest-client` | Adds an injection for RestClient - Parts to include | |
-| `ft-constr-inject-i-api-storage` | Creates an injection for ApiCacheStorageService - Complete | |
-| `ft-add-inject-i-api-storage` | Adds an injection for ApiCacheStorageService - Parts to include | |
-| `ft-constr-inject-rest-client-with-i-api-storage` | Creates an injection for RestClient and ApiCacheStorageService - Complete | |
-| `ft-ifnot` | Creates an if denying the condition | |
-| `ft-if-return` | Creates an if with return if condition was truthy | |
-| `ft-ifnot-return` | Creates an if with return if condition was falsy | |
-| `ft-ifnot-mounted` | Creates an if with return if StateFull Widget it'n mounted | |
-| `ft-ifnull` | Creates an if for null condition | |
-| `ft-ifnotnull` | Creates an if for not null condition | |
-| `ft-ifcontains` | Creates an if for check if String contains term | |
-| `ft-cm-basic` | Creates a basic comment | |
-| `ft-cm-block` | Creates a block comment | |
-| `ft-cm-section` | Creates a section comment | |
-| `ft-cm-subsection` | Creates a subsection comment | |
-| `ft-cm-section-footer` | Creates a footer comment | |
-| `ft-cm-element-block` | Creates a documentation comment | |
-| `ft-delayed-seconds` | Adds a Future.delayed instruction | `1` \| `2` \| `3` \| `4` \| `5` \| `10` \| `15` \| `20` \| `25` \| `30` \| `35` \| `40` \| `45` \| `50` \| `55` \| `60` |
-| `ft-duration` | Adds a Duration instruction | `days` \| `hours` \| `microseconds` \| `milliseconds` \| `minutes` \| `seconds` <br/><br/> `1` \| `2` \| `3` \| `4` \| `5` \| `10` \| `15` \| `20` \| `25` \| `30` \| `35` \| `40` \| `45` \| `50` \| `55` \| `60` |
-| `ft-final-void-function` | Adds property as a void Function() | |
-| `ft-final-void-call-back` | Adds property as a VoidCallback function | |
-| `ft-form-key` | Adds a variable of type GlobalKey<FormState>() | |
-| `ft-form-key-private` | Adds a private variable of type GlobalKey<FormState>() | |
-| `ft-focus-node` | Adds a variable of type FocusNode() | |
-| `ft-focus-node-private` | Adds a private variable of type FocusNode() | |
-| `ft-text-editing-controller` <br/><br/> `ft-editing-controller` | Adds a variable of type TextEditingController() | |
-| `ft-text-editing-controller-private` <br/><br/> `ft-editing-controller-private` | Adds a private variable of type TextEditingController() | |
-| `ft-list-from-map-and-json` | Adds two functions fromMap and fromJson to create lists from map data | |
-| `ft-prop-eq` | Adds a key and value assignment to an object where the key and value are equal | |
-| `ft-prop-eq-map` | Adds a key and value assignment to an map where the key and value are equal | |
-| `ft-throw-exception` | Adds the instruction throw Exception() | |
-| `ft-throw-app-exception` | Adds the instruction throw AppException() | |
-| `ft-throw-auth-exception` | Adds the instruction throw AuthException() | |
-| `ft-await` | Adds the instruction await | |
-| `ft-final-simple` | Adds a simple assignment variable | |
-| `ft-final-await` | Adds a future assignment variable | |
-| `ft-final-future-wait` | Adds a future assignment variable for multiple futures processing | |
-| `ft-build-context` | Adds a declaration for BuildContext | |
-| `ft-date-format-dd-mm-yyyy` | Adds a variable of type DateFormat('dd/MM/y') | |
-| `ft-future-method` | Adds a Future method | |
-| `ft-future-void-method` | Adds a Future void method | |
-| `ft-void-method` | Adds a void method | |
-| `ft-form-is-valid` | Check if a form is valid | |
-| `ft-get-property` | Adds a get property | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-static-get-property` | Adds a static get property | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-signature-static-method` | Add a signature to a static method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-static-method` | Adds a static method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-signature-future-static-method` | Adds a signature of a future static method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date`  |
-| `ft-static-future-method` | Adds a static Future method | `void` \| `String` \| `int` \| `double` \| `bool` \| `Date`  |
+| Snippet | Description |
+|---|---|
+| `ft-imp-dart-date` | Adds Dart Date import |
+| `ft-part` | Adds part file for main file |
+| `ft-part-of` | Adds part of main file |
+| `ft-get-file-name` | Adds current filename in pascal case |
+| `ft-class` | Creates a class for the current file |
+| `ft-constructor-class` | Creates a class constructor for the current file |
+| `ft-constructor-class-with-named-params` | Creates a class constructor for the current file with named params |
+| `ft-private-construtor` | Creates a private class constructor for the current file |
+| `ft-private-attribute` | Creates a private class attribute |
+| `ft-constr-inject-firebase-auth` | Creates an injection for Firebase Auth - Complete |
+| `ft-add-inject-firebase-auth` | Adds an injection for Firebase Auth - Parts to include |
+| `ft-constr-inject-controller` | Creates an injection for Controller - Complete |
+| `ft-add-inject-controller` | Adds an injection for Controller - Parts to include |
+| `ft-constr-inject-i-service` | Creates an injection for IService - Complete |
+| `ft-constr-inject-service` | Creates an injection for Service - Complete |
+| `ft-add-inject-i-service` | Creates an injection for IService - Parts to include |
+| `ft-add-inject-service` | Creates an injection for Service - Parts to include |
+| `ft-constr-inject-i-repository` | Creates an injection for IRepository - Complete |
+| `ft-constr-inject-repository` | Creates an injection for Repository - Complete |
+| `ft-add-inject-i-repository` | Adds an injection for IRepository - Parts to include |
+| `ft-add-inject-repository` | Adds an injection for Repository - Parts to include |
+| `ft-constr-inject-session` | Creates an injection for Session - Complete |
+| `ft-add-inject-session` | Adds an injection for Session - Parts to include |
+| `ft-constr-inject-i-provider` | Creates an injection for IProvider - Complete |
+| `ft-constr-inject-provider` | Creates an injection for Provider - Complete |
+| `ft-add-inject-i-provider` | Adds an injection for IProvider - Parts to include |
+| `ft-add-inject-provider` | Adds an injection for Provider - Parts to include |
+| `ft-constr-inject-rest-client` | Creates an injection for RestClient - Complete |
+| `ft-add-inject-rest-client` | Adds an injection for RestClient - Parts to include |
+| `ft-constr-inject-i-api-storage` | Creates an injection for ApiCacheStorageService - Complete |
+| `ft-add-inject-i-api-storage` | Adds an injection for ApiCacheStorageService - Parts to include |
+| `ft-constr-inject-rest-client-with-i-api-storage` | Creates an injection for RestClient and ApiCacheStorageService - Complete |
+| `ft-ifnot` | Creates an if denying the condition |
+| `ft-if-return` | Creates an if with return if condition was truthy |
+| `ft-ifnot-return` | Creates an if with return if condition was falsy |
+| `ft-ifnot-mounted` | Creates an if with return if StateFull Widget it'n mounted |
+| `ft-ifnull` | Creates an if for null condition |
+| `ft-ifnotnull` | Creates an if for not null condition |
+| `ft-ifcontains` | Creates an if for check if String contains term |
+| `ft-cm-basic` | Creates a basic comment |
+| `ft-cm-block` | Creates a block comment |
+| `ft-cm-section` | Creates a section comment |
+| `ft-cm-subsection` | Creates a subsection comment |
+| `ft-cm-section-footer` | Creates a footer comment |
+| `ft-cm-element-block` | Creates a documentation comment |
+| `ft-delayed-seconds` | Adds a Future.delayed instruction |
+| `ft-delayed-seconds-with-callback` | Adds a Future.delayed instruction with a callback function |
+| `ft-duration` | Adds a Duration instruction |
+| `ft-final-void-function` | Adds property as a void Function() |
+| `ft-final-void-call-back` | Adds property as a VoidCallback function |
+| `ft-form-key` | Adds a variable of type GlobalKey<FormState>() |
+| `ft-form-key-private` | Adds a private variable of type GlobalKey<FormState>() |
+| `ft-focus-node` | Adds a variable of type FocusNode() |
+| `ft-focus-node-private` | Adds a private variable of type FocusNode() |
+| `ft-text-editing-controller`, `ft-editing-controller` | Adds a variable of type TextEditingController() |
+| `ft-text-editing-controller-private`, `ft-editing-controller-private` | Adds a private variable of type TextEditingController() |
+| `ft-list-from-map-and-json` | Adds two functions fromMap and fromJson to create lists from map data |
+| `ft-prop-eq` | Adds a key and value assignment to an object where the key and value are equal |
+| `ft-prop-eq-map` | Adds a key and value assignment to an map where the key and value are equal |
+| `ft-throw-exception` | Adds the instruction throw Exception() |
+| `ft-throw-app-exception` | Adds the instruction throw AppException() |
+| `ft-throw-auth-exception` | Adds the instruction throw AuthException() |
+| `ft-await` | Adds the instruction await |
+| `ft-final-simple` | Adds a simple assignment variable |
+| `ft-final-await` | Adds a future assignment variable |
+| `ft-final-future-wait` | Adds a future assignment variable for multiple futures processing |
+| `ft-build-context` | Adds a declaration for BuildContext |
+| `ft-date-format-dd-mm-yyyy` | Adds a variable of type DateFormat('dd/MM/y') |
+| `ft-future-method` | Adds a Future method |
+| `ft-future-void-method` | Adds a Future void method |
+| `ft-void-method` | Adds a void method |
+| `ft-form-is-valid` | Check if a form is valid |
+| `ft-get-property` | Adds a get property |
+| `ft-static-get-property` | Adds a static get property |
+| `ft-signature-static-method` | Add a signature to a static method |
+| `ft-signature-method` | Add a signature to method |
+| `ft-static-method` | Adds a static method |
+| `ft-signature-future-static-method` | Adds a signature of a future static method |
+| `ft-signature-future-method` | Adds a signature of a future method |
+| `ft-future-static-method` | Adds a future static method |
+| `ft-value-notifier` | Creates a ValueNotifier attribute |
 
 ## Widgets
 
-| Snippet | Description | Choice Options |
-|---|---|---|
-| `ft-border-radius` | Adds borderRadius property using BorderRadius |  |
-| `ft-border-radius-circular` | Adds borderRadius property using BorderRadius.circular() | |
-| `ft-border-side` | Adds borderSide property using BorderSide() with width and color | `1` \| `2` \| `3` \| `4` \| `5` <br/><br/> `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-border-side-color` | Adds borderSide property using BorderSide() with color | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-shape-rounded-rectangle-border` | Adds a shape property using RoundedRectangleBorder() | |
-| `ft-main-axis-size` | Adds mainAxisSize property using MainAxisSize to Row() or Column() | `min` \| `max` |
-| `ft-main-axis-alignment` | Adds mainAxisAlignment property using MainAxisAlignment to Row() or Column() | `start` \| `end` \| `center` \| `spaceBetween` \| `spaceAround` \| `spaceEvenly` |
-| `ft-cross-axis-alignment` | Adds crossAxisAlignment property using CrossAxisAlignment to Row() or Column() | `start` \| `end` \| `center` \| `baseLine` \| `stretch` |
-| `ft-alignment` | Adds alignment property using Alignment | `topLeft` \| `topCenter` \| `topRight` \| `centerLeft` \| `center` \| `centerRight` \| `bottomLeft` \| `bottomCenter` \| `bottomRight` |
-| `ft-wrap-alignment` | Adds alignment property using WrapAlignment | `start` \| `end` \| `center` \| `spaceBetween` \| `spaceAround` \| `spaceEvenly`  |
-| `ft-font-weight` | Adds FontWeight | `normal` \| `bold` \| `w100` \| `w200` \| `w300` \| `w400` \| `w500` \| `w600` \| `w700` \| `w800` \| `w900` |
-| `ft-text-align` | Adds TextAlign | `left` \| `right` \| `center` \| `justify` \| `start` \| `end` |
-| `ft-0xff` <br/><br/> `ft-hex-color` | Adds a Hexadecimal Color | |
-| `ft-color-hex` | Adds a color property using a Hexadecimal Color | |
-| `ft-color` | Adds a color property using Colors | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-background-color` | Adds a backgroundColor property using Colors | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-background-color-hex` | Adds a backgroundColor property using a Hexadecimal Color | |
-| `ft-color-theme` | Adds a color property using Theme.of(context) | |
-| `ft-theme-of` | Adds a color using Theme.of(context) | |
-| `ft-text-overflow` | Adds an overflow property using TextOverflow.ellipsis | |
-| `ft-space-vertical` <br/><br/> `ft-separator-vertical` <br/><br/> `ft-sized-box-height` | Adds a vertical spacing between widgets using SizedBox | `5` \| `10` \| `15` \| `20` \| `25` \| `30` \| `35` \| `40` \| `45` \| `50` |
-| `ft-space-horizontal` <br/><br/> `ft-separator-horizontal` <br/><br/> `ft-sized-box-width` | Adds a horizontal spacing between widgets using SizedBox | `5` \| `10` \| `15` \| `20` \| `25` \| `30` \| `35` \| `40` \| `45` \| `50` |
-| `ft-space-shrink` | Adds a SizedBox.shrink() | |
-| `ft-margin-all` | Adds margin property using EdgeInsets.all() | |
-| `ft-margin-symmetric` | Adds margin property using EdgeInsets.symmetric() | `horizontal` \| `vertical` |
-| `ft-margin-only` | Adds margin property using EdgeInsets.only() | |
-| `ft-padding-all` | Adds padding property using EdgeInsets.all() | |
-| `ft-padding-symmetric` | Adds padding property using EdgeInsets.symmetric() | `horizontal` \| `vertical` |
-| `ft-padding-only` | Adds padding property using EdgeInsets.only() | |
-| `ft-padding-zero` | Adds padding property using EdgeInsets.zero | |
-| `ft-edge-insets-zero` | Adds EdgeInsets.zero | |
-| `ft-border-all` | Adds border property using Border.all | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-border-symmetric` | Adds border property using Border.symmetric | `horizontal` \| `vertical` |
-| `ft-bouncing-scroll-physics` | Adds physics property using BouncingScrollPhysics() | |
-| `ft-direction` | Adds direction property using Axis | `horizontal` \| `vertical` |
-| `ft-scroll-direction` | Adds scrollDirection property using Axis | `horizontal` \| `vertical` |
-| `ft-navigator-push-named` | Adds Navigator instruction using pushNamed | |
-| `ft-navigator-pop` | Adds Navigator instruction using pop | |
-| `ft-navigator-push` | Adds Navigator instruction using MaterialPageRoute | |
-| `ft-media-query` | Adds MediaQuery instruction using size | `width` \| `height` |
-| `ft-app-bar-theme` | Adds appBarTheme property using AppBarTheme() | |
-| `ft-app-bar-brightness` | Adds brightness property using Brightness | `dark` \| `light` |
-| `ft-text-style` | Adds style property using TextStyle() with color, fontSize and fontWeight | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` <br/><br/> `normal` \| `bold` \| `w100` \| `w200` \| `w300` \| `w400` \| `w500` \| `w600` \| `w700` \| `w800` \| `w900` |
-| `ft-text-style-weight` | Adds style property using TextStyle() only for fontWeight | `normal` \| `bold` \| `w100` \| `w200` \| `w300` \| `w400` \| `w500` \| `w600` \| `w700` \| `w800` \| `w900` |
-| `ft-text-style-size` | Adds style property using TextStyle() only for fontSize | |
-| `ft-text-style-color` | Adds style property using TextStyle() only for color | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-text-style-theme-of` | Adds style property using Theme.of(context).textTheme | |
-| `ft-image-asset` | Adds Image Widget with properties height, width, image and fit | `fill` \| `contain` \| `cover` \| `fitWidth` \| `fitHeight` \| `none` \| `scaleDown` |
-| `ft-fit-box-fit` | Adds fit property using BoxFit | `fill` \| `contain` \| `cover` \| `fitWidth` \| `fitHeight` \| `none` \| `scaleDown` |
-| `ft-icon-button` | Adds IconButton Widget with properties icon, color, iconSize and onPressed | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-elevated-rectangle-button` | Adds ElevatedButton Widget using BorderRadius() | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-elevated-circ-button` | Adds ElevatedButton Widget using CircleBorder() | |
-| `ft-container-decoration` | Adds decoration property using BoxDecoration | |
-| `ft-container-image` | Adds decoration property using BoxDecoration and DecorationImage | |
-| `ft-container-border-radius` | Adds decoration property using BoxDecoration with borderRadius and color | `amber` \| `amberAccent` \| `black` \| `blue` \| `blueAccent` \| `blueGrey` \| `brown` \| `cyan` \| `cyanAccent` \| `deepOrange` \| `deepOrangeAccent` \| `deepPurple` \| `deepPurpleAccent` \| `green` \| `greenAccent` \| `grey` \| `indigo` \| `indigoAccent` \| `lightBlue` \| `lightBlueAccent` \| `lightGreen` \| `lightGreenAccent` \| `lime` \| `limeAccent` \| `orange` \| `orangeAccent` \| `pink` \| `pinkAccent` \| `purple` \| `purpleAccent` \| `red` \| `redAccent` \| `teal` \| `tealAccent` \| `white` \| `yellow` \| `yellowAccent` |
-| `ft-container-box-shadow` | Adds decoration property using BoxDecoration with BoxShadow | |
-| `ft-container-box-shadow-bottom-sheet` | Adds decoration property using BoxDecoration with BoxShadow for Bottom Sheet | |
-| `ft-box-shadow` | Adds boxShadow property using BoxShadow | |
-| `ft-box-shadow-bottom-sheet` | Adds boxShadow property using BoxShadow for Bottom Sheet | |
-| `ft-column` | Adds Column Widget | |
-| `ft-row` | Adds Row Widget | |
-| `ft-border-radius-only` | Adds borderRadius property using BorderRadius.only() | |
-| `ft-text` | Adds Text Widget | |
-| `ft-text-span` | Adds TextSpan Widget with text property | |
-| `ft-text-span-children` | Adds TextSpan Widget with children property | |
-| `ft-outlined-icon-button` | Adds OutlinedButton Widget with Icon | |
-| `ft-status-bar-icon-brightness` | Sets the color for statusBarIconBrightness | |
-| `ft-text-input-action` <br/><br/> `ft-input-action` | Adds textInputAction property using TextInputAction | `none` \| `unspecified` \| `done` \| `go` \| `search` \| `send` \| `next` \| `previous` \| `continueAction` \| `join` \| `route` \| `emergencyCall` \| `newline` |
-| `ft-text-capitalization` | Adds textCapitalization property using TextCapitalization | `words` \| `sentences` \| `characters` \| `none` |
-| `ft-keyboard-type` <br/><br/> `ft-input-type` | Adds keyboardType property using TextInputType | `datetime` \| `emailAddress` \| `multiline` \| `name` \| `none` \| `number` \| `phone` \| `streetAddress` \| `text` \| `url` \| `visiblePassword` \| `values` |
-| `ft-ensure-initialized` | Adds the instruction WidgetsFlutterBinding.ensureInitialized(); | |
-| `ft-scaffold` | Adds Scaffold Widget | |
-| `ft-popup-menu-button` | Adds PopupMenuButton Widget |  `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-constraints-box-constraints` | Adds constraints property using BoxConstraints | |
-| `ft-add-locales-pt-br` | Adds localizations for pt-BR | |
-| `ft-text-shadow` | Adds shadows property using Shadow to use in Text Widget | |
-| `ft-text-rich` | Adds Text.rich Widget | |
+| Snippet | Description |
+|---|---|
+| `ft-border-side` | Adds borderSide property using BorderSide() with width and color |
+| `ft-border-side-color` | Adds borderSide property using BorderSide() with color |
+| `ft-shape-rounded-rectangle-border` | Adds a shape property using RoundedRectangleBorder() |
+| `ft-main-axis-size` | Adds mainAxisSize property using MainAxisSize to Row() or Column() |
+| `ft-main-axis-alignment` | Adds mainAxisAlignment property using MainAxisAlignment to Row() or Column() |
+| `ft-cross-axis-alignment` | Adds crossAxisAlignment property using CrossAxisAlignment to Row() or Column() |
+| `ft-alignment` | Adds alignment property using Alignment |
+| `ft-wrap-alignment` | Adds alignment property using WrapAlignment |
+| `ft-font-weight` | Adds FontWeight |
+| `ft-text-align` | Adds TextAlign |
+| `ft-0xff`, `ft-hex-color` | Adds a Hexadecimal Color |
+| `ft-color-hex` | Adds a color property using a Hexadecimal Color |
+| `ft-color` | Adds a color property using Colors |
+| `ft-background-color` | Adds a backgroundColor property using Colors |
+| `ft-background-color-hex` | Adds a backgroundColor property using a Hexadecimal Color |
+| `ft-color-theme` | Adds a color property using Theme.of(context) |
+| `ft-theme-of` | Adds a color using Theme.of(context) |
+| `ft-text-overflow` | Adds an overflow property using TextOverflow.ellipsis |
+| `ft-space-vertical`, `ft-separator-vertical` | Adds a vertical spacing between widgets using SizedBox |
+| `ft-space-horizontal`, `ft-separator-horizontal` | Adds a horizontal spacing between widgets using SizedBox |
+| `ft-space-shrink` | Adds a SizedBox.shrink() |
+| `ft-margin-all` | Adds margin property using EdgeInsets.all() |
+| `ft-margin-symmetric` | Adds margin property using EdgeInsets.symmetric() |
+| `ft-margin-only` | Adds margin property using EdgeInsets.only() |
+| `ft-padding-all` | Adds padding property using EdgeInsets.all() |
+| `ft-padding-symmetric` | Adds padding property using EdgeInsets.symmetric() |
+| `ft-padding-only` | Adds padding property using EdgeInsets.only() |
+| `ft-padding-zero` | Adds padding property using EdgeInsets.zero |
+| `ft-edge-insets-zero` | Adds EdgeInsets.zero |
+| `ft-border-all` | Adds border property using Border.all() |
+| `ft-border-symmetric` | Adds border property using Border.symmetric() |
+| `ft-bouncing-scroll-physics` | Adds physics property using BouncingScrollPhysics() |
+| `ft-direction` | Adds direction property using Axis |
+| `ft-scroll-direction` | Adds scrollDirection property using Axis |
+| `ft-navigator-push-named` | Adds Navigator instruction using pushNamed |
+| `ft-navigator-pop` | Adds Navigator instruction using pop |
+| `ft-navigator-push` | Adds Navigator instruction using MaterialPageRoute |
+| `ft-media-query` | Adds MediaQuery instruction using size |
+| `ft-app-bar-theme` | Adds appBarTheme property using AppBarTheme() |
+| `ft-app-bar-brightness` | Adds brightness property using Brightness |
+| `ft-text-style` | Adds style property using TextStyle() with color, fontSize and fontWeight |
+| `ft-text-style-weight` | Adds style property using TextStyle() only for fontWeight |
+| `ft-text-style-size` | Adds style property using TextStyle() only for fontSize |
+| `ft-text-style-color` | Adds style property using TextStyle() only for color |
+| `ft-text-style-theme-of` | Adds style property using Theme.of(context).textTheme |
+| `ft-image-asset` | Adds Image Widget with properties height, width, image and fit |
+| `ft-fit-box-fit` | Adds fit property using BoxFit |
+| `ft-icon-button` | Adds IconButton Widget with properties icon, color, iconSize and onPressed |
+| `ft-elevated-rectangle-button` | Adds ElevatedButton Widget using BorderRadius() |
+| `ft-elevated-circ-button` | Adds ElevatedButton Widget using CircleBorder() |
+| `ft-decoration` | Adds decoration property using BoxDecoration |
+| `ft-decoration-with-decoration-image` | Adds decoration property using BoxDecoration and DecorationImage |
+| `ft-decoration-image` | Adds image property using DecorationImage |
+| `ft-decoration-with-border-radius` | Adds decoration property using BoxDecoration with BorderRadius.circular() |
+| `ft-border-radius` | Adds borderRadius property using BorderRadius.circular() |
+| `ft-decoration-with-border-radius-only` | Adds decoration property using BoxDecoration with BorderRadius.only() |
+| `ft-border-radius-only` | Adds borderRadius property using BorderRadius.only() |
+| `ft-decoration-with-box-shadow` | Adds decoration property using BoxDecoration with BoxShadow |
+| `ft-box-shadow` | Adds boxShadow property using BoxShadow |
+| `ft-decoration-with-box-shadow-bottom-sheet` | Adds decoration property using BoxDecoration with BoxShadow for Bottom Sheet |
+| `ft-box-shadow-bottom-sheet` | Adds boxShadow property using BoxShadow for Bottom Sheet |
+| `ft-column` | Adds Column Widget |
+| `ft-row` | Adds Row Widget |
+| `ft-text` | Adds Text Widget |
+| `ft-text-span` | Adds TextSpan Widget with text property |
+| `ft-text-span-children` | Adds TextSpan Widget with children property |
+| `ft-outlined-icon-button` | Adds OutlinedButton Widget with Icon |
+| `ft-status-bar-icon-brightness` | Sets the color for statusBarIconBrightness |
+| `ft-text-input-action`, `ft-input-action` | Adds textInputAction property using TextInputAction |
+| `ft-text-capitalization` | Adds textCapitalization property using TextCapitalization |
+| `ft-keyboard-type`, `ft-input-type` | Adds keyboardType property using TextInputType |
+| `ft-ensure-initialized` | Adds the instruction WidgetsFlutterBinding.ensureInitialized(); |
+| `ft-scaffold` | Adds Scaffold Widget |
+| `ft-popup-menu-button` | Adds PopupMenuButton Widget |
+| `ft-constraints-box-constraints` | Adds constraints property using BoxConstraints |
+| `ft-add-locales-pt-br` | Adds localizations for pt-BR |
+| `ft-text-shadow` | Adds shadows property using Shadow to use in Text Widget |
+| `ft-text-rich` | Adds Text.rich Widget |
 
 ## GetX
 
-| Snippet | Description | Choice Options |
-|---|---|---|
-| `ft-imp-get` | Adds GetX import | `width` \|  `height` |
-| `ft-rx-attribute` | Creates a Rx attribute | `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-rxn-attribute` | Creates a Rxn attribute | `String` \| `int` \| `double` \| `bool` \| `Date` |
-| `ft-obs-attribute` | Creates a GetX Observable attribute | |
-| `ft-get-size` | Uses GetX to get width or height of screen | |
-| `ft-get-find` | Adds the Get.find() the get instance of classe using GetX | |
-| `ft-get-width` | Uses GetX to get width of screen | |
-| `ft-get-height` | Uses GetX to get height of screen | |
-| `ft-width-get-width` | Adds width property using Get.width | |
-| `ft-height-get-height` | Adds width property using Get.height | |
-| `ft-get-put-service` | Adds Get.put() instruction for Service() | |
-| `ft-get-put-service-impl` | Adds Get.put() instruction for ServiceImpl() | |
-| `ft-get-put-session` | Adds Get.put() instruction for Session() | |
-| `ft-get-put-repository` | Adds Get.put() instruction for Repository() | |
-| `ft-get-put-repository-impl` | Adds Get.put() instruction for RepositoryImpl() | |
-| `ft-get-put-provider` | Adds Get.put() instruction for Provider() | |
-| `ft-get-put-provider-impl` | Adds Get.put() instruction for ProviderImpl() | |
-| `ft-get-view` | Adds GetView instruction for get instance of controller inside view | |
-| `ft-get-put-controller` | Adds Get.put() instruction for Controller() | |
-| `ft-get-lazy-put-controller` | Adds Get.lazyPut() instruction for Controller() | |
-| `ft-get-lazy-put-provider` | Adds Get.lazyPut() instruction for Provider() used by a Service() | |
-| `ft-get-lazy-put-provider-impl` | Adds Get.lazyPut() instruction for ProviderImpl() used by a ServiceImpl() | |
-| `ft-get-lazy-put-service` | Adds Get.lazyPut() instruction for Service() | |
-| `ft-get-lazy-put-service-impl` | Adds Get.lazyPut() instruction for ServiceImpl() | |
-| `ft-get-lazy-put-repository` | Adds Get.lazyPut() instruction for Repository() used by a Service() | |
-| `ft-get-lazy-put-repository-impl` | Adds Get.lazyPut() instruction for RepositoryImpl() used by a ServiceImpl() | |
-| `ft-on-init` | Adds override for onInit method | |
-| `ft-on-ready` | Adds override for onReady method | |
-| `ft-on-close` | Adds override for onClose method | |
+| Snippet | Description |
+|---|---|
+| `ft-imp-get` | Adds GetX import |
+| `ft-rx-attribute` | Creates a Rx attribute |
+| `ft-rxn-attribute` | Creates a Rxn attribute |
+| `ft-obs-attribute` | Creates a GetX Observable attribute |
+| `ft-get-size` | Uses GetX to get width or height of screen |
+| `ft-get-find` | Adds the Get.find() the get instance of classe using GetX |
+| `ft-get-width` | Uses GetX to get width of screen |
+| `ft-get-height` | Uses GetX to get height of screen |
+| `ft-width-get-width` | Adds width property using Get.width |
+| `ft-height-get-height` | Adds width property using Get.height |
+| `ft-get-put-service` | Adds Get.put() instruction for Service() |
+| `ft-get-put-service-impl` | Adds Get.put() instruction for ServiceImpl() |
+| `ft-get-put-session` | Adds Get.put() instruction for Session() |
+| `ft-get-put-repository` | Adds Get.put() instruction for Repository() |
+| `ft-get-put-repository-impl` | Adds Get.put() instruction for RepositoryImpl() |
+| `ft-get-put-provider` | Adds Get.put() instruction for Provider() |
+| `ft-get-put-provider-impl` | Adds Get.put() instruction for ProviderImpl() |
+| `ft-get-view` | Adds GetView instruction for get instance of controller inside view |
+| `ft-get-put-controller` | Adds Get.put() instruction for Controller() |
+| `ft-get-lazy-put-controller` | Adds Get.lazyPut() instruction for Controller() |
+| `ft-get-lazy-put-provider` | Adds Get.lazyPut() instruction for Provider() used by a Service() |
+| `ft-get-lazy-put-provider` | Adds Get.lazyPut() instruction for ProviderImpl() used by a ServiceImpl() |
+| `ft-get-lazy-put-service` | Adds Get.lazyPut() instruction for Service() |
+| `ft-get-lazy-put-service-impl` | Adds Get.lazyPut() instruction for ServiceImpl() |
+| `ft-get-lazy-put-repository` | Adds Get.lazyPut() instruction for Repository() used by a Service() |
+| `ft-get-lazy-put-repository` | Adds Get.lazyPut() instruction for RepositoryImpl() used by a ServiceImpl() |
+| `ft-on-init` | Adds override for onInit method |
+| `ft-on-ready` | Adds override for onReady method |
+| `ft-on-close` | Adds override for onClose method |
 
 ## Provider
 
-| Snippet | Description | Choice Options |
-|---|---|---|
-| `ft-provider-read` | Adds the context.read() to get instance of classe using Provider | |
-| `ft-provider-read-data` | Adds the context.read<type>()... to get instance of classe using Provider | |
-| `ft-provider-watch` | Adds the context.watch<type>()... to watch instance of classe using Provider | |
-| `ft-provider-select` | Adds the context.select<ClassName, type>()... to select instance of classe using Provider |  `String` \| `int` \| `double` \| `bool` \| `Date` |
+| Snippet | Description |
+|---|---|
+| `ft-provider-read` | Adds the context.read() to get instance of classe using Provider |
+| `ft-provider-read-data` | Adds the context.read<type>()... to get instance of classe using Provider |
+| `ft-provider-watch` | Adds the context.watch<type>()... to watch instance of classe using Provider |
+| `ft-provider-select` | Adds the context.select<ClassName, type>()... to select instance of classe using Provider |
 
 ## Modular
 
-| Snippet | Description | Choice Options |
-|---|---|---|
-| `ft-modular-module` | Creates a Flutter Modular Module | |
-| `ft-modular-get` | Adds the Modular.get() the get instance of class using Modular | |
-| `ft-modular-get-of-type` | Adds the Modular.get<Class>() to get instance of class using Modular | |
-| `ft-bind-lazy-singleton-i-class` | Adds Bind.lazySingleton() instruction for any IClass using Modular | |
-| `ft-bind-lazy-singleton-class` | Adds Bind.lazySingleton() instruction for any Class using Modular | |
-
+| Snippet | Description |
+|---|---|
+| `ft-modular-module` | Creates a Flutter Modular Module |
+| `ft-modular-get` | Adds the Modular.get() the get instance of class using Modular |
+| `ft-modular-get-of-type` | Adds the Modular.get<Class>() to get instance of class using Modular |
+| `ft-bind-lazy-singleton-i-class` | Adds Bind.lazySingleton() instruction for any IClass using Modular |
+| `ft-bind-lazy-singleton-class` | Adds Bind.lazySingleton() instruction for any Class using Modular |
+| `ft-bind-lazy-singleton-controller` | Adds Bind.lazySingleton() instruction for Controller using Modular |
+| `ft-bind-lazy-singleton-repository` | Adds Bind.lazySingleton() instruction for Repository() used by a Service() using Modular |
+| `ft-bind-lazy-singleton-repository-impl` | Adds Bind.lazySingleton() instruction for RepositoryImpl() used by a ServiceImpl() using Modular |
+| `ft-bind-lazy-singleton-service` | Adds Bind.lazySingleton() instruction for Service() using Modular |
+| `ft-bind-lazy-singleton-service-impl` | Adds Bind.lazySingleton() instruction for ServiceImpl() using Modular |
 
 # Settings
 

@@ -1,20 +1,8 @@
 {
-  "Adds borderRadius property using BorderRadius": {
-		"prefix": "ft-border-radius",
-		"body": [
-			"borderRadius: BorderRadius.${0},"
-		]
-	},
-	"Adds borderRadius property using BorderRadius.circular()": {
-		"prefix": "ft-border-radius-circular",
-		"body": [
-			"borderRadius: BorderRadius.circular(${1:value}),${0}"
-		]
-	},
 	"Adds borderSide property using BorderSide() with width and color": {
 		"prefix": "ft-border-side",
 		"body": [
-			"borderSide: const BorderSide(width: ${1|1,2,3,4,5|}, color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},),${0}"
+			"borderSide: const BorderSide(width: ${1|1,2,3,4,5|},),${0}"
 		]
 	},
 	"Adds borderSide property using BorderSide() with color": {
@@ -123,13 +111,13 @@
 		]
 	},
 	"Adds a vertical spacing between widgets using SizedBox": {
-		"prefix": ["ft-space-vertical", "ft-separator-vertical", "ft-sized-box-height"],
+		"prefix": ["ft-space-vertical", "ft-separator-vertical"],
 		"body": [
 			"const SizedBox(height: ${1|5,10,15,20,25,30,35,40,45,50|}),${0}"
 		]
 	},
 	"Adds a horizontal spacing between widgets using SizedBox": {
-		"prefix": ["ft-space-horizontal", "ft-separator-horizontal", "ft-sized-box-width"],
+		"prefix": ["ft-space-horizontal", "ft-separator-horizontal"],
 		"body": [
 			"const SizedBox(width: ${1|5,10,15,20,25,30,35,40,45,50|}),${0}"
 		]
@@ -188,16 +176,16 @@
 			"EdgeInsets.zero,${0}"
 		]
 	},
-	"Adds border property using Border.all": {
+	"Adds border property using Border.all()": {
 		"prefix": "ft-border-all",
 		"body": [
-			"border: Border.all(width: ${1:value}, color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}),${0}"
+			"border: Border.all(width: ${1|1,2,3,4,5|}, color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|}),${0}"
 		]
 	},
-	"Adds border property using Border.symmetric": {
+	"Adds border property using Border.symmetric()": {
 		"prefix": "ft-border-symmetric",
 		"body": [
-			"border: Border.symmetric(${1|horizontal,vertical|}: ${2:value}),${0}"
+			"border: Border.symmetric(${1|horizontal,vertical|}: ${2|1,2,3,4,5|}),${0}"
 		]
 	},
 	"Adds physics property using BouncingScrollPhysics()": {
@@ -322,10 +310,8 @@
 		"prefix": "ft-icon-button",
 		"body": [
 			"IconButton(",
-			"  icon: Icon(Icons.${1:iconName}),",
-			"  color: Colors.${2|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},",
-			"  iconSize: ${3:size},",
-			"  onPressed: () => ${0},",
+			"  onPressed: () {${0}},",
+			"  icon: Icon(Icons.${1:iconName},),",
 			"),"
 		]
 	},
@@ -333,6 +319,7 @@
 		"prefix": "ft-elevated-rectangle-button",
 		"body": [
 			"ElevatedButton( ",
+			"  onPressed: () {}, ",
 			"  child: Text( ",
 			"    '${1:buttonText}', ",
 			"    style: TextStyle( ",
@@ -347,7 +334,6 @@
 			"      borderRadius: BorderRadius.circular(${6:value}), ",
 			"    ), ",
 			"  ), ",
-			"  onPressed: () => {}, ",
 			"),${0} "
 		]
 	},
@@ -369,7 +355,7 @@
 		]
 	},
 	"Adds decoration property using BoxDecoration": {
-		"prefix": "ft-container-decoration",
+		"prefix": "ft-decoration",
 		"body": [
 			"decoration: BoxDecoration(",
 			"  ${0}",
@@ -377,49 +363,67 @@
 		]
 	},
 	"Adds decoration property using BoxDecoration and DecorationImage": {
-		"prefix": "ft-container-image",
+		"prefix": "ft-decoration-with-decoration-image",
 		"body": [
 			"decoration: BoxDecoration(",
 			"  image: DecorationImage(",
 			"    image: AssetImage('assets/images/${1:assetUrl}'),",
-			"    fit: BoxFit.cover,",
+			"    fit: BoxFit.${2|fill,contain,cover,fitWidth,fitHeight,none,scaleDown|},",
 			"  ),",
-			"  borderRadius: BorderRadius.circular(${2:value}),",
 			"),${0}"
 		]
 	},
-	"Adds decoration property using BoxDecoration with borderRadius and color": {
-		"prefix": "ft-container-border-radius",
+	"Adds image property using DecorationImage": {
+		"prefix": "ft-decoration-image",
+		"body": [
+			"image: DecorationImage(",
+			"  image: AssetImage('assets/images/${1:assetUrl}'),",
+			"  fit: BoxFit.${2|fill,contain,cover,fitWidth,fitHeight,none,scaleDown|},",
+			"),${0}"
+		]
+	},
+	"Adds decoration property using BoxDecoration with BorderRadius.circular()": {
+		"prefix": "ft-decoration-with-border-radius",
 		"body": [
 			"decoration: BoxDecoration(",
-			"  borderRadius: BorderRadius.circular(${1:value}),",
-			"  border: Border.all(${2:value}),",
-			"  color: Colors.${3|amber,amberAccent,black,blue,blueAccent,blueGrey,brown,cyan,cyanAccent,deepOrange,deepOrangeAccent,deepPurple,deepPurpleAccent,green,greenAccent,grey,indigo,indigoAccent,lightBlue,lightBlueAccent,lightGreen,lightGreenAccent,lime,limeAccent,orange,orangeAccent,pink,pinkAccent,purple,purpleAccent,red,redAccent,teal,tealAccent,white,yellow,yellowAccent|},",
+			"  borderRadius: BorderRadius.circular(${1|2,4,8,10,16,20,30,150|}),",
+			"),${0}"
+		]
+	},
+	"Adds borderRadius property using BorderRadius.circular()": {
+		"prefix": "ft-border-radius",
+		"body": [
+			"borderRadius: BorderRadius.circular(${1|2,4,8,10,16,20,30,150|}),${0}"
+		]
+	},
+  "Adds decoration property using BoxDecoration with BorderRadius.only()": {
+		"prefix": "ft-decoration-with-border-radius-only",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  borderRadius: BorderRadius.only(",
+			"    ${1|top,bottom|}topLeft: Radius.circular(${2|2,4,8,10,16,20,30,150|}),",
+			"    ${1|top,bottom|}topRight: Radius.circular(${2|2,4,8,10,16,20,30,150|}),${0}",
+			"  ),",
 			"),"
 		]
 	},
+  "Adds borderRadius property using BorderRadius.only()": {
+		"prefix": "ft-border-radius-only",
+		"body": [
+			"borderRadius: BorderRadius.only(",
+			"  ${1|top,bottom|}Left: Radius.circular(24),",
+			"  ${1|top,bottom|}Right: Radius.circular(24),",
+			"), "
+		]
+	},
 	"Adds decoration property using BoxDecoration with BoxShadow": {
-		"prefix": "ft-container-box-shadow",
+		"prefix": "ft-decoration-with-box-shadow",
 		"body": [
 			"decoration: BoxDecoration(",
 			"  boxShadow: [",
 			"    BoxShadow(",
 			"      color: Colors.black26,",
 			"      offset: Offset(3, 0),",
-			"      blurRadius: 6,",
-			"    ),",
-			"  ],",
-			"),"
-		]
-	},
-	"Adds decoration property using BoxDecoration with BoxShadow for Bottom Sheet": {
-		"prefix": "ft-container-box-shadow-bottom-sheet",
-		"body": [
-			"decoration: BoxDecoration(",
-			"  boxShadow: [",
-			"    BoxShadow(",
-			"      color: Colors.black26,",
-			"      offset: Offset(0, -1),",
 			"      blurRadius: 6,",
 			"    ),",
 			"  ],",
@@ -436,6 +440,20 @@
 			"    blurRadius: 6,",
 			"  ),",
 			"],"
+		]
+	},
+	"Adds decoration property using BoxDecoration with BoxShadow for Bottom Sheet": {
+		"prefix": "ft-decoration-with-box-shadow-bottom-sheet",
+		"body": [
+			"decoration: BoxDecoration(",
+			"  boxShadow: [",
+			"    BoxShadow(",
+			"      color: Colors.black26,",
+			"      offset: Offset(0, -1),",
+			"      blurRadius: 6,",
+			"    ),",
+			"  ],",
+			"),"
 		]
 	},
 	"Adds boxShadow property using BoxShadow for Bottom Sheet": {
@@ -468,15 +486,6 @@
 			"    ${0}",
 			"  ],",
 			"),"
-		]
-	},
-	"Adds borderRadius property using BorderRadius.only()": {
-		"prefix": "ft-border-radius-only",
-		"body": [
-			"borderRadius: BorderRadius.only(",
-			"  topLeft: Radius.circular(24),",
-			"  topRight: Radius.circular(24),",
-			"), "
 		]
 	},
 	"Adds Text Widget": {
@@ -568,7 +577,7 @@
 			"PopupMenuButton(",
 			"  icon: const Icon(Icons.filter_alt),",
 			"  itemBuilder: (_) => [",
-			"    const PopupMenuItem<${1|String,int,double,bool,Date|}>(",
+			"    const PopupMenuItem<${1|String,int,double,bool,Datetime|}>(",
 			"      child: Text(",
 			"        '${2:itemText}',",
 			"      ),",

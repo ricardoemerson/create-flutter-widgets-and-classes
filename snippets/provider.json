@@ -20,7 +20,7 @@
 	"Adds the context.select<ClassName, type>()... to select instance of classe using Provider": {
     "prefix": "ft-provider-select",
     "body": [
-      "context.select<${1:ClassName, ${2|String,int,double,bool,Date|}}>((${3:value}) {});${0}"
+      "context.select<${1:ClassName, ${2|String,int,double,bool,Datetime|}}>((${3:value}) {});${0}"
     ]
 	}
 }
