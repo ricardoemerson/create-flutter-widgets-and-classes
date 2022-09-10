@@ -7,7 +7,6 @@ import { camelCase } from 'lodash';
 export default ({
   componentName,
   getxViewsSuffix,
-  featurePath,
   getxUseConstructorTearOffs,
 }: CreateComponent) =>
   `GetPage(

@@ -103,6 +103,20 @@ const wrapWithAlignTemplate = (widget: string) =>
 )
 `;
 
+const wrapWithColoredBoxTemplate = (widget: string) =>
+  `ColoredBox(
+  color: Colors.blue,
+  child: ${widget},
+)
+`;
+
+const wrapWithDecoratedBoxTemplate = (widget: string) =>
+  `DecoratedBox(
+  decoration: BoxDecoration(),
+  child: ${widget},
+)
+`;
+
 const wrapWithClipRRectTemplate = (widget: string) =>
   `ClipRRect(
   borderRadius: BorderRadius.circular(20),
@@ -113,6 +127,13 @@ const wrapWithClipRRectTemplate = (widget: string) =>
 const wrapWithHeroTemplate = (widget: string) =>
   `Hero(
   tag: 'tag-id',
+  child: ${widget},
+)
+`;
+
+const wrapWithWillPopScopeTemplate = (widget: string) =>
+  `WillPopScope(
+  onWillPop: () {},
   child: ${widget},
 )
 `;
@@ -183,8 +204,11 @@ export const wrapWithIntrinsicWidth = async () =>
 export const wrapWithStack = async () => wrapWith(wrapWithStackTemplate);
 export const wrapWithPositioned = async () => wrapWith(wrapWithPositionedTemplate);
 export const wrapWithAlign = async () => wrapWith(wrapWithAlignTemplate);
+export const wrapWithColoredBox = async () => wrapWith(wrapWithColoredBoxTemplate);
+export const wrapWithDecoratedBox = async () => wrapWith(wrapWithDecoratedBoxTemplate);
 export const wrapWithClipRRect = async () => wrapWith(wrapWithClipRRectTemplate);
 export const wrapWithHero = async () => wrapWith(wrapWithHeroTemplate);
+export const wrapWithWillPopScope = async () => wrapWith(wrapWithWillPopScopeTemplate);
 export const wrapWithGestureDetector = async () =>
   wrapWith(wrapWithGestureDetectorTemplate);
 export const wrapWithInkWell = async () => wrapWith(wrapWithInkWellTemplate);

@@ -37,7 +37,7 @@ import * as vscode from 'vscode';
 interface ComponentProps {
   dir?: string;
   type: FeatureType;
-  stateFullWidget?: boolean;
+  stateFulWidget?: boolean;
 }
 
 interface GetxFeature {
@@ -66,7 +66,7 @@ interface UpdateFeatureRoutes {
 
 export default async (
   componentName: string,
-  { dir, type, stateFullWidget = false }: ComponentProps
+  { dir, type, stateFulWidget = false }: ComponentProps
 ) => {
   // Load configurations.
   const config = vscode.workspace.getConfiguration('flutterTools');
@@ -369,15 +369,15 @@ export default async (
     });
   }
 
-  if (type === 'widget' && !stateFullWidget) {
+  if (type === 'widget' && !stateFulWidget) {
     await createFile(filePath(componentFileName), statelessWidget({ componentName }));
   }
 
-  if (type === 'widget' && stateFullWidget) {
+  if (type === 'widget' && stateFulWidget) {
     await createFile(filePath(componentFileName), statefulWidget({ componentName }));
   }
 
-  if (type === 'widget-page' && !stateFullWidget) {
+  if (type === 'widget-page' && !stateFulWidget) {
     if (createFolderForWidgetsPage) {
       const pathDir = `${dir}${sep}${fileName}`;
 
@@ -395,7 +395,7 @@ export default async (
     }
   }
 
-  if (type === 'widget-page' && stateFullWidget) {
+  if (type === 'widget-page' && stateFulWidget) {
     if (createFolderForWidgetsPage) {
       const pathDir = `${dir}${sep}${fileName}`;
 

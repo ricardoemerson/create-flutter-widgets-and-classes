@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -100,6 +100,14 @@
         "command": "extension.implementsInterface"
       },
       {
+        "title": "Wrap with ColoredBox",
+        "command": "extension.wrapWithExpanded"
+      },
+      {
+        "title": "Wrap with DecoratedBox",
+        "command": "extension.wrapWithExpanded"
+      },
+      {
         "title": "Wrap with Expanded",
         "command": "extension.wrapWithExpanded"
       },
@@ -116,28 +124,36 @@
         "command": "extension.wrapWithObx"
       },
       {
+        "title": "Wrap with Visibility",
+        "command": "extension.wrapWithObx"
+      },
+      {
+        "title": "Wrap with WillPopScope",
+        "command": "extension.wrapWithObx"
+      },
+      {
         "title": "Flutter Tools - Wrap with widget...",
         "command": "extension.wrapWithWidget"
       },
       {
-				"command": "extension.selectWidget",
-				"title": "Select a widget"
-			}
+        "command": "extension.selectWidget",
+        "title": "Select a widget"
+      }
     ],
-    "keybindings" : [
-			{
-				"command": "extension.selectWidget",
-				"key": "alt+w",
-				"mac": "alt+w",
-				"when": "editorFocus"
-			},
-			{
-				"command": "extension.wrapWithWidget",
-				"key": "shift+alt+w",
-				"mac": "shift+alt+w",
-				"when": "editorFocus"
-			}
-		],
+    "keybindings": [
+      {
+        "command": "extension.selectWidget",
+        "key": "alt+w",
+        "mac": "alt+w",
+        "when": "editorFocus"
+      },
+      {
+        "command": "extension.wrapWithWidget",
+        "key": "shift+alt+w",
+        "mac": "shift+alt+w",
+        "when": "editorFocus"
+      }
+    ],
     "menus": {
       "explorer/context": [
         {
@@ -187,6 +203,14 @@
       ],
       "commandPalette": [
         {
+          "command": "extension.wrapWithColoredBox",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithDecorated",
+          "when": "editorLangId == dart"
+        },
+        {
           "command": "extension.wrapWithExpanded",
           "when": "editorLangId == dart"
         },
@@ -204,6 +228,14 @@
         },
         {
           "command": "extension.wrapWithObx",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithVisibility",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithWillPopScope",
           "when": "editorLangId == dart"
         }
       ]
@@ -254,7 +286,7 @@
         },
         "flutterTools.getxUseConstructorTearOffs": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "markdownDescription": "Defines if the Bindings and Routes files will use the new Dart language feature named Constructor tear-offs."
         },
         "flutterTools.getxDisplayContextMenu": {
@@ -325,7 +357,7 @@
     "prettier": "^2.7.1",
     "tslint": "^5.12.1",
     "typescript": "^3.3.1",
-    "vscode": "^1.1.28"
+    "vscode": "^1.1.37"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

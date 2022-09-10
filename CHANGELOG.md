@@ -2,6 +2,14 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.8.0]
+
+- Added the item `Wrap with ColoredBox`.
+- Added the item `Wrap with DecoratedBox`.
+- Added the item `Wrap with WillPopScope`.
+- Include the type of widget in VSCode Quick Pick.
+- Disabled the use of constructors tear-off as default for GetX Features.
+
 ## [3.7.0]
 
 - Added new snippets for linter rules to the file `analysis_options.yaml`.

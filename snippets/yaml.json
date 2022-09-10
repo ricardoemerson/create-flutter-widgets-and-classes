@@ -34,7 +34,6 @@
       "unnecessary_brace_in_string_interps: true",
       "unnecessary_const: true",
       "unnecessary_getters_setters: true",
-      "unnecessary_lambdas: true",
       "unnecessary_new: true",
       "unnecessary_overrides: true",
       "unnecessary_parenthesis: true",

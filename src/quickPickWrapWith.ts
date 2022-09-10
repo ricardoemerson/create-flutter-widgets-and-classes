@@ -1,7 +1,9 @@
 import {
   wrapWithAlign,
   wrapWithClipRRect,
+  wrapWithColoredBox,
   wrapWithConstrainedBox,
+  wrapWithDecoratedBox,
   wrapWithExpanded,
   wrapWithFlexible,
   wrapWithForm,
@@ -20,6 +22,7 @@ import {
   wrapWithStack,
   wrapWithValueListenableBuilder,
   wrapWithVisibility,
+  wrapWithWillPopScope,
 } from './templates/wrapWith';
 
 import { orderBy } from 'lodash';
@@ -29,7 +32,9 @@ import { window } from 'vscode';
 type WrapWidgetType =
   | 'align'
   | 'clip-r-rect'
+  | 'colored-box'
   | 'constrained-box'
+  | 'decorated-box'
   | 'expanded'
   | 'flexible'
   | 'form'
@@ -47,7 +52,8 @@ type WrapWidgetType =
   | 'single-child-scroll-view'
   | 'stack'
   | 'value-listenable-builder'
-  | 'visibility';
+  | 'visibility'
+  | 'will-pop-scope';
 
 interface QuickPickItem {
   label: string;
@@ -73,8 +79,16 @@ export async function wrapWithWidget() {
         wrapWithClipRRect();
         break;
 
+      case 'colored-box':
+        wrapWithColoredBox();
+        break;
+
       case 'constrained-box':
         wrapWithConstrainedBox();
+        break;
+
+      case 'decorated-box':
+        wrapWithDecoratedBox();
         break;
 
       case 'expanded':
@@ -148,6 +162,10 @@ export async function wrapWithWidget() {
       case 'visibility':
         wrapWithVisibility();
         break;
+
+      case 'will-pop-scope':
+        wrapWithWillPopScope();
+        break;
     }
   }
 }
@@ -171,10 +189,22 @@ async function chooseWrapWithWidget() {
       value: 'clip-r-rect',
     },
     {
+      label: 'Wrap with ColoredBox',
+      description: 'Wrap the selected widget with ColoredBox',
+      picked: false,
+      value: 'colored-box',
+    },
+    {
       label: 'Wrap with ConstrainedBox',
       description: 'Wrap the selected widget with ConstrainedBox',
       picked: false,
       value: 'constrained-box',
+    },
+    {
+      label: 'Wrap with DecoratedBox',
+      description: 'Wrap the selected widget with DecoratedBox',
+      picked: false,
+      value: 'decorated-box',
     },
     {
       label: 'Wrap with Expanded',
@@ -272,6 +302,12 @@ async function chooseWrapWithWidget() {
       description: 'Wrap the selected widget with Visibility',
       picked: false,
       value: 'visibility',
+    },
+    {
+      label: 'Wrap with WillPopScope',
+      description: 'Wrap the selected widget with WillPopScope',
+      picked: false,
+      value: 'will-pop-scope',
     },
   ];
 

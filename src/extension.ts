@@ -1,9 +1,13 @@
 import { getSelectedText } from './templates/shared/functions/get-selected-text';
 import {
+  wrapWithColoredBox,
+  wrapWithDecoratedBox,
   wrapWithExpanded,
   wrapWithFlexible,
   wrapWithObserver,
   wrapWithObx,
+  wrapWithVisibility,
+  wrapWithWillPopScope,
 } from './templates/wrapWith';
 
 import createComponent from './createComponent';
@@ -57,7 +61,7 @@ export type FeatureType =
 interface CreateComponentProps {
   args: any;
   type: FeatureType;
-  stateFullWidget?: boolean;
+  stateFulWidget?: boolean;
 }
 
 export interface QuickPickItem {
@@ -66,12 +70,13 @@ export interface QuickPickItem {
   detail: string;
   picked: boolean;
   value: FeatureType;
+  group?: string;
 }
 
 const handleCreateFile = async ({
   args,
   type,
-  stateFullWidget = false,
+  stateFulWidget = false,
 }: CreateComponentProps) => {
   const promptTypes = [
     'widget',
@@ -109,7 +114,7 @@ const handleCreateFile = async ({
   }
 
   if (type == 'widget') {
-    selectedType = await chooseWidgetType();
+    selectedType = await chooseWidgetType(stateFulWidget);
   } else if (type == 'class') {
     selectedType = await chooseClassType();
   } else if (type == 'interface') {
@@ -141,9 +146,9 @@ const handleCreateFile = async ({
   }
 
   if (args) {
-    createComponent(componentName!, { dir: path, type: selectedType, stateFullWidget });
+    createComponent(componentName!, { dir: path, type: selectedType, stateFulWidget });
   } else {
-    createComponent(componentName!, { type: selectedType, stateFullWidget });
+    createComponent(componentName!, { type: selectedType, stateFulWidget });
   }
 };
 
@@ -172,6 +177,16 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 
     if (selectedText !== '') {
       codeActions.push({
+        command: 'extension.wrapWithColoredBox',
+        title: 'Wrap with ColoredBox',
+      });
+
+      codeActions.push({
+        command: 'extension.wrapWithDecoratedBox',
+        title: 'Wrap with DecoratedBox',
+      });
+
+      codeActions.push({
         command: 'extension.wrapWithExpanded',
         title: 'Wrap with Expanded',
       });
@@ -194,6 +209,16 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
           title: 'Wrap with Obx for GetX',
         });
       }
+
+      codeActions.push({
+        command: 'extension.wrapWithVisibility',
+        title: 'Wrap with Visibility',
+      });
+
+      codeActions.push({
+        command: 'extension.wrapWithWillPopScope',
+        title: 'Wrap with WillPopScope',
+      });
 
       codeActions.push({
         command: 'extension.wrapWithWidget',
@@ -302,7 +327,7 @@ export function activate(context: vscode.ExtensionContext) {
       handleCreateFile({ args, type: 'widget' });
     }),
     vscode.commands.registerCommand('extension.create-stateful-widget', args => {
-      handleCreateFile({ args, type: 'widget', stateFullWidget: true });
+      handleCreateFile({ args, type: 'widget', stateFulWidget: true });
     }),
     vscode.commands.registerCommand('extension.create-getx-app-structure', args => {
       handleCreateFile({ args, type: 'getx-structure' });
@@ -324,10 +349,20 @@ export function activate(context: vscode.ExtensionContext) {
     }),
 
     vscode.commands.registerCommand('extension.implementsInterface', implementsInterface),
+    vscode.commands.registerCommand('extension.wrapWithColoredBox', wrapWithColoredBox),
+    vscode.commands.registerCommand(
+      'extension.wrapWithDecoratedBox',
+      wrapWithDecoratedBox
+    ),
     vscode.commands.registerCommand('extension.wrapWithExpanded', wrapWithExpanded),
     vscode.commands.registerCommand('extension.wrapWithFlexible', wrapWithFlexible),
     vscode.commands.registerCommand('extension.wrapWithObserver', wrapWithObserver),
     vscode.commands.registerCommand('extension.wrapWithObx', wrapWithObx),
+    vscode.commands.registerCommand('extension.wrapWithVisibility', wrapWithVisibility),
+    vscode.commands.registerCommand(
+      'extension.wrapWithWillPopScope',
+      wrapWithWillPopScope
+    ),
     vscode.commands.registerCommand('extension.wrapWithWidget', wrapWithWidget),
     vscode.commands.registerCommand('extension.selectWidget', function () {
       expandSelection(true);

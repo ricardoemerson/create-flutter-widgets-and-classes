@@ -9,5 +9,5 @@ export default function createGetPageTearOff(
     return `${pascalCase(componentName)}${getxViewsSuffix}.new,`;
   }
 
-  return `() => ${pascalCase(componentName)}${getxViewsSuffix}(),`;
+  return `() => const ${pascalCase(componentName)}${getxViewsSuffix}(),`;
 }

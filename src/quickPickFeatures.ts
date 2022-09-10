@@ -2,22 +2,25 @@ import { QuickPickItem } from './extension';
 
 import * as vscode from 'vscode';
 
-export async function chooseWidgetType() {
+export async function chooseWidgetType(stateFulWidget: boolean) {
+  const widgetMessage = stateFulWidget ? 'Stateful Widget' : 'Stateless Widget';
   const widgetType = (await vscode.window.showQuickPick(
     [
       {
-        label: '🧩 Create Widget as a Component',
+        label: `🧩 Create ${widgetMessage} as a Component`,
         description: 'Create a widget without Scaffold.',
         detail: '',
         picked: true,
         value: 'widget',
+        group: 'group-a',
       },
       {
-        label: '📑 Create Widget as a Page',
+        label: `📑 Create ${widgetMessage} as a Page`,
         description: 'Create a widget with Scaffold.',
         detail: '',
         picked: false,
         value: 'widget-page',
+        group: 'group-b',
       },
     ] as QuickPickItem[],
     {
