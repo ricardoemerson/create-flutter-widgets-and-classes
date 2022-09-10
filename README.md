@@ -65,7 +65,7 @@
   - `Wrap with Visibility`
 
 - Added a check if some GetX folders exist to avoid errors.
-- Added [175 snippets](#snippets) that can be accessed with `ft-` prefix.
+- Added more than [180 snippets](#snippets) that can be accessed with `ft-` prefix.
 - Added the list of available snippets inside the README.md file in the [Snippets](#snippets) section.
 - Adds notification message for extension updates.
 
@@ -600,6 +600,13 @@ All snippets are available through prefix `ft-`.
 | `ft-bind-lazy-singleton-repository-impl` | Adds Bind.lazySingleton() instruction for RepositoryImpl() used by a ServiceImpl() using Modular |
 | `ft-bind-lazy-singleton-service` | Adds Bind.lazySingleton() instruction for Service() using Modular |
 | `ft-bind-lazy-singleton-service-impl` | Adds Bind.lazySingleton() instruction for ServiceImpl() using Modular |
+
+## Linter (analysis_options.yaml)
+
+| Snippet | Description |
+|---|---|
+| `ft-linter-analyzer` | Configures the analyzer options |
+| `ft-linter-rules` | Includes many rules for the linter to improve development |
 
 # Settings
 
