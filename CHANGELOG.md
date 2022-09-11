@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.8.1]
+
+- Fix internal commands definition.
+
 ## [3.8.0]
 
 - Added the item `Wrap with ColoredBox`.

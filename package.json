@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "3.8.0",
+  "version": "3.8.1",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -101,11 +101,11 @@
       },
       {
         "title": "Wrap with ColoredBox",
-        "command": "extension.wrapWithExpanded"
+        "command": "extension.wrapWithColoredBox"
       },
       {
         "title": "Wrap with DecoratedBox",
-        "command": "extension.wrapWithExpanded"
+        "command": "extension.wrapWithDecoratedBox"
       },
       {
         "title": "Wrap with Expanded",
@@ -125,11 +125,11 @@
       },
       {
         "title": "Wrap with Visibility",
-        "command": "extension.wrapWithObx"
+        "command": "extension.wrapWithVisibility"
       },
       {
         "title": "Wrap with WillPopScope",
-        "command": "extension.wrapWithObx"
+        "command": "extension.wrapWithWillPopScope"
       },
       {
         "title": "Flutter Tools - Wrap with widget...",
@@ -207,7 +207,7 @@
           "when": "editorLangId == dart"
         },
         {
-          "command": "extension.wrapWithDecorated",
+          "command": "extension.wrapWithDecoratedBox",
           "when": "editorLangId == dart"
         },
         {
@@ -216,10 +216,6 @@
         },
         {
           "command": "extension.wrapWithFlexible",
-          "when": "editorLangId == dart"
-        },
-        {
-          "command": "extension.wrapWithWidget",
           "when": "editorLangId == dart"
         },
         {
@@ -236,6 +232,10 @@
         },
         {
           "command": "extension.wrapWithWillPopScope",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrapWithWidget",
           "when": "editorLangId == dart"
         }
       ]
