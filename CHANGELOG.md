@@ -2,6 +2,14 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.8.3]
+
+- Updated the badges in README.md.
+
+## [3.8.2]
+
+- Fix snippet `ft-delayed-seconds-with-callback`.
+
 ## [3.8.1]
 
 - Fix internal commands definition.
