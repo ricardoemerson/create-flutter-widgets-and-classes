@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Tools extension will be documented in this file.
 
+## [3.9.0]
+
+- Updated snippet for linter rules.
+
 ## [3.8.3]
 
 - Updated the badges in README.md.

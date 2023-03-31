@@ -19,6 +19,7 @@
     "body": [
       "always_declare_return_types: true",
       "avoid_redundant_argument_values: true",
+      "avoid_unused_constructor_parameters: true",
       "camel_case_types: true",
       "constant_identifier_names: false",
       "close_sinks: true",
@@ -38,6 +39,7 @@
       "unnecessary_overrides: true",
       "unnecessary_parenthesis: true",
       "unnecessary_this: true",
+      "unnecessary_await_in_return: true",
       "",
       "cancel_subscriptions: true",
       "directives_ordering: true",
