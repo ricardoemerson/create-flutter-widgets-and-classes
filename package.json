@@ -2,7 +2,7 @@
   "name": "create-flutter-widgets-and-classes",
   "displayName": "Flutter Tools",
   "description": "This extension creates Stateless Widgets, Stateful Widgets, GetX App Structure, GetX Features, GetX Services, MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.",
-  "version": "3.9.0",
+  "version": "3.10.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/create-flutter-widgets-and-classes",
   "icon": "images/logo.png",
@@ -283,6 +283,11 @@
           "type": "boolean",
           "default": true,
           "markdownDescription": "Defines if it will create a folder to contain the interface and implementation only for Providers, Repositories and Services."
+        },
+        "flutterTools.useSuperInitializerParameters": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "To avoid having to manually pass each parameter into the super invocation of a constructor, you can use super-initializer parameters to forward parameters to the specified or default superclass constructor."
         },
         "flutterTools.getxUseConstructorTearOffs": {
           "type": "boolean",

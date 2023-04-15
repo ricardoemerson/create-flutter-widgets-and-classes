@@ -1,11 +1,11 @@
 import CreateComponent from './interfaces/CreateComponent';
 import pascalCase from './shared/functions/pascal-case';
 
-export default ({ componentName, widgetsViewsSuffix }: CreateComponent) =>
+export default ({ componentName, widgetsViewsSuffix, useSuperInitializerParameters }: CreateComponent) =>
   `import 'package:flutter/material.dart';
 
 class ${pascalCase(componentName)}${widgetsViewsSuffix} extends StatelessWidget {
-  const ${pascalCase(componentName)}${widgetsViewsSuffix}({Key? key}) : super(key: key);
+  ${useSuperInitializerParameters ? `const ${pascalCase(componentName)}${widgetsViewsSuffix}({super.key});` : `const ${pascalCase(componentName)}${widgetsViewsSuffix}({Key? key}) : super(key: key);`}
 
   @override
   Widget build(BuildContext context) {

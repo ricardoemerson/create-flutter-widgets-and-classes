@@ -80,6 +80,7 @@ export default async (
   ) as boolean;
   const createFolderForInterfaces = config.get('createFolderForInterfaces') as boolean;
   const createFolderForWidgetsPage = config.get('createFolderForWidgetsPage') as boolean;
+  const useSuperInitializerParameters = config.get('useSuperInitializerParameters') as boolean;
 
   const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 
@@ -199,7 +200,7 @@ export default async (
 
     await createFile(
       filePathFeature(pathDir, `${fileName}_${lowerCase(getxViewsSuffix)}.dart`),
-      getxFeatureView({ componentName, fileName, getxViewsSuffix })
+      getxFeatureView({ componentName, fileName, getxViewsSuffix, useSuperInitializerParameters })
     );
 
     if (createRouteFile) {
@@ -370,11 +371,11 @@ export default async (
   }
 
   if (type === 'widget' && !stateFulWidget) {
-    await createFile(filePath(componentFileName), statelessWidget({ componentName }));
+    await createFile(filePath(componentFileName), statelessWidget({ componentName, useSuperInitializerParameters }));
   }
 
   if (type === 'widget' && stateFulWidget) {
-    await createFile(filePath(componentFileName), statefulWidget({ componentName }));
+    await createFile(filePath(componentFileName), statefulWidget({ componentName, useSuperInitializerParameters }));
   }
 
   if (type === 'widget-page' && !stateFulWidget) {
@@ -385,12 +386,12 @@ export default async (
 
       await createFile(
         filePathFeature(pathDir, componentFileName),
-        statelessWidgetPage({ componentName, widgetsViewsSuffix })
+        statelessWidgetPage({ componentName, widgetsViewsSuffix, useSuperInitializerParameters })
       );
     } else {
       await createFile(
         filePath(componentFileName),
-        statelessWidgetPage({ componentName, widgetsViewsSuffix })
+        statelessWidgetPage({ componentName, widgetsViewsSuffix, useSuperInitializerParameters })
       );
     }
   }
@@ -403,12 +404,12 @@ export default async (
 
       await createFile(
         filePathFeature(pathDir, componentFileName),
-        statefulWidgetPage({ componentName, widgetsViewsSuffix })
+        statefulWidgetPage({ componentName, widgetsViewsSuffix, useSuperInitializerParameters })
       );
     } else {
       await createFile(
         filePath(componentFileName),
-        statefulWidgetPage({ componentName, widgetsViewsSuffix })
+        statefulWidgetPage({ componentName, widgetsViewsSuffix, useSuperInitializerParameters })
       );
     }
   }

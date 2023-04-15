@@ -3,7 +3,7 @@ import pascalCase from './shared/functions/pascal-case';
 
 import { snakeCase } from 'lodash';
 
-export default ({ componentName, getxViewsSuffix }: CreateComponent) =>
+export default ({ componentName, getxViewsSuffix, useSuperInitializerParameters }: CreateComponent) =>
   `import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +12,7 @@ import '${snakeCase(componentName)}_controller.dart';
 class ${pascalCase(componentName)}${getxViewsSuffix} extends GetView<${pascalCase(
     componentName
   )}Controller> {
-  const ${pascalCase(componentName)}${getxViewsSuffix}({Key? key}) : super(key: key);
+  ${useSuperInitializerParameters ? `const ${pascalCase(componentName) }${ getxViewsSuffix}({super.key});` : `const ${ pascalCase(componentName) }${ getxViewsSuffix } ({ Key? key }) : super(key: key);`}
 
   @override
   Widget build(BuildContext context) {
