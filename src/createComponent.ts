@@ -294,7 +294,7 @@ export default async (
 
     const updatedRoutesContent = appRoutesContentLines.join('\n');
 
-    fs.writeFile(appRoutesPath, updatedRoutesContent, err => {
+    await fs.writeFile(appRoutesPath, updatedRoutesContent, err => {
       if (err) {
         vscode.window.showErrorMessage(
           `Not was possible update the app routes in ${appRoutesPath}.`
@@ -361,7 +361,7 @@ export default async (
 
     const updatedRoutesContent = appRoutesContentLines.join('\n');
 
-    fs.writeFile(featureRoutesPath, updatedRoutesContent, err => {
+    await fs.writeFile(featureRoutesPath, updatedRoutesContent, err => {
       if (err) {
         vscode.window.showErrorMessage(
           `Not was possible update the app routes in ${featureRoutesPath}.`
@@ -691,6 +691,7 @@ const createDir = (targetDir: string) => {
 const createFile = async (filePath: string, content: string | string[]) => {
   if (!fs.existsSync(filePath)) {
     await fs.createWriteStream(filePath).close();
+    await sleep(200);
     await fs.writeFile(filePath, content, err => {
       if (err) {
         vscode.window.showErrorMessage('Maker cant write to file.');
