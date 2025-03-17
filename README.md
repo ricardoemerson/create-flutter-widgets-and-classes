@@ -1,7 +1,7 @@
 <p align="center">
   <br />
-  <a title="Learn more about Flutter Tools" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
-    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Flutter Tools Logo" width="256"  height="256"/>
+  <a title="Learn more about Flutter Tools Pro" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
+    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Flutter Tools Pro Logo" width="256"  height="256"/>
     </a>
 </p>
 
@@ -11,19 +11,21 @@
 ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square)
 [![GitHub](https://img.shields.io/github/stars/ricardoemerson/create-flutter-widgets-and-classes.svg?style=flat-square)](https://github.com/ricardoemerson/create-flutter-widgets-and-classes)
 
+# What's new in Flutter Tools Pro 4.0 🎉
 
-# What's new in Flutter Tools 4.0 🎉
-
-- Added the command `✨ Read pubspec.yaml to enable Flutter Tools features`.
-- Added the command `Open User Settings for Flutter Tools`.
-- Added the command `Open Workspace Settings for Flutter Tools`.
-- Added the command `➖ Take Previous Value` to decremente values between values (2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80, 96, 112,
-      128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384).
-- Added the command `➕ Take Next Value` to increment values between values (2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80, 96, 112,
-      128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384).
-- Added the event `onSave:pubspec.yaml` to execute the command `✨ Read pubspec.yaml to enable Flutter Tools features`.
+- Added the command `✨ Read pubspec.yaml to enable Flutter Tools Pro features`.
+- Added the command `Open User Settings for Flutter Tools Pro`.
+- Added the command `Open Workspace Settings for Flutter Tools Pro`.
+- Added the command `➖ Take Previous Value` to decremente values between values (2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28,
+  32, 36, 40, 44, 48, 56, 64, 80, 96, 112,
+  128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384).
+- Added the command `➕ Take Next Value` to increment values between values (2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32,
+  36, 40, 44, 48, 56, 64, 80, 96, 112,
+  128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384).
+- Added the event `onSave:pubspec.yaml` to execute the command
+  `✨ Read pubspec.yaml to enable Flutter Tools Pro features`.
 - Added the context menu item `📂 Create Riverpod App Structure`.
-- Added the context menu item `📑 Create Riverpod Feature`.
+- Added the context menu item `📑 Create Riverpod Feature` with GoRouter support case it's in use.
 - Added the context menu item `📝 Create Final Class` only for Dart 3+.
 - Added the context menu item `📝 Create Sealed Class` only for Dart 3+.
 - Updated the `Flutter Modular Module` to support versions 5 and 6.
@@ -31,57 +33,93 @@
 - Added the item `Wrap with CustomScrollView and SliverList and SliverChildBuilderDelegate`.
 - Added the item `Wrap with SliverList and SliverChildBuilderDelegate`.
 - Added the item `Wrap with Offstage`.
-- Added the setting `projectArchitecture`.
 - Added the setting `projectViewsPath`.
-- Added the setting `viewModelSuffix`.
 - Added `Riverpod` snippets.
 - Improve extension settings.
 - Removed the setting `projectsPath`.
 - Updated `Widget` snippets.
 
-🚀 Support the Development of Our Flutter Tools Extension for Visual Studio Code! 🚀
+## ✨Important Update: Flutter Tools Pro is Evolving to Freemium!
 
-Hello Visual Studio Code Community!
+Hello, amazing Flutter Tools Pro users!
 
-Have you benefited from our **Flutter Tools** extension? Has it made your life as a developer easier, more efficient, and productive? Now, you have the opportunity to help us continue evolving this amazing tool we all love.
+First off, we want to thank all of you for the support and feedback that have helped us get this far. Since the
+beginning, our mission has been to improve the development of Flutter applications, offering tools to make development
+faster and more efficient. And now, to keep improving the extension and delivering even more value, we’re making a big
+change: starting with version 4.0, Flutter Tools Pro will adopt a freemium model.
 
-Flutter Tools Extension in Visual Studio Code
+### Why the change?
 
-Why Your Contribution Matters?
+Building and maintaining a high-quality extension like Flutter Tools Pro takes significant time, effort, and resources.
+By adopting a freemium model, we’re ensuring that we can keep delivering the tools you love while taking things to the
+next level. Your support through a premium subscription empowers us to:
 
-Developing and maintaining a high-quality extension like "Flutter Tools" requires time, effort, and resources. We want to go above and beyond and bring even more powerful features to you. Your financial contribution through PIX will allow us to:
+✨ Innovate with New Features: Create powerful, cutting-edge tools to supercharge your Flutter workflow.
 
-✨ Develop innovative new features.
-✨ Enhance the stability and performance of the "Flutter Tools" extension.
-✨ Fix bugs and issues reported by the community.
-✨ Keep our extension up-to-date with the latest Visual Studio Code versions.
-✨ Provide fast and efficient technical support.
+✨ Boost Stability and Performance: Enhance the reliability and speed of Flutter Tools Pro for a seamless experience.
 
-How Can You Help?
+✨ Address Your Feedback: Quickly fix bugs and resolve issues reported by our amazing community.
 
-There are several ways to contribute:
+✨ Stay Ahead: Keep the extension fully compatible with the latest versions of Visual Studio Code and Flutter.
 
-💸 PIX Transfer: Currently, the only donation method we accept is through PIX. Your support through PIX is greatly appreciated.
+✨ Offer Top-Notch Support: Provide fast, efficient help whenever you need it.
 
-⭐ Give a Star on GitHub: Show your love for "Flutter Tools" by giving it a star on our GitHub repository. It's a simple gesture that goes a long way in supporting us.
+The free version will always be here for you, but with your contribution, we can make Flutter Tools Pro even
+better—saving you time and helping you build amazing apps faster. Ready to join us? Check out the premium plans
+at [https://www.extensionshub.com.br](https://www.extensionshub.com.br)!
 
-🌟 Rate on Marketplace: If you've found "Flutter Tools" valuable, please take a moment to rate it on the Visual Studio Code Marketplace. Your positive reviews help others discover and trust our extension.
+### Unlock the Full Power of Flutter Tools Pro!
 
-🐞 Report issues: If you can't contribute financially, reporting bugs and issues you encounter is extremely valuable.
+Ready to take your Flutter productivity to the next level? Subscribe to Flutter Tools Pro and gain access to
+exclusive features like advanced framework support (GetX, MobX, Riverpod and Flutter Modular), custom template
+generation, and much more!
 
-🌐 Share with others: Help us reach more developers by sharing the "Flutter Tools" extension with your network.
+#### How to get started?
 
-Contribute Now
+Visit [https://www.extensionshub.com.br](https://www.extensionshub.com.br) now, choose your plan, and unlock all premium
+features in just a few clicks.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/qr-code-pix.png" alt="Flutter Tools Logo" width="256"  height="256"/>
-      </a>
-</p>
+#### How to Register Your Subscription
 
-We greatly appreciate your support!
+Ready to unlock the premium features of **Flutter Tools Pro**? Follow these simple steps to register your subscription
+using your subscription key:
 
+1. **Open the Command Palette**
 
-# Flutter Tools
+- In Visual Studio Code, press `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (Mac) to open the Command
+  Palette.
+
+2. **Select the Subscription Option**
+
+- Type and select:  
+  ✏️ **Add/Update Subscription Code for Flutter Tools Pro**
+
+3. **Enter Your Subscription Key**
+
+- A text input will appear. Paste the subscription key you received after purchasing your plan
+  at [https://www.extensionshub.com.br](https://www.extensionshub.com.br).
+- Press `Enter` to submit.
+
+4. **Name Your Device**
+
+- Another input will pop up. Enter a name for your device (e.g., "Work Laptop" or "Home PC") to help you identify it
+  later.
+- Press `Enter` to confirm.
+
+5. **Enjoy Premium Features!**
+
+- Once validated, you’ll have instant access to all **Pro features 🎖️**. Start boosting your Flutter workflow right
+  away!
+
+Thank you for being part of this journey with us. We can’t wait to show you what’s coming next!
+
+Best regards,
+
+**Ricardo Emerson**  
+The Flutter Tools Pro Team
+---
+
+# Flutter Tools Pro
 
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square)
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square)
@@ -89,26 +127,42 @@ We greatly appreciate your support!
 ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square)
 [![GitHub](https://img.shields.io/github/stars/ricardoemerson/create-flutter-widgets-and-classes.svg?style=flat-square)](https://github.com/ricardoemerson/create-flutter-widgets-and-classes)
 
-This extension creates Stateless Widgets, Stateful Widgets, GetX, Riverpod, Flutter Modular features as well as MobX Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.
+This extension creates Stateless Widgets, Stateful Widgets, GetX, Riverpod, Flutter Modular features as well as MobX
+Store, Classes, Interfaces, and you can also apply to existing widgets new wrappers in your Flutter projects.
+
+## Features
+
+| Feature                                                             | Type            |
+|---------------------------------------------------------------------|-----------------|
+| Create Stateless/Stateful Widgets                                   | Free            |
+| Basic Dart classes                                                  | Free            |
+| Dart Interfaces (Repositories, Providers and Services)              | Pro feature 🎖️ |
+| Advanced framework support GetX, RiverPod, Flutter Modular and MobX | Pro feature 🎖️ |
+| Custom template generation                                          | Pro feature 🎖️ |
+| Priority bug fixes and support                                      | Pro feature 🎖️ |
+| Wrappers                                                            | Pro feature 🎖️ |
 
 # Usage Examples
 
-> All the examples shown below were performed using the extension's default settings. In your project feel free to customize as you wish.
+> All the examples shown below were performed using the extension's default settings. In your project feel free to
+> customize as you wish.
 
-## ✨ Flutter Tools now read your pubspec.yaml file!
+## ✨ Flutter Tools Pro now read your pubspec.yaml file!
 
-Since the Flutter Tools extension has many features, in order to prevent the context menu from becoming cluttered with items that won't be used in your projects, the Flutter Tools extension now reads the pubspec.yaml file and, based on the installed packages, enables or disables context menu items.
+Since the Flutter Tools Pro extension has many features, in order to prevent the context menu from becoming cluttered
+with items that won't be used in your projects, the Flutter Tools Pro extension now reads the pubspec.yaml file and,
+based on the installed packages, enables or disables context menu items.
 
 Among the supported packages, we have: **GetX**, **Riverpod**, **Flutter Modular**, and **MobX**.
 
-So, let's begin the demonstration of using the extension, first without any of these packages installed, and then we'll see the role of each one.
+So, let's begin the demonstration of using the extension, first without any of these packages installed, and then we'll
+see the role of each one.
 
 ## Widgets
 
 ### Create Stateless Widget as Component:
 
 ![Usage](images/create-stateless-widget-component.gif)
-
 
 ### Create Stateless Widget as Page:
 
@@ -128,27 +182,21 @@ So, let's begin the demonstration of using the extension, first without any of t
 
 ![Usage](images/settings-create-folder-for-widgets-page.gif)
 
-
 #### Suffix for Widgets as Pages (Page, Screen or View)
 
 ![Usage](images/settings-create-folder-for-widgets-suffix.gif)
 
-
-
-
-
-
-To create a Stateless Widget, right-click on the folder where the widget will be created, choose `🔶 Create Stateless Widget` and inform the name of the widget that will be created.
+To create a Stateless Widget, right-click on the folder where the widget will be created, choose
+`🔶 Create Stateless Widget` and inform the name of the widget that will be created.
 
 ![Usage](images/create-stateless-widget.gif)
 
-
 ## Create Stateful Widget Example:
 
-To create a Stateful Widget, right-click on the folder where the widget will be created, choose `🔷 Create Stateful Widget` and inform the name of the widget that will be created.
+To create a Stateful Widget, right-click on the folder where the widget will be created, choose
+`🔷 Create Stateful Widget` and inform the name of the widget that will be created.
 
 ![Usage](images/create-stateful-widget.gif)
-
 
 # GetX
 
@@ -166,19 +214,19 @@ The folders that will be created by the command `📂 Create GetX App Structure`
 
 If you not will use some folder, just delete it from your project.
 
-
 ## Create GetX Feature Example:
 
 > You need to have the `get` package installed in your `pubspec.yaml`
 
-To create a GetX resource that is composed of the `view`, `controller`, `binding` and `route` files, right-click on the `modules` folder or any subfolder inside it and choose `📑 Create GetX Feature`.
+To create a GetX resource that is composed of the `view`, `controller`, `binding` and `route` files, right-click on the
+`modules` folder or any subfolder inside it and choose `📑 Create GetX Feature`.
 
 ![Usage](images/create-getx-feature.gif)
 
-You can create a folder to group GetX resources. In this case the name of the route file will be the name of the folder created, as we can see in the example below:
+You can create a folder to group GetX resources. In this case the name of the route file will be the name of the folder
+created, as we can see in the example below:
 
 ![Usage](images/create-getx-feature-folder-group.gif)
-
 
 ## Create GetX Service Example:
 
@@ -187,7 +235,6 @@ You can create a folder to group GetX resources. In this case the name of the ro
 To create a GetX Service, right-click on the desired folder and choose  `🗃️ Create GetX Service`.
 
 ![Usage](images/create-getx-service.gif)
-
 
 # MobX
 
@@ -199,26 +246,26 @@ To create a MobX Store, right-click on the desired folder and choose `📦 Creat
 
 ![Usage](images/create-mobx-store.gif)
 
-
 # Interface for Providers, Repositories and Services
 
 ## Create Provider Interface Example:
 
-Select the folder where the Provider Interface will be created and choose `📄 Create Provider Interface` and enter the name of the provider interface to be created.
+Select the folder where the Provider Interface will be created and choose `📄 Create Provider Interface` and enter the
+name of the provider interface to be created.
 
 ![Usage](images/create-providers.gif)
 
-
 ## Create Repository Interface Example:
 
-Select the folder where the Repository Interface will be created and choose `📄 Create Repository Interface` and enter the name of the repository interface to be created.
+Select the folder where the Repository Interface will be created and choose `📄 Create Repository Interface` and enter
+the name of the repository interface to be created.
 
 ![Usage](images/create-repositories.gif)
 
-
 ## Create Service Interface Example:
 
-Select the folder where the Service Interface will be created and choose `📄 Create Service Interface` and enter the name of the service interface to be created.
+Select the folder where the Service Interface will be created and choose `📄 Create Service Interface` and enter the name
+of the service interface to be created.
 
 ![Usage](images/create-services.gif)
 
@@ -226,17 +273,17 @@ Select the folder where the Service Interface will be created and choose `📄 C
 
 ## Create Class Example:
 
-Select the folder where the class will be created and choose `📝 Create Dart Class` and enter the name of the class to be created.
+Select the folder where the class will be created and choose `📝 Create Dart Class` and enter the name of the class to be
+created.
 
 ![Usage](images/create-class.gif)
 
-
 ## Create Controller Example:
 
-Select the folder where the controller will be created and choose `📝 Create Controller` and enter the name of the controller to be created.
+Select the folder where the controller will be created and choose `📝 Create Controller` and enter the name of the
+controller to be created.
 
 ![Usage](images/create-controller.gif)
-
 
 ## Create DTO Example:
 
@@ -244,36 +291,35 @@ Select the folder where the DTO will be created and choose `📝 Create DTO` and
 
 ![Usage](images/create-dto.gif)
 
-
 ## Create Interface Example:
 
-Select the folder where the interface will be created and choose `📝 Create Interface` and enter the name of the interface to be created.
+Select the folder where the interface will be created and choose `📝 Create Interface` and enter the name of the
+interface to be created.
 
 ![Usage](images/create-interface.gif)
 
-
 ## Create Model Example:
 
-Select the folder where the model will be created and choose `📝 Create Model` and enter the name of the model to be created.
+Select the folder where the model will be created and choose `📝 Create Model` and enter the name of the model to be
+created.
 
 ![Usage](images/create-model.gif)
 
-
 ## Create Singleton Class Example:
 
-Select the folder where the model will be created and choose `📝 Create Singleton Class` and enter the name of the singleton class to be created.
+Select the folder where the model will be created and choose `📝 Create Singleton Class` and enter the name of the
+singleton class to be created.
 
 ![Usage](images/create-singleton-class.gif)
-
 
 # Code Actions
 
 ## Code action Implements Interface:
 
-In interfaces files it is possible to use the code action `Implements interface` to create interface implementation file case it is not implemented yet or when already exists and you want create another implementation of interface.
+In interfaces files it is possible to use the code action `Implements interface` to create interface implementation file
+case it is not implemented yet or when already exists and you want create another implementation of interface.
 
 ![Usage](images/implements-interface.gif)
-
 
 # Extra wrappers
 
@@ -339,23 +385,27 @@ Use the code actions of Visual Studio Code to wrap a widget with one of the foll
 
 ## Wrap with Obx
 
-In case of use of `GetX`, it is possible to wrapper a widget that uses an observable property with the widget `Obx` from lib [`get`](https://pub.dev/packages/get).
+In case of use of `GetX`, it is possible to wrapper a widget that uses an observable property with the widget `Obx` from
+lib [`get`](https://pub.dev/packages/get).
 
 ![Usage](images/wrap-with-obx.gif)
 
 ## Wrap with Observer
 
-In case of use of `MobX`, it is possible to wrapper a widget that uses an observable property with the widget `Observer` from lib [`flutter_mobx`](https://pub.dev/packages/flutter_mobx).
+In case of use of `MobX`, it is possible to wrapper a widget that uses an observable property with the widget `Observer`
+from lib [`flutter_mobx`](https://pub.dev/packages/flutter_mobx).
 
 ![Usage](images/wrap-with-observer.gif)
 
 ## If wrap fails and breaks the code?
 
-In some widgets structures by positioning the cursor over the widget which will be surrounded by new widget may cause breaking the code.
+In some widgets structures by positioning the cursor over the widget which will be surrounded by new widget may cause
+breaking the code.
 
 ![Usage](images/wrap-with-break-code.gif)
 
-In this case, undo the last operation and select all the widget that will be wrapped using the shortcut `Alt` + `W`, then use Visual Studio Code `code actions` and choose the appropriate wrapper.
+In this case, undo the last operation and select all the widget that will be wrapped using the shortcut `Alt` + `W`,
+then use Visual Studio Code `code actions` and choose the appropriate wrapper.
 
 ![Usage](images/wrap-with-selecting.gif)
 
@@ -366,7 +416,7 @@ All snippets are available through prefix `ft-`.
 ## Flutter and Dart
 
 | Snippet                                                               | Description                                                                    |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+|-----------------------------------------------------------------------|--------------------------------------------------------------------------------|
 | `ft-imp-dart-date`                                                    | Adds Dart Date import                                                          |
 | `ft-part`                                                             | Adds (.g) part file for main file                                              |
 | `ft-part-of`                                                          | Adds part of main file                                                         |
@@ -411,13 +461,15 @@ All snippets are available through prefix `ft-`.
 | `ft-add-inject-i-session-storage`                                     | Adds an injection for ISessionStorageService - Parts to include                |
 | `ft-add-inject-session-storage`                                       | Adds an injection for SessionStorageService - Parts to include                 |
 | `ft-constr-inject-rest-client-with-i-api-storage`                     | Creates an injection for RestClient and ApiCacheStorageService - Complete      |
-| `ft-ifnot`                                                            | Creates an if denying the condition                                            |
+| `ft-if-not`                                                           | Creates an if denying the condition                                            |
 | `ft-if-return`                                                        | Creates an if with return if condition was truthy                              |
-| `ft-ifnot-return`                                                     | Creates an if with return if condition was falsy                               |
-| `ft-ifnot-mounted`                                                    | Creates an if with return if StateFull Widget it'n mounted                     |
-| `ft-ifnull`                                                           | Creates an if for null condition                                               |
-| `ft-ifnotnull`                                                        | Creates an if for not null condition                                           |
-| `ft-ifcontains`                                                       | Creates an if for check if String contains term                                |
+| `ft-if-not-return`                                                    | Creates an if with return if condition was falsy                               |
+| `ft-if-not-mounted`                                                   | Creates an if with return if StateFull Widget it'n mounted                     |
+| `ft-if-context-not-mounted`                                           | Creates an if with return if context it'n mounted                              |
+| `ft-if-context-mounted`                                               | Creates an if for mounted context                                              |
+| `ft-if-null`                                                          | Creates an if for null condition                                               |
+| `ft-if-not-null`                                                      | Creates an if for not null condition                                           |
+| `ft-if-contains`                                                      | Creates an if for check if String contains term                                |
 | `ft-cm-basic`                                                         | Creates a basic comment                                                        |
 | `ft-cm-block`                                                         | Creates a block comment                                                        |
 | `ft-cm-section`                                                       | Creates a section comment                                                      |
@@ -466,7 +518,7 @@ All snippets are available through prefix `ft-`.
 ## Widgets
 
 | Snippet                                            | Description                                                                     |
-| -------------------------------------------------- | ------------------------------------------------------------------------------- |
+|----------------------------------------------------|---------------------------------------------------------------------------------|
 | `ft-border-side`                                   | Adds borderSide property using BorderSide() with width and color                |
 | `ft-border-side-color`                             | Adds borderSide property using BorderSide() with color                          |
 | `ft-shape-circle-border`                           | Adds a shape property using CircleBorder()                                      |
@@ -491,6 +543,7 @@ All snippets are available through prefix `ft-`.
 | `ft-text-overflow`                                 | Adds an overflow property using TextOverflow.ellipsis                           |
 | `ft-space-vertical`, `ft-separator-vertical`       | Adds a vertical spacing between widgets using SizedBox                          |
 | `ft-space-horizontal`, `ft-separator-horizontal`   | Adds a horizontal spacing between widgets using SizedBox                        |
+| `ft-gap`                                           | Adds a horizontal or vertical spacing between widgets using Gap                 |
 | `ft-space-shrink`                                  | Adds a SizedBox.shrink()                                                        |
 | `ft-margin-all`                                    | Adds margin property using EdgeInsets.all()                                     |
 | `ft-margin-symmetric`                              | Adds margin property using EdgeInsets.symmetric()                               |
@@ -598,7 +651,7 @@ All snippets are available through prefix `ft-`.
 ## GetX
 
 | Snippet                           | Description                                                                 |
-| --------------------------------- | --------------------------------------------------------------------------- |
+|-----------------------------------|-----------------------------------------------------------------------------|
 | `ft-imp-get`                      | Adds GetX import                                                            |
 | `ft-rx-attribute`                 | Creates a Rx attribute                                                      |
 | `ft-rxn-attribute`                | Creates a Rxn attribute                                                     |
@@ -632,7 +685,7 @@ All snippets are available through prefix `ft-`.
 ## Provider
 
 | Snippet                              | Description                                                                           |
-| ------------------------------------ | ------------------------------------------------------------------------------------- |
+|--------------------------------------|---------------------------------------------------------------------------------------|
 | `ft-context-read-provider`           | Adds the context.read() to get instance of class using Provider                       |
 | `ft-context-read-provider-data`      | Adds the context.read<type>() to get instance of Controller class using Provider      |
 | `ft-context-watch-provider`          | Adds the context.watch<type>() to watch instance of class using Provider              |
@@ -651,7 +704,7 @@ All snippets are available through prefix `ft-`.
 ## Bloc/Cubit
 
 | Snippet                    | Description                            |
-| -------------------------- | -------------------------------------- |
+|----------------------------|----------------------------------------|
 | `ft-bloc-router`           | Creates a Bloc Router Module           |
 | `ft-bloc-router-with-args` | Creates a Bloc Router Module with args |
 | `ft-get-navigation-args`   | Get args from ModalRoute               |
@@ -659,7 +712,7 @@ All snippets are available through prefix `ft-`.
 ## Modular
 
 | Snippet                                     | Description                                                                                              |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+|---------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | `ft-modular-get`                            | Adds the Modular.get() the get instance of class using Flutter Modular                                   |
 | `ft-modular-get-data`                       | Adds the Modular.get<type>() to get instance of Controller class using Flutter Modular                   |
 | `ft-modular-get-controller`                 | Adds the Modular.get() for controller the get instance of class using Flutter Modular                    |
@@ -689,7 +742,7 @@ All snippets are available through prefix `ft-`.
 ## Riverpod
 
 | Snippet                                | Description                                 |
-| -------------------------------------- | ------------------------------------------- |
+|----------------------------------------|---------------------------------------------|
 | `ft-riverpod-provider-rest-client`     | Adds Riverpod provider for RestClient()     |
 | `ft-riverpod-provider-class`           | Adds Riverpod provider for class()          |
 | `ft-riverpod-provider-session-class`   | Adds Riverpod provider for Session class()  |
@@ -701,7 +754,7 @@ All snippets are available through prefix `ft-`.
 ## Linter (analysis_options.yaml)
 
 | Snippet                            | Description                                               |
-| ---------------------------------- | --------------------------------------------------------- |
+|------------------------------------|-----------------------------------------------------------|
 | `ft-linter-analyzer`               | Configures the analyzer options                           |
 | `ft-linter-rules`                  | Includes many rules for the linter to improve development |
 | `ft-build-runner-options-bloc`     | Configures the build-runner options for Bloc              |
@@ -709,16 +762,18 @@ All snippets are available through prefix `ft-`.
 
 # Settings
 
-The **Flutter Tools** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX Store.
+The **Flutter Tools Pro** has many settings that change it's behavior when creating Interfaces, GetX Features and MobX
+Store.
 
-> The previous name of extension was **Create Widgets and Classes for Flutter** and now the name it's **Flutter Tools**. So in your VSCode the name of extension in settings will be the new name.
+> The previous name of extension was **Create Widgets and Classes for Flutter** and now the name it's **Flutter Tools
+Pro**. So in your VSCode the name of extension in settings will be the new name.
 
 ## Create Folder for Interfaces
 
-Defines if it will create a folder to contain the **interface** and **implementation** only for `Providers`, `Repositories` and `Services`.
+Defines if it will create a folder to contain the **interface** and **implementation** only for `Providers`,
+`Repositories` and `Services`.
 
 ![Usage](images/settings-create-folder-interfaces.gif)
-
 
 ## Create Implementation of Interface
 
@@ -726,13 +781,11 @@ Defines whether the implementation class of an interface will be created togethe
 
 ![Usage](images/settings-implements-interfaces.gif)
 
-
 ## GetX Display Context Menu
 
 Defines if the context menu with GetX features will be displayed.
 
 ![Usage](images/settings-display-getx-menu.gif)
-
 
 ## GetX Project Path
 
@@ -740,13 +793,11 @@ Default path for the GetX Project folders and files.
 
 ![Usage](images/settings-getx-project-path.gif)
 
-
 ## GetX Use Constructor Tear-offs
 
 Defines if the Bindings and Routes files will use the new Dart language feature named Constructor tear-offs.
 
 ![Usage](images/settings-getx-constructor-tear-off.gif)
-
 
 ## GetX View Suffix
 
@@ -754,13 +805,11 @@ Default suffix name for the GetX view layer.
 
 ![Usage](images/settings-getx-views-suffix.gif)
 
-
 ## MobX Display Context Menu
 
 Defines if the context menu with MobX features will be displayed.
 
 ![Usage](images/settings-display-mobx-menu.gif)
-
 
 ## MobX File Suffix
 
@@ -768,13 +817,10 @@ Default suffix name for the MobX store.
 
 ![Usage](images/settings-mobx-file-suffix.gif)
 
-
 ## Use `I` Prefix For Interfaces
 
 Defines whether an interface will be created using `I` with prefix to the interface name..
 
 ![Usage](images/settings-use-i-prefix-interface.gif)
-
-
 
 **That's all, Enjoy!**
