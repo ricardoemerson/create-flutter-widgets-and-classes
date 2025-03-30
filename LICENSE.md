@@ -13,5 +13,5 @@ non-infringement. Ricardo Emerson shall not be liable for any claim, damages, or
 this software.
 
 For licensing details, subscription purchases, or support,
-visit[https://extensionshub.com.br](https://extensionshub.com.br) or contact [Ricardo Emerson](
+visit [https://extensionshub.com.br](https://extensionshub.com.br) or contact [Ricardo Emerson](
 mailto:ricardo_emerson@extensionshub.com.br).
