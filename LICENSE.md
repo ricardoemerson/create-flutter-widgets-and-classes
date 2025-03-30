@@ -1,6 +1,6 @@
-Flutter Tools Pro
-Copyright (c) 2021-2025 Ricardo Emerson
-All rights reserved.
+Flutter Tools Pro  
+Copyright (c) 2021-2025 Ricardo Emerson  
+All rights reserved.  
 
 This software is proprietary and licensed solely for personal or commercial use by individuals or entities under the
 terms outlined by Ricardo Emerson. Access to Flutter Tools Pro requires the purchase of a valid subscription. The free
