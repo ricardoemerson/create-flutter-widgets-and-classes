@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <a title="Learn more about Flutter Tools Pro" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
+  <a title="Learn More about Flutter Tools Pro" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
     <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Flutter Tools Pro Logo" width="256"  height="256"/>
     </a>
 </p>
@@ -39,49 +39,38 @@
 - Removed the setting `projectsPath`.
 - Updated `Widget` snippets.
 
-## ✨Important Update: Flutter Tools Pro is Evolving to Freemium!
+## ✨Important Update: License Change for the Extension
 
-Hello, amazing Flutter Tools Pro users!
+The Flutter Tools extension is now fully paid. Since its launch, this extension has been designed to streamline and
+enhance Flutter development in Visual Studio Code. Initially offered for free, then under a freemium model, we are now
+taking the next step to ensure its sustainability and continued development.
 
-First off, we want to thank all of you for the support and feedback that have helped us get this far. Since the
-beginning, our mission has been to improve the development of Flutter applications, offering tools to make development
-faster and more efficient. And now, to keep improving the extension and delivering even more value, we’re making a big
-change: starting with version 4.0, Flutter Tools Pro will adopt a freemium model.
+### 💡 Why this change?
 
-### Why the change?
+Maintaining and improving an extension like Flutter Tools requires ongoing time and resources. With the paid model, we
+can:
 
-Building and maintaining a high-quality extension like Flutter Tools Pro takes significant time, effort, and resources.
-By adopting a freemium model, we’re ensuring that we can keep delivering the tools you love while taking things to the
-next level. Your support through a premium subscription empowers us to:
+✅ Continuously improve and add new features.  
+✅ Provide better support for users.  
+✅ Deliver regular updates to keep the extension compatible with new versions of Flutter and Visual Studio Code.
 
-✨ Innovate with New Features: Create powerful, cutting-edge tools to supercharge your Flutter workflow.
+### 🔑 How to get your subscription?
 
-✨ Boost Stability and Performance: Enhance the reliability and speed of Flutter Tools Pro for a seamless experience.
-
-✨ Address Your Feedback: Quickly fix bugs and resolve issues reported by our amazing community.
-
-✨ Stay Ahead: Keep the extension fully compatible with the latest versions of Visual Studio Code and Flutter.
-
-✨ Offer Top-Notch Support: Provide fast, efficient help whenever you need it.
-
-The free version will always be here for you, but with your contribution, we can make Flutter Tools Pro even
-better—saving you time and helping you build amazing apps faster. Ready to join us? Check out the premium plans
-at [https://www.extensionshub.com.br](https://www.extensionshub.com.br)!
-
-### Unlock the Full Power of Flutter Tools Pro!
-
-Ready to take your Flutter productivity to the next level? Subscribe to Flutter Tools Pro and gain access to
+To continue using Flutter Tools Pro and gain access to
 exclusive features like advanced framework support (GetX, MobX, Riverpod and Flutter Modular), custom template
-generation, and much more!
+generation, and much more, you can purchase a paid license through the [Extensions Hub](https://extensionshub.com.br),
+where we offer flexible payment options.
 
-#### How to get started?
+### How to get started?
 
-Visit [https://www.extensionshub.com.br](https://www.extensionshub.com.br) now, choose your plan, and unlock all premium
+Visit [https://extensionshub.com.br](https://extensionshub.com.br) now, where you can choose your plan, and unlock all
+premium
 features in just a few clicks.
 
 #### How to Register Your Subscription
 
-Ready to unlock the premium features of **Flutter Tools Pro**? Follow these simple steps to register your subscription
+Ready to unlock the premium features of **Flutter Tools Pro** in Visual Studio Code? Follow these simple steps to
+register your subscription
 using your subscription key:
 
 1. **Open the Command Palette**
@@ -89,15 +78,15 @@ using your subscription key:
 - In Visual Studio Code, press `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (Mac) to open the Command
   Palette.
 
-2. **Select the Subscription Option**
+2. **Select the Subscription Option in the Command Palette**
 
-- Type and select:  
+- Type "Flutter Tools Pro" and select:  
   ✏️ **Add/Update Subscription Code for Flutter Tools Pro**
 
-3. **Enter Your Subscription Key**
+3. **Enter Your Subscription Key that you copied from Extensions Hub**
 
 - A text input will appear. Paste the subscription key you received after purchasing your plan
-  at [https://www.extensionshub.com.br](https://www.extensionshub.com.br).
+  at [https://extensionshub.com.br](https://extensionshub.com.br).
 - Press `Enter` to submit.
 
 4. **Name Your Device**
@@ -111,11 +100,18 @@ using your subscription key:
 - Once validated, you’ll have instant access to all **Pro features 🎖️**. Start boosting your Flutter workflow right
   away!
 
-Thank you for being part of this journey with us. We can’t wait to show you what’s coming next!
+🙌 Thank you for your support!
+
+We recognize that this change, making the extension fully paid, may impact some users, but we believe it will allow the
+extension to
+continue growing and providing even more value to the Flutter community.
+
+Thank you for being part of this journey! If you have any questions, feel free to reach out. 🚀
+!
 
 Best regards,
 
-**Ricardo Emerson**  
+**Ricardo Emerson**    
 The Flutter Tools Pro Team
 ---
 
@@ -132,15 +128,16 @@ Store, Classes, Interfaces, and you can also apply to existing widgets new wrapp
 
 ## Features
 
-| Feature                                                             | Type            |
-|---------------------------------------------------------------------|-----------------|
-| Create Stateless/Stateful Widgets                                   | Free            |
-| Basic Dart classes                                                  | Free            |
-| Dart Interfaces (Repositories, Providers and Services)              | Pro feature 🎖️ |
-| Advanced framework support GetX, RiverPod, Flutter Modular and MobX | Pro feature 🎖️ |
-| Custom template generation                                          | Pro feature 🎖️ |
-| Priority bug fixes and support                                      | Pro feature 🎖️ |
-| Wrappers                                                            | Pro feature 🎖️ |
+| Feature                                                             | Type        |
+|---------------------------------------------------------------------|-------------|
+| Create Stateless/Stateful Widgets                                   | Pro feature |
+| Basic Dart classes                                                  | Pro feature |
+| Dart Interfaces (Repositories, Providers and Services)              | Pro feature |
+| Advanced framework support GetX, RiverPod, Flutter Modular and MobX | Pro feature |
+| Custom template generation                                          | Pro feature |
+| Priority bug fixes and support                                      | Pro feature |
+| Wrappers                                                            | Pro feature |
+| Snippets                                                            | Free        |
 
 # Usage Examples
 
