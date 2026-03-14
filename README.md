@@ -1,13 +1,13 @@
 # Flutter Tools Pro
 
 <p align="right">
-  🌐 <b>English</b> | <a href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes/blob/master/README.pt-br.md">Português</a>
+  🌐 <b>English</b> | <a href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes/blob/main/README.pt-br.md">Português</a>
 </p>
 
 <p align="center">
   <br />
   <a title="Learn More about Flutter Tools Pro" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
-    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Flutter Tools Pro Logo" width="180"  height="180"/>
+    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/main/images/cover-logo.png" alt="Flutter Tools Pro Logo" width="180"  height="180"/>
   </a>
 </p>
 
@@ -137,7 +137,7 @@ Generate DTOs, Models, and Singletons with standard patterns.
 
 ## 🛠 Pro Code Actions
 
-Intelligently wrap widgets using Visual Studio Code's code actions. 
+Intelligently wrap widgets using Visual Studio Code's code actions.
 > **Tip**: Use `Alt + W` to select the entire widget before applying a wrapper for 100% accuracy.
 
 <details>

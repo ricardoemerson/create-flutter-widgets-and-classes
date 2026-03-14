@@ -1,13 +1,13 @@
 # Flutter Tools Pro
 
 <p align="right">
-  <a href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes/blob/master/README.md">English</a> | 🌐 <b>Português</b>
+  <a href="README.md">English</a> | 🌐 <b>Português</b>
 </p>
 
 <p align="center">
   <br />
   <a title="Saiba mais sobre o Flutter Tools Pro" href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes">
-    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/cover-logo.png" alt="Logo Flutter Tools Pro" width="180"  height="180"/>
+    <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/main/images/cover-logo.png" alt="Logo Flutter Tools Pro" width="180"  height="180"/>
   </a>
 </p>
 
