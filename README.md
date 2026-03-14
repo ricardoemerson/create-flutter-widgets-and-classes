@@ -1,7 +1,7 @@
 # Flutter Tools Pro
 
 <p align="right">
-  🌐 <b>English</b> | <a href="README.pt-br.md">Português</a>
+  🌐 <b>English</b> | <a href="https://github.com/ricardoemerson/create-flutter-widgets-and-classes/blob/master/README.pt-br.md">Português</a>
 </p>
 
 <p align="center">
