@@ -1,33 +1,42 @@
 # Change Log
 
-All notable changes to the Flutter Tools extension will be documented in this file.
+All notable changes to the Flutter Tools Pro extension will be documented in this file.
+
+## [4.1.12]
+
+### Added
+- Added the documentation in `README.pt-br.md`.
+
+### Changed
+- Updated the `README.md` for better readability.
 
 ## [4.0.0]
 
-- Added the command `✨ Read pubspec.yaml to enable Flutter Tools features`.
-- Added the command `Open User Settings for Flutter Tools`.
-- Added the command `Open Workspace Settings for Flutter Tools`.
-- Added the command `➖ Take Previous Value` to decremente values between values (2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80, 96, 112,
-      128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384).
-- Added the command `➕ Take Next Value` to increment values between values (2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80, 96, 112,
-      128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384).
-- Added the event `onSave:pubspec.yaml` to execute the command `✨ Read pubspec.yaml to enable Flutter Tools features`.
-- Added the context menu item `📂 Create Riverpod App Structure`.
-- Added the context menu item `📑 Create Riverpod Feature`.
-- Added the context menu item `📝 Create Final Class` only for Dart 3+.
-- Added the context menu item `📝 Create Sealed Class` only for Dart 3+.
-- Added the item `Wrap with Consumer`.
-- Added the item `Wrap with CustomScrollView and SliverList and SliverChildBuilderDelegate`.
-- Added the item `Wrap with SliverList and SliverChildBuilderDelegate`.
-- Added the item `Wrap with Offstage`.
-- Added the setting `projectArchitecture`.
-- Added the setting `projectViewsPath`.
-- Added the setting `viewModelSuffix`.
-- Added `FVM` snippets for configure `dart.flutterSdkPath` and `dart.sdkPath` in `settings.json` file in `.vscode` folder.
+### Added
+- Added the command `✨ Read pubspec.yaml to enable Flutter Tools Pro features`.
+- Added the command `Open User Settings for Flutter Tools Pro`.
+- Added the command `Open Workspace Settings for Flutter Tools Pro`.
+- Added the command `➖ Take Previous Value` (Value step decrementor).
+- Added the command `➕ Take Next Value` (Value step incrementor).
+- Added the event `onSave:pubspec.yaml` to automatically read project configuration.
+- Added context menu `📂 Create Riverpod App Structure`.
+- Added context menu `📑 Create Riverpod Feature` (with GoRouter support).
+- Added context menu `📝 Create Final Class` (Dart 3+).
+- Added context menu `📝 Create Sealed Class` (Dart 3+).
+- Added `Wrap with Consumer`.
+- Added `Wrap with CustomScrollView` and sliver delegates.
+- Added `Wrap with Offstage`.
+- Added setting `projectViewsPath`.
 - Added `Riverpod` snippets.
-- Improve extension settings.
-- Removed the setting `projectsPath`.
+- Added `FVM` snippets for SDK path configuration.
+
+### Changed
+- Updated `Flutter Modular Module` support for versions 5 and 6.
+- Improved extension settings and overall project structure.
 - Updated `Widget` snippets.
+
+### Removed
+- Removed the setting `projectsPath`.
 
 ## [3.21.0]
 
