@@ -1,7 +1,7 @@
 # Flutter Tools Pro
 
 <p align="right">
-  🌐 <b>English</b> | <a href="README.pt-BR.md">Português</a>
+  🌐 <b>English</b> | <a href="README.pt-br.md">Português</a>
 </p>
 
 <p align="center">
