@@ -12,18 +12,6 @@
 </p>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes">
-    <img src="https://img.shields.io/visual-studio-marketplace/v/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=for-the-badge&logo=visual-studio-code" alt="Version"/>
-  </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes">
-    <img src="https://img.shields.io/visual-studio-marketplace/i/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=for-the-badge" alt="Installs"/>
-  </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.create-flutter-widgets-and-classes">
-    <img src="https://img.shields.io/visual-studio-marketplace/r/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=for-the-badge" alt="Rating"/>
-  </a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/visual-studio-marketplace/v/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square" alt="Visual Studio Marketplace Version" />
   <img src="https://img.shields.io/visual-studio-marketplace/i/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square" alt="Visual Studio Marketplace Installs" />
   <img src="https://img.shields.io/visual-studio-marketplace/d/ricardo-emerson.create-flutter-widgets-and-classes.svg?style=flat-square" alt="Visual Studio Marketplace Downloads" />
