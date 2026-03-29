@@ -127,13 +127,24 @@ Gere DTOs, Models e Singletons com padrões de mercado.
 
 ---
 
-## 🛠 Ações de Código Pro
+## 🛠 Pro Code Actions
 
-Envolva (wrap) widgets de forma inteligente usando as ações de código do Visual Studio Code.
+Envolva (wrap) widgets de forma inteligente usando as code actions do Visual Studio Code.
 > **Dica**: Use `Alt + W` para selecionar todo o widget antes de aplicar um wrapper para 100% de precisão.
 
+### ⚡ Atalhos de Power User
+
+| Atalho | Ação | Descrição |
+| :--- | :--- | :--- |
+| `Alt + W` | **Selecionar Widget** | Expande a seleção de forma inteligente para todo o widget. |
+| `Alt + Q` | **Envolver com Widget...** | Abre o Quick Pick com os 60+ wrappers disponíveis. |
+| `Alt + U` | **Sincronização Inteligente**| Sincroniza manualmente as funcionalidades com o `pubspec.yaml`. |
+| `Ctrl + Shift + .` | **Próximo Valor** | Incrementa valores numéricos (passo: 2, 4, 8, 16...). |
+| `Ctrl + Shift + ,` | **Valor Anterior** | Decrementa valores numéricos. |
+| `Ctrl + O` + `S/W` | **Configurações** | Abre rapidamente as configurações de Usuário (`S`) ou Workspace (`W`). |
+
 <details>
-<summary><b>Ver Todos os 15+ Wrappers e Ferramentas Disponíveis</b></summary>
+<summary><b>Ver Todos os 60+ Wrappers e Ferramentas Disponíveis</b></summary>
 
 ### Implementação Inteligente de Interface
 Gere automaticamente arquivos de implementação a partir de definições de interface.
@@ -141,16 +152,14 @@ Gere automaticamente arquivos de implementação a partir de definições de int
 
 ### Wrappers Abrangentes
 As ações disponíveis incluem:
-- `Wrap with LayoutBuilder`
-- `Wrap with Expanded`, `Stack`, `Positioned`, `Align`
-- `Wrap with ClipRRect`, `Hero`, `GestureDetector`
-- `Wrap with SingleChildScrollView`, `SafeArea`, `Form`
-- `Wrap with Obx` (GetX), `Observer` (MobX)
+- **Layout e Responsividade**: `Envolver com LayoutBuilder` (todas as variações), `Expanded`, `Flexible`, `Stack`, `Positioned`, `Align`, `SafeArea`, `Wrap`, `IntrinsicHeight/Width`, `Card`, `Center`, `Column`, `Row`, `Container`, `Padding`, `SizedBox`
+- **Rolagem e Slivers**: `SingleChildScrollView`, `ListView.builder`, `GridView.builder`, `CustomScrollView` (7+ variações), `SliverAppBar`, `SliverList`, `SliverToBoxAdapter`, `SliverFillRemaining`, etc.
+- **Estilização e Formas**: `ClipRRect`, `Hero`, `FittedBox`, `FractionallySizedBox`, `DecoratedBox`, `ColoredBox`, `Pdf` (widget wrapper)
+- **Interação e Formulários**: `GestureDetector`, `InkWell`, `CallbackShortcuts`, `Form`, `PopScope`, `FormField`
+- **Gerenciamento de Estado**: `Obx` (GetX), `Observer` (MobX), `Consumer` (Riverpod), `ValueListenableBuilder`, `Watch` (Signals)
+- **Visibilidade e Lógica**: `Visibility`, `Offstage`, `SliverVisibility`, `If (Child)`, `If (Children)`
 
 ![Wrappers](images/wrap-with-layout-builder.gif)
-
-> **Aviso de Segurança**: Ao envolver estruturas complexas, use o modo de seleção para evitar quebra de sintaxe.
-![Erro de Wrap](images/wrap-with-break-code.gif)
 </details>
 
 ## ⚡ Biblioteca de Snippets (160+)
@@ -197,8 +206,10 @@ Acesse snippets de alta velocidade usando o prefixo `ft-`.
 | `ft-add-inject-provider` | Adiciona injeção para Provider - Partes |
 | `ft-constr-inject-rest-client` | Cria injeção para RestClient - Completo |
 | `ft-add-inject-rest-client` | Adiciona injeção para RestClient - Partes |
-| `ft-constr-inject-i-api-storage` | Cria injeção para ApiCacheStorageService - Completo |
-| `ft-add-inject-i-api-storage` | Adiciona injeção para ApiCacheStorageService - Partes |
+| `ft-constr-inject-i-api-storage` | Cria injeção para IApiCacheStorageService - Completo |
+| `ft-constr-inject-api-storage` | Cria injeção para ApiCacheStorageService - Completo |
+| `ft-add-inject-i-api-storage` | Adiciona injeção para IApiCacheStorageService - Partes |
+| `ft-add-inject-api-storage` | Adiciona injeção para ApiCacheStorageService - Partes |
 | `ft-constr-inject-i-local-storage` | Cria injeção para ILocalStorageService - Completo |
 | `ft-constr-inject-local-storage` | Cria injeção para LocalStorageService - Completo |
 | `ft-add-inject-i-local-storage` | Adiciona injeção para ILocalStorageService - Partes |
@@ -261,7 +272,14 @@ Acesse snippets de alta velocidade usando o prefixo `ft-`.
 | `ft-signature-future-method` | Adiciona assinatura de um método future |
 | `ft-future-static-method` | Adiciona um método static future |
 | `ft-value-notifier` | Cria um atributo ValueNotifier |
-| `widgets-binding-add-post-frame-callback` | Adiciona WidgetsBinding.instance.addPostFrameCallback() |
+| `widgets-binding-add-post-frame-callback`, `ft-widgets-binding-add-post-frame-callback` | Adiciona WidgetsBinding.instance.addPostFrameCallback() |
+| `log`                                                                | Imprime uma string no System.out                                               |
+| `logv`                                                               | Imprime um valor no System.out                                                |
+| `ft-delayed-miliseconds`                                             | Adiciona instrução Future.delayed                                              |
+| `ft-void-function`                                                   | Adiciona propriedade como void Function()                                      |
+| `ft-void-call-back`                                                  | Adiciona propriedade como VoidCallback                                         |
+| `ft-service-call`                                                    | Adiciona chamada de serviço com tratamento de erro                              |
+| `ft-unfocus`                                                         | Esconde o teclado                                                              |
 
 ## Widgets
 
@@ -334,6 +352,13 @@ Acesse snippets de alta velocidade usando o prefixo `ft-`.
 | `ft-scaffold` | Adiciona Widget Scaffold |
 | `ft-icon` | Adiciona ícone do Google Fonts |
 | `ft-phosphor-icon` | Adiciona ícone do pacote PhosphorIcon |
+| `ft-separator`                                     | Adiciona espaçamento horizontal ou vertical usando SizedBox                    |
+| `ft-media-query-size-of`                           | Adiciona MediaQuery.sizeOf(context).                                           |
+| `ft-media-query-maybe`                             | Adiciona MediaQuery.of(context).                                               |
+| `ft-font-size`                                     | Adiciona propriedade estilo fontSize                                           |
+| `ft-text-form-input-simple`                        | Adiciona Widget TextFormInput Simples                                          |
+| `ft-text-form-input-detailed`                      | Adiciona Widget TextFormInput Detalhado                                        |
+| `ft-values`                                        | Adiciona um valor a partir de uma lista de valores                             |
 
 ## GetX
 
@@ -351,27 +376,127 @@ Acesse snippets de alta velocidade usando o prefixo `ft-`.
 | `ft-on-ready` | Adiciona override para o método onReady |
 | `ft-on-close` | Adiciona override para o método onClose |
 
-## Outros Frameworks
-Todos os outros snippets para **Provider**, **Bloc/Cubit**, **Modular** e **Riverpod** também estão disponíveis seguindo o mesmo padrão de nomenclatura rápida.
+## Bloc/Cubit
+
+| Snippet | Descrição |
+|:---|:---|
+| `ft-bloc-router` | Cria um Módulo de Rota Bloc |
+| `ft-bloc-router-with-args` | Cria um Módulo de Rota Bloc com argumentos |
+| `ft-get-navigation-args` | Obtém argumentos de ModalRoute |
+| `ft-enum-status` | Cria um enum para status de estado |
+
+## Modular
+
+| Snippet | Descrição |
+|:---|:---|
+| `ft-modular-get` | Adiciona Modular.get() para instanciar classe usando Flutter Modular |
+| `ft-modular-get-data` | Adiciona Modular.get<type>() para instanciar Controller usando Flutter Modular |
+| `ft-modular-get-controller` | Adiciona Modular.get() para instanciar controller usando Flutter Modular |
+| `ft-modular-get-of-type` | Adiciona Modular.get<Class>() para instanciar classe usando Flutter Modular |
+| `ft-modular-to-navigate` | Navega para uma nova tela |
+| `ft-modular-to-push-named` | Navega para uma rota |
+| `ft-module-route-v5` | Adiciona ModuleRoute ao Módulo |
+| `ft-child-route-v5` | Adiciona ChildRoute ao Módulo |
+| `ft-child-route-with-router-outlet-v5` | Adiciona ChildRoute com RouterOutlet ao Módulo |
+| `ft-bind-lazy-singleton-class-v5` | Adiciona Bind.lazySingleton() para qualquer Classe usando Modular |
+| `ft-bind-lazy-singleton-class-impl-v5` | Adiciona Bind.lazySingleton() para qualquer ClassImpl usando Modular |
+| `ft-bind-lazy-singleton-controller-v5` | Adiciona Bind.lazySingleton() para Controller usando Modular |
+| `ft-module-route-v6` | Adiciona ModuleRoute ao Módulo |
+| `ft-child-route-v6` | Adiciona ChildRoute ao Módulo |
+| `ft-bind-lazy-singleton-class-v6` | Adiciona i.addLazySingleton() para qualquer Classe usando Modular |
+| `ft-bind-lazy-singleton-class-impl-v6` | Adiciona i.addLazySingleton() para qualquer ClassImpl usando Modular |
+| `ft-bind-lazy-singleton-controller-v6` | Adiciona i.addLazySingleton() para Controller usando Modular |
+| `ft-bind-lazy-singleton-i-repository-class` | Injeta uma instância lazy singleton de classe |
+| `ft-bind-lazy-singleton-class-without-interface` | Injeta um lazy singleton de classe sem referência de interface |
+| `ft-bind-singleton-class-without-interface` | Injeta um singleton de classe sem referência de interface |
+| `ft-rchild` | Adiciona rota filha |
+| `ft-rmodule` | Adiciona rota de módulo |
+| `ft-modular-to-pop` | Adiciona instrução Modular.to usando pop |
+| `ft-modular-to-pop-and-push-named` | Adiciona instrução Modular.to usando popAndPushNamed |
+| `ft-modular-to-pop-until` | Adiciona instrução Modular.to usando popUntil |
+| `ft-modular-to-push-replacement-named` | Adiciona instrução Modular.to usando pushReplacementNamed |
+| `ft-modular-to-push-named-and-remove-until` | Adiciona instrução Modular.to usando pushNamedAndRemoveUntil |
+| `ft-modular-import-app-module` | Importa AppModule no módulo atual |
+
+## Riverpod
+
+| Snippet | Descrição |
+|:---|:---|
+| `ft-riverpod-provider-rest-client` | Adiciona provider Riverpod para RestClient() |
+| `ft-riverpod-provider-class` | Adiciona provider Riverpod para class() |
+| `ft-riverpod-provider-session-class` | Adiciona provider Riverpod para classe Session() |
+| `ft-riverpod-provider-repository` | Adiciona provider Riverpod para Repository() |
+| `ft-riverpod-provider-repository-impl` | Adiciona provider Riverpod para RepositoryImpl() |
+| `ft-riverpod-provider-service` | Adiciona provider Riverpod para Service() |
+| `ft-riverpod-provider-service-impl` | Adiciona provider Riverpod para ServiceImpl() |
+| `ft-riverpod-ref` | Adiciona ref do Riverpod |
+| `ft-riverpod-command-class` | Adiciona classe de comando Riverpod |
+| `ft-riverpode-provider-current-class` | Adiciona provider Riverpod para a classe atual() |
+| `ft-riverpod-async-command-class` | Adiciona classe de comando Riverpod assíncrona |
+
+## Linter (analysis_options.yaml)
+
+| Snippet | Descrição |
+|:---|:---|
+| `ft-linter-analyzer` | Configura as opções do analyzer |
+| `ft-linter-rules` | Inclui diversas regras para o linter melhorar o desenvolvimento |
+| `ft-build-runner-options-bloc` | Configura opções do build-runner para Bloc |
+| `ft-build-runner-options-riverpod`| Configura opções do build-runner para Riverpod |
+| `ft-linter-formmater` | Configura as opções do analyzer |
+| `ft-linter-analyzer-with-custom-lint` | Configura as opções do analyzer com custom lint |
+
+## Provider
+
+| Snippet | Descrição |
+|:---|:---|
+| `ft-context-read-provider` | Adiciona context.read() para instanciar classe usando Provider |
+| `ft-context-read-provider-data` | Adiciona context.read<type>() para instanciar Controller usando Provider |
+| `ft-context-watch-provider` | Adiciona context.watch<type>() para observar instância usando Provider |
+| `ft-context-select-provider` | Adiciona context.select<ClassName, type>() para selecionar instância usando Provider |
+| `ft-provider-create` | Adiciona instrução Provider() para Bloc, Cubit ou Controller |
+| `ft-provider-create-class` | Adiciona instrução Provider() para IClass |
+| `ft-provider-create-class-impl` | Adiciona instrução Provider() para Class |
+| `ft-provider-create-controller` | Adiciona instrução Provider() para Controller() |
+| `ft-provider-create-provider` | Adiciona instrução Provider() para Provider() usado por um Service() |
+| `ft-provider-create-provider-impl` | Adiciona instrução Provider() para ProviderImpl() usado por um ServiceImpl() |
+| `ft-provider-create-service` | Adiciona instrução Provider() para Service() |
+| `ft-provider-create-service-impl` | Adiciona instrução Provider() para ServiceImpl() |
+| `ft-provider-create-repository` | Adiciona instrução Provider() para Repository() usado por um Service() |
+| `ft-provider-create-repository-impl` | Adiciona instrução Provider() para RepositoryImpl() usado por um ServiceImpl() |
+
+## Configuração do App (settings.json)
+
+| Snippet | Descrição |
+|:---|:---|
+| `fvm_flutter_sdk` | Configura caminhos do SDK FVM Dart/Flutter (remove .fvm da busca) |
 
 </details>
 
 ---
 
-## ⚙️ Configurações Avançadas
+## ⚙️ Configuração Avançada
 
-Ajuste como o Flutter Tools Pro gera código para alinhar com o estilo da sua equipe.
+Ajuste como o Flutter Tools Pro gera código para combinar com o estilo da sua equipe.
 
 <details>
 <summary><b>Ver Todas as Configurações Disponíveis</b></summary>
 
-O **Flutter Tools Pro** permite ampla personalização do comportamento para Interfaces, Recursos GetX e MobX Stores.
+| Configuração | Tipo | Padrão | Descrição |
+| :--- | :---: | :---: | :--- |
+| `createFolderForInterfaces` | bool | `true` | Cria subpastas para interface e implementações. |
+| `createFolderForWidgetsPage` | bool | `true` | Cria uma pasta dedicada ao gerar uma página de widget. |
+| `useIPrefixForInterfaces` | bool | `true` | Usa o prefixo `I` para nomes de interface (ex: `IService`). |
+| `widgetsViewsSuffix` | enum | `Page` | Sufixo padrão para telas: `Page`, `Screen` ou `View`. |
+| `displayGetxContextMenu` | bool | `false` | Habilita/Desabilita itens de menu de contexto do GetX. |
+| `displayRiverpodContextMenu`| bool | `false` | Habilita/Desabilita itens de menu de contexto do Riverpod. |
+| `displayModularContextMenu` | bool | `false` | Habilita/Desabilita itens de menu de contexto do Flutter Modular. |
+| `displayMobxContextMenu` | bool | `false` | Habilita/Desabilita itens de menu de contexto do MobX. |
+| `displaySignalsContextMenu` | bool | `false` | Habilita/Desabilita itens de menu de contexto do Signals. |
+| `projectPath` | enum | `/lib/app` | Caminho raiz para estruturas (`/lib`, `/lib/src`, `/lib/app`). |
+| `projectViewsPath` | enum | `/modules` | Subcaminho para views (`/features`, `/modules`, `/pages`). |
+| `useConstructorTearOffs` | bool | `false` | Habilita constructor tear-offs do Dart 3+ nos templates. |
 
-- **Create Folder for Interfaces**: Alterna o aninhamento automático.
-- **GetX Use Constructor Tear-offs**: Suporte à sintaxe moderna do Dart.
-- **Use `I` Prefix**: Impõe convenções de nomenclatura de interface.
-
-![Configurações](images/settings-create-folder-interfaces.gif)
+![Settings](images/settings-create-folder-interfaces.gif)
 
 </details>
 

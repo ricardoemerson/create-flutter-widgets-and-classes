@@ -2,13 +2,34 @@
 
 All notable changes to the Flutter Tools Pro extension will be documented in this file.
 
-## [4.1.12]
+## [4.2.0]
+
+### Added
+- Added 12 new widget wrappers: `Card`, `Center`, `Column`, `Container`, `FormField`, `If (Child)`, `If (Children)`, `Padding`, `Pdf`, `Row`, `SizedBox`, `Watch.builder`.
+- Added dynamic controller selection for Flutter Modular (Signals vs MobX).
+
+### Changed
+- Migrated the deprecated `WillPopScope` wrapper to the modern `PopScope` API (Flutter 3.12+ / 3.22+).
+
+### Fixed
+- Fixed generic warning messages when `flutter_modular` is installed without its dependencies (MobX or Signals).
+- Fixed redundant error messages in `PubspecYaml` by centralizing UI feedback in the main extension loop.
+- Fixed "silent mode" bug where warnings and errors were suppressed if active packages hadn't changed.
+- Fixed the creation of missing module files for nested Flutter Modular features.
+- Fixed automatic routing injection of nested sub-features into the root `app_module.dart`.
+- Fixed trailing comma by replacing it with a semicolon in Flutter Modular V6 method bindings.
+
+## [4.1.20]
 
 ### Added
 - Added the documentation in `README.pt-br.md`.
+- Added the fix for wrap with in complex widgets.
+- Added Signals support for Flutter Modular and wrapper `Watch`.
 
 ### Changed
 - Updated the `README.md` for better readability.
+- Changed the extension logo.
+- Remove from Flutter Modular the mandatory `MobX`. Now the extension supports `Signals` and `MobX`.
 
 ## [4.0.0]
 

@@ -134,8 +134,19 @@ Generate DTOs, Models, and Singletons with standard patterns.
 Intelligently wrap widgets using Visual Studio Code's code actions.
 > **Tip**: Use `Alt + W` to select the entire widget before applying a wrapper for 100% accuracy.
 
+### ⚡ Power User Shortcuts
+
+| Shortcut | Action | Description |
+| :--- | :--- | :--- |
+| `Alt + W` | **Select Widget** | Intelligently expands selection to the entire widget. |
+| `Alt + Q` | **Wrap with Widget...** | Opens the Quick Pick with 60+ available wrappers. |
+| `Alt + U` | **Smart Sync** | Manually syncs features with `pubspec.yaml`. |
+| `Ctrl + Shift + .` | **Next Value** | Increments numeric values (step: 2, 4, 8, 16...). |
+| `Ctrl + Shift + ,` | **Previous Value** | Decrements numeric values. |
+| `Ctrl + O` + `S/W` | **Settings** | Quickly open User (`S`) or Workspace (`W`) settings. |
+
 <details>
-<summary><b>View All 15+ Available Wrappers & Tooling</b></summary>
+<summary><b>View All 60+ Available Wrappers & Tooling</b></summary>
 
 ### Smart Interface Implementation
 Automatically generate implementation files from interface definitions.
@@ -143,16 +154,14 @@ Automatically generate implementation files from interface definitions.
 
 ### Comprehensive Wrappers
 Available actions include:
-- `Wrap with LayoutBuilder`
-- `Wrap with Expanded`, `Stack`, `Positioned`, `Align`
-- `Wrap with ClipRRect`, `Hero`, `GestureDetector`
-- `Wrap with SingleChildScrollView`, `SafeArea`, `Form`
-- `Wrap with Obx` (GetX), `Observer` (MobX)
+- **Layout & Responsive**: `LayoutBuilder` (all variations), `Expanded`, `Flexible`, `Stack`, `Positioned`, `Align`, `SafeArea`, `Wrap`, `IntrinsicHeight/Width`, `Card`, `Center`, `Column`, `Row`, `Container`, `Padding`, `SizedBox`
+- **Scrolling & Slivers**: `SingleChildScrollView`, `ListView.builder`, `GridView.builder`, `CustomScrollView` (7+ variations), `SliverAppBar`, `SliverList`, `SliverToBoxAdapter`, `SliverFillRemaining`, etc.
+- **Styling & Shape**: `ClipRRect`, `Hero`, `FittedBox`, `FractionallySizedBox`, `DecoratedBox`, `ColoredBox`, `Pdf` (widget wrapper)
+- **Interaction & Forms**: `GestureDetector`, `InkWell`, `CallbackShortcuts`, `Form`, `PopScope`, `FormField`
+- **State Management**: `Obx` (GetX), `Observer` (MobX), `Consumer` (Riverpod), `ValueListenableBuilder`, `Watch` (Signals)
+- **Visibility & Logic**: `Visibility`, `Offstage`, `SliverVisibility`, `If (Child)`, `If (Children)`
 
 ![Wrappers](images/wrap-with-layout-builder.gif)
-
-> **Safety Warning**: If wrapping complex structures, use selection mode to avoid syntax breakage.
-![Wrap Break](images/wrap-with-break-code.gif)
 </details>
 
 ## ⚡ Snippet Library (160+)
@@ -199,8 +208,10 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-add-inject-provider`                                              | Adds an injection for Provider - Parts to include                              |
 | `ft-constr-inject-rest-client`                                        | Creates an injection for RestClient - Complete                                 |
 | `ft-add-inject-rest-client`                                           | Adds an injection for RestClient - Parts to include                            |
-| `ft-constr-inject-i-api-storage`                                      | Creates an injection for ApiCacheStorageService - Complete                     |
-| `ft-add-inject-i-api-storage`                                         | Adds an injection for ApiCacheStorageService - Parts to include                |
+| `ft-constr-inject-i-api-storage`                                      | Creates an injection for IApiCacheStorageService - Complete                |
+| `ft-constr-inject-api-storage`                                        | Creates an injection for ApiCacheStorageService - Complete                 |
+| `ft-add-inject-i-api-storage`                                         | Adds an injection for IApiCacheStorageService - Parts to include           |
+| `ft-add-inject-api-storage`                                           | Adds an injection for ApiCacheStorageService - Parts to include            |
 | `ft-constr-inject-i-local-storage`                                    | Creates an injection for ILocalStorageService - Complete                       |
 | `ft-constr-inject-local-storage`                                      | Creates an injection for LocalStorageService - Complete                        |
 | `ft-add-inject-i-local-storage`                                       | Adds an injection for ILocalStorageService - Parts to include                  |
@@ -262,7 +273,14 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-signature-future-method`                                          | Adds a signature of a future method                                            |
 | `ft-future-static-method`                                             | Adds a future static method                                                    |
 | `ft-value-notifier`                                                   | Creates a ValueNotifier attribute                                              |
-| `widgets-binding-add-post-frame-callback`                             | Adds WidgetsBinding.instance.addPostFrameCallback() to be used in initState()  |
+| `widgets-binding-add-post-frame-callback`, `ft-widgets-binding-add-post-frame-callback` | Adds WidgetsBinding.instance.addPostFrameCallback() to be used in initState() |
+| `log`                                                                | Prints a string to System.out                                                  |
+| `logv`                                                               | Prints a value to System.out                                                   |
+| `ft-delayed-miliseconds`                                             | Adds a Future.delayed instruction                                              |
+| `ft-void-function`                                                   | Adds property as a void Function()                                             |
+| `ft-void-call-back`                                                  | Adds property as a VoidCallback function                                       |
+| `ft-service-call`                                                    | Adds a call for service with error handling                                    |
+| `ft-unfocus`                                                         | Hide keyboard                                                                  |
 
 ## Widgets
 
@@ -396,6 +414,13 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-icon`                                          | Adds an icon from Google Fonts                                                  |
 | `ft-phosphor-icon`                                 | Adds an icon from PhosphorIcon package                                          |
 | `ft-navigator-context`                             | Get the Navigator.of(context)                                                   |
+| `ft-separator`                                     | Adds a horizontal or vertical spacing between widgets using SizedBox            |
+| `ft-media-query-size-of`                           | Adds MediaQuery.sizeOf(context).                                               |
+| `ft-media-query-maybe`                             | Adds MediaQuery.of(context).                                                   |
+| `ft-font-size`                                     | Adds style property fontSize                                                   |
+| `ft-text-form-input-simple`                        | Adds TextFormInput Widget Simple                                               |
+| `ft-text-form-input-detailed`                      | Adds TextFormInput Widget Detailed                                             |
+| `ft-values`                                        | Adds a value from a list of values                                             |
 
 ## GetX
 
@@ -457,6 +482,7 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-bloc-router`           | Creates a Bloc Router Module           |
 | `ft-bloc-router-with-args` | Creates a Bloc Router Module with args |
 | `ft-get-navigation-args`   | Get args from ModalRoute               |
+| `ft-enum-status`           | Creates a enum state status            |
 
 ## Modular
 
@@ -487,6 +513,17 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-bind-lazy-singleton-repository-impl-v6` | Adds i.addLazySingleton() instruction for RepositoryImpl() used by a ServiceImpl() using Flutter Modular |
 | `ft-bind-lazy-singleton-service-v6`         | Adds i.addLazySingleton() instruction for Service() using Flutter Modular                                |
 | `ft-bind-lazy-singleton-service-impl-v6`    | Adds i.addLazySingleton() instruction for ServiceImpl() using Flutter Modular                            |
+| `ft-bind-lazy-singleton-i-repository-class` | Inject a lazy singleton instance of class                                                                |
+| `ft-bind-lazy-singleton-class-without-interface` | Inject a lazy singleton of class without interface reference                                            |
+| `ft-bind-singleton-class-without-interface` | Inject a singleton of class without interface reference                                                  |
+| `ft-rchild`                                 | Add child route                                                                                          |
+| `ft-rmodule`                                | Add module route                                                                                         |
+| `ft-modular-to-pop`                         | Adds Modular.to instruction using pop                                                                    |
+| `ft-modular-to-pop-and-push-named`          | Adds Modular.to instruction using popAndPushNamed                                                        |
+| `ft-modular-to-pop-until`                   | Adds Modular.to instruction using popUntil                                                               |
+| `ft-modular-to-push-replacement-named`      | Adds Modular.to instruction using pushReplacementNamed                                                   |
+| `ft-modular-to-push-named-and-remove-until` | Adds Modular.to instruction using pushNamedAndRemoveUntil                                                |
+| `ft-modular-import-app-module`              | Import AppModule into current module                                                                     |
 
 ## Riverpod
 
@@ -499,6 +536,10 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-riverpod-provider-repository-impl` | Adds Riverpod provider for RepositoryImpl() |
 | `ft-riverpod-provider-service`         | Adds Riverpod provider for Service()        |
 | `ft-riverpod-provider-service-impl`    | Adds Riverpod provider for ServiceImpl()    |
+| `ft-riverpod-ref`                      | Adds Riverpod ref                           |
+| `ft-riverpod-command-class`            | Adds Riverpod command class                 |
+| `ft-riverpode-provider-current-class`  | Adds Riverpod provider for the current class() |
+| `ft-riverpod-async-command-class`      | Adds Async Riverpod command class           |
 
 ## Linter (analysis_options.yaml)
 
@@ -508,6 +549,14 @@ Access high-speed snippets using the `ft-` prefix.
 | `ft-linter-rules`                  | Includes many rules for the linter to improve development |
 | `ft-build-runner-options-bloc`     | Configures the build-runner options for Bloc              |
 | `ft-build-runner-options-riverpod` | Configures the build-runner options for Riverpod          |
+| `ft-linter-formmater`               | Configures the analyzer options                           |
+| `ft-linter-analyzer-with-custom-lint` | Configures the analyzer options with custom lint          |
+
+## App Config (settings.json)
+
+| Snippet             | Description                                                             |
+|---------------------|-------------------------------------------------------------------------|
+| `fvm_flutter_sdk`   | Configures FVM Dart/Flutter SDK paths (removes .fvm from search)        |
 
 </details>
 
@@ -520,11 +569,20 @@ Fine-tune how Flutter Tools Pro generates code to match your team's style.
 <details>
 <summary><b>View All Available Settings</b></summary>
 
-The **Flutter Tools Pro** allows extensive customization of behavior for Interfaces, GetX Features, and MobX Stores.
-
-- **Create Folder for Interfaces**: Toggle automatic nesting.
-- **GetX Use Constructor Tear-offs**: modern Dart syntax support.
-- **Use `I` Prefix**: Enforce interface naming conventions.
+| Setting | Type | Default | Description |
+| :--- | :---: | :---: | :--- |
+| `createFolderForInterfaces` | bool | `true` | Create subfolders for interface and implementations. |
+| `createFolderForWidgetsPage` | bool | `true` | Create a dedicated folder when generating a widget page. |
+| `useIPrefixForInterfaces` | bool | `true` | Use `I` prefix for interface names (e.g., `IService`). |
+| `widgetsViewsSuffix` | enum | `Page` | Default suffix for screens: `Page`, `Screen`, or `View`. |
+| `displayGetxContextMenu` | bool | `false` | Enable/Disable GetX context menu items. |
+| `displayRiverpodContextMenu`| bool | `false` | Enable/Disable Riverpod context menu items. |
+| `displayModularContextMenu` | bool | `false` | Enable/Disable Flutter Modular context menu items. |
+| `displayMobxContextMenu` | bool | `false` | Enable/Disable MobX context menu items. |
+| `displaySignalsContextMenu` | bool | `false` | Enable/Disable Signals context menu items. |
+| `projectPath` | enum | `/lib/app` | Root path for structures (`/lib`, `/lib/src`, `/lib/app`). |
+| `projectViewsPath` | enum | `/modules` | Subpath for views (`/features`, `/modules`, `/pages`). |
+| `useConstructorTearOffs` | bool | `false` | Enable Dart 3+ constructor tear-offs in templates. |
 
 ![Settings](images/settings-create-folder-interfaces.gif)
 
