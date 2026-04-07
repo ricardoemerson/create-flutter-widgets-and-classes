@@ -2,6 +2,19 @@
 
 All notable changes to the Flutter Tools Pro extension will be documented in this file.
 
+## [4.3.0]
+
+### Added
+- Added the new `JSON to Dart Model` generator with support for `Native`, `JsonSerializable`, and `Freezed`.
+- Added customization options for the JSON generator: Class naming suffix ("Model"), and toggles for `fromJson`, `toJson`, `copyWith`, and `toString`.
+- Added `Format JSON` and `Clear` buttons to the JSON to Model interface.
+- Added intelligent auto-detection of `json_serializable` and `freezed` in `pubspec.yaml` to automatically set the generation type.
+- Added cumulative warning messages in `PubspecYaml` for multiple missing dependencies.
+- Added robust `PubspecYaml` dependency verification for `json_serializable` and `freezed` companion packages.
+
+### Changed
+- Improved the JSON to Model generation logic for better consistency.
+
 ## [4.2.0]
 
 ### Added

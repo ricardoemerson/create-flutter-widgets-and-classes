@@ -37,6 +37,7 @@ O **Flutter Tools Pro** é uma suíte de produtividade de alta performance para 
 | **Frameworks** | GetX, Riverpod, Flutter Modular, MobX | **PRO** |
 | **Geradores** | Widgets Stateless/Stateful (Página ou Componente) | **PRO** |
 | **Arquitetura** | Interfaces, Repositórios, DTOs, Serviços | **PRO** |
+| **Modelos JSON** | JSON para Dart (Native, Serializable, Freezed) | **PRO** |
 | **Produtividade** | Geração de Templates Customizados | **PRO** |
 | **Ações de Código** | Wrappers Inteligentes (LayoutBuilder, Obx, etc.) | **PRO** |
 | **Snippets** | 160+ Utilitários Dart & Flutter | **GRÁTIS** |
@@ -123,6 +124,14 @@ Crie interfaces profissionais para Providers, Repositories e Services.
 ### Classes Base
 Gere DTOs, Models e Singletons com padrões de mercado.
 ![Classes](images/create-class.gif)
+
+### 💎 Gerador JSON para Model
+Conversão de alta performance de JSON para Dart com detecção inteligente de projeto.
+- **Auto-Detecção**: Seleciona automaticamente Native, JsonSerializable ou Freezed com base no seu `pubspec.yaml`.
+- **Customização**: Alterne a geração de `fromJson`, `toJson`, `copyWith` e `toString`.
+- **Utilidade**: Formatação e validação de JSON integradas.
+
+![JSON to Model](images/json-to-model.png)
 </details>
 
 ---

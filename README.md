@@ -37,6 +37,7 @@
 | **Frameworks** | GetX, Riverpod, Flutter Modular, MobX | **PRO** |
 | **Generators** | Stateless/Stateful Widgets (Page or Component) | **PRO** |
 | **Architecture** | Interfaces, Repositories, DTOs, Services | **PRO** |
+| **JSON Models** | JSON to Dart (Native, Serializable, Freezed) | **PRO** |
 | **Productivity** | Custom Template Generation | **PRO** |
 | **Code Actions** | Intelligent Widget Wrappers (LayoutBuilder, Obx, etc.) | **PRO** |
 | **Snippets** | 160+ Dart & Flutter Utilities | **FREE** |
@@ -125,6 +126,14 @@ Create professional interfaces for Providers, Repositories, and Services.
 ### Core Classes
 Generate DTOs, Models, and Singletons with standard patterns.
 ![Classes](images/create-class.gif)
+
+### 💎 JSON to Model Generator
+High-performance JSON to Dart conversion with intelligent project detection.
+- **Auto-Detect**: Automatically selects Native, JsonSerializable, or Freezed based on your `pubspec.yaml`.
+- **Customization**: Toggle `fromJson`, `toJson`, `copyWith`, and `toString` generation.
+- **Utility**: Built-in JSON formatting and validation.
+
+![JSON to Model](images/json-to-model.png)
 </details>
 
 ---
