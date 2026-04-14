@@ -2,6 +2,16 @@
 
 All notable changes to the Flutter Tools Pro extension will be documented in this file.
 
+## [4.4.0]
+
+### Added
+- Added new **Code Actions** for Data Classes to easily generate `fromJson`/`toJson`, `copyWith`, and `toString` methods.
+- Added specific support for **JsonSerializable** in Data Classes: generates `fromJson`/`toJson` using arrow syntaxes, adds `@JsonSerializable` and `@JsonKey` annotations with default values, and manages `part` directives.
+- Added intelligent, idempotent overwriting: generators will detect existing methods and replace them smoothly without duplicating boilerplate.
+- Added combined Code Action `Generate All Methods` to quickly build out all available methods in one click.
+- Added **Pro Settings Dashboard** — a rich WebView interface to configure all extension settings visually, supporting both **User Settings** (global) and **Workspace Settings** (per-project). Open via `Ctrl+O S` (User) or `Ctrl+O W` (Workspace).
+- Security updates for Pro features implementation across the new generation commands.
+
 ## [4.3.0]
 
 ### Added
